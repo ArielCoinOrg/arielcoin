@@ -1,0 +1,11 @@
+.idea
+.vscode
+config.log
+share/setup.nsi
+Makefile
+config.status
+test/config.ini
+doc/man/Makefile
+src/Makefile
+src/qt/test/.deps
+src/wallet/test/.deps

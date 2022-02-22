@@ -33,7 +33,7 @@ regularly to indicate new official, stable release versions of Arielcoin Core.
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
 
-Developer IRC can be found on Telegram https://t.me/ArielCoin
+Developer chat can be found on Telegram https://t.me/ArielCoin
 
 Testing
 -------

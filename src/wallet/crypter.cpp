@@ -10,6 +10,8 @@
 #include <script/standard.h>
 #include <util/system.h>
 
+#include <api.h>
+
 #include <string>
 #include <vector>
 
@@ -134,7 +136,7 @@ static bool DecryptKey(const CKeyingMaterial& vMasterKey, const std::vector<unsi
     if(!DecryptSecret(vMasterKey, vchCryptedSecret, vchPubKey.GetHash(), vchSecret))
         return false;
 
-    if (vchSecret.size() != 1281)
+    if (vchSecret.size() != PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES)
         return false;
 
     key.Set(vchSecret.begin(), vchSecret.end(), vchPubKey,vchPubKey.IsCompressed());

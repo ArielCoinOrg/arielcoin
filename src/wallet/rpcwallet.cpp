@@ -383,10 +383,10 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
             "\"txid\"                  (string) The transaction id.\n"
                 },
                 RPCExamples{
-                    HelpExampleCli("sendtoaddress", "\"TAQCPfZMynAkJxzSwmWbjn2y9CeCyAyQ1D\" 0.1")
-            + HelpExampleCli("sendtoaddress", "\"TAQCPfZMynAkJxzSwmWbjn2y9CeCyAyQ1D\" 0.1 \"donation\" \"seans outpost\"")
-            + HelpExampleCli("sendtoaddress", "\"TAQCPfZMynAkJxzSwmWbjn2y9CeCyAyQ1D\" 0.1 \"\" \"\" true")
-            + HelpExampleRpc("sendtoaddress", "\"TAQCPfZMynAkJxzSwmWbjn2y9CeCyAyQ1D\", 0.1, \"donation\", \"seans outpost\"")
+                    HelpExampleCli("sendtoaddress", "\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\" 0.1")
+            + HelpExampleCli("sendtoaddress", "\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\" 0.1 \"donation\" \"seans outpost\"")
+            + HelpExampleCli("sendtoaddress", "\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\" 0.1 \"\" \"\" true")
+            + HelpExampleRpc("sendtoaddress", "\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\", 0.1, \"donation\", \"seans outpost\"")
                 },
             }.ToString());
 
@@ -2780,8 +2780,8 @@ static UniValue listunspent(const JSONRPCRequest& request)
                 },
                 RPCExamples{
                     HelpExampleCli("listunspent", "")
-            + HelpExampleCli("listunspent", "6 9999999 \"[\\\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\\\",\\\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\\\"]\"")
-            + HelpExampleRpc("listunspent", "6, 9999999 \"[\\\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\\\",\\\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\\\"]\"")
+            + HelpExampleCli("listunspent", "6 9999999 \"[\\\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\\\",\\\"AXFDVC9DwXCpVi2r458VUqz9C32zFMXavp\\\"]\"")
+            + HelpExampleRpc("listunspent", "6, 9999999 \"[\\\"AYcNTpMH6XzfgqXRGDxxkkucf3cpXtDkdQ\\\",\\\"AXFDVC9DwXCpVi2r458VUqz9C32zFMXavp\\\"]\"")
             + HelpExampleCli("listunspent", "6 9999999 '[]' true '{ \"minimumAmount\": 0.005 }'")
             + HelpExampleRpc("listunspent", "6, 9999999, [] , true, { \"minimumAmount\": 0.005 } ")
                 },

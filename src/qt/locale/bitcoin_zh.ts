@@ -47,11 +47,11 @@
     </message>
     <message>
         <source>These are your Arielcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这些是你的莱特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
+        <translation>这些是你的爱丽儿币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
         <source>These are your Arielcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这些是您的莱特币接收地址。建议每个交易使用一个新的接收地址。</translation>
+        <translation>这些是您的爱丽儿币接收地址。建议每个交易使用一个新的接收地址。</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -144,8 +144,8 @@
         <translation>确认钱包密码</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的arielcoin。</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
+        <translation>注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的爱丽儿币。&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

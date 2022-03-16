@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/arielcoin-project/arielcoin-detached-sigs.git"
+- "url": "https://github.com/ArielCoinOrg/arielcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "arielcoin-osx-unsigned.tar.gz"

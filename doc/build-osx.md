@@ -43,7 +43,7 @@ Build Arielcoin Core
 
 1. Clone the Arielcoin Core source code:
 
-        git clone https://github.com/arielcoin-project/arielcoin
+        git clone https://github.com/ArielCoinOrg/arielcoin
         cd arielcoin
 
 2.  Build Arielcoin Core:

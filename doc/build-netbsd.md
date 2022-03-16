@@ -22,7 +22,7 @@ libtool
 pkg-config
 python37
 
-git clone https://github.com/arielcoin-project/arielcoin.git
+git clone https://github.com/ArielCoinOrg/arielcoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

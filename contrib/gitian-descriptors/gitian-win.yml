@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/arielcoin-project/arielcoin.git"
+- "url": "https://github.com/ArielCoinOrg/arielcoin.git"
   "dir": "arielcoin"
 files: []
 script: |

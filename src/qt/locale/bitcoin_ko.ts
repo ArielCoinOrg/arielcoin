@@ -156,8 +156,8 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>경고: 지갑이 암호화된 상태로 당신의 암호문을 잃어버리셨다면, 당신은 &lt;b&gt;모든 라이트코인을 잃게됩니다&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
+        <translation>경고: 지갑이 암호화된 상태로 당신의 암호문을 잃어버리셨다면, 당신은 &lt;b&gt;모든 아리엘코인을 잃게됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

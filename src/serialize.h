@@ -24,7 +24,10 @@
 #include <prevector.h>
 #include <span.h>
 
-static const unsigned int MAX_SIZE = 0x02000000;
+// Change max size to allow for larger requests to libevent
+
+static const unsigned int MAX_SIZE = 0x04ffffff;
+
 
 /**
  * Dummy data type to identify deserializing constructors.

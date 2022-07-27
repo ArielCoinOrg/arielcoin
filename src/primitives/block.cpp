@@ -27,14 +27,12 @@ uint256 CBlockHeader::GetPoWHash() const
             .perslen = 0
         };
 
-        CDataStream powHead(SER_GETHASH, 0);
-        powHead << nVersion  << hashPrevBlock << hashMerkleRoot << nTime << nBits << nNonce;
+    CDataStream powHead(SER_GETHASH, 0);
+    powHead << nVersion  << hashPrevBlock << hashMerkleRoot << nTime << nBits << nNonce;
 
-        if (yespower_tls((unsigned char *)powHead.data(), powHead.size(), &yespower_tidecoin, (yespower_binary_t *)thash.begin())) {
+    if (yespower_tls((unsigned char *)powHead.data(), powHead.size(), &yespower_tidecoin, (yespower_binary_t *)thash.begin())) {
             //printf("Error: GetPoWHash: failed to compute PoW hash (out of memory?)\n");
-        }
-
-
+    }
     return thash;
 }
 

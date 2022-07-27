@@ -9,11 +9,36 @@
 #include <tinyformat.h>
 #include <util/strencodings.h>
 #include <crypto/common.h>
+#include <crypto/yespower/yespower.h>
 #include <pubkey.h>
 #include <streams.h>
 
 // Used to serialize the header without signature
 // Workaround due to removing serialization templates in Bitcoin Core 0.18
+
+uint256 CBlockHeader::GetPoWHash() const
+{
+    uint256 thash;
+    static const yespower_params_t yespower_tidecoin = {
+            .version = YESPOWER_1_0,
+            .N = 2048,
+            .r = 8,
+            .pers = NULL,
+            .perslen = 0
+        };
+
+        CDataStream powHead(SER_GETHASH, 0);
+        powHead << nVersion  << hashPrevBlock << hashMerkleRoot << nTime << nBits << nNonce;
+
+        if (yespower_tls((unsigned char *)powHead.data(), powHead.size(), &yespower_tidecoin, (yespower_binary_t *)thash.begin())) {
+            //printf("Error: GetPoWHash: failed to compute PoW hash (out of memory?)\n");
+        }
+
+
+    return thash;
+}
+
+
 class CBlockHeaderSign
 {
 public:
@@ -32,7 +57,7 @@ public:
         vchBlockDlgt = header.GetProofOfDelegation();
     }
 
-    SERIALIZE_METHODS(CBlockHeaderSign, obj) { 
+    SERIALIZE_METHODS(CBlockHeaderSign, obj) {
         READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce, obj.hashStateRoot, obj.hashUTXORoot, obj.prevoutStake);
         if(obj.fHasProofOfDelegation)
         {

@@ -80,7 +80,7 @@ public:
     {
         return !IsProofOfStake();
     }
-    
+
     virtual uint32_t StakeTime() const
     {
         uint32_t ret = 0;
@@ -156,7 +156,7 @@ public:
     {
         return IsProofOfStake()? std::make_pair(prevoutStake, nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
-    
+
     CBlockHeader GetBlockHeader() const
     {
         CBlockHeader block;
@@ -172,6 +172,8 @@ public:
         block.prevoutStake   = prevoutStake;
         return block;
     }
+
+    uint256 GetPoWHash() const;
 
     std::string ToString() const;
 };

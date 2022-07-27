@@ -1361,7 +1361,7 @@ CTransactionRef GetTransaction(const CBlockIndex* const block_index, const CTxMe
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams)
 {
     // Check for proof of work block header
-    return CheckProofOfWork(block.GetHash(), block.nBits, consensusParams);
+    return CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams, CChainState& chainstate)
@@ -2219,7 +2219,7 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     tx.vout.push_back(CTxOut(nAmount, CScript() << OP_DUP << OP_HASH160 << senderAddress.asBytes() << OP_EQUALVERIFY << OP_CHECKSIG));
     block.vtx.push_back(MakeTransactionRef(CTransaction(tx)));
     dev::u256 nonce = globalState->getNonce(senderAddress);
- 
+
     QtumTransaction callTransaction;
     if(addrContract == dev::Address())
     {
@@ -2232,7 +2232,7 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     callTransaction.forceSender(senderAddress);
     callTransaction.setVersion(VersionVM::GetEVMDefault());
 
-    
+
     ByteCodeExec exec(block, std::vector<QtumTransaction>(1, callTransaction), blockGasLimit, pblockindex, chainstate.m_chain);
     exec.performByteCode(dev::eth::Permanence::Reverted);
     return exec.getResult();
@@ -2315,7 +2315,7 @@ bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, 
         std::vector<CTxOut> mposOutputList;
         if(!GetMPoSOutputs(mposOutputList, splitReward, nPrevHeight, consensusParams, chain))
             return error("CheckReward(): cannot create the list of MPoS outputs");
-      
+
         for(size_t i = 0; i < mposOutputList.size(); i++){
             it=std::find(vTempVouts.begin(), vTempVouts.end(), mposOutputList[i]);
             if(it==vTempVouts.end()){
@@ -2438,7 +2438,7 @@ void writeVMlog(const std::vector<ResultExecute>& res, CChain& chain, const CTra
             ss << "]}";
         }
     }
-    
+
     std::ofstream file(qtumDir.string(), std::ios::in | std::ios::out);
     file.seekp(-2, std::ios::end);
     file << ss.str();
@@ -3065,7 +3065,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         {
             if (tx.IsCoinStake())
                 nActualStakeReward = tx.GetValueOut()-view.GetValueIn(tx);
-                    
+
             std::vector<CScriptCheck> vChecks;
             bool fCacheResults = fJustCheck; /* Don't cache results if we're actually connecting blocks (still consult the cache, though) */
             TxValidationState tx_state;
@@ -4984,7 +4984,7 @@ CBlockIndex* BlockManager::GetLastCheckpoint(const CCheckpointData& data)
     return nullptr;
 }
 
-// Automatically select a suitable sync-checkpoint 
+// Automatically select a suitable sync-checkpoint
 const CBlockIndex* BlockManager::AutoSelectSyncCheckpoint(const CBlockIndex *pindexBest)
 {
     const CBlockIndex *pindex = pindexBest;
@@ -5150,7 +5150,7 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
     //reject proof of work at height consensusParams.nLastPOWBlock
     if (block.IsProofOfWork() && nHeight > consensusParams.nLastPOWBlock)
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "reject-pow", strprintf("UpdateHashProof() : reject proof-of-work at height %d", nHeight));
-    
+
     // Check coinstake timestamp
     if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), nHeight, consensusParams))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "timestamp-invalid", strprintf("UpdateHashProof() : coinstake timestamp violation nTimeBlock=%d", block.GetBlockTime()));
@@ -5169,13 +5169,13 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
             return error("UpdateHashProof() : check proof-of-stake failed for block %s", hash.ToString());
         }
     }
-    
+
     // PoW is checked in CheckBlock()
     if (block.IsProofOfWork())
     {
         hashProof = block.GetHash();
     }
-    
+
     // Record proof hash value
     pindex->hashProof = hashProof;
     return true;

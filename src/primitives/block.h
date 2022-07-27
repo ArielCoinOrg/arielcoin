@@ -99,6 +99,8 @@ public:
 
     bool HasProofOfDelegation() const;
 
+    uint256 GetPoWHash() const;
+
     CBlockHeader& operator=(const CBlockHeader& other) //qtum
     {
         if (this != &other)
@@ -172,8 +174,6 @@ public:
         block.prevoutStake   = prevoutStake;
         return block;
     }
-
-    uint256 GetPoWHash() const;
 
     std::string ToString() const;
 };

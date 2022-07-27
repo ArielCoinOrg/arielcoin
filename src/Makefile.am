@@ -498,6 +498,13 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   crypto/sha512.h \
   crypto/siphash.cpp \
   crypto/siphash.h \
+  crypto/yespower/sha256y.c \
+  crypto/yespower/sha256y.h \
+  crypto/yespower/yespower-ref.c \
+  crypto/yespower/yespower.c \
+  crypto/yespower/yespower.h \
+  crypto/yespower/insecure_memzero.h \
+  crypto/yespower/sysendian.h \
   eth_client/utils/libscrypt/b64.c \
   eth_client/utils/libscrypt/b64.h \
   eth_client/utils/libscrypt/crypto-mcf.c \

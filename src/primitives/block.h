@@ -38,7 +38,18 @@ public:
     }
     virtual ~CBlockHeader(){};
 
-    SERIALIZE_METHODS(CBlockHeader, obj) { READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce, obj.hashStateRoot, obj.hashUTXORoot, obj.prevoutStake, obj.vchBlockSigDlgt); }
+    SERIALIZE_METHODS(CBlockHeader, obj) {
+        READWRITE(obj.nVersion);
+        READWRITE(obj.hashPrevBlock);
+        READWRITE(obj.hashMerkleRoot);
+        READWRITE(obj.nTime);
+        READWRITE(obj.nBits);
+        READWRITE(obj.nNonce);
+        READWRITE(obj.hashStateRoot);
+        READWRITE(obj.hashUTXORoot);
+        READWRITE(obj.prevoutStake);
+        READWRITE(obj.vchBlockSigDlgt);
+    }
 
     void SetNull()
     {

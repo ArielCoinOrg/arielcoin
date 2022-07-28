@@ -156,9 +156,10 @@ public:
         m_assumed_chain_state_size = 3;
 
         genesis = CreateGenesisBlock(1609074580, 11033477, 0x2001ffff, 1, 50 * COIN);
+        devnetGenesis = FindDevNetGenesisBlock(genesis);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("block string %s\n", genesis.ToString());
-        devnetGenesis = FindDevNetGenesisBlock(genesis);
+
 
         LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 

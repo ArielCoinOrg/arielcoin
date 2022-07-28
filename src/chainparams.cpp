@@ -65,6 +65,31 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
+
+static CBlock FindDevNetGenesisBlock(const CBlock &prevBlock, const CAmount& reward)
+{
+    std::string devNetName = gArgs.GetDevNetName();
+    assert(!devNetName.empty());
+
+    CBlock block = CreateDevNetGenesisBlock(prevBlock.GetHash(), devNetName.c_str(), prevBlock.nTime + 1, 0, prevBlock.nBits, reward);
+
+    arith_uint256 bnTarget;
+    bnTarget.SetCompact(block.nBits);
+
+    for (uint32_t nNonce = 0; nNonce < UINT32_MAX; nNonce++) {
+        block.nNonce = nNonce;
+
+        uint256 hash = block.GetHash();
+        if (UintToArith256(hash) <= bnTarget)
+            return block;
+    }
+
+    // This is very unlikely to happen as we start the devnet with a very low difficulty. In many cases even the first
+    // iteration of the above loop will give a result already
+    error("FindDevNetGenesisBlock: could not find devnet genesis block for %s", devNetName);
+    assert(false);
+}
+
 /**
  * Main network on which people trade goods and services.
  */
@@ -138,6 +163,9 @@ public:
         genesis = CreateGenesisBlock(1609074580, 11033477, 0x2001ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("block string %s\n", genesis.ToString());
+        devnetGenesis = FindDevNetGenesisBlock(genesis, 50 * COIN);
+
+        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 
 //        assert(consensus.hashGenesisBlock == uint256S("0x000075aef83cf2853580f8ae8ce6f8c3096cfa21d98334d6e3f95e5582ed986c"));
 //        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));

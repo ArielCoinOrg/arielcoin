@@ -91,7 +91,7 @@ public:
         consensus.nReduceBlocktimeHeight = 845000;
         consensus.nMuirGlacierHeight = 845000;
         consensus.nLondonHeight = 2080512;
-        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -118,8 +118,8 @@ public:
         // Replace 0xffffc0 with the activation block number
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080512;
 
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000037e70dfa7662e619017"); // 1883974
-        consensus.defaultAssumeValid = uint256S("0xefe5b66cd0963b19ed64850884f039ff4d98c49cd63b9ec763d5c336619d5a6d"); // 1883974
+        consensus.nMinimumChainWork = uint256S("0x01"); // 1883974
+        consensus.defaultAssumeValid = uint256S("0xb34a457c601ef8ce3294116e3296078797be7ded1b0d12515395db9ab5e93ab8"); // 1883974
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -151,13 +151,15 @@ public:
 //        vSeeds.emplace_back("qtum6.dynu.net"); // Qtum mainnet
 //        vSeeds.emplace_back("qtum7.dynu.net"); // Qtum mainnet
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,50);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,70);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,65);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,125);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x68, 0xAC, 0xDE};
+        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x68, 0xFE, 0xB1};
 
-        bech32_hrp = "qc";
+        bech32_hrp = "tbc";
+
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));
 

@@ -1397,7 +1397,7 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
 {
     // Get the hash of the proof
     // After validating the PoS block the computed hash proof is saved in the block index, which is used to check the index
-    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHash() : block.hashProof;
+    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHeader().GetPoWHash() : block.hashProof;
     // Check for proof after the hash proof is computed
     if(block.IsProofOfStake()){
         //blocks are loaded out of order, so checking PoS kernels here is not practical

@@ -66,7 +66,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 }
 
 
-static CBlock FindDevNetGenesisBlock(const CBlock &block, const CAmount& reward)
+static CBlock FindDevNetGenesisBlock(const CBlock &block)
 {
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);
@@ -158,7 +158,7 @@ public:
         genesis = CreateGenesisBlock(1609074580, 11033477, 0x2001ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("block string %s\n", genesis.ToString());
-        devnetGenesis = FindDevNetGenesisBlock(genesis, 50 * COIN);
+        devnetGenesis = FindDevNetGenesisBlock(genesis);
 
         LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 

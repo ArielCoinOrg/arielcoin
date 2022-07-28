@@ -62,6 +62,7 @@ public:
             READWRITE(obj.vchBlockDlgt);
         }
     }
+    uint32_t nNonce;
 
 private:
     bool fHasProofOfDelegation;
@@ -72,7 +73,7 @@ private:
     uint256 hashMerkleRoot;
     uint32_t nTime;
     uint32_t nBits;
-    uint32_t nNonce;
+
     uint256 hashStateRoot;
     uint256 hashUTXORoot;
     COutPoint prevoutStake;

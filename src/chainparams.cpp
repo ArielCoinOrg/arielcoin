@@ -77,7 +77,7 @@ static CBlock FindDevNetGenesisBlock(const CBlock &block)
 
         uint256 hash = genesis.GetPoWHash();
         if (UintToArith256(hash) <= bnTarget)
-            return block;
+            return genesis;
     }
 
     // This is very unlikely to happen as we start the devnet with a very low difficulty. In many cases even the first

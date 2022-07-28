@@ -386,7 +386,7 @@ bool ReadBlockFromDisk(Block& block, const FlatFilePos& pos, const Consensus::Pa
     // Check the header
     // PoS blocks can be loaded out of order from disk, which makes PoS impossible to validate. So, do not validate their headers
     // they will be validated later in CheckBlock and ConnectBlock anyway
-    if (block.IsProofOfWork() && !CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
+    if (block.IsProofOfWork() && !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams)) {
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
     }
 

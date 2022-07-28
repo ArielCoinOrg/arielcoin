@@ -389,7 +389,7 @@ bool ReadBlockFromDisk(Block& block, const FlatFilePos& pos, const Consensus::Pa
 
     if (block.IsProofOfWork() && !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams)) {
         LogPrintf("IsProofOfWork %s\n", block.IsProofOfWork());
-        LogPrintf("!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams)) %s\n", !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams)));
+        LogPrintf("!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams)) %s\n", !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams));
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
     }
 

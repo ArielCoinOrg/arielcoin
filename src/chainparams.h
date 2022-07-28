@@ -85,12 +85,12 @@ public:
 
     const Consensus::Params& GetConsensus() const { return consensus; }
     const CMessageHeader::MessageStartChars& MessageStart() const { return pchMessageStart; }
-    uint64_t GetDefaultPort() const { return nDefaultPort; }
-    uint64_t GetDefaultPort(Network net) const
+    uint16_t GetDefaultPort() const { return nDefaultPort; }
+    uint16_t GetDefaultPort(Network net) const
     {
         return net == NET_I2P ? I2P_SAM31_PORT : GetDefaultPort();
     }
-    uint64_t GetDefaultPort(const std::string& addr) const
+    uint16_t GetDefaultPort(const std::string& addr) const
     {
         CNetAddr a;
         return a.SetSpecial(addr) ? GetDefaultPort(a.GetNetwork()) : GetDefaultPort();
@@ -149,7 +149,7 @@ protected:
 
     Consensus::Params consensus;
     CMessageHeader::MessageStartChars pchMessageStart;
-    uint64_t nDefaultPort;
+    uint16_t nDefaultPort;
     uint64_t nPruneAfterHeight;
     uint64_t m_assumed_blockchain_size;
     uint64_t m_assumed_chain_state_size;

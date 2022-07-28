@@ -263,14 +263,15 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001568777684de8c59f80"); // 1930000
         consensus.defaultAssumeValid = uint256S("0xf4836510a70e25d5c70554abbbcb346abd66af540f616d806fb1c20335c1e874"); // 1930000
 
-        pchMessageStart[0] = 0x0d;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x15;
-        pchMessageStart[3] = 0x06;
-        nDefaultPort = 13888;
+        pchMessageStart[0] = 0xfc;
+        pchMessageStart[1] = 0xa5;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0xe6;
+        nDefaultPort = 18755;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 6;
         m_assumed_chain_state_size = 1;
+
 
         genesis = CreateGenesisBlock(1504695029, 7349697, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();

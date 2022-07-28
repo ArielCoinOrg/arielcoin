@@ -328,7 +328,8 @@ BITCOIN_CORE_H = \
   qtum/qtumutils.h \
   qtum/qtumdelegation.h \
   qtum/qtumtoken.h \
-  qtum/qtumledger.h
+  qtum/qtumledger.h \
+  crypto/yespower/yespower.h
 
 obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj

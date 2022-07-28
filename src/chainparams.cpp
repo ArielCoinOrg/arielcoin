@@ -66,27 +66,22 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 }
 
 
-static CBlock FindDevNetGenesisBlock(const CBlock &prevBlock, const CAmount& reward)
+static CBlock FindDevNetGenesisBlock(const CBlock &block, const CAmount& reward)
 {
-    std::string devNetName = gArgs.GetDevNetName();
-    assert(!devNetName.empty());
-
-    CBlock block = CreateDevNetGenesisBlock(prevBlock.GetHash(), devNetName.c_str(), prevBlock.nTime + 1, 0, prevBlock.nBits, reward);
-
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);
 
     for (uint32_t nNonce = 0; nNonce < UINT32_MAX; nNonce++) {
         block.nNonce = nNonce;
 
-        uint256 hash = block.GetHash();
+        uint256 hash = block.GetPoWHash();
         if (UintToArith256(hash) <= bnTarget)
             return block;
     }
 
     // This is very unlikely to happen as we start the devnet with a very low difficulty. In many cases even the first
     // iteration of the above loop will give a result already
-    error("FindDevNetGenesisBlock: could not find devnet genesis block for %s", devNetName);
+    error("FindDevNetGenesisBlock: could not find devnet genesis block");
     assert(false);
 }
 

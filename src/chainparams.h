@@ -158,6 +158,7 @@ protected:
     std::string bech32_hrp;
     std::string strNetworkID;
     CBlock genesis;
+    CBlock devnetGenesis;
     std::vector<uint8_t> vFixedSeeds;
     bool fDefaultConsistencyChecks;
     bool fRequireStandard;

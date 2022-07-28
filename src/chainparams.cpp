@@ -70,9 +70,10 @@ static CBlock FindDevNetGenesisBlock(const CBlock &block)
 {
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);
+    CBlock genesis;
 
     for (uint32_t nNonce = 0; nNonce < UINT32_MAX; nNonce++) {
-        block.nNonce = nNonce;
+        block = CreateGenesisBlock(1609074580, nNonce, 0x2001ffff, 1, 50 * COIN);
 
         uint256 hash = block.GetPoWHash();
         if (UintToArith256(hash) <= bnTarget)

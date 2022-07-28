@@ -126,14 +126,14 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf1;
-        pchMessageStart[1] = 0xcf;
-        pchMessageStart[2] = 0xa6;
-        pchMessageStart[3] = 0xd3;
-        nDefaultPort = 3888;
+        pchMessageStart[0] = 0xec;
+        pchMessageStart[1] = 0xfa;
+        pchMessageStart[2] = 0xce;
+        pchMessageStart[3] = 0xa5;
+        nDefaultPort = 8755;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 16;
-        m_assumed_chain_state_size = 1;
+        m_assumed_blockchain_size = 22;
+        m_assumed_chain_state_size = 3;
 
         genesis = CreateGenesisBlock(1504695029, 8026361, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -263,15 +263,14 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001568777684de8c59f80"); // 1930000
         consensus.defaultAssumeValid = uint256S("0xf4836510a70e25d5c70554abbbcb346abd66af540f616d806fb1c20335c1e874"); // 1930000
 
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xa5;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xe6;
-        nDefaultPort = 18755;
+        pchMessageStart[0] = 0x0d;
+        pchMessageStart[1] = 0x22;
+        pchMessageStart[2] = 0x15;
+        pchMessageStart[3] = 0x06;
+        nDefaultPort = 13888;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 6;
         m_assumed_chain_state_size = 1;
-
 
         genesis = CreateGenesisBlock(1504695029, 7349697, 0x1f00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();

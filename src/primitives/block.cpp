@@ -40,7 +40,7 @@ uint256 CBlockHeader::GetPoWHash() const
 class CBlockHeaderYespower
 {
 public:
-    CBlockHeaderSign(const CBlockHeader& header)
+    CBlockHeaderYespower(const CBlockHeader& header)
     {
         nVersion = header.nVersion;
         hashPrevBlock = header.hashPrevBlock;

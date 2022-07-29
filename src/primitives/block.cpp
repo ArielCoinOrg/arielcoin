@@ -37,6 +37,33 @@ uint256 CBlockHeader::GetPoWHash() const
 }
 
 
+class CBlockHeaderYespower
+{
+public:
+    CBlockHeaderSign(const CBlockHeader& header)
+    {
+        nVersion = header.nVersion;
+        hashPrevBlock = header.hashPrevBlock;
+        hashMerkleRoot = header.hashMerkleRoot;
+        nTime = header.nTime;
+        nBits = header.nBits;
+        nNonce = header.nNonce;
+    }
+
+    SERIALIZE_METHODS(CBlockHeaderSign, obj) {
+        READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce);
+    }
+
+private:
+    int32_t nVersion;
+    uint256 hashPrevBlock;
+    uint256 hashMerkleRoot;
+    uint32_t nTime;
+    uint32_t nBits;
+    uint32_t nNonce;
+};
+
+
 class CBlockHeaderSign
 {
 public:
@@ -81,7 +108,9 @@ private:
 
 uint256 CBlockHeader::GetHash() const
 {
-    return SerializeHash(*this);
+    if (IsProofOfStake())
+        return SerializeHash(*this);
+    return SerializeHash(CBlockHeaderYespower(*this));
 }
 
 uint256 CBlockHeader::GetHashWithoutSign() const

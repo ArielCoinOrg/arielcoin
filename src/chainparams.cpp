@@ -162,10 +162,10 @@ public:
         LogPrintf("block string %s\n", genesis.ToString());
 
 
-//        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
+        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 
-        assert(consensus.hashGenesisBlock == uint256S("0x1704ccad7380b91eeeaeb597c26355802de4a5b6a13472b226fc07dda9a5da8e"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
+//        assert(consensus.hashGenesisBlock == uint256S("0x1704ccad7380b91eeeaeb597c26355802de4a5b6a13472b226fc07dda9a5da8e"));
+//        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.

@@ -50,7 +50,7 @@ public:
         nNonce = header.nNonce;
     }
 
-    SERIALIZE_METHODS(CBlockHeaderSign, obj) {
+    SERIALIZE_METHODS(CBlockHeaderYespower, obj) {
         READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce);
     }
 

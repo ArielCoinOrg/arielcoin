@@ -18,6 +18,8 @@
  * of the block.
  */
 
+static const uint32_t nPosActivationTime = 1569945600;
+
 class CBlockHeader
 {
 public:
@@ -47,10 +49,12 @@ public:
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
         READWRITE(obj.nNonce);
-        READWRITE(obj.hashStateRoot);
-        READWRITE(obj.hashUTXORoot);
-        READWRITE(obj.prevoutStake);
-        READWRITE(obj.vchBlockSigDlgt);
+        if (nPosActivationTime < obj.nTime){
+            READWRITE(obj.hashStateRoot);
+            READWRITE(obj.hashUTXORoot);
+            READWRITE(obj.prevoutStake);
+            READWRITE(obj.vchBlockSigDlgt);
+        }
     }
 
     void SetNull()

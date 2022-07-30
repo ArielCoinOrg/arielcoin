@@ -108,9 +108,7 @@ private:
 
 uint256 CBlockHeader::GetHash() const
 {
-    if (IsProofOfStake())
-        return SerializeHash(*this);
-    return SerializeHash(CBlockHeaderYespower(*this), SER_GETHASH);
+    return SerializeHash(*this);
 }
 
 uint256 CBlockHeader::GetHashWithoutSign() const

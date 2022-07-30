@@ -24,7 +24,12 @@
 #include <prevector.h>
 #include <span.h>
 
+// TODO NEXT BIG UPDATE: Change max size to allow for larger serialized messages
+// static const unsigned int MAX_SIZE = 0x04ffffff;
+
+static const unsigned int MAX_HTTP_SIZE = 0x04ffffff;
 static const unsigned int MAX_SIZE = 0x02000000;
+
 
 /**
  * Dummy data type to identify deserializing constructors.

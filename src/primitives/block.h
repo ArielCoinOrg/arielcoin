@@ -18,7 +18,7 @@
  * of the block.
  */
 
-static const uint32_t nPosActivationTime = 1659177784;
+static const uint32_t nPosActivationTime = 1659183784;
 
 class CBlockHeader
 {

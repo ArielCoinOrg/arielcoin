@@ -72,7 +72,7 @@ struct Params {
     int nSubsidyHalvingInterval;
     int nSubsidyHalvingIntervalV2;
     /* Block hash that is excepted from BIP16 enforcement */
-    uint256 BIP16Exception;
+    int BIP16Height;
     /** Block height and hash at which BIP34 becomes active */
     int BIP34Height;
     uint256 BIP34Hash;
@@ -209,7 +209,7 @@ struct Params {
     }
     int64_t TargetTimespan(int height) const
     {
-        return height < QIP9Height ? nPowTargetTimespan : 
+        return height < QIP9Height ? nPowTargetTimespan :
             (height < nReduceBlocktimeHeight ? nPowTargetTimespanV2 : nRBTPowTargetTimespan);
     }
     int CheckpointSpan(int height) const

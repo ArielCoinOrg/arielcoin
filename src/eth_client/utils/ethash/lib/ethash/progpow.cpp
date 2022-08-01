@@ -4,10 +4,10 @@
 
 #include <eth_client/utils/ethash/include/ethash/progpow.hpp>
 
-#include "bit_manipulation.h"
-#include "endianness.hpp"
-#include "ethash-internal.hpp"
-#include "kiss99.hpp"
+#include "eth_client/utils/ethash/lib/ethash/bit_manipulation.h"
+#include "eth_client/utils/ethash/lib/ethash/endianness.hpp"
+#include "eth_client/utils/ethash/lib/ethash/ethash-internal.hpp"
+#include "eth_client/utils/ethash/lib/ethash/kiss99.hpp"
 #include <eth_client/utils/ethash/include/ethash/keccak.hpp>
 
 #include <array>

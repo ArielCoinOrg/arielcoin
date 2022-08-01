@@ -1,5 +1,6 @@
-// Copyright 2018 Pawel Bylica.
-// Licensed under the Apache License, Version 2.0. See the LICENSE file.
+// ethash: C/C++ implementation of Ethash, the Ethereum Proof of Work algorithm.
+// Copyright 2018-2019 Pawel Bylica.
+// Licensed under the Apache License, Version 2.0.
 
 /// @file
 /// This file contains helper functions to handle big-endian architectures.
@@ -27,6 +28,13 @@
 #elif __APPLE__
 
 #include <machine/endian.h>
+
+#define bswap32 __builtin_bswap32
+#define bswap64 __builtin_bswap64
+
+#elif __FreeBSD__
+
+#include <sys/endian.h>
 
 #define bswap32 __builtin_bswap32
 #define bswap64 __builtin_bswap64

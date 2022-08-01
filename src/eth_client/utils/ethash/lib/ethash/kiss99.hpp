@@ -1,11 +1,11 @@
 /* ethash: C/C++ implementation of Ethash, the Ethereum Proof of Work algorithm.
- * Copyright 2018 Pawel Bylica.
- * Licensed under the Apache License, Version 2.0. See the LICENSE file.
+ * Copyright 2018-2019 Pawel Bylica.
+ * Licensed under the Apache License, Version 2.0.
  */
 
 #pragma once
 
-#include "support/attributes.h"
+#include "../support/attributes.h"
 #include <stdint.h>
 
 /**
@@ -40,8 +40,8 @@ public:
     kiss99() noexcept = default;
 
     /** Creates KISS generator state with provided init values.*/
-    kiss99(uint32_t z, uint32_t w, uint32_t jsr, uint32_t jcong) noexcept
-      : z{z}, w{w}, jsr{jsr}, jcong{jcong}
+    kiss99(uint32_t _z, uint32_t _w, uint32_t _jsr, uint32_t _jcong) noexcept
+      : z{_z}, w{_w}, jsr{_jsr}, jcong{_jcong}
     {}
 
     /** Generates next number from the KISS generator. */

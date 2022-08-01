@@ -1,12 +1,13 @@
 /* ethash: C/C++ implementation of Ethash, the Ethereum Proof of Work algorithm.
- * Copyright 2018 Pawel Bylica.
- * Licensed under the Apache License, Version 2.0. See the LICENSE file.
+ * Copyright 2018-2019 Pawel Bylica.
+ * Licensed under the Apache License, Version 2.0.
  */
 
 #pragma once
 
 #include <eth_client/utils/ethash/include/ethash/hash_types.h>
 
+#include <stdbool.h>
 #include <stdint.h>
 
 #ifdef __cplusplus
@@ -19,7 +20,13 @@
 extern "C" {
 #endif
 
-#define ETHASH_EPOCH_LENGTH 30000
+/**
+ * The Ethash algorithm revision implemented as specified in the Ethash spec
+ * https://github.com/ethereum/wiki/wiki/Ethash.
+ */
+#define ETHASH_REVISION "23"
+
+#define ETHASH_EPOCH_LENGTH 7500
 #define ETHASH_LIGHT_CACHE_ITEM_SIZE 64
 #define ETHASH_FULL_DATASET_ITEM_SIZE 128
 #define ETHASH_NUM_DATASET_ACCESSES 64
@@ -36,6 +43,13 @@ struct ethash_epoch_context
 
 
 struct ethash_epoch_context_full;
+
+
+struct ethash_result
+{
+    union ethash_hash256 final_hash;
+    union ethash_hash256 mix_hash;
+};
 
 
 /**
@@ -87,6 +101,30 @@ struct ethash_epoch_context_full* ethash_create_epoch_context_full(int epoch_num
 void ethash_destroy_epoch_context(struct ethash_epoch_context* context) NOEXCEPT;
 
 void ethash_destroy_epoch_context_full(struct ethash_epoch_context_full* context) NOEXCEPT;
+
+
+/**
+ * Get global shared epoch context.
+ */
+const struct ethash_epoch_context* ethash_get_global_epoch_context(int epoch_number) NOEXCEPT;
+
+/**
+ * Get global shared epoch context with full dataset initialized.
+ */
+const struct ethash_epoch_context_full* ethash_get_global_epoch_context_full(
+    int epoch_number) NOEXCEPT;
+
+
+struct ethash_result ethash_hash(const struct ethash_epoch_context* context,
+    const union ethash_hash256* header_hash, uint64_t nonce) NOEXCEPT;
+
+bool ethash_verify(const struct ethash_epoch_context* context,
+    const union ethash_hash256* header_hash, const union ethash_hash256* mix_hash, uint64_t nonce,
+    const union ethash_hash256* boundary) NOEXCEPT;
+
+bool ethash_verify_final_hash(const union ethash_hash256* header_hash,
+    const union ethash_hash256* mix_hash, uint64_t nonce,
+    const union ethash_hash256* boundary) NOEXCEPT;
 
 #ifdef __cplusplus
 }

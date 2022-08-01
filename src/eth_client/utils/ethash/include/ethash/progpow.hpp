@@ -8,7 +8,7 @@
 ///
 /// This file provides the public API for ProgPoW as the Ethash API extension.
 
-#include <eth_client/utils/ethash/include/ethash/ethash.hpp>
+#include <crypto/ethash/include/ethash/ethash.hpp>
 
 namespace progpow
 {

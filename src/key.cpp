@@ -336,7 +336,7 @@ bool CKey::SignSchnorr(const uint256& hash, Span<unsigned char> sig, const uint2
 }
 
 bool CKey::Load(const CPrivKey &seckey, const CPubKey &vchPubKey, bool fSkipCheck=false) {
-    memcpy((unsigned char*)begin(), privkey.data(), privkey.size());
+    memcpy((unsigned char*)begin(), seckey.data(), seckey.size());
     fCompressed = true; //vchPubKey.IsCompressed();
     fValid = true;
     memcpy((unsigned char*)pkbegin(), vchPubKey.data()+1, pksize());

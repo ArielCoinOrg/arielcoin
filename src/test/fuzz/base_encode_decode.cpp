@@ -30,7 +30,7 @@ FUZZ_TARGET_INIT(base_encode_decode, initialize_base_encode_decode)
         assert(ToLower(encoded_string) == ToLower(TrimString(random_encoded_string)));
     }
 
-    if (DecodeBase58Check(random_encoded_string, decoded, 100)) {
+    if (DecodeBase58Check(random_encoded_string, decoded)) {
         const std::string encoded_string = EncodeBase58Check(decoded);
         assert(encoded_string == TrimString(encoded_string));
         assert(ToLower(encoded_string) == ToLower(TrimString(random_encoded_string)));

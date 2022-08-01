@@ -75,10 +75,10 @@ BOOST_AUTO_TEST_CASE(base58_DecodeBase58)
     std::vector<unsigned char> expected = ParseHex("971a55");
     BOOST_CHECK_EQUAL_COLLECTIONS(result.begin(), result.end(), expected.begin(), expected.end());
 
-    BOOST_CHECK(DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh"s, result, 100));
-    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oi"s, result, 100));
-    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh0IOl"s, result, 100));
-    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh\0" "0IOl"s, result, 100));
+    BOOST_CHECK(DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh"s, result));
+    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oi"s, result));
+    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh0IOl"s, result));
+    BOOST_CHECK(!DecodeBase58Check("3vQB7B6MrGQZaxCuFg4oh\0" "0IOl"s, result));
 }
 
 BOOST_AUTO_TEST_CASE(base58_random_encode_decode)
@@ -89,9 +89,9 @@ BOOST_AUTO_TEST_CASE(base58_random_encode_decode)
         auto data = Cat(std::vector<unsigned char>(zeroes, '\000'), g_insecure_rand_ctx.randbytes(len - zeroes));
         auto encoded = EncodeBase58Check(data);
         std::vector<unsigned char> decoded;
-        auto ok_too_small = DecodeBase58Check(encoded, decoded, InsecureRandRange(len));
+        auto ok_too_small = DecodeBase58Check(encoded, decoded);
         BOOST_CHECK(!ok_too_small);
-        auto ok = DecodeBase58Check(encoded, decoded, len + InsecureRandRange(257 - len));
+        auto ok = DecodeBase58Check(encoded, decoded);
         BOOST_CHECK(ok);
         BOOST_CHECK(data == decoded);
     }

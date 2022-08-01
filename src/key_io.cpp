@@ -82,7 +82,7 @@ CTxDestination DecodeDestination(const std::string& str, const CChainParams& par
     std::vector<unsigned char> data;
     uint160 hash;
     error_str = "";
-    if (DecodeBase58Check(str, data, 21)) {
+    if (DecodeBase58Check(str, data)) {
         // base58-encoded Bitcoin addresses.
         // Public-key-hash-addresses have version 0 (or 111 testnet).
         // The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
@@ -212,7 +212,7 @@ CExtPubKey DecodeExtPubKey(const std::string& str)
 {
     CExtPubKey key;
     std::vector<unsigned char> data;
-    if (DecodeBase58Check(str, data, 78)) {
+    if (DecodeBase58Check(str, data)) {
         const std::vector<unsigned char>& prefix = Params().Base58Prefix(CChainParams::EXT_PUBLIC_KEY);
         if (data.size() == BIP32_EXTKEY_SIZE + prefix.size() && std::equal(prefix.begin(), prefix.end(), data.begin())) {
             key.Decode(data.data() + prefix.size());
@@ -235,7 +235,7 @@ CExtKey DecodeExtKey(const std::string& str)
 {
     CExtKey key;
     std::vector<unsigned char> data;
-    if (DecodeBase58Check(str, data, 78)) {
+    if (DecodeBase58Check(str, data)) {
         const std::vector<unsigned char>& prefix = Params().Base58Prefix(CChainParams::EXT_SECRET_KEY);
         if (data.size() == BIP32_EXTKEY_SIZE + prefix.size() && std::equal(prefix.begin(), prefix.end(), data.begin())) {
             key.Decode(data.data() + prefix.size());

@@ -141,15 +141,15 @@ std::string EncodeBase58Check(Span<const unsigned char> input)
     return EncodeBase58(vch);
 }
 
-[[nodiscard]] static bool DecodeBase58Check(const char* psz, std::vector<unsigned char>& vchRet, int max_ret_len)
+[[nodiscard]] static bool DecodeBase58Check(const char* psz, std::vector<unsigned char>& vchRet)
 {
-    if (!DecodeBase58(psz, vchRet, max_ret_len > std::numeric_limits<int>::max() - 4 ? std::numeric_limits<int>::max() : max_ret_len + 4) ||
+    if (!DecodeBase58(psz, vchRet) ||
         (vchRet.size() < 4)) {
         vchRet.clear();
         return false;
     }
     // re-calculate the checksum, ensure it matches the included 4-byte checksum
-    uint256 hash = Hash(MakeSpan(vchRet).first(vchRet.size() - 4));
+    uint256 hash = Hash(vchRet.begin(), vchRet.end() - 4);
     if (memcmp(&hash, &vchRet[vchRet.size() - 4], 4) != 0) {
         vchRet.clear();
         return false;
@@ -158,10 +158,10 @@ std::string EncodeBase58Check(Span<const unsigned char> input)
     return true;
 }
 
-bool DecodeBase58Check(const std::string& str, std::vector<unsigned char>& vchRet, int max_ret)
+bool DecodeBase58Check(const std::string& str, std::vector<unsigned char>& vchRet)
 {
     if (!ValidAsCString(str)) {
         return false;
     }
-    return DecodeBase58Check(str.c_str(), vchRet, max_ret);
+    return DecodeBase58Check(str.c_str(), vchRet);
 }

@@ -29,7 +29,7 @@ std::string EncodeBase58(Span<const unsigned char> input);
  * Decode a base58-encoded string (str) into a byte vector (vchRet).
  * return true if decoding is successful.
  */
-[[nodiscard]] bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet, int max_ret_len);
+[[nodiscard]] bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet);
 
 /**
  * Encode a byte span into a base58-encoded string, including checksum

@@ -24,7 +24,7 @@ FUZZ_TARGET_INIT(base_encode_decode, initialize_base_encode_decode)
     const std::string random_encoded_string(buffer.begin(), buffer.end());
 
     std::vector<unsigned char> decoded;
-    if (DecodeBase58(random_encoded_string, decoded, 100)) {
+    if (DecodeBase58(random_encoded_string, decoded)) {
         const std::string encoded_string = EncodeBase58(decoded);
         assert(encoded_string == TrimString(encoded_string));
         assert(ToLower(encoded_string) == ToLower(TrimString(random_encoded_string)));

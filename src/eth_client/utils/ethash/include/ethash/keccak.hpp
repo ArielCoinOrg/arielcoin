@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include <crypto/ethash/include/ethash/keccak.h>
-#include <crypto/ethash/include/ethash/hash_types.hpp>
+#include <eth_client/utils/ethash/include/ethash/keccak.h>
+#include <eth_client/utils/ethash/include/ethash/hash_types.hpp>
 
 namespace ethash
 {

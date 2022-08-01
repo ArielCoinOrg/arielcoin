@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <crypto/ethash/include/ethash/ethash.hpp>
+#include <eth_client/utils/ethash/include/ethash/ethash.hpp>
 
 #include <string>
 

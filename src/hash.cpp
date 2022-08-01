@@ -9,6 +9,10 @@
 #include <string>
 #include <eth_client/utils/ethash/include/ethash/progpow.hpp>
 
+#include <primitives/block.h>
+#include "pubkey.h"
+#include "util/strencodings.h"
+
 
 inline uint32_t ROTL32(uint32_t x, int8_t r)
 {

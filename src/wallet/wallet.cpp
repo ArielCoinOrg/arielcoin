@@ -325,11 +325,11 @@ std::shared_ptr<CWallet> CreateWallet(interfaces::Chain& chain, const std::strin
                 if (wallet->IsWalletFlagSet(WALLET_FLAG_DESCRIPTORS)) {
                     wallet->SetupDescriptorScriptPubKeyMans();
                 } else {
-                    if (wallet->CanGenerateKeys() && !wallet->TopUpKeyPool()) {
-                        InitError(_("Unable to generate initial keys"));
+                    if (walletInstance->CanGenerateKeys() && !walletInstance->TopUpKeyPool()) {
+                        error = Untranslated("Unable to generate initial keys");
+                        status = DatabaseStatus::FAILED_CREATE;
                         return nullptr;
                     }
-
                 }
             }
 

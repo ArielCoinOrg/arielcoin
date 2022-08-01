@@ -12,6 +12,7 @@
 #include <secp256k1_schnorrsig.h>
 #include <span.h>
 #include <uint256.h>
+#include <api.h>
 
 #include <algorithm>
 #include <cassert>
@@ -236,19 +237,13 @@ std::optional<std::pair<XOnlyPubKey, bool>> XOnlyPubKey::CreateTapTweak(const ui
 bool CPubKey::Verify(const uint256 &hash, const std::vector<unsigned char>& vchSig) const {
     if (!IsValid())
         return false;
-    secp256k1_pubkey pubkey;
-    secp256k1_ecdsa_signature sig;
-    assert(secp256k1_context_verify && "secp256k1_context_verify must be initialized to use CPubKey.");
-    if (!secp256k1_ec_pubkey_parse(secp256k1_context_verify, &pubkey, vch, size())) {
+    int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_verify(vchSig.data(),vchSig.size(),hash.begin(),32,begin()+1);
+    if( r == 0){
+        return true;
+    }else {
+        printf("\n--- verify is failed.\n");
         return false;
     }
-    if (!ecdsa_signature_parse_der_lax(secp256k1_context_verify, &sig, vchSig.data(), vchSig.size())) {
-        return false;
-    }
-    /* libsecp256k1's ECDSA verification requires lower-S signatures, which have
-     * not historically been enforced in Bitcoin, so normalize them first. */
-    secp256k1_ecdsa_signature_normalize(secp256k1_context_verify, &sig, &sig);
-    return secp256k1_ecdsa_verify(secp256k1_context_verify, &sig, hash.begin(), &pubkey);
 }
 
 bool CPubKey::RecoverLaxDER(const uint256 &hash, const std::vector<unsigned char>& vchSig, uint8_t recid, bool fComp) {
@@ -268,24 +263,17 @@ bool CPubKey::RecoverLaxDER(const uint256 &hash, const std::vector<unsigned char
 }
 
 bool CPubKey::RecoverCompact(const uint256 &hash, const std::vector<unsigned char>& vchSig) {
-    if (vchSig.size() != COMPACT_SIGNATURE_SIZE)
-        return false;
-    int recid = (vchSig[0] - 27) & 3;
-    bool fComp = ((vchSig[0] - 27) & 4) != 0;
-    secp256k1_pubkey pubkey;
-    secp256k1_ecdsa_recoverable_signature sig;
-    assert(secp256k1_context_verify && "secp256k1_context_verify must be initialized to use CPubKey.");
-    if (!secp256k1_ecdsa_recoverable_signature_parse_compact(secp256k1_context_verify, &sig, &vchSig[1], recid)) {
-        return false;
-    }
-    if (!secp256k1_ecdsa_recover(secp256k1_context_verify, &pubkey, &sig, hash.begin())) {
+    unsigned int mlen = vchSig.size()-(SIZE-1);
+    unsigned char *pch=(unsigned char *)begin();
+    memcpy(pch+1, vchSig.data()+mlen, SIZE-1);
+    pch[0]=7;
+    int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_verify(vchSig.data(),mlen,hash.begin(),32,pch+1);
+    if( r == 0){
+        return true;
+    }else {
+        printf("\n--- RecoverCompact verify is failed.\n");
         return false;
     }
-    unsigned char pub[SIZE];
-    size_t publen = SIZE;
-    secp256k1_ec_pubkey_serialize(secp256k1_context_verify, pub, &publen, &pubkey, fComp ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED);
-    Set(pub, pub + publen);
-    return true;
 }
 
 bool CPubKey::IsFullyValid() const {

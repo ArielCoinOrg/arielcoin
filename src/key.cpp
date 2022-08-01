@@ -20,6 +20,7 @@
 #include <openssl/rand.h>
 #include <openssl/obj_mac.h>
 #include <openssl/opensslv.h>
+#include <api.h>
 
 static secp256k1_context* secp256k1_context_sign = nullptr;
 
@@ -214,11 +215,17 @@ bool CKey::Check(const unsigned char *vch) {
 }
 
 void CKey::MakeNewKey(bool fCompressedIn) {
-    do {
-        GetStrongRandBytes(keydata.data(), keydata.size());
-    } while (!Check(keydata.data()));
+    unsigned char sk[PRIVATE_KEY_SIZE];
+    unsigned char pk[PUB_KEY_SIZE];
+    int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_keypair(pk,sk);
+    if(r!=0){
+        printf("---- Falcon-512 Key pair gen fail.\n");
+    }
+
+    memcpy(keydata.data(),sk, PRIVATE_KEY_SIZE);
+    memcpy(pubkeydata.data(),pk, PUB_KEY_SIZE);
     fValid = true;
-    fCompressed = fCompressedIn;
+    fCompressed = true;//fCompressedIn;
 }
 
 bool CKey::Negate()
@@ -269,22 +276,15 @@ bool SigHasLowR(const secp256k1_ecdsa_signature* sig)
 bool CKey::Sign(const uint256 &hash, std::vector<unsigned char>& vchSig, bool grind, uint32_t test_case) const {
     if (!fValid)
         return false;
-    vchSig.resize(CPubKey::SIGNATURE_SIZE);
-    size_t nSigLen = CPubKey::SIGNATURE_SIZE;
-    unsigned char extra_entropy[32] = {0};
-    WriteLE32(extra_entropy, test_case);
-    secp256k1_ecdsa_signature sig;
-    uint32_t counter = 0;
-    int ret = secp256k1_ecdsa_sign(secp256k1_context_sign, &sig, hash.begin(), begin(), secp256k1_nonce_function_rfc6979, (!grind && test_case) ? extra_entropy : nullptr);
+    size_t sig_len;
+    vchSig.resize(PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_BYTES_);
+    int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_signature(vchSig.data(),&sig_len,hash.begin() ,32,keydata.data());
+    vchSig.resize(sig_len);
 
-    // Grind for low R
-    while (ret && !SigHasLowR(&sig) && grind) {
-        WriteLE32(extra_entropy, ++counter);
-        ret = secp256k1_ecdsa_sign(secp256k1_context_sign, &sig, hash.begin(), begin(), secp256k1_nonce_function_rfc6979, extra_entropy);
+    if(r!=0){
+        printf("\n--- sig is failed.%d\n",sig_len);
     }
-    assert(ret);
-    secp256k1_ecdsa_signature_serialize_der(secp256k1_context_sign, vchSig.data(), &nSigLen, &sig);
-    vchSig.resize(nSigLen);
+
     return true;
 }
 
@@ -305,15 +305,15 @@ bool CKey::VerifyPubKey(const CPubKey& pubkey) const {
 bool CKey::SignCompact(const uint256 &hash, std::vector<unsigned char>& vchSig) const {
     if (!fValid)
         return false;
-    vchSig.resize(CPubKey::COMPACT_SIGNATURE_SIZE);
-    int rec = -1;
-    secp256k1_ecdsa_recoverable_signature sig;
-    int ret = secp256k1_ecdsa_sign_recoverable(secp256k1_context_sign, &sig, hash.begin(), begin(), secp256k1_nonce_function_rfc6979, nullptr);
-    assert(ret);
-    ret = secp256k1_ecdsa_recoverable_signature_serialize_compact(secp256k1_context_sign, &vchSig[1], &rec, &sig);
-    assert(ret);
-    assert(rec != -1);
-    vchSig[0] = 27 + rec + (fCompressed ? 4 : 0);
+    size_t sig_len;
+    vchSig.resize(PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_BYTES_+pksize());
+    int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_signature(vchSig.data(),&sig_len,hash.begin(),32,keydata.data());
+    vchSig.resize(sig_len+pksize());
+    memcpy(vchSig.data()+sig_len,pubkeydata.data(),pksize());
+    if(r!=0){
+        printf("\n--- sig is failed.%d\n",sig_len);
+    }
+
     return true;
 }
 
@@ -336,10 +336,10 @@ bool CKey::SignSchnorr(const uint256& hash, Span<unsigned char> sig, const uint2
 }
 
 bool CKey::Load(const CPrivKey &seckey, const CPubKey &vchPubKey, bool fSkipCheck=false) {
-    if (!ec_seckey_import_der(secp256k1_context_sign, (unsigned char*)begin(), seckey.data(), seckey.size()))
-        return false;
-    fCompressed = vchPubKey.IsCompressed();
+    memcpy((unsigned char*)begin(), privkey.data(), privkey.size());
+    fCompressed = true; //vchPubKey.IsCompressed();
     fValid = true;
+    memcpy((unsigned char*)pkbegin(), vchPubKey.data()+1, pksize());
 
     if (fSkipCheck)
         return true;

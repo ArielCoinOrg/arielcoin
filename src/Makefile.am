@@ -850,6 +850,28 @@ libbitcoin_common_a_SOURCES = \
   eth_client/utils/json_spirit/json_spirit_writer.cpp \
   eth_client/utils/json_spirit/json_spirit_writer.h \
   eth_client/utils/json_spirit/json_spirit_writer_template.h \
+  ntt.cpp \
+  poly.cpp \
+  packing.cpp \
+  fips202.cpp \
+  fips202.h \
+  polyvec.cpp \
+  ntt.h \
+  symmetric-shake.cpp \
+  reduce.cpp \
+  rounding.cpp \
+  randombytes.cpp \
+  randombytes.h \
+  sign.cpp \
+  packing.h \
+  params.h \
+  poly.h \
+  polyvec.h \
+  reduce.h \
+  rounding.h \
+  sign.h \
+  symmetric.h \
+  api.h \
   $(BITCOIN_CORE_H)
 
 #only added json_spirit so that `make dist` works properly

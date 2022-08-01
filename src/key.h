@@ -15,6 +15,9 @@
 #include <stdexcept>
 #include <vector>
 
+#define PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES_   4000
+#define PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_PUBLICKEYBYTES_   1952
+#define PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_BYTES_            3293
 
 /**
  * secure_allocator is defined in allocators.h
@@ -30,8 +33,13 @@ public:
     /**
      * secp256k1:
      */
-    static const unsigned int SIZE            = 279;
-    static const unsigned int COMPRESSED_SIZE = 214;
+    static const unsigned int PRIVATE_KEY_SIZE            = PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES_;
+    static const unsigned int COMPRESSED_PRIVATE_KEY_SIZE = PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES_;
+    static const unsigned int PUB_KEY_SIZE            = PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_PUBLICKEYBYTES_;
+    static const unsigned int SIGN_SIZE            = PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_BYTES_;
+
+    static const unsigned int SIZE            = PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES_;
+    static const unsigned int COMPRESSED_SIZE = COMPRESSED_PRIVATE_KEY_SIZE;
     /**
      * see www.keylength.com
      * script supports up to 75 for single byte push

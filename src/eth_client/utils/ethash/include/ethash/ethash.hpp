@@ -14,8 +14,8 @@
 
 #pragma once
 
-#include <ethash/ethash.h>
-#include <ethash/hash_types.hpp>
+#include <eth_client/utils/ethash/include/ethash/ethash.h>
+#include <eth_client/utils/ethash/include/ethash/hash_types.hpp>
 
 #include <cstdint>
 #include <cstring>

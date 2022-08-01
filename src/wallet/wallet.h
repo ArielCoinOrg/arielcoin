@@ -269,7 +269,7 @@ private:
     friend class WalletRescanReserver;
 
     //! the current wallet version: clients below this version are not able to load the wallet
-    int nWalletVersion GUARDED_BY(cs_wallet){FEATURE_BASE};
+    int nWalletVersion GUARDED_BY(cs_wallet){FEATURE_LATEST};
 
     /** The next scheduled rebroadcast of wallet transactions. */
     int64_t nNextResend = 0;
@@ -589,7 +589,7 @@ public:
     //! Adds a contract data tuple to the store, without saving it to disk
     bool LoadContractData(const std::string &address, const std::string &key, const std::string &value);
 
-    /** 
+    /**
      * Increment the next transaction order id
      * @return next transaction order id
      */
@@ -840,7 +840,7 @@ public:
     int GetVersion() const { LOCK(cs_wallet); return nWalletVersion; }
 
     //! disable transaction for coinstake
-    void DisableTransaction(const CTransaction &tx);   
+    void DisableTransaction(const CTransaction &tx);
 
     //! Get wallet transactions that conflict with given transaction (spend same outputs)
     std::set<uint256> GetConflicts(const uint256& txid) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
@@ -872,7 +872,7 @@ public:
      */
     boost::signals2::signal<void(const uint256& hashTx, ChangeType status)> NotifyTransactionChanged;
 
-    /** 
+    /**
      * Wallet token transaction added, removed or updated.
      * @note called with lock cs_wallet held.
      */

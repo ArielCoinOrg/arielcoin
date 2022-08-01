@@ -559,7 +559,27 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   eth_client/utils/libscrypt/sha256.h \
   eth_client/utils/libscrypt/slowequals.c \
   eth_client/utils/libscrypt/slowequals.h \
-  eth_client/utils/libscrypt/sysendian.h
+  eth_client/utils/libscrypt/sysendian.h \
+  eth_client/utils/ethash/include/ethash/ethash.h \
+  eth_client/utils/ethash/include/ethash/ethash.hpp \
+  eth_client/utils/ethash/include/ethash/hash_types.h \
+  eth_client/utils/ethash/include/ethash/hash_types.hpp \
+  eth_client/utils/ethash/include/ethash/keccak.h \
+  eth_client/utils/ethash/include/ethash/keccak.hpp \
+  eth_client/utils/ethash/include/ethash/progpow.hpp \
+  eth_client/utils/ethash/lib/ethash/bit_manipulation.h \
+  eth_client/utils/ethash/lib/ethash/builtins.h \
+  eth_client/utils/ethash/lib/ethash/endianness.hpp \
+  eth_client/utils/ethash/lib/ethash/ethash-internal.hpp \
+  eth_client/utils/ethash/lib/ethash/ethash.cpp \
+  eth_client/utils/ethash/lib/keccak/keccak.c \
+  eth_client/utils/ethash/lib/keccak/keccakf1600.c \
+  eth_client/utils/ethash/lib/keccak/keccakf800.c \
+  eth_client/utils/ethash/lib/ethash/kiss99.hpp \
+  eth_client/utils/ethash/lib/ethash/primes.c \
+  eth_client/utils/ethash/lib/ethash/primes.h \
+  eth_client/utils/ethash/lib/ethash/progpow.cpp \
+  eth_client/utils/ethash/lib/ethash/support/attributes.h \
 
 if USE_ASM
 crypto_libbitcoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp

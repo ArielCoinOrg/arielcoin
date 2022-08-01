@@ -47,8 +47,8 @@ std::vector<std::shared_ptr<CBlock>> CreateBlockChain(size_t total_height, const
         block.nTime = ++time;
         block.nBits = params.GenesisBlock().nBits;
         block.nNonce = 0;
-
-        while (!CheckProofOfWork(block->GetHashFull(), block.nBits, params.GetConsensus())) {
+        uint256 mix_hash;
+        while (!CheckProofOfWork(block->GetHashFull(mix_hash), block.nBits, params.GetConsensus())) {
             ++block.nNonce;
             assert(block.nNonce);
         }
@@ -59,8 +59,8 @@ std::vector<std::shared_ptr<CBlock>> CreateBlockChain(size_t total_height, const
 CTxIn MineBlock(const NodeContext& node, const CScript& coinbase_scriptPubKey)
 {
     auto block = PrepareBlock(node, coinbase_scriptPubKey);
-
-    while (!CheckProofOfWork(block->GetHashFull(), block->nBits, Params().GetConsensus())) {
+    uint256 mix_hash;
+    while (!CheckProofOfWork(block->GetHashFull(mix_hash), block->nBits, Params().GetConsensus())) {
         ++block->nNonce;
         assert(block->nNonce);
     }

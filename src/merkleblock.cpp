@@ -126,7 +126,7 @@ uint256 CPartialMerkleTree::TraverseAndExtract(int height, unsigned int pos, uns
             right = left;
         }
         // and combine them before returning
-        return Hash(left, right);
+        return Hash(left.begin(), left.end(), right.begin(), right.end());
     }
 }
 

@@ -206,13 +206,7 @@ void UnloadWallet(std::shared_ptr<CWallet>&& wallet)
     }
 }
 
-bool CWallet::CanGenerateKeys()
-{
-    // A wallet can generate keys if it has an HD seed (IsHDEnabled) or it is a non-HD wallet (pre FEATURE_HD)
-    LOCK(cs_wallet);
-    assert(!IsHDEnabled());
-    return true; //IsHDEnabled() || !CanSupportFeature(FEATURE_HD);
-}
+
 
 namespace {
 std::shared_ptr<CWallet> LoadWalletInternal(interfaces::Chain& chain, const std::string& name, std::optional<bool> load_on_start, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings)
@@ -382,6 +376,14 @@ void CWallet::UpgradeKeyMetadata()
 
     spk_man->UpgradeKeyMetadata();
     SetWalletFlag(WALLET_FLAG_KEY_ORIGIN_METADATA);
+}
+
+bool CWallet::CanGenerateKeys()
+{
+    // A wallet can generate keys if it has an HD seed (IsHDEnabled) or it is a non-HD wallet (pre FEATURE_HD)
+    LOCK(cs_wallet);
+    assert(!IsHDEnabled());
+    return true; //IsHDEnabled() || !CanSupportFeature(FEATURE_HD);
 }
 
 void CWallet::UpgradeDescriptorCache()

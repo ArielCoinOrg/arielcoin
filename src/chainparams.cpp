@@ -69,7 +69,7 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 static CBlock FindGenesisBlock()
 {
 
-    CBlock block = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 1, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
+    CBlock block = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN);
 
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);

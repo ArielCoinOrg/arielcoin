@@ -206,8 +206,6 @@ void UnloadWallet(std::shared_ptr<CWallet>&& wallet)
     }
 }
 
-
-
 namespace {
 std::shared_ptr<CWallet> LoadWalletInternal(interfaces::Chain& chain, const std::string& name, std::optional<bool> load_on_start, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings)
 {
@@ -376,14 +374,6 @@ void CWallet::UpgradeKeyMetadata()
 
     spk_man->UpgradeKeyMetadata();
     SetWalletFlag(WALLET_FLAG_KEY_ORIGIN_METADATA);
-}
-
-bool CWallet::CanGenerateKeys()
-{
-    // A wallet can generate keys if it has an HD seed (IsHDEnabled) or it is a non-HD wallet (pre FEATURE_HD)
-    LOCK(cs_wallet);
-    assert(!IsHDEnabled());
-    return true; //IsHDEnabled() || !CanSupportFeature(FEATURE_HD);
 }
 
 void CWallet::UpgradeDescriptorCache()
@@ -2864,106 +2854,14 @@ unsigned int CWallet::GetKeyPoolSize() const
     return count;
 }
 
-CPubKey CWallet::GenerateNewKey(WalletBatch &batch, bool internal)
-{
-    assert(!IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS));
-    assert(!IsWalletFlagSet(WALLET_FLAG_BLANK_WALLET));
-    AssertLockHeld(cs_wallet); // mapKeyMetadata
-    bool fCompressed = false;//CanSupportFeature(FEATURE_COMPRPUBKEY); // default to compressed public keys if we want 0.6.0 wallets
-
-    CKey secret;
-
-    // Create new metadata
-    int64_t nCreationTime = GetTime();
-    CKeyMetadata metadata(nCreationTime);
-
-    // use HD key derivation if HD was enabled during wallet creation and a seed is present
-    assert(!IsHDEnabled());
-    if (IsHDEnabled()) {
-        //DeriveNewChildKey(batch, metadata, secret, (CanSupportFeature(FEATURE_HD_SPLIT) ? internal : false));
-    } else {
-        secret.MakeNewKey(fCompressed);
-    }
-
-    // Compressed public keys were introduced in version 0.6.0
-    if (fCompressed) {
-        //SetMinVersion(FEATURE_COMPRPUBKEY);
-    }
-
-    CPubKey pubkey = secret.GetPubKey();
-    assert(secret.VerifyPubKey(pubkey));
-
-    mapKeyMetadata[pubkey.GetID()] = metadata;
-    UpdateTimeFirstKey(nCreationTime);
-
-    if (!AddKeyPubKeyWithDB(batch, secret, pubkey)) {
-        throw std::runtime_error(std::string(__func__) + ": AddKey failed");
-    }
-    return pubkey;
-}
-
-void CWallet::AddKeypoolPubkeyWithDB(const CPubKey& pubkey, const bool internal, WalletBatch& batch)
-{
-    LOCK(cs_wallet);
-    assert(m_max_keypool_index < std::numeric_limits<int64_t>::max()); // How in the hell did you use so many keys?
-    int64_t index = ++m_max_keypool_index;
-    if (!batch.WritePool(index, CKeyPool(pubkey, internal))) {
-        throw std::runtime_error(std::string(__func__) + ": writing imported pubkey failed");
-    }
-    if (internal) {
-        setInternalKeyPool.insert(index);
-    } else {
-        setExternalKeyPool.insert(index);
-    }
-    m_pool_key_to_index[pubkey.GetID()] = index;
-}
-
 bool CWallet::TopUpKeyPool(unsigned int kpSize)
 {
-    if (!CanGenerateKeys()) {
-        return false;
+    LOCK(cs_wallet);
+    bool res = true;
+    for (auto spk_man : GetActiveScriptPubKeyMans()) {
+        res &= spk_man->TopUp(kpSize);
     }
-    {
-        LOCK(cs_wallet);
-
-        if (IsLocked())
-            return false;
-
-        // Top up key pool
-        unsigned int nTargetSize;
-        if (kpSize > 0)
-            nTargetSize = kpSize;
-        else
-            nTargetSize = std::max(gArgs.GetArg("-keypool", DEFAULT_KEYPOOL_SIZE), (int64_t) 0);
-
-        // count amount of available keys (internal, external)
-        // make sure the keypool of external and internal keys fits the user selected target (-keypool)
-        int64_t missingExternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setExternalKeyPool.size(), (int64_t) 0);
-        int64_t missingInternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setInternalKeyPool.size(), (int64_t) 0);
-
-        assert(!IsHDEnabled());
-        //if (!IsHDEnabled() || !CanSupportFeature(FEATURE_HD_SPLIT))
-        {
-            // don't create extra internal keys
-            missingInternal = 0;
-        }
-        bool internal = false;
-        WalletBatch batch(*database);
-        for (int64_t i = missingInternal + missingExternal; i--;)
-        {
-            if (i < missingInternal) {
-                internal = true;
-            }
-
-            CPubKey pubkey(GenerateNewKey(batch, internal));
-            AddKeypoolPubkeyWithDB(pubkey, internal, batch);
-        }
-        if (missingInternal + missingExternal > 0) {
-            WalletLogPrintf("keypool added %d keys (%d internal), size=%u (%u internal)\n", missingInternal + missingExternal, missingInternal, setInternalKeyPool.size() + setExternalKeyPool.size() + set_pre_split_keypool.size(), setInternalKeyPool.size());
-        }
-    }
-    NotifyCanGetAddressesChanged();
-    return true;
+    return res;
 }
 
 bool CWallet::GetNewDestination(const OutputType type, const std::string label, CTxDestination& dest, std::string& error)

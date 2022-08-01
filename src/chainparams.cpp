@@ -220,14 +220,14 @@ public:
 //        vSeeds.emplace_back("qtum6.dynu.net"); // Qtum mainnet
 //        vSeeds.emplace_back("qtum7.dynu.net"); // Qtum mainnet
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,70);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,65);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,23);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,125);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x68, 0xAC, 0xDE};
-        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x68, 0xFE, 0xB1};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x88, 0xB2, 0x1E};
+        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "tbc";
+        bech32_hrp = "arl";
 
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));

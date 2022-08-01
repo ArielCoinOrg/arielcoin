@@ -107,7 +107,7 @@ static CBlock FindGenesisBlock()
             std::cout.flush();
         } else {
                     uint256 mix_hash;
-                    uint256 hashfull = block->GetHashFull(mix_hash);
+                    uint256 hashfull = block.GetHashFull(mix_hash);
 
                     std::cout << "BLOCK NOONCE: " << block.nNonce64 << std::endl;
                     std::cout << "BLOCK HASH: " << hash.ToString() << std::endl;

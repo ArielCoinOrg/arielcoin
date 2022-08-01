@@ -4791,17 +4791,17 @@ static bool CheckBlockHeader(const CBlockHeader& block, BlockValidationState& st
 
     if (fCheckPOW && block.nHeight == 0) {
         if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
-            return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed with mix_hash only check");
+            return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed with mix_hash only check");
         }
 
         return true;
     }
 
 
-    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(Params().Checkpoints());
+    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(params.Checkpoints());
     if (fCheckPOW && pcheckpoint && block.nHeight <= (uint32_t)pcheckpoint->nHeight) {
         if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
-            return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed with mix_hash only check");
+            return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed with mix_hash only check");
         }
 
         return true;
@@ -4811,12 +4811,12 @@ static bool CheckBlockHeader(const CBlockHeader& block, BlockValidationState& st
     uint256 mix_hash;
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, consensusParams)) {
-        return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
+        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed");
     }
 
     if (fCheckPOW && block.nHeight > 1) {
         if (mix_hash != block.mix_hash) {
-            return state.DoS(50, false, REJECT_INVALID, "invalid-mix-hash", false, "mix_hash validity failed");
+            return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "invalid-mix-hash", "mix_hash validity failed");
         }
     }
 

@@ -180,13 +180,12 @@ CKey DecodeSecret(const std::string& str)
 {
     CKey key;
     std::vector<unsigned char> data;
-    if (DecodeBase58Check(str, data, 34)) {
+    if (DecodeBase58Check(str, data)) {
         const std::vector<unsigned char>& privkey_prefix = Params().Base58Prefix(CChainParams::SECRET_KEY);
-        if ((data.size() == 32 + privkey_prefix.size() || (data.size() == 33 + privkey_prefix.size() && data.back() == 1)) &&
-            std::equal(privkey_prefix.begin(), privkey_prefix.end(), data.begin())) {
-            bool compressed = data.size() == 33 + privkey_prefix.size();
-            key.Set(data.begin() + privkey_prefix.size(), data.begin() + privkey_prefix.size() + 32, compressed);
-        }
+        key.Set(data.begin() + privkey_prefix.size(), data.begin() + privkey_prefix.size() + PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES, true);
+        unsigned char* pch = (unsigned char *)(key.pkbegin());
+        unsigned char* pk = (unsigned char *)&((data.begin())[0]);
+        memcpy(pch,pk + privkey_prefix.size() + PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES + 1,key.pksize());
     }
     if (!data.empty()) {
         memory_cleanse(data.data(), data.size());
@@ -202,6 +201,8 @@ std::string EncodeSecret(const CKey& key)
     if (key.IsCompressed()) {
         data.push_back(1);
     }
+
+    data.insert(data.end(), key.pkbegin(), key.pkend());
     std::string ret = EncodeBase58Check(data);
     memory_cleanse(data.data(), data.size());
     return ret;

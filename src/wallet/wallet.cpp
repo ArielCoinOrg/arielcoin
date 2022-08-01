@@ -1443,7 +1443,7 @@ bool CWallet::IsHDEnabled() const
     for (const auto& spk_man : GetActiveScriptPubKeyMans()) {
         result &= spk_man->IsHDEnabled();
     }
-    return result;
+    return false;
 }
 
 bool CWallet::CanGetAddresses(bool internal) const
@@ -4259,7 +4259,7 @@ bool CWallet::IsTokenTxMine(const CTokenTx &wtx) const
         CTokenInfo info = it->second;
         if(wtx.strContractAddress == info.strContractAddress)
         {
-            if(wtx.strSenderAddress == info.strSenderAddress || 
+            if(wtx.strSenderAddress == info.strSenderAddress ||
                 wtx.strReceiverAddress == info.strSenderAddress)
             {
                 ret = true;

@@ -219,7 +219,7 @@ void CKey::MakeNewKey(bool fCompressedIn) {
     unsigned char pk[PUB_KEY_SIZE];
     int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_keypair(pk,sk);
     if(r!=0){
-        printf("---- Falcon-512 Key pair gen fail.\n");
+        printf("---- DILITHIUM3 Key pair gen fail.\n");
     }
 
     memcpy(keydata.data(),sk, PRIVATE_KEY_SIZE);

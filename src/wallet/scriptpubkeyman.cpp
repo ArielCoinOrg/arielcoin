@@ -1958,7 +1958,7 @@ bool DescriptorScriptPubKeyMan::SetupDescriptorGeneration(const CExtKey& master_
 bool DescriptorScriptPubKeyMan::IsHDEnabled() const
 {
     LOCK(cs_desc_man);
-    return m_wallet_descriptor.descriptor->IsRange();
+    return false;
 }
 
 bool DescriptorScriptPubKeyMan::CanGetAddresses(bool internal) const

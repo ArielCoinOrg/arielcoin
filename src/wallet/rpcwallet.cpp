@@ -6381,9 +6381,10 @@ static RPCHelpMan sethdseed()
     LOCK2(pwallet->cs_wallet, spk_man.cs_KeyStore);
 
     // Do not do anything to non-HD wallets
-    if (!pwallet->CanSupportFeature(FEATURE_HD)) {
-        throw JSONRPCError(RPC_WALLET_ERROR, "Cannot set an HD seed on a non-HD wallet. Use the upgradewallet RPC in order to upgrade a non-HD wallet to HD");
-    }
+    throw JSONRPCError(RPC_WALLET_ERROR, "Cannot set an HD seed, HD not avaiable in this node version");
+//    if (!pwallet->CanSupportFeature(FEATURE_HD)) {
+//        throw JSONRPCError(RPC_WALLET_ERROR, "Cannot set an HD seed on a non-HD wallet. Use the upgradewallet RPC in order to upgrade a non-HD wallet to HD");
+//    }
 
     EnsureWalletIsUnlocked(*pwallet);
 

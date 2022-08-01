@@ -1361,7 +1361,7 @@ CTransactionRef GetTransaction(const CBlockIndex* const block_index, const CTxMe
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams)
 {
     // Check for proof of work block header
-    return CheckProofOfWork(block.GetHashFull(), block.nBits, consensusParams);
+    return CheckProofOfWork(block.GetHash(), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams, CChainState& chainstate)
@@ -1397,7 +1397,7 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
 {
     // Get the hash of the proof
     // After validating the PoS block the computed hash proof is saved in the block index, which is used to check the index
-    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHeader().GetHashFull() : block.hashProof;
+    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHeader().GetHash() : block.hashProof;
     // Check for proof after the hash proof is computed
     if(block.IsProofOfStake()){
         //blocks are loaded out of order, so checking PoS kernels here is not practical
@@ -4785,9 +4785,40 @@ bool CheckBlockSignature(const CBlock& block)
 
 static bool CheckBlockHeader(const CBlockHeader& block, BlockValidationState& state, const Consensus::Params& consensusParams, CChainState& chainstate, bool fCheckPOW = true, bool fCheckPOS = true)
 {
+    //std::cout << "CheckBlockHeader" << std::endl;
+
+    //std::cout << block.ToString() << std::endl;
+
+    if (fCheckPOW && block.nHeight == 0) {
+        if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
+            return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed with mix_hash only check");
+        }
+
+        return true;
+    }
+
+
+    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(Params().Checkpoints());
+    if (fCheckPOW && pcheckpoint && block.nHeight <= (uint32_t)pcheckpoint->nHeight) {
+        if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
+            return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed with mix_hash only check");
+        }
+
+        return true;
+    }
+
+
+    uint256 mix_hash;
     // Check proof of work matches claimed amount
-    if (fCheckPOW && block.IsProofOfWork() && !CheckHeaderPoW(block, consensusParams))
-        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed");
+    if (fCheckPOW && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, consensusParams)) {
+        return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
+    }
+
+    if (fCheckPOW && block.nHeight > 1) {
+        if (mix_hash != block.mix_hash) {
+            return state.DoS(50, false, REJECT_INVALID, "invalid-mix-hash", false, "mix_hash validity failed");
+        }
+    }
 
     // Check proof of stake matches claimed amount
     if (fCheckPOS && !chainstate.IsInitialBlockDownload() && block.IsProofOfStake() && !CheckHeaderPoS(block, consensusParams, chainstate))

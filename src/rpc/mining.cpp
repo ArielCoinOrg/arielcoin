@@ -47,6 +47,9 @@
 #endif
 #include <memory>
 #include <stdint.h>
+#include <crypto/ethash/include/ethash/ethash.hpp>
+#include <consensus/merkle.h>
+#include <crypto/ethash/include/ethash/progpow.hpp>
 
 /**
  * Return average network hashes per second based on the last 'lookup' blocks,
@@ -127,7 +130,7 @@ static bool GenerateBlock(ChainstateManager& chainman, CBlock& block, uint64_t& 
 
     CChainParams chainparams(Params());
 
-    while (max_tries > 0 && block.nNonce < std::numeric_limits<uint32_t>::max() && !CheckProofOfWork(block.GetPoWHash(), block.nBits, chainparams.GetConsensus()) && !ShutdownRequested()) {
+    while (max_tries > 0 && block.nNonce < std::numeric_limits<uint32_t>::max() && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, chainparams.GetConsensus()) && !ShutdownRequested()) {
         ++block.nNonce;
         --max_tries;
     }

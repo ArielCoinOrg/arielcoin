@@ -66,23 +66,44 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 }
 
 
-static CBlock FindDevNetGenesisBlock(const CBlock &block)
+static CBlock FindGenesisBlock()
 {
+
+    CBlock block = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 1, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
+
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);
-    CBlock genesis;
 
-    for (uint32_t nNonce = 0; nNonce < UINT32_MAX; nNonce++) {
-        genesis = CreateGenesisBlock(1609074580, nNonce, 0x2001ffff, 1, 50 * COIN);
+    std::cout << "Target: " << bnTarget.ToString()<< std::endl;
+    std::cout.flush();
 
-        uint256 hash = genesis.GetPoWHash();
-        if (UintToArith256(hash) <= bnTarget)
-            return genesis;
+
+    for (uint64_t nNonce = 32768333; nNonce < UINT64_MAX; nNonce++) {
+
+        block.nNonce64=nNonce;
+
+        uint256 hash = block.GetHash();
+
+        if(!CheckPoW(hash, block.nBits, uint256S("0000ffff00000000000000000000000000000000000000000000000000000000")) ) {
+            std::cout << "Hash: " << hash.ToString() << " work: " << UintToArith256(hash).ToString() << " Target: " << bnTarget.ToString() << std::endl;
+            std::cout.flush();
+        } else {
+                    uint256 mix_hash;
+                    uint256 hashfull = block.GetHashFull(mix_hash);
+
+                    std::cout << "BLOCK NOONCE: " << block.nNonce64 << std::endl;
+                    std::cout << "BLOCK HASH: " << hash.ToString() << std::endl;
+                    std::cout << "BLOCK FULLHASH: " << hashfull .ToString() << std::endl;
+                    std::cout << "BLOCK MIX_HASH: " << mix_hash.ToString() << std::endl;
+                    std::cout << "BLOCK NONCE64: " << block.nNonce64 << std::endl;
+                    std::cout << "BLOCK NONCE: " << block.nNonce64 << std::endl;
+                    std::cout << "BLOCK ROOT: " << block.hashMerkleRoot.ToString() << std::endl;
+                    std::cout.flush();
+                    return block;
+
+                }
     }
 
-    // This is very unlikely to happen as we start the devnet with a very low difficulty. In many cases even the first
-    // iteration of the above loop will give a result already
-    error("FindDevNetGenesisBlock: could not find devnet genesis block");
     assert(false);
 }
 

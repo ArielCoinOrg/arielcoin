@@ -9,59 +9,34 @@
 #include <tinyformat.h>
 #include <util/strencodings.h>
 #include <crypto/common.h>
-#include <crypto/yespower/yespower.h>
 #include <pubkey.h>
 #include <streams.h>
 
 // Used to serialize the header without signature
 // Workaround due to removing serialization templates in Bitcoin Core 0.18
 
-uint256 CBlockHeader::GetPoWHash() const
+uint256 CBlockHeader::GetHash() const
 {
-    uint256 thash;
-    static const yespower_params_t yespower_tidecoin = {
-            .version = YESPOWER_1_0,
-            .N = 2048,
-            .r = 8,
-            .pers = NULL,
-            .perslen = 0
-        };
+        return KAWPOWHash_OnlyMix(*this);
+}
 
-    CDataStream powHead(SER_GETHASH, 0);
-    powHead << nVersion  << hashPrevBlock << hashMerkleRoot << nTime << nBits << nNonce;
-
-    if (yespower_tls((unsigned char *)powHead.data(), powHead.size(), &yespower_tidecoin, (yespower_binary_t *)thash.begin())) {
-            //printf("Error: GetPoWHash: failed to compute PoW hash (out of memory?)\n");
-    }
-    return thash;
+uint256 CBlockHeader::GetHashFull(uint256& mix_hash) const
+{
+        return KAWPOWHash(*this, mix_hash);
 }
 
 
-class CBlockHeaderYespower
+/**
+ * @brief This takes a block header, removes the nNonce64 and the mixHash. Then performs a serialized hash of it SHA256D.
+ * This will be used as the input to the KAAAWWWPOW hashing function
+ * @note Only to be called and used on KAAAWWWPOW block headers
+ */
+uint256 CBlockHeader::GetKAWPOWHeaderHash() const
 {
-public:
-    CBlockHeaderYespower(const CBlockHeader& header)
-    {
-        nVersion = header.nVersion;
-        hashPrevBlock = header.hashPrevBlock;
-        hashMerkleRoot = header.hashMerkleRoot;
-        nTime = header.nTime;
-        nBits = header.nBits;
-        nNonce = header.nNonce;
-    }
+    CKAWPOWInput input{*this};
 
-    SERIALIZE_METHODS(CBlockHeaderYespower, obj) {
-        READWRITE(obj.nVersion, obj.hashPrevBlock, obj.hashMerkleRoot, obj.nTime, obj.nBits, obj.nNonce);
-    }
-
-private:
-    int32_t nVersion;
-    uint256 hashPrevBlock;
-    uint256 hashMerkleRoot;
-    uint32_t nTime;
-    uint32_t nBits;
-    uint32_t nNonce;
-};
+    return SerializeHash(input);
+}
 
 
 class CBlockHeaderSign

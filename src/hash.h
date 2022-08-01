@@ -17,6 +17,7 @@
 
 #include <string>
 #include <vector>
+#include <crypto/ethash/helpers.hpp>
 
 typedef uint256 ChainCode;
 
@@ -210,5 +211,8 @@ void BIP32Hash(const ChainCode &chainCode, unsigned int nChild, unsigned char he
  * then calling CHashWriter::GetSHA256().
  */
 CHashWriter TaggedHash(const std::string& tag);
+
+uint256 KAWPOWHash(const CBlockHeader& blockHeader, uint256& mix_hash);
+uint256 KAWPOWHash_OnlyMix(const CBlockHeader& blockHeader);
 
 #endif // BITCOIN_HASH_H

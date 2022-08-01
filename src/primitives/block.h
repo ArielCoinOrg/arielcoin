@@ -18,7 +18,7 @@
  * of the block.
  */
 
-static const uint32_t nPosActivationTime = 1659183784;
+static const uint32_t nSmartActivationBlock = 1000;
 
 class CBlockHeader
 {
@@ -30,6 +30,11 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
+
+    uint32_t nHeight;
+    uint64_t nNonce64;
+    uint256 mix_hash;
+
     uint256 hashStateRoot; // qtum
     uint256 hashUTXORoot; // qtum
     // proof-of-stake specific fields
@@ -48,8 +53,11 @@ public:
         READWRITE(obj.hashMerkleRoot);
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
-        READWRITE(obj.nNonce);
-        if (nPosActivationTime < obj.nTime){
+//        READWRITE(obj.nNonce);
+        READWRITE(obj.nHeight);
+        READWRITE(obj.nNonce64);
+        READWRITE(obj.mix_hash);
+        if (nSmartActivationBlock < obj.nHeight){
             READWRITE(obj.hashStateRoot);
             READWRITE(obj.hashUTXORoot);
             READWRITE(obj.prevoutStake);
@@ -65,6 +73,11 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
+
+        nNonce64 = 0;
+        nHeight = 0;
+        mix_hash.SetNull();
+
         hashStateRoot.SetNull(); // qtum
         hashUTXORoot.SetNull(); // qtum
         vchBlockSigDlgt.clear();
@@ -81,6 +94,9 @@ public:
     uint256 GetHashWithoutSign() const;
 
     std::string GetWithoutSign() const;
+
+    uint256 GetHashFull(uint256& mix_hash) const;
+    uint256 GetKAWPOWHeaderHash() const;
 
     int64_t GetBlockTime() const
     {
@@ -128,6 +144,9 @@ public:
             this->nTime          = other.nTime;
             this->nBits          = other.nBits;
             this->nNonce         = other.nNonce;
+            this->nHeight        = other.nHeight;
+            this->nNonce64       = other.nNonce64;
+            this->mix_hash       = other.mix_hash;
             this->hashStateRoot  = other.hashStateRoot;
             this->hashUTXORoot   = other.hashUTXORoot;
             this->vchBlockSigDlgt    = other.vchBlockSigDlgt;
@@ -185,6 +204,11 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
+
+        block.nHeight        = nHeight;
+        block.nNonce64       = nNonce64;
+        block.mix_hash       = mix_hash;
+
         block.hashStateRoot  = hashStateRoot; // qtum
         block.hashUTXORoot   = hashUTXORoot; // qtum
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
@@ -223,6 +247,28 @@ struct CBlockLocator
     bool IsNull() const
     {
         return vHave.empty();
+    }
+};
+
+class CKAWPOWInput : private CBlockHeader
+{
+public:
+    CKAWPOWInput(const CBlockHeader &header)
+    {
+        CBlockHeader::SetNull();
+        *((CBlockHeader*)this) = header;
+    }
+
+    ADD_SERIALIZE_METHODS;
+
+    SERIALIZE_METHODS(CBlock, obj)
+    {
+        READWRITE(obj.nVersion);
+        READWRITE(obj.hashPrevBlock);
+        READWRITE(obj.hashMerkleRoot);
+        READWRITE(obj.nTime);
+        READWRITE(obj.nBits);
+        READWRITE(obj.nHeight);
     }
 };
 

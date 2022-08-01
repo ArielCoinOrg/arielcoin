@@ -2609,7 +2609,12 @@ void PeerManagerImpl::ProcessBlock(CNode& node, const std::shared_ptr<const CBlo
         node.nLastBlockTime = GetTime();
     } else {
         LOCK(cs_main);
-        mapBlockSource.erase(block->GetHash());
+        if(block->fChecked){
+            mapBlockSource.erase(block->GetHash());
+        } else {
+            uint256 mix_hash;
+            mapBlockSource.erase(block->GetHashFull(mix_hash));
+        }
     }
 }
 
@@ -5212,7 +5217,7 @@ bool PeerManagerImpl::ProcessNetBlock(const std::shared_ptr<const CBlock> pblock
         }
 
         // Check for the signiture encoding
-        if (!CheckCanonicalBlockSignature(pblock.get())) 
+        if (!CheckCanonicalBlockSignature(pblock.get()))
         {
             if (pfrom)
                 Misbehaving(pfrom->GetId(), 100, "Bad block signature encoding");

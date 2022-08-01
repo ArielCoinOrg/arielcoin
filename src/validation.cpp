@@ -1361,7 +1361,7 @@ CTransactionRef GetTransaction(const CBlockIndex* const block_index, const CTxMe
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams)
 {
     // Check for proof of work block header
-    return CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams);
+    return CheckProofOfWork(block.GetHashFull(), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams, CChainState& chainstate)
@@ -1397,7 +1397,7 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
 {
     // Get the hash of the proof
     // After validating the PoS block the computed hash proof is saved in the block index, which is used to check the index
-    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHeader().GetPoWHash() : block.hashProof;
+    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHeader().GetHashFull() : block.hashProof;
     // Check for proof after the hash proof is computed
     if(block.IsProofOfStake()){
         //blocks are loaded out of order, so checking PoS kernels here is not practical

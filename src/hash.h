@@ -19,9 +19,11 @@
 #include <vector>
 #include <crypto/ethash/helpers.hpp>
 
-class CBlockHeader;
+
 
 typedef uint256 ChainCode;
+
+class CBlockHeader;
 
 /** A hasher class for Bitcoin's 256-bit hash (double SHA-256). */
 class CHash256 {

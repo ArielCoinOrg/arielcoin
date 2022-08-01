@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+#include <tinyformat.h>
+
 #include <iostream>
 #include <chrono>
 

@@ -43,7 +43,7 @@
 #include "algo/lyra2.h"
 #include "algo/gost_streebog.h"
 
-#include <eth_client/utils/ethash/test/unittests/helpers.hpp>
+#include <eth_client/utils/ethash/helpers.hpp>
 
 typedef uint256 ChainCode;
 

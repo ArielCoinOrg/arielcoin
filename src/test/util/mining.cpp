@@ -48,7 +48,7 @@ std::vector<std::shared_ptr<CBlock>> CreateBlockChain(size_t total_height, const
         block.nBits = params.GenesisBlock().nBits;
         block.nNonce = 0;
         uint256 mix_hash;
-        while (!CheckProofOfWork(block->GetHashFull(mix_hash), block.nBits, params.GetConsensus())) {
+        while (!CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, params.GetConsensus())) {
             ++block.nNonce;
             assert(block.nNonce);
         }

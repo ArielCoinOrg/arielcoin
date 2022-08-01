@@ -174,6 +174,14 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].min_activation_height = 0; // No activation delay
 
+        // Deployment of Taproot (BIPs 340-342)
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = 0;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
+        // Min block number for activation, the number must be divisible by 2016
+        // Replace 0xffffc0 with the activation block number
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080512000;
+
         consensus.nMinimumChainWork = uint256S("0x01"); // 1883974
         consensus.defaultAssumeValid = uint256S(""); // 1883974
 

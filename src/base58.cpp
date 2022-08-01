@@ -35,7 +35,7 @@ static const int8_t mapBase58[256] = {
     -1,-1,-1,-1,-1,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1,-1,
 };
 
-[[nodiscard]] static bool DecodeBase58(const char* psz, std::vector<unsigned char>& vch, int max_ret_len)
+[[nodiscard]] static bool DecodeBase58(const char* psz, std::vector<unsigned char>& vch)
 {
     // Skip leading spaces.
     while (*psz && IsSpace(*psz))
@@ -45,14 +45,13 @@ static const int8_t mapBase58[256] = {
     int length = 0;
     while (*psz == '1') {
         zeroes++;
-        if (zeroes > max_ret_len) return false;
         psz++;
     }
     // Allocate enough space in big-endian base256 representation.
     int size = strlen(psz) * 733 /1000 + 1; // log(58) / log(256), rounded up.
     std::vector<unsigned char> b256(size);
     // Process the characters.
-    static_assert(std::size(mapBase58) == 256, "mapBase58.size() should be 256"); // guarantee not out of range
+    static_assert(sizeof(mapBase58)/sizeof(mapBase58[0]) == 256, "mapBase58.size() should be 256"); // guarantee not out of range
     while (*psz && !IsSpace(*psz)) {
         // Decode base58 character
         int carry = mapBase58[(uint8_t)*psz];
@@ -66,7 +65,6 @@ static const int8_t mapBase58[256] = {
         }
         assert(carry == 0);
         length = i;
-        if (length + zeroes > max_ret_len) return false;
         psz++;
     }
     // Skip trailing spaces.
@@ -76,6 +74,8 @@ static const int8_t mapBase58[256] = {
         return false;
     // Skip leading zeroes in b256.
     std::vector<unsigned char>::iterator it = b256.begin() + (size - length);
+    while (it != b256.end() && *it == 0)
+        it++;
     // Copy result into output vector.
     vch.reserve(zeroes + (b256.end() - it));
     vch.assign(zeroes, 0x00);
@@ -124,12 +124,9 @@ std::string EncodeBase58(Span<const unsigned char> input)
     return str;
 }
 
-bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet, int max_ret_len)
+bool DecodeBase58(const std::string& str, std::vector<unsigned char>& vchRet)
 {
-    if (!ValidAsCString(str)) {
-        return false;
-    }
-    return DecodeBase58(str.c_str(), vchRet, max_ret_len);
+    return DecodeBase58(str.c_str(), vchRet);
 }
 
 std::string EncodeBase58Check(Span<const unsigned char> input)

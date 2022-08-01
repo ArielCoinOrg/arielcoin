@@ -259,7 +259,7 @@ public:
         *((CBlockHeader*)this) = header;
     }
 
-    SERIALIZE_METHODS(CBlock, obj)
+    SERIALIZE_METHODS(CKAWPOWInput, obj)
     {
         READWRITE(obj.nVersion);
         READWRITE(obj.hashPrevBlock);

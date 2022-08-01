@@ -2866,12 +2866,50 @@ unsigned int CWallet::GetKeyPoolSize() const
 
 bool CWallet::TopUpKeyPool(unsigned int kpSize)
 {
-    LOCK(cs_wallet);
-    bool res = true;
-    for (auto spk_man : GetActiveScriptPubKeyMans()) {
-        res &= spk_man->TopUp(kpSize);
+    if (!CanGenerateKeys()) {
+        return false;
     }
-    return res;
+    {
+        LOCK(cs_wallet);
+
+        if (IsLocked())
+            return false;
+
+        // Top up key pool
+        unsigned int nTargetSize;
+        if (kpSize > 0)
+            nTargetSize = kpSize;
+        else
+            nTargetSize = std::max(gArgs.GetArg("-keypool", DEFAULT_KEYPOOL_SIZE), (int64_t) 0);
+
+        // count amount of available keys (internal, external)
+        // make sure the keypool of external and internal keys fits the user selected target (-keypool)
+        int64_t missingExternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setExternalKeyPool.size(), (int64_t) 0);
+        int64_t missingInternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setInternalKeyPool.size(), (int64_t) 0);
+
+        assert(!IsHDEnabled());
+        //if (!IsHDEnabled() || !CanSupportFeature(FEATURE_HD_SPLIT))
+        {
+            // don't create extra internal keys
+            missingInternal = 0;
+        }
+        bool internal = false;
+        WalletBatch batch(*database);
+        for (int64_t i = missingInternal + missingExternal; i--;)
+        {
+            if (i < missingInternal) {
+                internal = true;
+            }
+
+            CPubKey pubkey(GenerateNewKey(batch, internal));
+            AddKeypoolPubkeyWithDB(pubkey, internal, batch);
+        }
+        if (missingInternal + missingExternal > 0) {
+            WalletLogPrintf("keypool added %d keys (%d internal), size=%u (%u internal)\n", missingInternal + missingExternal, missingInternal, setInternalKeyPool.size() + setExternalKeyPool.size() + set_pre_split_keypool.size(), setInternalKeyPool.size());
+        }
+    }
+    NotifyCanGetAddressesChanged();
+    return true;
 }
 
 bool CWallet::GetNewDestination(const OutputType type, const std::string label, CTxDestination& dest, std::string& error)

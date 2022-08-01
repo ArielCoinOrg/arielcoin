@@ -11,8 +11,9 @@
 
 #include <primitives/block.h>
 #include "pubkey.h"
+#include "pubkey.h"
 #include "util/strencodings.h"
-
+#include <crypto/siphash.h>
 
 inline uint32_t ROTL32(uint32_t x, int8_t r)
 {

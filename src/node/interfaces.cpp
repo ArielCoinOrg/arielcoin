@@ -769,7 +769,7 @@ public:
     {
 //        LOCK(::cs_main);
 //        const CBlockIndex* tip = Assert(m_node.chainman)->ActiveChain().Tip();
-        return false
+        return false;
 //        return DeploymentActiveAfter(tip, Params().GetConsensus(), Consensus::DEPLOYMENT_TAPROOT);
     }
     CBlockIndex* getTip() const override

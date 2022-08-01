@@ -236,28 +236,19 @@ bool CKey::Negate()
 
 CPrivKey CKey::GetPrivKey() const {
     assert(fValid);
-    CPrivKey seckey;
-    int ret;
-    size_t seckeylen;
-    seckey.resize(SIZE);
-    seckeylen = SIZE;
-    ret = ec_seckey_export_der(secp256k1_context_sign, seckey.data(), &seckeylen, begin(), fCompressed);
-    assert(ret);
-    seckey.resize(seckeylen);
-    return seckey;
+    CPrivKey privkey;
+    privkey.resize(PRIVATE_KEY_SIZE);
+    memcpy(privkey.data(),keydata.data(), keydata.size());
+    return privkey;
 }
 
 CPubKey CKey::GetPubKey() const {
     assert(fValid);
-    secp256k1_pubkey pubkey;
-    size_t clen = CPubKey::SIZE;
-    CPubKey result;
-    int ret = secp256k1_ec_pubkey_create(secp256k1_context_sign, &pubkey, begin());
-    assert(ret);
-    secp256k1_ec_pubkey_serialize(secp256k1_context_sign, (unsigned char*)result.begin(), &clen, &pubkey, fCompressed ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED);
-    assert(result.size() == clen);
-    assert(result.IsValid());
-    return result;
+    CPubKey pubkey;
+    unsigned char* pch = (unsigned char *)pubkey.begin();
+    memcpy(pch+1,pubkeydata.data(), pubkeydata.size());
+    pch[0] = 7;
+    return pubkey;
 }
 
 // Check that the sig has a low R value and will be less than 71 bytes

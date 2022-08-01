@@ -1,6 +1,6 @@
 // ethash: C/C++ implementation of Ethash, the Ethereum Proof of Work algorithm.
-// Copyright 2018 Pawel Bylica.
-// Licensed under the Apache License, Version 2.0. See the LICENSE file.
+// Copyright 2018-2019 Pawel Bylica.
+// Licensed under the Apache License, Version 2.0.
 
 /// @file
 ///
@@ -14,6 +14,8 @@ namespace progpow
 {
 using namespace ethash;  // Include ethash namespace.
 
+/// The ProgPoW algorithm revision implemented as specified in the spec
+/// https://github.com/ifdefelse/ProgPOW.
 constexpr auto revision = "0.9.4";
 
 constexpr int period_length = 3;
@@ -30,11 +32,11 @@ result hash(const epoch_context& context, int block_number, const hash256& heade
 result hash(const epoch_context_full& context, int block_number, const hash256& header_hash,
     uint64_t nonce) noexcept;
 
-hash256 hash_no_verify(const int& block_number, const hash256& header_hash,
-    const hash256& mix_hash, const uint64_t& nonce) noexcept;
-
 bool verify(const epoch_context& context, int block_number, const hash256& header_hash,
     const hash256& mix_hash, uint64_t nonce, const hash256& boundary) noexcept;
+
+hash256 hash_no_verify(const int& block_number, const hash256& header_hash,
+    const hash256& mix_hash, const uint64_t& nonce) noexcept;
 
 search_result search_light(const epoch_context& context, int block_number,
     const hash256& header_hash, const hash256& boundary, uint64_t start_nonce,

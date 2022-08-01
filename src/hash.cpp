@@ -11,7 +11,6 @@
 
 #include <primitives/block.h>
 #include "pubkey.h"
-#include "pubkey.h"
 #include "util/strencodings.h"
 #include <crypto/siphash.h>
 

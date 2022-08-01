@@ -2,13 +2,13 @@
 // Copyright 2018-2019 Pawel Bylica.
 // Licensed under the Apache License, Version 2.0.
 
-#include <ethash/progpow.hpp>
+#include <eth_client/utils/ethash/include/ethash/progpow.hpp>
 
 #include "bit_manipulation.h"
 #include "endianness.hpp"
 #include "ethash-internal.hpp"
 #include "kiss99.hpp"
-#include <ethash/keccak.hpp>
+#include <eth_client/utils/ethash/include/ethash/keccak.hpp>
 
 #include <array>
 

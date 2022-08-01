@@ -22,7 +22,7 @@
 #include <chrono>
 
 //#include <primitives/block.h>
-#include <crypto/ethash/helpers.hpp>
+#include <eth_client/utils/ethash/include/ethash/helpers.hpp>
 
 typedef uint256 ChainCode;
 

@@ -7,7 +7,7 @@
 #include <crypto/hmac_sha512.h>
 
 #include <string>
-#include <crypto/ethash/include/ethash/progpow.hpp>
+#include <eth_client/utils/ethash/include/ethash/progpow.hpp>
 
 
 inline uint32_t ROTL32(uint32_t x, int8_t r)

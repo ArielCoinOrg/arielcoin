@@ -47,9 +47,9 @@
 #endif
 #include <memory>
 #include <stdint.h>
-#include <crypto/ethash/include/ethash/ethash.hpp>
+#include <eth_client/utils/ethash/include/ethash/ethash.hpp>
 #include <consensus/merkle.h>
-#include <crypto/ethash/include/ethash/progpow.hpp>
+#include <eth_client/utils/ethash/include/ethash/progpow.hpp>
 
 /**
  * Return average network hashes per second based on the last 'lookup' blocks,

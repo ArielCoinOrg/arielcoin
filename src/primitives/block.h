@@ -259,8 +259,6 @@ public:
         *((CBlockHeader*)this) = header;
     }
 
-    ADD_SERIALIZE_METHODS;
-
     SERIALIZE_METHODS(CBlock, obj)
     {
         READWRITE(obj.nVersion);

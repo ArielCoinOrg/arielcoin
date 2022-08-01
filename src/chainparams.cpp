@@ -200,12 +200,12 @@ public:
         m_assumed_chain_state_size = 0;
 
         genesis = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 38899382, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
-        devnetGenesis = FindGenesisBlock();
+//        devnetGenesis = FindGenesisBlock();
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("block string %s\n", genesis.ToString());
 //
 //
-        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
+//        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 
 //        assert(consensus.hashGenesisBlock == uint256S("0xa04b0c9573c21311658ad15447d9a57fd9547263d11747e963f8b6353b6e4d04"));
 //        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));

@@ -375,7 +375,8 @@ BITCOIN_CORE_H = \
   qtum/qtumutils.h \
   qtum/qtumdelegation.h \
   qtum/qtumtoken.h \
-  qtum/qtumledger.h
+  qtum/qtumledger.h \
+  api.h
 
 obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
@@ -871,7 +872,6 @@ libbitcoin_common_a_SOURCES = \
   rounding.h \
   sign.h \
   symmetric.h \
-  api.h \
   $(BITCOIN_CORE_H)
 
 #only added json_spirit so that `make dist` works properly

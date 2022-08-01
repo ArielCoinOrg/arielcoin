@@ -58,6 +58,8 @@ private:
 
     //! The actual byte data
     std::vector<unsigned char, secure_allocator<unsigned char> > keydata;
+    //! The actual byte data
+    std::vector<unsigned char, secure_allocator<unsigned char> > pubkeydata;
 
     //! Check whether the 32-byte array pointed to by vch is valid keydata.
     bool static Check(const unsigned char* vch);
@@ -96,6 +98,10 @@ public:
     unsigned int size() const { return (fValid ? keydata.size() : 0); }
     const unsigned char* begin() const { return keydata.data(); }
     const unsigned char* end() const { return keydata.data() + size(); }
+
+    unsigned int pksize() const { return (fValid ? pubkeydata.size() : 0); }
+    const unsigned char* pkbegin() const { return pubkeydata.data(); }
+    const unsigned char* pkend() const { return pubkeydata.data() + pksize(); }
 
     //! Check whether this private key is valid.
     bool IsValid() const { return fValid; }

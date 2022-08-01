@@ -579,7 +579,7 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   eth_client/utils/ethash/lib/ethash/primes.c \
   eth_client/utils/ethash/lib/ethash/primes.h \
   eth_client/utils/ethash/lib/ethash/progpow.cpp \
-  eth_client/utils/ethash/lib/ethash/support/attributes.h \
+  eth_client/utils/ethash/lib/ethash/support/attributes.h
 
 if USE_ASM
 crypto_libbitcoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp

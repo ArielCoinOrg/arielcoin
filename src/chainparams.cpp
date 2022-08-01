@@ -90,7 +90,7 @@ bool CheckPoW(uint256 hash, unsigned int nBits, uint256 powLimit)
 static CBlock FindGenesisBlock()
 {
 
-    CBlock block = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN);
+    CBlock block = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 1, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
 
     arith_uint256 bnTarget;
     bnTarget.SetCompact(block.nBits);

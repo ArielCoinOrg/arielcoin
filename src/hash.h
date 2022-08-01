@@ -17,9 +17,12 @@
 
 #include <string>
 #include <vector>
+
+#include <iostream>
+#include <chrono>
+
+//#include <primitives/block.h>
 #include <crypto/ethash/helpers.hpp>
-
-
 
 typedef uint256 ChainCode;
 

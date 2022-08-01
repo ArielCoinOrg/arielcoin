@@ -7,7 +7,7 @@
 
 #include <ethash/endianness.hpp>
 #include <ethash/ethash-internal.hpp>
-#include <ethash/ethash.hpp>
+#include <eth_client/utils/ethash/include/ethash/ethash.hpp>
 #include <ethash/keccak.hpp>
 
 #include "helpers.hpp"

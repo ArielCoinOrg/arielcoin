@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <ethash/ethash.hpp>
+#include <eth_client/utils/ethash/include/ethash/ethash.hpp>
 
 #include "endianness.hpp"
 

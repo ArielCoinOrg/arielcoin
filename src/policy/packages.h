@@ -14,7 +14,7 @@
 /** Default maximum number of transactions in a package. */
 static constexpr uint32_t MAX_PACKAGE_COUNT{25};
 /** Default maximum total virtual size of transactions in a package in KvB. */
-static constexpr uint32_t MAX_PACKAGE_SIZE{101};
+static constexpr uint32_t MAX_PACKAGE_SIZE{501};
 static_assert(MAX_PACKAGE_SIZE * WITNESS_SCALE_FACTOR * 1000 >= MAX_STANDARD_TX_WEIGHT);
 
 /** A "reason" why a package was invalid. It may be that one or more of the included

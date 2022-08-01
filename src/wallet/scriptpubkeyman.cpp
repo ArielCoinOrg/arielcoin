@@ -447,11 +447,12 @@ bool LegacyScriptPubKeyMan::CanGetAddresses(bool internal) const
     LOCK(cs_KeyStore);
     // Check if the keypool has keys
     bool keypool_has_keys;
-    if (internal && m_storage.CanSupportFeature(FEATURE_HD_SPLIT)) {
-        keypool_has_keys = setInternalKeyPool.size() > 0;
-    } else {
-        keypool_has_keys = KeypoolCountExternalKeys() > 0;
-    }
+    keypool_has_keys = KeypoolCountExternalKeys() > 0;
+//    if (internal && m_storage.CanSupportFeature(FEATURE_HD_SPLIT)) {
+//        keypool_has_keys = setInternalKeyPool.size() > 0;
+//    } else {
+//        keypool_has_keys = KeypoolCountExternalKeys() > 0;
+//    }
     // If the keypool doesn't have keys, check if we can generate them
     if (!keypool_has_keys) {
         return CanGenerateKeys();
@@ -464,29 +465,29 @@ bool LegacyScriptPubKeyMan::Upgrade(int prev_version, int new_version, bilingual
     LOCK(cs_KeyStore);
     bool hd_upgrade = false;
     bool split_upgrade = false;
-    if (IsFeatureSupported(new_version, FEATURE_HD) && !IsHDEnabled()) {
-        WalletLogPrintf("Upgrading wallet to HD\n");
-        m_storage.SetMinVersion(FEATURE_HD);
-
-        // generate a new master key
-        CPubKey masterPubKey = GenerateNewSeed();
-        SetHDSeed(masterPubKey);
-        hd_upgrade = true;
-    }
-    // Upgrade to HD chain split if necessary
-    if (!IsFeatureSupported(prev_version, FEATURE_HD_SPLIT) && IsFeatureSupported(new_version, FEATURE_HD_SPLIT)) {
-        WalletLogPrintf("Upgrading wallet to use HD chain split\n");
-        m_storage.SetMinVersion(FEATURE_PRE_SPLIT_KEYPOOL);
-        split_upgrade = FEATURE_HD_SPLIT > prev_version;
-        // Upgrade the HDChain
-        if (m_hd_chain.nVersion < CHDChain::VERSION_HD_CHAIN_SPLIT) {
-            m_hd_chain.nVersion = CHDChain::VERSION_HD_CHAIN_SPLIT;
-            if (!WalletBatch(m_storage.GetDatabase()).WriteHDChain(m_hd_chain)) {
-                throw std::runtime_error(std::string(__func__) + ": writing chain failed");
-            }
-        }
-    }
-    // Mark all keys currently in the keypool as pre-split
+//    if (IsFeatureSupported(new_version, FEATURE_HD) && !IsHDEnabled()) {
+//        WalletLogPrintf("Upgrading wallet to HD\n");
+//        m_storage.SetMinVersion(FEATURE_HD);
+//
+//        // generate a new master key
+//        CPubKey masterPubKey = GenerateNewSeed();
+//        SetHDSeed(masterPubKey);
+//        hd_upgrade = true;
+//    }
+//    // Upgrade to HD chain split if necessary
+//    if (!IsFeatureSupported(prev_version, FEATURE_HD_SPLIT) && IsFeatureSupported(new_version, FEATURE_HD_SPLIT)) {
+//        WalletLogPrintf("Upgrading wallet to use HD chain split\n");
+//        m_storage.SetMinVersion(FEATURE_PRE_SPLIT_KEYPOOL);
+//        split_upgrade = FEATURE_HD_SPLIT > prev_version;
+//        // Upgrade the HDChain
+//        if (m_hd_chain.nVersion < CHDChain::VERSION_HD_CHAIN_SPLIT) {
+//            m_hd_chain.nVersion = CHDChain::VERSION_HD_CHAIN_SPLIT;
+//            if (!WalletBatch(m_storage.GetDatabase()).WriteHDChain(m_hd_chain)) {
+//                throw std::runtime_error(std::string(__func__) + ": writing chain failed");
+//            }
+//        }
+//    }
+//    // Mark all keys currently in the keypool as pre-split
     if (split_upgrade) {
         MarkPreSplitKeys();
     }
@@ -539,12 +540,12 @@ int64_t LegacyScriptPubKeyMan::GetOldestKeyPoolTime() const
 
     // load oldest key from keypool, get time and return
     int64_t oldestKey = GetOldestKeyTimeInPool(setExternalKeyPool, batch);
-    if (IsHDEnabled() && m_storage.CanSupportFeature(FEATURE_HD_SPLIT)) {
-        oldestKey = std::max(GetOldestKeyTimeInPool(setInternalKeyPool, batch), oldestKey);
-        if (!set_pre_split_keypool.empty()) {
-            oldestKey = std::max(GetOldestKeyTimeInPool(set_pre_split_keypool, batch), oldestKey);
-        }
-    }
+//    if (IsHDEnabled() && m_storage.CanSupportFeature(FEATURE_HD_SPLIT)) {
+//        oldestKey = std::max(GetOldestKeyTimeInPool(setInternalKeyPool, batch), oldestKey);
+//        if (!set_pre_split_keypool.empty()) {
+//            oldestKey = std::max(GetOldestKeyTimeInPool(set_pre_split_keypool, batch), oldestKey);
+//        }
+//    }
 
     return oldestKey;
 }
@@ -1060,7 +1061,7 @@ CPubKey LegacyScriptPubKeyMan::GenerateNewKey(WalletBatch &batch, CHDChain& hd_c
 
     // Compressed public keys were introduced in version 0.6.0
     if (fCompressed) {
-        m_storage.SetMinVersion(FEATURE_COMPRPUBKEY);
+//        m_storage.SetMinVersion(FEATURE_COMPRPUBKEY);
     }
 
     CPubKey pubkey = secret.GetPubKey();
@@ -1155,7 +1156,7 @@ bool LegacyScriptPubKeyMan::CanGenerateKeys() const
 {
     // A wallet can generate keys if it has an HD seed (IsHDEnabled) or it is a non-HD wallet (pre FEATURE_HD)
     LOCK(cs_KeyStore);
-    return IsHDEnabled() || !m_storage.CanSupportFeature(FEATURE_HD);
+    return true; //IsHDEnabled() || !m_storage.CanSupportFeature(FEATURE_HD);
 }
 
 CPubKey LegacyScriptPubKeyMan::GenerateNewSeed()
@@ -1269,11 +1270,11 @@ bool LegacyScriptPubKeyMan::TopUp(unsigned int kpSize)
         int64_t missingExternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setExternalKeyPool.size(), (int64_t) 0);
         int64_t missingInternal = std::max(std::max((int64_t) nTargetSize, (int64_t) 1) - (int64_t)setInternalKeyPool.size(), (int64_t) 0);
 
-        if (!IsHDEnabled() || !m_storage.CanSupportFeature(FEATURE_HD_SPLIT))
-        {
-            // don't create extra internal keys
-            missingInternal = 0;
-        }
+//        if (!IsHDEnabled() || !m_storage.CanSupportFeature(FEATURE_HD_SPLIT))
+//        {
+//            // don't create extra internal keys
+//            missingInternal = 0;
+//        }
         bool internal = false;
         WalletBatch batch(m_storage.GetDatabase());
         for (int64_t i = missingInternal + missingExternal; i--;)
@@ -1374,7 +1375,7 @@ bool LegacyScriptPubKeyMan::ReserveKeyFromKeyPool(int64_t& nIndex, CKeyPool& key
         LOCK(cs_KeyStore);
 
         bool fReturningInternal = fRequestedInternal;
-        fReturningInternal &= (IsHDEnabled() && m_storage.CanSupportFeature(FEATURE_HD_SPLIT)) || m_storage.IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS);
+        fReturningInternal &= m_storage.IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS);
         bool use_split_keypool = set_pre_split_keypool.empty();
         std::set<int64_t>& setKeyPool = use_split_keypool ? (fReturningInternal ? setInternalKeyPool : setExternalKeyPool) : set_pre_split_keypool;
 

@@ -4531,9 +4531,9 @@ static RPCHelpMan getwalletinfo()
         }
     }
 
-    if (pwallet->CanSupportFeature(FEATURE_HD_SPLIT)) {
-        obj.pushKV("keypoolsize_hd_internal",   (int64_t)(pwallet->GetKeyPoolSize() - kpExternalSize));
-    }
+//    if (pwallet->CanSupportFeature(FEATURE_HD_SPLIT)) {
+//        obj.pushKV("keypoolsize_hd_internal",   (int64_t)(pwallet->GetKeyPoolSize() - kpExternalSize));
+//    }
     if (pwallet->IsCrypted()) {
         obj.pushKV("unlocked_until", pwallet->nRelockTime);
     }

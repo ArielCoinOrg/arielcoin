@@ -81,11 +81,6 @@ private:
     std::vector<unsigned char> vchBlockDlgt;
 };
 
-uint256 CBlockHeader::GetHash() const
-{
-    return SerializeHash(*this);
-}
-
 uint256 CBlockHeader::GetHashWithoutSign() const
 {
     return SerializeHash(CBlockHeaderSign(*this), SER_GETHASH);

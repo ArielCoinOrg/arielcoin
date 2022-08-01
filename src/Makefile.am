@@ -806,9 +806,9 @@ libbitcoin_common_a_SOURCES = \
   eth_client/utils/ethash/lib/ethash/endianness.hpp \
   eth_client/utils/ethash/lib/ethash/ethash-internal.hpp \
   eth_client/utils/ethash/lib/ethash/ethash.cpp \
-  eth_client/utils/ethash/lib/ethash/keccak.c \
-  eth_client/utils/ethash/lib/ethash/keccakf1600.c \
-  eth_client/utils/ethash/lib/ethash/keccakf800.c \
+  eth_client/utils/ethash/lib/keccak/keccak.c \
+  eth_client/utils/ethash/lib/keccak/keccakf1600.c \
+  eth_client/utils/ethash/lib/keccak/keccakf800.c \
   eth_client/utils/ethash/lib/ethash/kiss99.hpp \
   eth_client/utils/ethash/lib/ethash/managed.cpp \
   eth_client/utils/ethash/lib/ethash/primes.c \

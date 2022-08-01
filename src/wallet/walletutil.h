@@ -26,7 +26,7 @@ enum WalletFeature
 //
 //    FEATURE_PRE_SPLIT_KEYPOOL = 169900, // Upgraded to HD SPLIT and can have a pre-split keypool
 
-    FEATURE_LATEST = FEATURE_PRE_SPLIT_KEYPOOL
+    FEATURE_LATEST = FEATURE_WALLETCRYPT
 };
 
 bool IsFeatureSupported(int wallet_version, int feature_version);

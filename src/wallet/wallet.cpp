@@ -2864,6 +2864,60 @@ unsigned int CWallet::GetKeyPoolSize() const
     return count;
 }
 
+CPubKey CWallet::GenerateNewKey(WalletBatch &batch, bool internal)
+{
+    assert(!IsWalletFlagSet(WALLET_FLAG_DISABLE_PRIVATE_KEYS));
+    assert(!IsWalletFlagSet(WALLET_FLAG_BLANK_WALLET));
+    AssertLockHeld(cs_wallet); // mapKeyMetadata
+    bool fCompressed = false;//CanSupportFeature(FEATURE_COMPRPUBKEY); // default to compressed public keys if we want 0.6.0 wallets
+
+    CKey secret;
+
+    // Create new metadata
+    int64_t nCreationTime = GetTime();
+    CKeyMetadata metadata(nCreationTime);
+
+    // use HD key derivation if HD was enabled during wallet creation and a seed is present
+    assert(!IsHDEnabled());
+    if (IsHDEnabled()) {
+        //DeriveNewChildKey(batch, metadata, secret, (CanSupportFeature(FEATURE_HD_SPLIT) ? internal : false));
+    } else {
+        secret.MakeNewKey(fCompressed);
+    }
+
+    // Compressed public keys were introduced in version 0.6.0
+    if (fCompressed) {
+        //SetMinVersion(FEATURE_COMPRPUBKEY);
+    }
+
+    CPubKey pubkey = secret.GetPubKey();
+    assert(secret.VerifyPubKey(pubkey));
+
+    mapKeyMetadata[pubkey.GetID()] = metadata;
+    UpdateTimeFirstKey(nCreationTime);
+
+    if (!AddKeyPubKeyWithDB(batch, secret, pubkey)) {
+        throw std::runtime_error(std::string(__func__) + ": AddKey failed");
+    }
+    return pubkey;
+}
+
+void CWallet::AddKeypoolPubkeyWithDB(const CPubKey& pubkey, const bool internal, WalletBatch& batch)
+{
+    LOCK(cs_wallet);
+    assert(m_max_keypool_index < std::numeric_limits<int64_t>::max()); // How in the hell did you use so many keys?
+    int64_t index = ++m_max_keypool_index;
+    if (!batch.WritePool(index, CKeyPool(pubkey, internal))) {
+        throw std::runtime_error(std::string(__func__) + ": writing imported pubkey failed");
+    }
+    if (internal) {
+        setInternalKeyPool.insert(index);
+    } else {
+        setExternalKeyPool.insert(index);
+    }
+    m_pool_key_to_index[pubkey.GetID()] = index;
+}
+
 bool CWallet::TopUpKeyPool(unsigned int kpSize)
 {
     if (!CanGenerateKeys()) {

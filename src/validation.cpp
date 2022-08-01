@@ -4797,15 +4797,15 @@ static bool CheckBlockHeader(const CBlockHeader& block, BlockValidationState& st
         return true;
     }
 
-
-    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(consensusParams.Checkpoints());
-    if (fCheckPOW && pcheckpoint && block.nHeight <= (uint32_t)pcheckpoint->nHeight) {
-        if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
-            return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed with mix_hash only check");
-        }
-
-        return true;
-    }
+//TODO
+//    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(consensusParams.Checkpoints());
+//    if (fCheckPOW && pcheckpoint && block.nHeight <= (uint32_t)pcheckpoint->nHeight) {
+//        if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams)) {
+//            return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "high-hash", "proof of work failed with mix_hash only check");
+//        }
+//
+//        return true;
+//    }
 
 
     uint256 mix_hash;

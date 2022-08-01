@@ -24,13 +24,14 @@
 #include "arith_uint256.h"
 /////////////////////////////////////////////
 
-static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+
+static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, uint64_t nNonce64, uint256 mix_hash)
 {
     CMutableTransaction txNew;
     txNew.nVersion = 1;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << 00 << 488804799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
@@ -38,6 +39,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.nTime    = nTime;
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
+    genesis.nNonce64  = nNonce64;
+    genesis.mix_hash  = mix_hash;
     genesis.nVersion = nVersion;
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
@@ -58,11 +61,11 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
  *   vMerkleTree: 4a5e1e
  */
-static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, uint64_t nNonce64, uint256 mix_hash)
 {
-    const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
-    const CScript genesisOutputScript = CScript() << ParseHex("040d61d8653448c98731ee5fffd303c15e71ec2057b77f11ab3601979728cdaff2d68afbba14e4fa0bc44f2072b0b23ef63717f8cdfbe58dcd33f32b6afe98741a") << OP_CHECKSIG;
-    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
+    const char* pszTimestamp = "whitehouse.gov 19/Jan/2022 Memorandum on Improving the Cybersecurity";
+    const CScript genesisOutputScript = CScript() << ParseHex("07c36441284b082151a216e7105cda5f51e7cbceea126fd1af7f20023331735300f7c803d53edbb1acf7376c9f23562e5fd23960be1cd386303d8a474300b3f25f60ff81b5056cddf63dc41c9fd9aaa844467d8bcee77b3ae089d20acd270f075ff4db493930aacb0891fb5f77425c4e1405de0139c5968295f86de7c9e641fda224af41ba2188a283b103e7d5b3a7fa03a3b14939dacd49b565e6dbdd8707412c000722f998afd5ca42f3c4034ad6db32c05540e61818bfc551681f921180c4d69764d41fb150758dfcf54273c77a27aa727f985ccf2f688fec0a37643ebcbc7b692498321949dd97fb1f0619d4831326d7402cdf652431b469de8b7fdb6a269dc76dfea3c566a8172cb6610ca3a676e203ecde4fa48453932e760810757c0b557ce700ba976403312b4266a1f89c1a5ed84e28b4ae9cc3f73b66847c4594cbb176c0856dafa306d2ef0ebb5182ac7bff955bbaf445a025230c532b5d4ab42d05ebf448b6467d1ff6f7f706688517cc2cbefd69dfbe82d0ee83490071ee78ae6b6b80dd5c10e6b91b168361d6dd02b52b04bb46cae63dc6455ac91e4dc3deef348d0868002e53a5311bab915ad52ee36618ef85a1196dc67a2814dad2125ddadb965bab01970eee12af39085ecdb53786fe5cf8778ab833372ce1a7f0d5a18e81a9b3a6b61f6e2715dfce99b2c58b25917192fc0569970670a7d1e0dc7553707c3608d385eddd1134f5edcc6b4afe7ae4071f32e2da547aaf6fd0207111f2197fa7e56fa2b469d932dfd4ba76b8a7bfb91ec0ff9b3a0e22627c1e4b21c327b3c76990fafe7e6b10a0cc670dcba1e431fe13c09bb5b5bba84389aa1ff85bdbd6de48999829c85020b3a37ba47692139f9436d0e1755e448b8d856d54ea8298704afb34480414f1e993cb8f59d6c55a0be19bb18de0f4c10d742de4478c6f529aac37e32375e8923864e467ce1814635cc243b294d6f5ec9dd93d5929fce37b1daa3c0821337d84644822d41adbc72bb5b0c97cd1218788e2fe1d7d3bb2456e7d31a702f0e4d4a026c66761cc8a86610f19f169ff682338c4f9375ad82647fee4c452708ec9670e9f90abc4642cd8d2d6208ab3137f9bfc65a46ead3dfe5abf16ece4c936eee869718ad64b39d58359e450a2988c3986c591a3381ec7e425fbd282ff799e41cf3f553aefe13be0ba7ffff0f6a8a73b24d2117961fdb7993fb3a26175edce550c78b21a255e333a5d7f32afae546ea456a19a5c91e6dd8d9c394723783fd443bb4fa996816896d10d2c71bb8da23aa202d6af26879c202681cae33a250c9ff3f8cc643daa7907460dd4ff3e7ecbdea949d2e7251ece688ad9225fd287459a4894af8abc1294a509f1e5773d073590bcc3d2116f696e70d42f870dea9a69d23db353e0cd146bc75cb719472eb9e07625401b4613d49237ba38c1ac9674e65df9834e1b273734a8eabef6d3d388ab90e0cd45b339f0afbb0f5b297682c24a3e70390fb1f3deb94053551dd9940019931261bcb641361baae5e875d18d23a4ffd4b36db36ea176821609fdbe95d2d6a7714665f9b86e9f17c2b2df00d384f057bee7de14fc218379f7ce575f978c7f8113569c0893ab0cbbcd06cd94d595536803d7089af0fa72bb5e49483729fe952a5bba2c1c20b2a6552ba599d83320174e5c373e9a5fb63fb8ddd736ce307c487f6d053d376047ec60cd6b9f747d271d849a13215dc257543ca50548e521d4420dada351e2f2d19b8ad935e4ab7eb129eb65768754920faa100221087db5846d4de6d476696bbbf38527f339149c8688365952e6400db43c3f7a43e438ee26dbfcb25870b65161fed7411a25d4acda5da36c7ba7c40c6d51a59a320ba14a21538c763113fcb1a3154fdc91551ec7433d56bda5fd8ffdaf15db6668727869ba154a7eed0dda06d24fa2d457fa12a51032d00b9763586e8baf7e1db5b569d96f7a1fbdc1c18054fa8939f5b099fb6935a6af05f6a9691a8c36c8d2aebd6bb97ee0834267698eaf0f7e85ffd0e8784f5749bb8608ef26a95aae7232425073f0c882445c163d79a2a957029e576806ac969cdb0c825e82ed8b7a1020807a0fbe0dc239034315d2bc9894994f17623d08427c4fc9bfb01a49f2fd8cd0f7b138343e30df07a15ba37606f06492bd311a81528ffda080f7be3d13c1edbb930912e11e5caaf2e95b069af07ed56b06f18ef8abff4e7b9b8378831dd3cb63254f119e25918f080c0d75425d6f0e773642c2b4fd96f8f34bc8d560ae7b9f11c6bb82a04f6d1aad4d65bd2aec4d8a71533f10a427b557939521c634ec2e51adad1b3236e1ae0b619451c1707945506c325f2b3647921d10f527119f2bb90354f8b6d273c6ac31ab80521239f32d3441930851ed5312138e25889571f2126b5fef0820cc6edb5ba23fdc56f367b9b88f2007071976e5dad91f112c98f1728d41a287e28c44de5ab5c851a8ba37c41c988cdd4980b89e11fd00733dde98e90afa1fc58563a5a1b07f64bac86efd105500a293057f13487e29277e9828ea11d9bce233ab9bfae14a6cf1e253f818104370080feba70a5dd2dd31d6f3282f23fb91fe933dea9e67904515c05e844f413e744106eab3b1b7e23a8c314bd20887c7c6aa4efe3d54d286b86112499f40035e0808f597be9a39b82e7468722291c38652a15b59f6b8a81fcbc97c5cf95476ff63f8b1ea90502eae674d8539ecec5146ea218d1b9d9b535bb64bcb0934f08f29577434bc19") << OP_CHECKSIG;
+    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward,nNonce64,mix_hash);
 }
 
 bool CheckPoW(uint256 hash, unsigned int nBits, uint256 powLimit)
@@ -134,7 +137,7 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
-        consensus.nSubsidyHalvingInterval = 262800;// initial interval
+        consensus.nSubsidyHalvingInterval = 525600;// initial interval
         consensus.BIP16Height = 1;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("fa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf");
@@ -180,32 +183,32 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080512;
 
         consensus.nMinimumChainWork = uint256S("0x01"); // 1883974
-        consensus.defaultAssumeValid = uint256S("0xb34a457c601ef8ce3294116e3296078797be7ded1b0d12515395db9ab5e93ab8"); // 1883974
+        consensus.defaultAssumeValid = uint256S(""); // 1883974
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xec;
-        pchMessageStart[1] = 0xfa;
-        pchMessageStart[2] = 0xce;
-        pchMessageStart[3] = 0xa5;
-        nDefaultPort = 8755;
+        pchMessageStart[0] = 0x51;
+        pchMessageStart[1] = 0x42;
+        pchMessageStart[2] = 0x49;
+        pchMessageStart[3] = 0x54;
+        nDefaultPort = 8686;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 22;
-        m_assumed_chain_state_size = 3;
+        m_assumed_blockchain_size = 0;
+        m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1609074580, 34, 0x2001ffff, 1, 50 * COIN);
-//        devnetGenesis = FindDevNetGenesisBlock(genesis);
+        genesis = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 38899382, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
+        devnetGenesis = FindGenesisBlock();
         consensus.hashGenesisBlock = genesis.GetHash();
-//        LogPrintf("block string %s\n", genesis.ToString());
+        LogPrintf("block string %s\n", genesis.ToString());
 //
 //
-//        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
+        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());
 
-        assert(consensus.hashGenesisBlock == uint256S("0xa04b0c9573c21311658ad15447d9a57fd9547263d11747e963f8b6353b6e4d04"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
+//        assert(consensus.hashGenesisBlock == uint256S("0xa04b0c9573c21311658ad15447d9a57fd9547263d11747e963f8b6353b6e4d04"));
+//        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.

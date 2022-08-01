@@ -69,7 +69,8 @@ public:
     CKey() : fValid(false), fCompressed(false)
     {
         // Important: vch must be 32 bytes in length to not break serialization
-        keydata.resize(32);
+        keydata.resize(PRIVATE_KEY_SIZE);
+        pubkeydata.resize(PUB_KEY_SIZE);
     }
 
     friend bool operator==(const CKey& a, const CKey& b)

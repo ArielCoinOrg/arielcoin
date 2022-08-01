@@ -26,7 +26,7 @@
 
 typedef uint256 ChainCode;
 
-class CBlockHeader;
+#include <primitives/block.h>
 
 /** A hasher class for Bitcoin's 256-bit hash (double SHA-256). */
 class CHash256 {

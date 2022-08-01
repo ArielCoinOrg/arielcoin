@@ -18,12 +18,31 @@
 #include <string>
 #include <vector>
 
-#include <tinyformat.h>
-
 #include <iostream>
 #include <chrono>
 
-//#include <primitives/block.h>
+#include "algo/sph_blake.h"
+#include "algo/sph_bmw.h"
+#include "algo/sph_groestl.h"
+#include "algo/sph_jh.h"
+#include "algo/sph_keccak.h"
+#include "algo/sph_skein.h"
+#include "algo/sph_luffa.h"
+#include "algo/sph_cubehash.h"
+#include "algo/sph_shavite.h"
+#include "algo/sph_simd.h"
+#include "algo/sph_echo.h"
+#include "algo/sph_hamsi.h"
+#include "algo/sph_fugue.h"
+#include "algo/sph_shabal.h"
+#include "algo/sph_whirlpool.h"
+#include "algo/sph_sha2.h"
+#include "algo/sph_haval.h"
+
+#include "algo/sph_tiger.h"
+#include "algo/lyra2.h"
+#include "algo/gost_streebog.h"
+
 #include <eth_client/utils/ethash/test/unittests/helpers.hpp>
 
 typedef uint256 ChainCode;

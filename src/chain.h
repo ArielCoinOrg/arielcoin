@@ -229,7 +229,7 @@ public:
           hashStateRoot{block.hashStateRoot},
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
-          prevoutStake{block.prevoutStake}
+          prevoutStake{block.prevoutStake};
           nHeight{block.nHeight};
           nNonce64{block.nNonce64};
           mix_hash{block.mix_hash};

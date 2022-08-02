@@ -149,8 +149,9 @@ public:
     //! pointer to the index of some further predecessor of this block
     CBlockIndex* pskip{nullptr};
 
-    //! height of the entry in the chain. The genesis block has height 0
-    int nHeight{0};
+    //! height of the entry in the chain. The genesis block has height 0    
+    //! arielcoin changing to unsigned int
+    unsigned int nHeight{0};
 
     //! Which # file this block is stored in (blk?????.dat)
     int nFile{0};

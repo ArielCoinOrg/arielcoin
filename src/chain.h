@@ -195,6 +195,11 @@ public:
     uint32_t nTime{0};
     uint32_t nBits{0};
     uint32_t nNonce{0};
+
+    uint32_t nHeight{0};
+    uint64_t nNonce64{0};
+    uint256 mix_hash{0};
+
     uint256 hashStateRoot{}; // qtum
     uint256 hashUTXORoot{}; // qtum
     // block signature - proof-of-stake protect the block by signing the block using a stake holder private key
@@ -225,6 +230,9 @@ public:
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
           prevoutStake{block.prevoutStake}
+          nHeight{block.nHeight};
+          nNonce64{block.nNonce64};
+          mix_hash{block.mix_hash};
     {
     }
 
@@ -260,6 +268,9 @@ public:
         block.hashUTXORoot   = hashUTXORoot; // qtum
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
         block.prevoutStake   = prevoutStake;
+        block.nHeight = nHeight;
+        block.nNonce64 = nNonce64;
+        block.mix_hash = mix_hash;
         return block;
     }
 
@@ -399,6 +410,9 @@ public:
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
         READWRITE(obj.nNonce);
+        READWRITE(obj.nHeight);
+        READWRITE(obj.nNonce64);
+        READWRITE(obj.mix_hash);
         READWRITE(obj.hashStateRoot); // qtum
         READWRITE(obj.hashUTXORoot); // qtum
         READWRITE(obj.nStakeModifier);

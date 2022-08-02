@@ -47,10 +47,10 @@ const std::string& FormatOutputType(OutputType type)
 CTxDestination GetDestinationForKey(const CPubKey& key, OutputType type)
 {
     switch (type) {
-    case OutputType::LEGACY: return key.GetID();
+    case OutputType::LEGACY: return PKHash(key);
     case OutputType::P2SH_SEGWIT:
     case OutputType::BECH32: {
-        if (!key.IsCompressed()) return key.GetID();
+        if (!key.IsCompressed()) return PKHash(key);
         CTxDestination witdest = WitnessV0KeyHash(key.GetID());
         CScript witprog = GetScriptForDestination(witdest);
         if (type == OutputType::P2SH_SEGWIT) {

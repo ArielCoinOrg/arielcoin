@@ -228,9 +228,10 @@ public:
           hashStateRoot{block.hashStateRoot},
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
-          prevoutStake{block.prevoutStake};
-          nNonce64{block.nNonce64};
-          mix_hash{block.mix_hash};
+          prevoutStake{block.prevoutStake},
+          nHeight{block.nHeight},
+          nNonce64{block.nNonce64},
+          mix_hash{block.mix_hash}
     {
     }
 
@@ -432,6 +433,9 @@ public:
         block.hashUTXORoot    = hashUTXORoot; // qtum
         block.vchBlockSigDlgt     = vchBlockSigDlgt;
         block.prevoutStake    = prevoutStake;
+        block.nHeight = nHeight;
+        block.nNonce64 = nNonce64;
+        block.mix_hash = mix_hash;
         return block.GetHash();
     }
 

@@ -427,7 +427,7 @@ void LegacyScriptPubKeyMan::UpgradeKeyMetadata()
 bool LegacyScriptPubKeyMan::SetupGeneration(bool force)
 {
     if ((CanGenerateKeys() && !force) || m_storage.IsLocked()) {
-        LogPrintf("tretii proeb\n");
+        LogPrintf("tretii proeb %s\n", m_storage.IsLocked());
         return false;
     }
 

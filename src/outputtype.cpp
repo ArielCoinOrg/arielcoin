@@ -53,7 +53,7 @@ const std::string& FormatOutputType(OutputType type)
 CTxDestination GetDestinationForKey(const CPubKey& key, OutputType type)
 {
     switch (type) {
-    case OutputType::LEGACY: 
+    case OutputType::LEGACY:
     case OutputType::P2PK: return PKHash(key);
     case OutputType::P2SH_SEGWIT:
     case OutputType::BECH32: {
@@ -91,8 +91,7 @@ CTxDestination AddAndGetDestinationForScript(FillableSigningProvider& keystore, 
     // Note that scripts over 520 bytes are not yet supported.
     switch (type) {
     case OutputType::LEGACY:
-    case OutputType::P2PK:
-        return ScriptHash(script);
+        return CScriptID(script);
     case OutputType::P2SH_SEGWIT:
     case OutputType::BECH32: {
         CTxDestination witdest = WitnessV0ScriptHash(script);

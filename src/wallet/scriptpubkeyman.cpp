@@ -427,11 +427,13 @@ void LegacyScriptPubKeyMan::UpgradeKeyMetadata()
 bool LegacyScriptPubKeyMan::SetupGeneration(bool force)
 {
     if ((CanGenerateKeys() && !force) || m_storage.IsLocked()) {
+        LogPrintf("tretii proeb\n");
         return false;
     }
 
     SetHDSeed(GenerateNewSeed());
     if (!NewKeyPool()) {
+        LogPrintf("chetvetrii proeb\n");
         return false;
     }
     return true;

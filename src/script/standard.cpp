@@ -152,6 +152,8 @@ static bool MatchMultisig(const CScript& script, int& required_sigs, std::vector
     return (it + 1 == script.end());
 }
 
+
+// !!!! IMPORTANT TO TEST FOR ARIEL KEY SIZE
 static bool MatchContract(const CScript& scriptPubKey, std::vector<std::vector<unsigned char>>& vSolutionsRet, bool contractConsensus, bool allowEmptySenderSig, TxoutType& typeRet )
 {
     //contractConsesus is true when evaluating if a contract tx is "standard" for consensus purposes

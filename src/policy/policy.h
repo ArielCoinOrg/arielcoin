@@ -40,13 +40,14 @@ static const bool DEFAULT_PERMIT_BAREMULTISIG = true;
 /** The maximum number of witness stack items in a standard P2WSH script */
 static const unsigned int MAX_STANDARD_P2WSH_STACK_ITEMS = 100;
 /** The maximum size in bytes of each witness stack item in a standard P2WSH script */
-static const unsigned int MAX_STANDARD_P2WSH_STACK_ITEM_SIZE = 80;
+static const unsigned int MAX_STANDARD_P2WSH_STACK_ITEM_SIZE = 3768;
 /** The maximum size in bytes of each witness stack item in a standard BIP 342 script (Taproot, leaf version 0xc0) */
 static const unsigned int MAX_STANDARD_TAPSCRIPT_STACK_ITEM_SIZE = 3768;
 /** The maximum size in bytes of a standard witnessScript */
 static const unsigned int MAX_STANDARD_P2WSH_SCRIPT_SIZE = 169560;
 /** The maximum size of a standard ScriptSig */
-static const unsigned int MAX_STANDARD_SCRIPTSIG_SIZE = 1650;
+//! changed to arielsize
+static const unsigned int MAX_STANDARD_SCRIPTSIG_SIZE = 150000;
 /** Min feerate for defining dust. Historically this has been based on the
  * minRelayTxFee, however changing the dust limit changes which transactions are
  * standard and should be done with care and ideally rarely. It makes sense to
@@ -89,7 +90,7 @@ static constexpr unsigned int STANDARD_LOCKTIME_VERIFY_FLAGS = LOCKTIME_VERIFY_S
 /** The number of sender stack items in a standard sender signature script */
 static const unsigned int STANDARD_SENDER_STACK_ITEMS = 2;
 /** The maximum size of each sender stack item in a standard sender signature script */
-static const unsigned int MAX_STANDARD_SENDER_STACK_ITEM_SIZE = 80;
+static const unsigned int MAX_STANDARD_SENDER_STACK_ITEM_SIZE = 3768;
 
 CAmount GetDustThreshold(const CTxOut& txout, const CFeeRate& dustRelayFee);
 

@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "*.ipp": "cpp",
+        "any": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "optional": "cpp",
+        "functional": "cpp",
+        "random": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "mutex": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "streambuf": "cpp",
+        "regex": "cpp",
+        "chrono": "cpp",
+        "string_view": "cpp",
+        "variant": "cpp"
+    },
+    "cmake.configureOnOpen": false
+}

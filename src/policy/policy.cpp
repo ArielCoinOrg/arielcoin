@@ -37,9 +37,11 @@ CAmount GetDustThreshold(const CTxOut& txout, const CFeeRate& dustRelayFeeIn)
     if (txout.scriptPubKey.IsWitnessProgram(witnessversion, witnessprogram)) {
         // sum the sizes of the parts of a transaction input
         // with 75% segwit discount applied to the script size.
-        nSize += (32 + 4 + 1 + (107 / WITNESS_SCALE_FACTOR) + 4);
+        //! changed to ariel sizes
+        nSize += (1952 + 4 + 1 + (107 / WITNESS_SCALE_FACTOR) + 4);
     } else {
-        nSize += (32 + 4 + 1 + 107 + 4); // the 148 mentioned above
+        //! changed to ariel sizes
+        nSize += (1952 + 4 + 1 + 107 + 4); // the 148 mentioned above
     }
 
     return dustRelayFeeIn.GetFee(nSize);

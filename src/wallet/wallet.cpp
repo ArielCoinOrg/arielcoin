@@ -326,6 +326,7 @@ std::shared_ptr<CWallet> CreateWallet(interfaces::Chain& chain, const std::strin
                     wallet->SetupDescriptorScriptPubKeyMans();
                 } else {
                     if (!wallet->TopUpKeyPool()) {
+                        LogPrintf("perviy proeb\n");
                         error = Untranslated("Unable to generate initial keys");
                         status = DatabaseStatus::FAILED_CREATE;
                         return nullptr;
@@ -3326,6 +3327,7 @@ std::shared_ptr<CWallet> CWallet::Create(interfaces::Chain* chain, const std::st
                 // Legacy wallets need SetupGeneration here.
                 for (auto spk_man : walletInstance->GetActiveScriptPubKeyMans()) {
                     if (!spk_man->SetupGeneration()) {
+                        LogPrintf("vtoroi proeb\n");
                         error = _("Unable to generate initial keys");
                         return nullptr;
                     }

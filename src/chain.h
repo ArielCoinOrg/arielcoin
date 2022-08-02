@@ -196,7 +196,6 @@ public:
     uint32_t nBits{0};
     uint32_t nNonce{0};
 
-    uint32_t nHeight{0};
     uint64_t nNonce64{0};
     uint256 mix_hash{0};
 
@@ -230,7 +229,6 @@ public:
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
           prevoutStake{block.prevoutStake};
-          nHeight{block.nHeight};
           nNonce64{block.nNonce64};
           mix_hash{block.mix_hash};
     {

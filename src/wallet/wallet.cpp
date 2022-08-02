@@ -3326,7 +3326,7 @@ std::shared_ptr<CWallet> CWallet::Create(interfaces::Chain* chain, const std::st
             } else {
                 // Legacy wallets need SetupGeneration here.
                 for (auto spk_man : walletInstance->GetActiveScriptPubKeyMans()) {
-                    if (!spk_man->SetupGeneration()) {
+                    if (!spk_man->SetupGeneration(true)) {
                         LogPrintf("vtoroi proeb\n");
                         error = _("Unable to generate initial keys");
                         return nullptr;

@@ -332,11 +332,11 @@ public:
 
     std::string ToString() const
     {
-        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, mix_hash=%s, nNonce64=%s, hashBlock=%s)",
+        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, mix_hash=%s, nNonce64=%d, hashBlock=%s)",
             pprev, nHeight,
             hashMerkleRoot.ToString(),
             mix_hash.ToString(),
-            nNonce64.ToString(),
+            nNonce64,
             GetBlockHash().ToString());
     }
 

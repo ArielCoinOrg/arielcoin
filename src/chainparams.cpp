@@ -45,8 +45,6 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // qtum
-    genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // qtum
     return genesis;
 }
 
@@ -214,7 +212,7 @@ public:
         genesis = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 38899382, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
 //        devnetGenesis = FindGenesisBlock();
         consensus.hashGenesisBlock = genesis.GetHash();
-        LogPrintf("block string %s\n", genesis.ToString());
+//        LogPrintf("block string %s\n", genesis.ToString());
 //
 //
 //        LogPrintf("NEW genesis %s\n", devnetGenesis.ToString());

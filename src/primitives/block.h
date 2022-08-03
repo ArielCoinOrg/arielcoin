@@ -10,11 +10,6 @@
 #include <serialize.h>
 #include <uint256.h>
 
-#include <libdevcore/SHA3.h>
-#include <libdevcore/RLP.h>
-#include "arith_uint256.h"
-#include <util/convert.h>
-
 /** Nodes collect new transactions into a block, hash them into a hash tree,
  * and scan through nonce values to make the block's hash satisfy proof-of-work
  * requirements.  When they solve the proof-of-work, they broadcast the block
@@ -40,8 +35,8 @@ public:
     uint64_t nNonce64;
     uint256 mix_hash;
 
-    uint256 hashStateRoot = uint256S("9514771014c9ae803d8cea2731b2063e83de44802b40dce2d06acd02d0ff65e9"); // qtum; // qtum
-    uint256 hashUTXORoot = uint256S("21b463e3b52f6201c0ad6c991be0485b6ef8c092e64583ffa655cc1b171fe856"); // qtum; // qtum
+    uint256 hashStateRoot; // qtum; // qtum
+    uint256 hashUTXORoot; // qtum; // qtum
     // proof-of-stake specific fields
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockSigDlgt; // The delegate is 65 bytes or 0 bytes, it can be added in the signature paramether at the end to avoid compatibility problems

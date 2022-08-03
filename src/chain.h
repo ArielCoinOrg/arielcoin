@@ -149,8 +149,8 @@ public:
     //! pointer to the index of some further predecessor of this block
     CBlockIndex* pskip{nullptr};
 
-    //! height of the entry in the chain. The genesis block has height 0    
-    
+    //! height of the entry in the chain. The genesis block has height 0
+
     int nHeight{0};
 
     //! Which # file this block is stored in (blk?????.dat)
@@ -332,9 +332,11 @@ public:
 
     std::string ToString() const
     {
-        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, hashBlock=%s)",
+        return strprintf("CBlockIndex(pprev=%p, nHeight=%d, merkle=%s, mix_hash=%s, nNonce64=%s, hashBlock=%s)",
             pprev, nHeight,
             hashMerkleRoot.ToString(),
+            mix_hash.ToString(),
+            nNonce64.ToString(),
             GetBlockHash().ToString());
     }
 

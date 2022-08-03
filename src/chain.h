@@ -411,8 +411,6 @@ public:
         READWRITE(obj.hashMerkleRoot);
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
-        READWRITE(obj.nNonce);
-        READWRITE(obj.nHeight);
         READWRITE(obj.nNonce64);
         READWRITE(obj.mix_hash);
         READWRITE(obj.hashStateRoot); // qtum

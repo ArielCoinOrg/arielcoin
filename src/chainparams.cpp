@@ -45,6 +45,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
+    genesis.hashStateRoot = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // qtum
+    genesis.hashUTXORoot = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // qtum
     return genesis;
 }
 

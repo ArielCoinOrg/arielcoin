@@ -36,8 +36,8 @@ public:
     uint64_t nNonce64;
     uint256 mix_hash;
 
-    uint256 hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // qtum; // qtum
-    uint256 hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // qtum; // qtum
+    uint256 hashStateRoot = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // qtum; // qtum
+    uint256 hashUTXORoot = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // qtum; // qtum
     // proof-of-stake specific fields
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockSigDlgt; // The delegate is 65 bytes or 0 bytes, it can be added in the signature paramether at the end to avoid compatibility problems

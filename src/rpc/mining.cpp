@@ -130,16 +130,19 @@ static bool GenerateBlock(ChainstateManager& chainman, CBlock& block, uint64_t& 
 
     CChainParams chainparams(Params());
     uint256 mix_hash;
-    while (max_tries > 0 && block.nNonce < std::numeric_limits<uint32_t>::max() && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, chainparams.GetConsensus()) && !ShutdownRequested()) {
-        ++block.nNonce;
+    while (max_tries > 0 && block.nNonce64 < std::numeric_limits<uint64_t>::max() && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, chainparams.GetConsensus()) && !ShutdownRequested()) {
+        ++block.nNonce64;
         --max_tries;
     }
     if (max_tries == 0 || ShutdownRequested()) {
         return false;
     }
-    if (block.nNonce == std::numeric_limits<uint32_t>::max()) {
+    if (block.nNonce64 == std::numeric_limits<uint64_t>::max()) {
         return true;
     }
+
+    // KAWPOW Assign the mix_hash to the block that was found
+    block.mix_hash = mix_hash;
 
     std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(block);
     if (!chainman.ProcessNewBlock(chainparams, shared_pblock, true, nullptr)) {

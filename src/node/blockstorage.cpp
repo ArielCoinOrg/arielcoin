@@ -413,6 +413,22 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
         return false;
     }
     if (block.GetHash() != pindex->GetBlockHash()) {
+    std::cout<<"READBLOCKFROMDISK: "<<std::endl;
+    std::cout<<"block.hashMerkleRoot: " << block.hashMerkleRoot.ToString()<<std::endl;
+    std::cout<<"block.hashPrevBlock: " << block.hashPrevBlock.ToString()<<std::endl;
+    std::cout<<"block.hashStateRoot: " << block.hashStateRoot.ToString()<<std::endl;
+    std::cout<<"block.hashUTXORoot: " << block.hashUTXORoot.ToString()<<std::endl;
+    std::cout<<"block.mix_hash: " << block.mix_hash.ToString()<<std::endl;
+    std::cout<<"block.nBits: " << block.nBits <<std::endl;
+    std::cout<<"block.nHeight: " << block.nHeight<<std::endl;
+    std::cout<<"block.nNonce64: " << block.nNonce64<<std::endl;
+    std::cout<<"block.nNonce: " << block.nNonce<<std::endl;
+    std::cout<<"block.nTime: " << block.nTime<<std::endl;
+    std::cout<<"block.nVersion: " << block.nVersion<<std::endl;
+    std::cout<<"block.GetHash() "<<block.GetHash().ToString()<<std::endl;
+    std::cout<<"pindex.GetBlockHash() "<<pindex->GetBlockHash().ToString()<<std::endl;
+    std::cout<<"==================================================================="<<std::endl;
+
         return error("ReadBlockFromDisk(CBlock&, CBlockIndex*): GetHash() doesn't match index for %s at %s",
                      pindex->ToString(), pindex->GetBlockPos().ToString());
     }

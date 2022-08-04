@@ -61,8 +61,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     unsigned int  nTargetLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
 
     // genesis block
-    if (pindexLast == NULL)
-        return nTargetLimit;
+    if (pindexLast == NULL) {
+        std::cout<<"FUCK THIS SHIT FOREVER:"<<nTargetLimit<<std::endl;
+        //return nTargetLimit;
+        return 503382015;
+    }
 
     // first block
     const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);

@@ -128,6 +128,20 @@ static bool GenerateBlock(ChainstateManager& chainman, CBlock& block, uint64_t& 
         IncrementExtraNonce(&block, chainman.ActiveChain().Tip(), extra_nonce);
     }
 
+    std::cout<<"GENERATE BLOCK TEMPLATE: "<<std::endl;
+    std::cout<<"block.hashMerkleRoot: " << block.hashMerkleRoot.ToString()<<std::endl;
+    std::cout<<"block.hashPrevBlock: " << block.hashPrevBlock.ToString()<<std::endl;
+    std::cout<<"block.hashStateRoot: " << block.hashStateRoot.ToString()<<std::endl;
+    std::cout<<"block.hashUTXORoot: " << block.hashUTXORoot.ToString()<<std::endl;
+    std::cout<<"block.mix_hash: " << block.mix_hash.ToString()<<std::endl;
+    std::cout<<"block.nBits: " << block.nBits <<std::endl;
+    std::cout<<"block.nHeight: " << block.nHeight<<std::endl;
+    std::cout<<"block.nNonce64: " << block.nNonce64<<std::endl;
+    std::cout<<"block.nNonce: " << block.nNonce<<std::endl;
+    std::cout<<"block.nTime: " << block.nTime<<std::endl;
+    std::cout<<"block.nVersion: " << block.nVersion<<std::endl;
+    std::cout<<"==================================================================="<<std::endl;
+
     CChainParams chainparams(Params());
     uint256 mix_hash;
     while (max_tries > 0 && block.nNonce64 < std::numeric_limits<uint64_t>::max() && !CheckProofOfWork(block.GetHashFull(mix_hash), block.nBits, chainparams.GetConsensus()) && !ShutdownRequested()) {
@@ -141,15 +155,34 @@ static bool GenerateBlock(ChainstateManager& chainman, CBlock& block, uint64_t& 
         return true;
     }
 
+
+
+
+    block_hash = block.GetHashFull(mix_hash);
+    
     // KAWPOW Assign the mix_hash to the block that was found
     block.mix_hash = mix_hash;
+
+    std::cout<<"GENERATE BLOCK MINED"<<std::endl;
+    std::cout<<"block.hashMerkleRoot: " << block.hashMerkleRoot.ToString()<<std::endl;
+    std::cout<<"block.hashPrevBlock: " << block.hashPrevBlock.ToString()<<std::endl;
+    std::cout<<"block.hashStateRoot: " << block.hashStateRoot.ToString()<<std::endl;
+    std::cout<<"block.hashUTXORoot: " << block.hashUTXORoot.ToString()<<std::endl;
+    std::cout<<"block.mix_hash: " << block.mix_hash.ToString()<<std::endl;
+    std::cout<<"block.nBits: " << block.nBits <<std::endl;
+    std::cout<<"block.nHeight: " << block.nHeight<<std::endl;
+    std::cout<<"block.nNonce64: " << block.nNonce64<<std::endl;
+    std::cout<<"block.nNonce: " << block.nNonce<<std::endl;
+    std::cout<<"block.nTime: " << block.nTime<<std::endl;
+    std::cout<<"block.nVersion: " << block.nVersion<<std::endl;
+    std::cout<<"==================================================================="<<std::endl;
 
     std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(block);
     if (!chainman.ProcessNewBlock(chainparams, shared_pblock, true, nullptr)) {
         throw JSONRPCError(RPC_INTERNAL_ERROR, "ProcessNewBlock, block not accepted");
     }
 
-    block_hash = block.GetHash();
+
     return true;
 }
 
@@ -157,12 +190,14 @@ static UniValue generateBlocks(ChainstateManager& chainman, const CTxMemPool& me
 {
     int nHeightEnd = 0;
     int nHeight = 0;
+    
 
     {   // Don't keep cs_main locked
         LOCK(cs_main);
         nHeight = chainman.ActiveChain().Height();
         nHeightEnd = nHeight+nGenerate;
     }
+
     unsigned int nExtraNonce = 0;
     UniValue blockHashes(UniValue::VARR);
     while (nHeight < nHeightEnd && !ShutdownRequested())
@@ -182,6 +217,8 @@ static UniValue generateBlocks(ChainstateManager& chainman, const CTxMemPool& me
             blockHashes.push_back(block_hash.GetHex());
         }
     }
+
+    std::cout<<"FUCK ALL THIS SHIT 4 "<<std::endl;
     return blockHashes;
 }
 

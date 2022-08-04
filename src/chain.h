@@ -279,6 +279,8 @@ public:
         return *phashBlock;
     }
 
+
+
     /**
      * Check whether this block's and all previous blocks' transactions have been
      * downloaded (and stored to disk) at some point.
@@ -413,14 +415,14 @@ public:
         READWRITE(obj.nBits);
         READWRITE(obj.nNonce64);
         READWRITE(obj.mix_hash);
-        if (nSmartActivationBlock < obj.nHeight){
+        // if (nSmartActivationBlock < obj.nHeight){
             READWRITE(obj.hashStateRoot); // qtum
             READWRITE(obj.hashUTXORoot); // qtum
             READWRITE(obj.nStakeModifier);
             READWRITE(obj.prevoutStake);
             READWRITE(obj.hashProof);
             READWRITE(obj.vchBlockSigDlgt); // qtum
-        }
+        //}
     }
 
     uint256 GetBlockHash() const
@@ -438,7 +440,7 @@ public:
         block.prevoutStake    = prevoutStake;
         block.nHeight = nHeight;
         block.nNonce64 = nNonce64;
-        block.mix_hash = mix_hash;
+        block.mix_hash = mix_hash;        
         return block.GetHash();
     }
 

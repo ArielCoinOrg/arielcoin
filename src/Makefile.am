@@ -594,6 +594,27 @@ libbitcoin_consensus_a_SOURCES = \
   util/strencodings.cpp \
   util/strencodings.h \
   version.h \
+  ntt.cpp \
+  poly.cpp \
+  packing.cpp \
+  fips202.cpp \
+  fips202.h \
+  polyvec.cpp \
+  ntt.h \
+  symmetric-shake.cpp \
+  reduce.cpp \
+  rounding.cpp \
+  randombytes.cpp \
+  randombytes.h \
+  sign.cpp \
+  packing.h \
+  params.h \
+  poly.h \
+  polyvec.h \
+  reduce.h \
+  rounding.h \
+  sign.h \
+  symmetric.h \
   api.h
 
 # common: shared between bitcoind, and bitcoin-qt and non-server tools

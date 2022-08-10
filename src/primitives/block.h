@@ -31,7 +31,7 @@ public:
     uint32_t nBits;
     uint32_t nNonce;
 
-    uint32_t nHeight;
+    int nHeight;
     uint64_t nNonce64;
     uint256 mix_hash;
 

@@ -151,7 +151,7 @@ public:
 
     //! height of the entry in the chain. The genesis block has height 0
 
-    uint32_t nHeight{0};
+    int nHeight{0};
 
     //! Which # file this block is stored in (blk?????.dat)
     int nFile{0};

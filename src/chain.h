@@ -151,7 +151,7 @@ public:
 
     //! height of the entry in the chain. The genesis block has height 0
 
-    int nHeight{0};
+    uint32_t nHeight{0};
 
     //! Which # file this block is stored in (blk?????.dat)
     int nFile{0};
@@ -440,7 +440,7 @@ public:
         block.prevoutStake    = prevoutStake;
         block.nHeight = nHeight;
         block.nNonce64 = nNonce64;
-        block.mix_hash = mix_hash;        
+        block.mix_hash = mix_hash;
         return block.GetHash();
     }
 

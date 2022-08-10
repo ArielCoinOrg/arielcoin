@@ -593,7 +593,8 @@ libbitcoin_consensus_a_SOURCES = \
   uint256.h \
   util/strencodings.cpp \
   util/strencodings.h \
-  version.h
+  version.h \
+  api.h
 
 # common: shared between bitcoind, and bitcoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -DQTUM_BUILD
@@ -825,6 +826,7 @@ libbitcoin_common_a_SOURCES = \
   rounding.h \
   sign.h \
   symmetric.h \
+  api.h \
   $(BITCOIN_CORE_H)
 
 #only added json_spirit so that `make dist` works properly

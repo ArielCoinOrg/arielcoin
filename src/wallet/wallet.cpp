@@ -1524,6 +1524,7 @@ bool CWallet::DummySignInput(CTxIn &tx_in, const CTxOut &txout, bool use_max_sig
 
     std::unique_ptr<SigningProvider> provider = GetSolvingProvider(scriptPubKey);
     if (!provider) {
+        std::cout<<"FUCK ALL THIS SHIT GetSolvingProvider "<<std::endl;
         // We don't know about this scriptpbuKey;
         return false;
     }

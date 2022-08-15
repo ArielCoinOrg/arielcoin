@@ -2107,11 +2107,14 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
     std::cout<<"66666"<<std::endl;
     if (flags & SCRIPT_VERIFY_P2SH)
         stackCopy = stack;
+    std::cout<<"66665"<<std::endl;
     if (!EvalScript(stack, scriptPubKey, flags, checker, SigVersion::BASE, serror))
         // serror is set
         return false;
+    std::cout<<"66664"<<std::endl;
     if (stack.empty())
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
+    std::cout<<"66663"<<std::endl;
     if (CastToBool(stack.back()) == false)
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
     std::cout<<"55555"<<std::endl;

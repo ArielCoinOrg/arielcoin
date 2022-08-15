@@ -2101,9 +2101,11 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
     // scriptSig and scriptPubKey must be evaluated sequentially on the same stack
     // rather than being simply concatenated (see CVE-2010-5141)
     std::vector<std::vector<unsigned char> > stack, stackCopy;
-    if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror))
-        // serror is set
+    if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror)){
+        std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_WITNESS SigVersion::BASE " << std::endl;
         return false;
+    }
+        // serror is set
     if (flags & SCRIPT_VERIFY_P2SH)
         stackCopy = stack;
     if (!EvalScript(stack, scriptPubKey, flags, checker, SigVersion::BASE, serror))
@@ -2125,6 +2127,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
                 return set_error(serror, SCRIPT_ERR_WITNESS_MALLEATED);
             }
             if (!VerifyWitnessProgram(*witness, witnessversion, witnessprogram, flags, checker, serror, /* is_p2sh */ false)) {
+                std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_WITNESS VerifyWitnessProgram " << std::endl;
                 return false;
             }
             // Bypass the cleanstack check at the end. The actual stack is obviously not clean
@@ -2152,10 +2155,11 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
         CScript pubKey2(pubKeySerialized.begin(), pubKeySerialized.end());
         popstack(stack);
 
-        if (!EvalScript(stack, pubKey2, flags, checker, SigVersion::BASE, serror))
+        if (!EvalScript(stack, pubKey2, flags, checker, SigVersion::BASE, serror)){
             // serror is set
-            std::cout<<"FUCK ALL THIS EvalScript " << std::endl;
+            std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_P2SH EvalScript " << std::endl;
             return false;
+        }
         if (stack.empty())
             return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
         if (!CastToBool(stack.back()))
@@ -2171,6 +2175,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
                     return set_error(serror, SCRIPT_ERR_WITNESS_MALLEATED_P2SH);
                 }
                 if (!VerifyWitnessProgram(*witness, witnessversion, witnessprogram, flags, checker, serror, /* is_p2sh */ true)) {
+                    std::cout<<"FUCK ALL THIS VerifyWitnessProgram " << std::endl;
                     return false;
                 }
                 // Bypass the cleanstack check at the end. The actual stack is obviously not clean

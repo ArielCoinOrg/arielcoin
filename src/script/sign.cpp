@@ -291,6 +291,7 @@ static bool SignStep(const SigningProvider& provider, const BaseSignatureCreator
         if (!GetPubKey(provider, sigdata, keyID, pubkey)) {
             // Pubkey could not be found, add to missing
             sigdata.missing_pubkeys.push_back(keyID);
+            std::cout<<"FUCK ALL THIS PUBKEYHASH:GetPubKey "<<std::endl;
             return false;
         }
         if (!CreateSig(creator, sigdata, provider, sig, pubkey, scriptPubKey, sigversion)) return false;
@@ -306,6 +307,7 @@ static bool SignStep(const SigningProvider& provider, const BaseSignatureCreator
         }
         // Could not find redeemScript, add to missing
         sigdata.missing_redeem_script = h160;
+        std::cout<<"FUCK ALL THIS SCRIPTHASH:GetCScript "<<std::endl;
         return false;
 
     case TxoutType::MULTISIG: {
@@ -340,6 +342,7 @@ static bool SignStep(const SigningProvider& provider, const BaseSignatureCreator
         }
         // Could not find witnessScript, add to missing
         sigdata.missing_witness_script = uint256(vSolutions[0]);
+        std::cout<<"FUCK ALL THIS WITNESS_V0_SCRIPTHASH:GetCScript "<<std::endl;
         return false;
 
     case TxoutType::WITNESS_V1_TAPROOT:
@@ -573,7 +576,7 @@ bool SignSignature(const SigningProvider &provider, const CTransaction& txFrom, 
 bool VerifySignature(const Coin& coin, const uint256 txFromHash, const CTransaction& txTo, unsigned int nIn, unsigned int flags)
 {
     TransactionSignatureChecker checker(&txTo, nIn, 0, MissingDataBehavior::FAIL);
-	
+
     const CTxIn& txin = txTo.vin[nIn];
 //    if (txin.prevout.n >= txFrom.vout.size())
 //        return false;
@@ -583,19 +586,19 @@ bool VerifySignature(const Coin& coin, const uint256 txFromHash, const CTransact
 
     if (txin.prevout.hash != txFromHash)
         return false;
-		
+
     return VerifyScript(txin.scriptSig, txout.scriptPubKey, NULL, flags, checker);
 }
 
 bool VerifySignature(const CScript& fromPubKey, const uint256 txFromHash, const CTransaction& txTo, unsigned int nIn, unsigned int flags)
 {
     TransactionSignatureChecker checker(&txTo, nIn, 0, MissingDataBehavior::FAIL);
-	
+
     const CTxIn& txin = txTo.vin[nIn];
 
     if (txin.prevout.hash != txFromHash)
         return false;
-		
+
     return VerifyScript(txin.scriptSig, fromPubKey, NULL, flags, checker);
 }
 

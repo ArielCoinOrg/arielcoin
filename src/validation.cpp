@@ -1403,28 +1403,28 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
         //blocks are loaded out of order, so checking PoS kernels here is not practical
         return true; //CheckKernel(block.pprev, block.nBits, block.nTime, block.prevoutStake);
     }else{
-	LogPrintf("FUCK ME 2 \n");
+//	LogPrintf("FUCK ME 2 \n");
 
         if(block.nHeight == 0) {
-	        LogPrintf("FUCK ME 3 \n");
+//	        LogPrintf("FUCK ME 3 \n");
             return CheckProofOfWork(block.GetBlockHash(), block.nBits, consensusParams, false);
         } else {
-	        LogPrintf("FUCK ME 4 \n");
+//	        LogPrintf("FUCK ME 4 \n");
             CBlockHeader header = block.GetBlockHeader();
             //LogPrintf(header.ToString();
-            std::cout<<"GENERATE FUCK ME"<<std::endl;
-            std::cout<<"block.hashMerkleRoot: " << header.hashMerkleRoot.ToString()<<std::endl;
-            std::cout<<"block.hashPrevBlock: " << header.hashPrevBlock.ToString()<<std::endl;
-            std::cout<<"block.hashStateRoot: " << header.hashStateRoot.ToString()<<std::endl;
-            std::cout<<"block.hashUTXORoot: " << header.hashUTXORoot.ToString()<<std::endl;
-            std::cout<<"block.mix_hash: " << header.mix_hash.ToString()<<std::endl;
-            std::cout<<"block.nBits: " << header.nBits <<std::endl;
-            std::cout<<"block.nHeight: " << header.nHeight<<std::endl;
-            std::cout<<"block.nNonce64: " << header.nNonce64<<std::endl;
-            std::cout<<"block.nNonce: " << header.nNonce<<std::endl;
-            std::cout<<"block.nTime: " << header.nTime<<std::endl;
-            std::cout<<"block.nVersion: " << header.nVersion<<std::endl;
-            std::cout<<"==================================================================="<<std::endl;
+//            std::cout<<"GENERATE FUCK ME"<<std::endl;
+//            std::cout<<"block.hashMerkleRoot: " << header.hashMerkleRoot.ToString()<<std::endl;
+//            std::cout<<"block.hashPrevBlock: " << header.hashPrevBlock.ToString()<<std::endl;
+//            std::cout<<"block.hashStateRoot: " << header.hashStateRoot.ToString()<<std::endl;
+//            std::cout<<"block.hashUTXORoot: " << header.hashUTXORoot.ToString()<<std::endl;
+//            std::cout<<"block.mix_hash: " << header.mix_hash.ToString()<<std::endl;
+//            std::cout<<"block.nBits: " << header.nBits <<std::endl;
+//            std::cout<<"block.nHeight: " << header.nHeight<<std::endl;
+//            std::cout<<"block.nNonce64: " << header.nNonce64<<std::endl;
+//            std::cout<<"block.nNonce: " << header.nNonce<<std::endl;
+//            std::cout<<"block.nTime: " << header.nTime<<std::endl;
+//            std::cout<<"block.nVersion: " << header.nVersion<<std::endl;
+//            std::cout<<"==================================================================="<<std::endl;
 
             uint256 mix_hash;
 

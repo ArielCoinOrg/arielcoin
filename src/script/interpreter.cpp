@@ -2091,21 +2091,20 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
         witness = &emptyWitness;
     }
     bool hadWitness = false;
-
+    std::cout<<"88888"<<std::endl;
     set_error(serror, SCRIPT_ERR_UNKNOWN_ERROR);
 
     if ((flags & SCRIPT_VERIFY_SIGPUSHONLY) != 0 && !scriptSig.IsPushOnly()) {
         return set_error(serror, SCRIPT_ERR_SIG_PUSHONLY);
     }
-
+    std::cout<<"77777"<<std::endl;
     // scriptSig and scriptPubKey must be evaluated sequentially on the same stack
     // rather than being simply concatenated (see CVE-2010-5141)
     std::vector<std::vector<unsigned char> > stack, stackCopy;
-    if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror)){
-        std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_WITNESS SigVersion::BASE " << std::endl;
-        return false;
-    }
+    if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror))
         // serror is set
+        return false;
+    std::cout<<"66666"<<std::endl;
     if (flags & SCRIPT_VERIFY_P2SH)
         stackCopy = stack;
     if (!EvalScript(stack, scriptPubKey, flags, checker, SigVersion::BASE, serror))
@@ -2115,7 +2114,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
     if (CastToBool(stack.back()) == false)
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
-
+    std::cout<<"55555"<<std::endl;
     // Bare witness programs
     int witnessversion;
     std::vector<unsigned char> witnessprogram;
@@ -2127,7 +2126,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
                 return set_error(serror, SCRIPT_ERR_WITNESS_MALLEATED);
             }
             if (!VerifyWitnessProgram(*witness, witnessversion, witnessprogram, flags, checker, serror, /* is_p2sh */ false)) {
-                std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_WITNESS VerifyWitnessProgram " << std::endl;
                 return false;
             }
             // Bypass the cleanstack check at the end. The actual stack is obviously not clean
@@ -2135,7 +2133,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             stack.resize(1);
         }
     }
-
+    std::cout<<"44444"<<std::endl;
     // Additional validation for spend-to-script-hash transactions:
     if ((flags & SCRIPT_VERIFY_P2SH) && scriptPubKey.IsPayToScriptHash())
     {
@@ -2155,11 +2153,9 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
         CScript pubKey2(pubKeySerialized.begin(), pubKeySerialized.end());
         popstack(stack);
 
-        if (!EvalScript(stack, pubKey2, flags, checker, SigVersion::BASE, serror)){
+        if (!EvalScript(stack, pubKey2, flags, checker, SigVersion::BASE, serror))
             // serror is set
-            std::cout<<"FUCK ALL THIS SCRIPT_VERIFY_P2SH EvalScript " << std::endl;
             return false;
-        }
         if (stack.empty())
             return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
         if (!CastToBool(stack.back()))
@@ -2175,7 +2171,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
                     return set_error(serror, SCRIPT_ERR_WITNESS_MALLEATED_P2SH);
                 }
                 if (!VerifyWitnessProgram(*witness, witnessversion, witnessprogram, flags, checker, serror, /* is_p2sh */ true)) {
-                    std::cout<<"FUCK ALL THIS VerifyWitnessProgram " << std::endl;
                     return false;
                 }
                 // Bypass the cleanstack check at the end. The actual stack is obviously not clean
@@ -2184,7 +2179,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             }
         }
     }
-
+    std::cout<<"33333"<<std::endl;
     // The CLEANSTACK check is only performed after potential P2SH evaluation,
     // as the non-P2SH evaluation of a P2SH script will obviously not result in
     // a clean stack (the P2SH inputs remain). The same holds for witness evaluation.
@@ -2197,7 +2192,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             return set_error(serror, SCRIPT_ERR_CLEANSTACK);
         }
     }
-
+    std::cout<<"22222"<<std::endl;
     if (flags & SCRIPT_VERIFY_WITNESS) {
         // We can't check for correct unexpected witness data if P2SH was off, so require
         // that WITNESS implies P2SH. Otherwise, going from WITNESS->P2SH+WITNESS would be
@@ -2207,7 +2202,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             return set_error(serror, SCRIPT_ERR_WITNESS_UNEXPECTED);
         }
     }
-
+    std::cout<<"11111 "<<std::endl;
     return set_success(serror);
 }
 

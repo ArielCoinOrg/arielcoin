@@ -424,7 +424,6 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
 
     // Test solution
     sigdata.complete = solved && VerifyScript(sigdata.scriptSig, fromPubKey, &sigdata.scriptWitness, STANDARD_SCRIPT_VERIFY_FLAGS, creator.Checker());
-    std::cout<<"FUCK ALL THIS SHIT complete "<< solved << VerifyScript(sigdata.scriptSig, fromPubKey, &sigdata.scriptWitness, STANDARD_SCRIPT_VERIFY_FLAGS, creator.Checker()) << std::endl;
     return sigdata.complete;
 }
 

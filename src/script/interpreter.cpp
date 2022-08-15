@@ -460,7 +460,6 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
     if ((sigversion == SigVersion::BASE || sigversion == SigVersion::WITNESS_V0) && script.size() > MAX_SCRIPT_SIZE) {
         return set_error(serror, SCRIPT_ERR_SCRIPT_SIZE);
     }
-    std::cout<<"12222"<<std::endl;
     int nOpCount = 0;
     bool fRequireMinimal = (flags & SCRIPT_VERIFY_MINIMALDATA) != 0;
     uint32_t opcode_pos = 0;
@@ -513,7 +512,6 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
                 }
                 stack.push_back(vchPushValue);
             } else if (fExec || (OP_IF <= opcode && opcode <= OP_ENDIF)){
-                std::cout<<"opcode "<<opcode<<std::endl;
                 switch (opcode)
                 {
                     //
@@ -1282,10 +1280,8 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
     {
         return set_error(serror, SCRIPT_ERR_UNKNOWN_ERROR);
     }
-    std::cout<<"19999"<<std::endl;
     if (!vfExec.empty())
         return set_error(serror, SCRIPT_ERR_UNBALANCED_CONDITIONAL);
-    std::cout<<"10000"<<std::endl;
     return set_success(serror);
 }
 
@@ -2104,20 +2100,15 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
     if (!EvalScript(stack, scriptSig, flags, checker, SigVersion::BASE, serror))
         // serror is set
         return false;
-    std::cout<<"66666"<<std::endl;
     if (flags & SCRIPT_VERIFY_P2SH)
         stackCopy = stack;
-    std::cout<<"66665"<<std::endl;
     if (!EvalScript(stack, scriptPubKey, flags, checker, SigVersion::BASE, serror))
         // serror is set
         return false;
-    std::cout<<"66664"<<std::endl;
     if (stack.empty())
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
-    std::cout<<"66663"<<std::endl;
     if (CastToBool(stack.back()) == false)
         return set_error(serror, SCRIPT_ERR_EVAL_FALSE);
-    std::cout<<"55555"<<std::endl;
     // Bare witness programs
     int witnessversion;
     std::vector<unsigned char> witnessprogram;
@@ -2136,7 +2127,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             stack.resize(1);
         }
     }
-    std::cout<<"44444"<<std::endl;
     // Additional validation for spend-to-script-hash transactions:
     if ((flags & SCRIPT_VERIFY_P2SH) && scriptPubKey.IsPayToScriptHash())
     {
@@ -2182,7 +2172,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             }
         }
     }
-    std::cout<<"33333"<<std::endl;
     // The CLEANSTACK check is only performed after potential P2SH evaluation,
     // as the non-P2SH evaluation of a P2SH script will obviously not result in
     // a clean stack (the P2SH inputs remain). The same holds for witness evaluation.
@@ -2195,7 +2184,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             return set_error(serror, SCRIPT_ERR_CLEANSTACK);
         }
     }
-    std::cout<<"22222"<<std::endl;
     if (flags & SCRIPT_VERIFY_WITNESS) {
         // We can't check for correct unexpected witness data if P2SH was off, so require
         // that WITNESS implies P2SH. Otherwise, going from WITNESS->P2SH+WITNESS would be
@@ -2205,7 +2193,6 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
             return set_error(serror, SCRIPT_ERR_WITNESS_UNEXPECTED);
         }
     }
-    std::cout<<"11111 "<<std::endl;
     return set_success(serror);
 }
 

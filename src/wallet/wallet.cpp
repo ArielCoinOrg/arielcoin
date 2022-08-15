@@ -1524,12 +1524,12 @@ bool CWallet::DummySignInput(CTxIn &tx_in, const CTxOut &txout, bool use_max_sig
 
     std::unique_ptr<SigningProvider> provider = GetSolvingProvider(scriptPubKey);
     if (!provider) {
-        std::cout<<"FUCK ALL THIS SHIT GetSolvingProvider "<<std::endl;
         // We don't know about this scriptpbuKey;
         return false;
     }
 
     if (!ProduceSignature(*provider, use_max_sig ? DUMMY_MAXIMUM_SIGNATURE_CREATOR : DUMMY_SIGNATURE_CREATOR, scriptPubKey, sigdata)) {
+        std::cout<<"FUCK ALL THIS ProduceSignature "<<std::endl;
         return false;
     }
     UpdateInput(tx_in, sigdata);

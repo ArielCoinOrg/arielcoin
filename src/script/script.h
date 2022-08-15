@@ -20,7 +20,7 @@
 #include <vector>
 
 // Maximum number of bytes pushable to the stack
-static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 128000; //(128 kb)
+static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 150000; //(128 kb)
 
 // Maximum number of non-push operations per script
 static const int MAX_OPS_PER_SCRIPT = 201;
@@ -35,7 +35,7 @@ static const int MAX_SCRIPT_SIZE = 129000; // (129 kb)
 static const int MAX_BASE_SCRIPT_SIZE = 10000;
 
 // Maximum number of values on script interpreter stack
-static const int MAX_STACK_SIZE = 1000;
+static const int MAX_STACK_SIZE = 2000;
 
 // Threshold for nLockTime: below this value it is interpreted as block number,
 // otherwise as UNIX timestamp.
@@ -622,7 +622,7 @@ public:
     {
         return Find(OP_CREATE) == 1;
     }
-    
+
     bool HasOpCall() const
     {
         return Find(OP_CALL) == 1;

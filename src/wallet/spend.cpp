@@ -42,6 +42,7 @@ TxSize CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *walle
 {
     CMutableTransaction txNew(tx);
     if (!wallet->DummySignTx(txNew, txouts, use_max_sig)) {
+        std::cout<<"FUCK ALL THIS SHIT DummySignTx "<<std::endl;
         return TxSize{-1, -1};
     }
     CTransaction ctx(txNew);

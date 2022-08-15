@@ -513,6 +513,7 @@ bool EvalScript(std::vector<std::vector<unsigned char> >& stack, const CScript& 
                 }
                 stack.push_back(vchPushValue);
             } else if (fExec || (OP_IF <= opcode && opcode <= OP_ENDIF))
+            std::cout<<"opcode "<<opcode<<std::endl;
             switch (opcode)
             {
                 //

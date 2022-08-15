@@ -1403,34 +1403,34 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
         //blocks are loaded out of order, so checking PoS kernels here is not practical
         return true; //CheckKernel(block.pprev, block.nBits, block.nTime, block.prevoutStake);
     }else{
-	LogPrintf("FUCK ME 2 \n");
+//	LogPrintf("FUCK ME 2 \n");
 
         if(block.nHeight == 0) {
-	        LogPrintf("FUCK ME 3 \n");
+//	        LogPrintf("FUCK ME 3 \n");
             return CheckProofOfWork(block.GetBlockHash(), block.nBits, consensusParams, false);
         } else {
-	        LogPrintf("FUCK ME 4 \n");
+//	        LogPrintf("FUCK ME 4 \n");
             CBlockHeader header = block.GetBlockHeader();
             //LogPrintf(header.ToString();
-            std::cout<<"GENERATE FUCK ME"<<std::endl;
-            std::cout<<"block.hashMerkleRoot: " << header.hashMerkleRoot.ToString()<<std::endl;
-            std::cout<<"block.hashPrevBlock: " << header.hashPrevBlock.ToString()<<std::endl;
-            std::cout<<"block.hashStateRoot: " << header.hashStateRoot.ToString()<<std::endl;
-            std::cout<<"block.hashUTXORoot: " << header.hashUTXORoot.ToString()<<std::endl;
-            std::cout<<"block.mix_hash: " << header.mix_hash.ToString()<<std::endl;
-            std::cout<<"block.nBits: " << header.nBits <<std::endl;
-            std::cout<<"block.nHeight: " << header.nHeight<<std::endl;
-            std::cout<<"block.nNonce64: " << header.nNonce64<<std::endl;
-            std::cout<<"block.nNonce: " << header.nNonce<<std::endl;
-            std::cout<<"block.nTime: " << header.nTime<<std::endl;
-            std::cout<<"block.nVersion: " << header.nVersion<<std::endl;
-            std::cout<<"==================================================================="<<std::endl;
+//            std::cout<<"GENERATE FUCK ME"<<std::endl;
+//            std::cout<<"block.hashMerkleRoot: " << header.hashMerkleRoot.ToString()<<std::endl;
+//            std::cout<<"block.hashPrevBlock: " << header.hashPrevBlock.ToString()<<std::endl;
+//            std::cout<<"block.hashStateRoot: " << header.hashStateRoot.ToString()<<std::endl;
+//            std::cout<<"block.hashUTXORoot: " << header.hashUTXORoot.ToString()<<std::endl;
+//            std::cout<<"block.mix_hash: " << header.mix_hash.ToString()<<std::endl;
+//            std::cout<<"block.nBits: " << header.nBits <<std::endl;
+//            std::cout<<"block.nHeight: " << header.nHeight<<std::endl;
+//            std::cout<<"block.nNonce64: " << header.nNonce64<<std::endl;
+//            std::cout<<"block.nNonce: " << header.nNonce<<std::endl;
+//            std::cout<<"block.nTime: " << header.nTime<<std::endl;
+//            std::cout<<"block.nVersion: " << header.nVersion<<std::endl;
+//            std::cout<<"==================================================================="<<std::endl;
 
             uint256 mix_hash;
-            
+
             return CheckProofOfWork(header.GetHashFull(mix_hash), block.nBits, consensusParams, false);
-        }    
-        
+        }
+
     }
 }
 
@@ -2835,13 +2835,13 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     }
 
     // State is filled in by UpdateHashProof
-    std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;  
+    std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;
 
     if (!UpdateHashProof(block, state, m_params.GetConsensus(), pindex, view)) {
         return error("%s: ConnectBlock(): %s", __func__, state.GetRejectReason().c_str());
     }
 
-        std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;  
+        std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;
 
 
     bool fScriptChecks = true;
@@ -3487,7 +3487,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             return AbortNode(state, "Failed to write blockhash index");
     }
     /////////////////////////////////////////////////////////////
-    std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;  
+    std::cout<<"FUCK ALL THIS SHIT 11313131313001 "<<std::endl;
 
     // add this block to the view's block chain
     view.SetBestBlock(pindex->GetBlockHash());
@@ -5210,21 +5210,21 @@ static bool ContextualCheckBlock(const CBlock& block, BlockValidationState& stat
 bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& state, const Consensus::Params& consensusParams, CBlockIndex* pindex, CCoinsViewCache& view)
 {
 
-    std::cout<<"FUCK ALL THIS SHIT 09798767868756979 "<<std::endl;  
+    std::cout<<"FUCK ALL THIS SHIT 09798767868756979 "<<std::endl;
 
     int nHeight = pindex->nHeight;
     uint256 hash = block.GetHash();
 
     //reject proof of work at height consensusParams.nLastPOWBlock
     if (block.IsProofOfWork() && nHeight > consensusParams.nLastPOWBlock) {
-                    std::cout<<"FUCK ALL THIS SHIT erg3reg323erv3erv "<<std::endl;  
+                    std::cout<<"FUCK ALL THIS SHIT erg3reg323erv3erv "<<std::endl;
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "reject-pow", strprintf("UpdateHashProof() : reject proof-of-work at height %d", nHeight));
     }
 
     // Check coinstake timestamp
     if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), nHeight, consensusParams)) {
-                       std::cout<<"FUCK ALL THIS SHIT mllkkjbjkbvhjvbjkb "<<std::endl;  
+                       std::cout<<"FUCK ALL THIS SHIT mllkkjbjkbvhjvbjkb "<<std::endl;
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "timestamp-invalid", strprintf("UpdateHashProof() : coinstake timestamp violation nTimeBlock=%d", block.GetBlockTime()));
     }
 
@@ -5690,7 +5690,7 @@ bool TestBlockValidity(BlockValidationState& state,
                        bool fCheckMerkleRoot)
 {
 
-        std::cout<<"FUCK ALL THIS SHIT 100 "<<std::endl;  
+        std::cout<<"FUCK ALL THIS SHIT 100 "<<std::endl;
 
     AssertLockHeld(cs_main);
     assert(pindexPrev && pindexPrev == chainstate.m_chain.Tip());
@@ -5711,7 +5711,6 @@ bool TestBlockValidity(BlockValidationState& state,
 
     dev::h256 oldHashStateRoot(globalState->rootHash()); // qtum
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // qtum
-        std::cout<<"FUCK ALL THIS SHIT 1001 "<<std::endl;  
 
     if (!chainstate.ConnectBlock(block, state, &indexDummy, viewNew, true)) {
         globalState->setRoot(oldHashStateRoot); // qtum
@@ -5720,7 +5719,7 @@ bool TestBlockValidity(BlockValidationState& state,
         return false;
     }
 
-            std::cout<<"FUCK ALL THIS SHIT 10011 "<<std::endl;  
+
 
     assert(state.IsValid());
 

@@ -573,7 +573,7 @@ bool SignSignature(const SigningProvider &provider, const CTransaction& txFrom, 
 bool VerifySignature(const Coin& coin, const uint256 txFromHash, const CTransaction& txTo, unsigned int nIn, unsigned int flags)
 {
     TransactionSignatureChecker checker(&txTo, nIn, 0, MissingDataBehavior::FAIL);
-	
+
     const CTxIn& txin = txTo.vin[nIn];
 //    if (txin.prevout.n >= txFrom.vout.size())
 //        return false;
@@ -583,19 +583,19 @@ bool VerifySignature(const Coin& coin, const uint256 txFromHash, const CTransact
 
     if (txin.prevout.hash != txFromHash)
         return false;
-		
+
     return VerifyScript(txin.scriptSig, txout.scriptPubKey, NULL, flags, checker);
 }
 
 bool VerifySignature(const CScript& fromPubKey, const uint256 txFromHash, const CTransaction& txTo, unsigned int nIn, unsigned int flags)
 {
     TransactionSignatureChecker checker(&txTo, nIn, 0, MissingDataBehavior::FAIL);
-	
+
     const CTxIn& txin = txTo.vin[nIn];
 
     if (txin.prevout.hash != txFromHash)
         return false;
-		
+
     return VerifyScript(txin.scriptSig, fromPubKey, NULL, flags, checker);
 }
 

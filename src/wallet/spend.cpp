@@ -42,6 +42,7 @@ TxSize CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *walle
 {
     CMutableTransaction txNew(tx);
     if (!wallet->DummySignTx(txNew, txouts, use_max_sig)) {
+        std::cout<<"FUCK ALL THIS SHIT DummySignTx "<<std::endl;
         return TxSize{-1, -1};
     }
     CTransaction ctx(txNew);
@@ -577,9 +578,9 @@ bool CWallet::CreateTransactionInternal(
         bilingual_str& error,
         const CCoinControl& coin_control,
         FeeCalculation& fee_calc_out,
-        bool sign, 
-        CAmount nGasFee, 
-        bool hasSender, 
+        bool sign,
+        CAmount nGasFee,
+        bool hasSender,
         const CTxDestination& signSenderAddress)
 {
     AssertLockHeld(cs_wallet);
@@ -726,7 +727,7 @@ bool CWallet::CreateTransactionInternal(
     const CAmount change_and_fee = inputs_sum - recipients_sum;
     assert(change_and_fee >= 0);
     if(change_and_fee > 0)
-    { 
+    {
         // send change to existing address
         if (!m_use_change_address &&
                 !std::holds_alternative<CNoDestination>(coin_control.destChange) &&
@@ -794,6 +795,7 @@ bool CWallet::CreateTransactionInternal(
     TxSize tx_sizes = CalculateMaximumSignedTxSize(CTransaction(txNew), this, coin_control.fAllowWatchOnly);
     int nBytes = tx_sizes.vsize;
     if (nBytes < 0) {
+        LogPrintf("FUCK THIS SIGN FOREVER 1 \n");
         error = _("Signing transaction failed");
         return false;
     }
@@ -879,6 +881,7 @@ bool CWallet::CreateTransactionInternal(
     }
 
     if (sign && !SignTransaction(txNew)) {
+        LogPrintf("FUCK THIS SIGN FOREVER 2 \n");
         error = _("Signing transaction failed");
         return false;
     }
@@ -931,9 +934,9 @@ bool CWallet::CreateTransaction(
         bilingual_str& error,
         const CCoinControl& coin_control,
         FeeCalculation& fee_calc_out,
-        bool sign, 
-        CAmount nGasFee, 
-        bool hasSender, 
+        bool sign,
+        CAmount nGasFee,
+        bool hasSender,
         const CTxDestination& signSenderAddress)
 {
     if (vecSend.empty()) {

@@ -1436,20 +1436,28 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    if(nHeight <= consensusParams.nLastBigReward)
-        return 20000 * COIN;
+    CAmount nSubsidyBase;
 
-    int subsidyHalvingInterval = consensusParams.SubsidyHalvingInterval(nHeight);
-    int subsidyHalvingWeight = consensusParams.SubsidyHalvingWeight(nHeight);
-    int halvings = (subsidyHalvingWeight - 1) / subsidyHalvingInterval;
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 7)
-        return 0;
+    if(nHeight<601)
+        nSubsidyBase=5000;  // Team coins 3M
+    else if(nHeight<10681)
+        nSubsidyBase=50;    // Grace period 1st week
+    else if(nHeight<20761)
+        nSubsidyBase=30;    // Grace period 2nd week
+    else if(nHeight<30841)
+        nSubsidyBase=20;    // Grace period 3d week
+    else if(nHeight<40921)
+        nSubsidyBase=15;    // Grace period 4th week
+    else
+        nSubsidyBase=11;    // Normal mining
 
-    int blocktimeDownscaleFactor = consensusParams.BlocktimeDownscaleFactor(nHeight);
-    CAmount nSubsidy = 4 * COIN / blocktimeDownscaleFactor;
-    // Subsidy is cut in half every 985500 blocks which will occur approximately every 4 years.
-    nSubsidy >>= halvings;
+
+    CAmount nSubsidy = nSubsidyBase * COIN;
+
+    for (int i = consensusParams.nSubsidyHalvingInterval; i <= nHeight; i += consensusParams.nSubsidyHalvingInterval) {
+        nSubsidy -= nSubsidy/25;
+    }
+
     return nSubsidy;
 }
 

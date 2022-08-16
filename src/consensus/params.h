@@ -99,6 +99,7 @@ struct Params {
     int QIP9Height;
     /** Block height at which Offline Staking becomes active */
     int nOfflineStakeHeight;
+    int nSmartActivationBlock;
     /** Block height at which Reduce Block Time becomes active */
     int nReduceBlocktimeHeight;
     /** Block height at which EVM Muir Glacier fork becomes active */

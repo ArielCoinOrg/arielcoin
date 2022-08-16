@@ -121,7 +121,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // genesis block
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
-        return bnPowLimit.GetCompact();
+        return bnPowLimit;
     }
 
     // min difficulty
@@ -132,12 +132,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // then allow mining of a min-difficulty block.
         int nHeight = pindexLast->nHeight + 1;
         if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.TargetSpacing(nHeight)*2)
-            return nTargetLimit;
+            return bnPowLimit;
         else
         {
             // Return the last non-special-min-difficulty-rules-block
             const CBlockIndex* pindex = pindexLast;
-            while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval(pindex->nHeight) != 0 && pindex->nBits == nTargetLimit)
+            while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval(pindex->nHeight) != 0 && pindex->nBits == bnPowLimit)
                 pindex = pindex->pprev;
             return pindex->nBits;
         }

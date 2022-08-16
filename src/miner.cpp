@@ -304,9 +304,9 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     int nPackagesSelected = 0;
     int nDescendantsUpdated = 0;
 
-    if(nHeight >= chainparams.GetConsensus().nSmartActivationBlock){
-        addPackageTxs(nPackagesSelected, nDescendantsUpdated, minGasPrice, pblock);
-    }
+    //if(nHeight >= chainparams.GetConsensus().nSmartActivationBlock){
+    addPackageTxs(nPackagesSelected, nDescendantsUpdated, minGasPrice, pblock);
+
 
     pblock->hashStateRoot = uint256(h256Touint(dev::h256(globalState->rootHash())));
     pblock->hashUTXORoot = uint256(h256Touint(dev::h256(globalState->rootHashUTXO())));
@@ -866,7 +866,7 @@ void BlockAssembler::addPackageTxs(int &nPackagesSelected, int &nDescendantsUpda
             }
             const CTransaction& tx = sortedEntries[i]->GetTx();
             if(wasAdded) {
-                if (tx.HasCreateOrCall()) {
+                if (nHeight >= chainparams.GetConsensus().nSmartActivationBlock && tx.HasCreateOrCall()) {
                     wasAdded = AttemptToAddContractToBlock(sortedEntries[i], minGasPrice, pblock);
                     if(!wasAdded){
                         if(fUsingModified) {

@@ -18,7 +18,7 @@
  * of the block.
  */
 
-static const uint32_t nSmartActivationBlock = 1000;
+static const int nSmartActivationBlock = 1000;
 
 class CBlockHeader
 {
@@ -57,12 +57,12 @@ public:
         READWRITE(obj.nHeight);
         READWRITE(obj.nNonce64);
         READWRITE(obj.mix_hash);
-        //if (nSmartActivationBlock < obj.nHeight){
+        if (nSmartActivationBlock <= obj.nHeight){
             READWRITE(obj.hashStateRoot);
             READWRITE(obj.hashUTXORoot);
             READWRITE(obj.prevoutStake);
             READWRITE(obj.vchBlockSigDlgt);
-        //}
+        }
     }
 
     void SetNull()

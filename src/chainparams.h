@@ -103,6 +103,8 @@ public:
     bool RequireStandard() const { return fRequireStandard; }
     /** If this chain is exclusively used for testing */
     bool IsTestChain() const { return m_is_test_chain; }
+    const uint256 HashStateRoot() const { return hashStateRoot; }
+    const uint256 HashUTXORoot() const { return hashUTXORoot; }
     /** If this chain allows time to be mocked */
     bool IsMockableChain() const { return m_is_mockable_chain; }
     uint64_t PruneAfterHeight() const { return nPruneAfterHeight; }
@@ -153,6 +155,8 @@ protected:
     uint64_t nPruneAfterHeight;
     uint64_t m_assumed_blockchain_size;
     uint64_t m_assumed_chain_state_size;
+    uint256 hashStateRoot;
+    uint256 hashUTXORoot;
     std::vector<std::string> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
     std::string bech32_hrp;

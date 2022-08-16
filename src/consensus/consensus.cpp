@@ -12,7 +12,7 @@ unsigned int dgpMaxBlockSize = dgpMaxBlockWeight - 4000; // qtum
 /** The maximum allowed number of signature check operations in a block (network rule) */
 int64_t dgpMaxBlockSigOps = 80000;
 
-unsigned int dgpMaxProtoMsgLength = 8000000;
+unsigned int dgpMaxProtoMsgLength = 32000000;
 
 unsigned int dgpMaxTxSigOps = 16000;
 

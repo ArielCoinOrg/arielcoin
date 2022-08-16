@@ -307,13 +307,14 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
         addPackageTxs(nPackagesSelected, nDescendantsUpdated, minGasPrice, pblock);
         pblock->hashStateRoot = uint256(h256Touint(dev::h256(globalState->rootHash())));
         pblock->hashUTXORoot = uint256(h256Touint(dev::h256(globalState->rootHashUTXO())));
-    }
-    globalState->setRoot(oldHashStateRoot);
-    globalState->setRootUTXO(oldHashUTXORoot);
+        globalState->setRoot(oldHashStateRoot);
+        globalState->setRootUTXO(oldHashUTXORoot);
 
-    //this should already be populated by AddBlock in case of contracts, but if no contracts
-    //then it won't get populated
-    RebuildRefundTransaction(pblock);
+        //this should already be populated by AddBlock in case of contracts, but if no contracts
+        //then it won't get populated
+        RebuildRefundTransaction(pblock);
+    }
+
     ////////////////////////////////////////////////////////
     std::cout<<"FUCK ALL THIS SHIT 9 "<<std::endl;
     pblocktemplate->vchCoinbaseCommitment = GenerateCoinbaseCommitment(*pblock, pindexPrev, chainparams.GetConsensus(), fProofOfStake);

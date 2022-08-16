@@ -3395,8 +3395,9 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "incorrect-transactions-or-hashes-block", "ConnectBlock(): Incorrect AAL transactions or hashes (hashStateRoot, hashUTXORoot)");
     }
 
+    //pindex->nHeight < m_params.GetConsensus().nSmartActivationBlock ||
 
-    if (pindex->nHeight < m_params.GetConsensus().nSmartActivationBlock || fJustCheck)
+    if (fJustCheck)
     {
         dev::h256 prevHashStateRoot(dev::sha3(dev::rlp("")));
         dev::h256 prevHashUTXORoot(dev::sha3(dev::rlp("")));

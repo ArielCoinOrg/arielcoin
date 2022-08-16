@@ -439,6 +439,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateEmptyBlock(const CScript& 
     //state shouldn't change here for an empty block, but if it's not valid it'll fail in CheckBlock later
     pblock->hashStateRoot = uint256(h256Touint(dev::h256(globalState->rootHash())));
     pblock->hashUTXORoot = uint256(h256Touint(dev::h256(globalState->rootHashUTXO())));
+    std::cout << "BLOCK hashStateRoot BASED " << uint256(h256Touint(dev::h256(globalState->rootHash()))) << std::endl;
 
     RebuildRefundTransaction(pblock);
     ////////////////////////////////////////////////////////

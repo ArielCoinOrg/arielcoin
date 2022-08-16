@@ -507,7 +507,7 @@ bool BlockAssembler::TestPackageTransactions(const CTxMemPool::setEntries& packa
 }
 
 bool BlockAssembler::AttemptToAddContractToBlock(CTxMemPool::txiter iter, uint64_t minGasPrice, CBlock* pblock) {
-    if (nTimeLimit != 0 && GetAdjustedTime() >= nTimeLimit - nBytecodeTimeBuffer) {
+    if (nHeight >= chainparams.GetConsensus().nSmartActivationBlock && nTimeLimit != 0 && GetAdjustedTime() >= nTimeLimit - nBytecodeTimeBuffer) {
         return false;
     }
     if (gArgs.GetBoolArg("-disablecontractstaking", false))
@@ -866,7 +866,7 @@ void BlockAssembler::addPackageTxs(int &nPackagesSelected, int &nDescendantsUpda
             }
             const CTransaction& tx = sortedEntries[i]->GetTx();
             if(wasAdded) {
-                if (nHeight >= chainparams.GetConsensus().nSmartActivationBlock && tx.HasCreateOrCall()) {
+                if (tx.HasCreateOrCall()) {
                     wasAdded = AttemptToAddContractToBlock(sortedEntries[i], minGasPrice, pblock);
                     if(!wasAdded){
                         if(fUsingModified) {

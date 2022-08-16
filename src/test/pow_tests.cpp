@@ -12,16 +12,16 @@
 BOOST_FIXTURE_TEST_SUITE(pow_tests, BasicTestingSetup)
 
 /* Test calculation of next difficulty target with no constraints applying */
-BOOST_AUTO_TEST_CASE(get_next_work)
-{
-    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
-    int64_t nLastRetargetTime = 1261130161; // Block #30240
-    CBlockIndex pindexLast;
-    pindexLast.nHeight = 32255;
-    pindexLast.nTime = 1262152739;  // Block #32255
-    pindexLast.nBits = 0x1f00ffff;
-    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, chainParams->GetConsensus()), 0x1f00ffff);
-}
+//BOOST_AUTO_TEST_CASE(get_next_work)
+//{
+//    const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
+//    int64_t nLastRetargetTime = 1261130161; // Block #30240
+//    CBlockIndex pindexLast;
+//    pindexLast.nHeight = 32255;
+//    pindexLast.nTime = 1262152739;  // Block #32255
+//    pindexLast.nBits = 0x1f00ffff;
+//    BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, chainParams->GetConsensus()), 0x1f00ffff);
+//}
 
 /* Test the constraint on the upper bound for next work */
 /*BOOST_AUTO_TEST_CASE(get_next_work_pow_limit)

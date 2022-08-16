@@ -149,7 +149,7 @@ public:
         consensus.QIP6Height = 10000;
         consensus.QIP7Height = 10000;
         consensus.QIP9Height = 10000;
-        consensus.nSmartActivationBlock = 0;
+        consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 680000;
         consensus.nReduceBlocktimeHeight = 845000;
         consensus.nMuirGlacierHeight = 1;

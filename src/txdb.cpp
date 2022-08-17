@@ -716,8 +716,9 @@ bool CBlockTreeDB::LoadBlockIndexGuts(const Consensus::Params& consensusParams, 
                 pindexNew->vchBlockSigDlgt    = diskindex.vchBlockSigDlgt; // qtum
 
                 if (diskindex.nHeight < Params().GetConsensus().nSmartActivationBlock){
-                    pindexNew->hashStateRoot = uintToh256(Params().HashUTXORoot());
-                    pindexNew->hashUTXORoot = uintToh256(Params().HashUTXORoot());
+                    pindexNew->hashStateRoot = Params().HashUTXORoot();
+                    pindexNew->hashUTXORoot = Params().HashUTXORoot();
+                    //TODO
                 }
 
                 if (!CheckIndexProof(*pindexNew, Params().GetConsensus()))

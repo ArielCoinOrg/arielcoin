@@ -1933,8 +1933,10 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     // move best block pointer to prevout block
     view.SetBestBlock(pindex->pprev->GetBlockHash());
 
-    globalState->setRoot(uintToh256(pindex->pprev->hashStateRoot)); // qtum
-    globalState->setRootUTXO(uintToh256(pindex->pprev->hashUTXORoot)); // qtum
+    if (pindex->nHeight > m_params.GetConsensus().nSmartActivationBlock){
+        globalState->setRoot(uintToh256(pindex->pprev->hashStateRoot)); // qtum
+        globalState->setRootUTXO(uintToh256(pindex->pprev->hashUTXORoot)); // qtum
+    }
 
     if(pfClean == NULL && fLogEvents){
         pstorageresult->deleteResults(block.vtx);

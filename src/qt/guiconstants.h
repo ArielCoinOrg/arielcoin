@@ -59,10 +59,10 @@ static constexpr uint64_t GB_BYTES{1000000000};
 static constexpr int DEFAULT_PRUNE_TARGET_GB{2};
 
 /* Mainnet qtum explorer uri */
-#define QTUM_INFO_MAINNET "<a href='https://qtum.info/%1/%2'>%2</a>"
+#define QTUM_INFO_MAINNET "<a href='https://explorer.arielcoin.org/%1/%2'>%2</a>"
 
 /* Testnet qtum explorer uri */
-#define QTUM_INFO_TESTNET "<a href='https://testnet.qtum.info/%1/%2'>%2</a>"
+#define QTUM_INFO_TESTNET "<a href='https://explorer.arielcoin.org/%1/%2'>%2</a>"
 
 /* Hardware wallet interface uri */
 #define QTUM_HWI_TOOL "<a href='https://github.com/qtumproject/HWI/tags'>HWI Tool</a>"

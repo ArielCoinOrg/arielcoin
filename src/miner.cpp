@@ -170,18 +170,15 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 {
     int64_t nTimeStart = GetTimeMicros();
 
-    std::cout<<"FUCK ALL THIS SHIT 5 "<<std::endl;
 
     resetBlock();
 
-    std::cout<<"FUCK ALL THIS SHIT 6 "<<std::endl;
     pblocktemplate.reset(new CBlockTemplate());
 
     if(!pblocktemplate.get())
         return nullptr;
     CBlock* const pblock = &pblocktemplate->block; // pointer for convenience
 
-    std::cout<<"FUCK ALL THIS SHIT 7 "<<std::endl;
 
     this->nTimeLimit = nTimeLimit;
 
@@ -238,7 +235,6 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     m_last_block_num_txs = nBlockTx;
     m_last_block_weight = nBlockWeight;
-    std::cout<<"FUCK ALL THIS SHIT 7 "<<std::endl;
     // Create coinbase transaction.
     CMutableTransaction coinbaseTx;
     coinbaseTx.vin.resize(1);
@@ -274,7 +270,6 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     }
 
-    std::cout<<"FUCK ALL THIS SHIT 8 "<<std::endl;
 
     //////////////////////////////////////////////////////// qtum
     QtumDGP qtumDGP(globalState.get(), m_chainstate, fGettingValuesDGP);
@@ -319,7 +314,6 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
 
     ////////////////////////////////////////////////////////
-    std::cout<<"FUCK ALL THIS SHIT 9 "<<std::endl;
     pblocktemplate->vchCoinbaseCommitment = GenerateCoinbaseCommitment(*pblock, pindexPrev, chainparams.GetConsensus(), fProofOfStake);
     pblocktemplate->vTxFees[0] = -nFees;
 

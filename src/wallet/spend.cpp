@@ -42,7 +42,6 @@ TxSize CalculateMaximumSignedTxSize(const CTransaction &tx, const CWallet *walle
 {
     CMutableTransaction txNew(tx);
     if (!wallet->DummySignTx(txNew, txouts, use_max_sig)) {
-        std::cout<<"FUCK ALL THIS SHIT DummySignTx "<<std::endl;
         return TxSize{-1, -1};
     }
     CTransaction ctx(txNew);
@@ -795,7 +794,6 @@ bool CWallet::CreateTransactionInternal(
     TxSize tx_sizes = CalculateMaximumSignedTxSize(CTransaction(txNew), this, coin_control.fAllowWatchOnly);
     int nBytes = tx_sizes.vsize;
     if (nBytes < 0) {
-        LogPrintf("FUCK THIS SIGN FOREVER 1 \n");
         error = _("Signing transaction failed");
         return false;
     }
@@ -881,7 +879,6 @@ bool CWallet::CreateTransactionInternal(
     }
 
     if (sign && !SignTransaction(txNew)) {
-        LogPrintf("FUCK THIS SIGN FOREVER 2 \n");
         error = _("Signing transaction failed");
         return false;
     }

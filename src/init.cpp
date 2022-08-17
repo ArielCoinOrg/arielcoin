@@ -1789,7 +1789,6 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
                     if (!is_coinsview_empty(chainstate)) {
                         // LoadChainTip initializes the chain based on CoinsTip()'s best block
                         if (!chainstate->LoadChainTip()) {
-			                std::cout << "FUCK LOADCHAINTIP " << std::endl;
                             strLoadError = _("Error initializing block database");
                             failed_chainstate_init = true;
                             break; // out of the per-chainstate loop

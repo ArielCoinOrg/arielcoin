@@ -2791,8 +2791,8 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-blk-length", "size limits failed");
 
     // Move this check from ContextualCheckBlock to ConnectBlock as it depends on DGP values
-    std::cout << "GetBlockWeight(block) " << GetBlockWeight(block) << << std::endl;
-    std::cout << "dgpMaxBlockWeight " << dgpMaxBlockWeight << << std::endl;
+    std::cout << "GetBlockWeight(block) " << GetBlockWeight(block) <<std::endl;
+    std::cout << "dgpMaxBlockWeight " << dgpMaxBlockWeight <<std::endl;
     if (GetBlockWeight(block) > dgpMaxBlockWeight) {
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-blk-weight", strprintf("%s : weight limit failed", __func__));
     }

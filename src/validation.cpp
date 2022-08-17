@@ -2771,9 +2771,9 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     uint32_t sizeBlockDGP = qtumDGP.getBlockSize(pindex->nHeight + (pindex->nHeight+1 >= m_params.GetConsensus().QIP7Height ? 0 : 1));
     uint64_t minGasPrice = qtumDGP.getMinGasPrice(pindex->nHeight + (pindex->nHeight+1 >= m_params.GetConsensus().QIP7Height ? 0 : 1));
     uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(pindex->nHeight + (pindex->nHeight+1 >= m_params.GetConsensus().QIP7Height ? 0 : 1));
-    std::cout<<"do1 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
+//    std::cout<<"do1 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
     dgpMaxBlockSize = sizeBlockDGP ? sizeBlockDGP : dgpMaxBlockSize;
-    std::cout<<"pos1 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
+//    std::cout<<"pos1 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
     updateBlockSizeParams(dgpMaxBlockSize);
     CBlock checkBlock(block.GetBlockHeader());
     std::vector<CTxOut> checkVouts;
@@ -6104,9 +6104,9 @@ bool CVerifyDB::VerifyDB(
 
         ///////////////////////////////////////////////////////////////////// // qtum
         uint32_t sizeBlockDGP = qtumDGP.getBlockSize(pindex->nHeight);
-        std::cout<<"do2 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
+//        std::cout<<"do2 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
         dgpMaxBlockSize = sizeBlockDGP ? sizeBlockDGP : dgpMaxBlockSize;
-        std::cout<<"pos2 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
+//        std::cout<<"pos2 dgpMaxBlockSize " << dgpMaxBlockSize <<std::endl;
         updateBlockSizeParams(dgpMaxBlockSize);
         /////////////////////////////////////////////////////////////////////
 

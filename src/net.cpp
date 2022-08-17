@@ -696,8 +696,7 @@ int V1TransportDeserializer::readHeader(Span<const uint8_t> msg_bytes)
     }
 
     // reject messages larger than MAX_SIZE or dgpMaxProtoMsgLength
-    // TODO || hdr.nMessageSize > dgpMaxProtoMsgLength
-    if (hdr.nMessageSize > MAX_SIZE) {
+    if (hdr.nMessageSize > MAX_SIZE || hdr.nMessageSize > dgpMaxProtoMsgLength) {
         LogPrint(BCLog::NET, "Header error: Size too large (%s, %u bytes), peer=%d\n", SanitizeString(hdr.GetCommand()), hdr.nMessageSize, m_node_id);
         return -1;
     }

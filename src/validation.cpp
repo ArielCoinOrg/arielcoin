@@ -1426,9 +1426,8 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
             std::cout<<"block.nVersion: " << header.nVersion<<std::endl;
             std::cout<<"==================================================================="<<std::endl;
 
-            uint256 mix_hash;
 
-            return CheckProofOfWork(header.GetHashFull(mix_hash), block.nBits, consensusParams, false);
+            return CheckProofOfWork(header.GetHash(), block.nBits, consensusParams, false);
         }
 
     }

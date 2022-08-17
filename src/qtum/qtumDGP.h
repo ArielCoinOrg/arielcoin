@@ -14,7 +14,7 @@ static const dev::Address BlockGasLimitDGP = dev::Address("000000000000000000000
 
 static const uint32_t MIN_BLOCK_SIZE_DGP = 500000;
 static const uint32_t MAX_BLOCK_SIZE_DGP = 32000000;
-static const uint32_t DEFAULT_BLOCK_SIZE_DGP = 2000000;
+static const uint32_t DEFAULT_BLOCK_SIZE_DGP = 8000000;
 
 static const uint64_t MIN_MIN_GAS_PRICE_DGP = 1;
 static const uint64_t MAX_MIN_GAS_PRICE_DGP = 10000;
@@ -25,7 +25,7 @@ static const uint64_t MAX_BLOCK_GAS_LIMIT_DGP = 1000000000;
 static const uint64_t DEFAULT_BLOCK_GAS_LIMIT_DGP = 40000000;
 
 class QtumDGP {
-    
+
 public:
 
     QtumDGP(QtumState* _state, CChainState& _chainstate, bool _dgpevm = true) : dgpevm(_dgpevm), state(_state), chainstate(_chainstate) { initDataSchedule(); }
@@ -59,7 +59,7 @@ private:
     uint64_t getUint64FromDGP(unsigned int blockHeight, const dev::Address& contract, std::vector<unsigned char> data);
 
     void parseStorageScheduleContract(std::vector<uint32_t>& uint32Values);
-    
+
     void parseDataScheduleContract(std::vector<uint32_t>& uint32Values);
 
     void parseStorageOneUint64(uint64_t& blockSize);
@@ -68,7 +68,7 @@ private:
 
     dev::eth::EVMSchedule createEVMSchedule(const dev::eth::EVMSchedule& schedule, int blockHeight);
 
-    void clear();    
+    void clear();
 
 
 

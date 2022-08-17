@@ -1889,7 +1889,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>外部签名器脚本路径(&amp;E)</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <source>Full path to a Arielcoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
         <translation>指向兼容Qtum Core的脚本的完整路径 (例如 C:\Downloads\hwi.exe 或者 /Users/you/Downloads/hwi.py )。注意: 恶意软件可能会偷窃您的币！</translation>
     </message>
     <message>
@@ -5694,8 +5694,8 @@ Go to File &gt; Open Wallet to load a wallet.
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>Arielcoin Core</source>
+        <translation type="unfinished">Arielcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -6386,8 +6386,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="vanished">无法启动HTTP服务，查看日志获取更多信息</translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation type="vanished">Qtum Core</translation>
+        <source>Arielcoin Core</source>
+        <translation type="vanished">Arielcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

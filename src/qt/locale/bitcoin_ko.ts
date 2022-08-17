@@ -5335,8 +5335,8 @@ Go to File &gt; Open Wallet to load a wallet.
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>Arielcoin Core</source>
+        <translation type="unfinished">Arielcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -5838,8 +5838,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="vanished">HTTP 서비스를 활성화하지 못했습니다. 디버그 로그에서 더 많은 정보를 확인하세요. </translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation type="vanished">Qtum Core</translation>
+        <source>Arielcoin Core</source>
+        <translation type="vanished">Arielcoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

@@ -715,6 +715,11 @@ bool CBlockTreeDB::LoadBlockIndexGuts(const Consensus::Params& consensusParams, 
                 pindexNew->prevoutStake   = diskindex.prevoutStake;
                 pindexNew->vchBlockSigDlgt    = diskindex.vchBlockSigDlgt; // qtum
 
+                if (diskindex.nHeight < chainparams.GetConsensus().nSmartActivationBlock){
+                    pindexNew->hashStateRoot = uintToh256(chainparams.HashUTXORoot());
+                    pindexNew->hashUTXORoot = uintToh256(chainparams.HashUTXORoot());
+                }
+
                 if (!CheckIndexProof(*pindexNew, Params().GetConsensus()))
                     return error("%s: CheckIndexProof failed: %s", __func__, pindexNew->ToString());
 

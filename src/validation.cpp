@@ -3336,8 +3336,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         globalState->deployDelegationsContract();
     }
     checkBlock.hashMerkleRoot = BlockMerkleRoot(checkBlock);
-    checkBlock.hashStateRoot = h256Touint(globalState->rootHash());
-    checkBlock.hashUTXORoot = h256Touint(globalState->rootHashUTXO());
 
 //    if (pindex->nHeight == m_params.GetConsensus().nSmartActivationBlock){
 //        globalState->setRoot(dev::sha3(dev::rlp("")));

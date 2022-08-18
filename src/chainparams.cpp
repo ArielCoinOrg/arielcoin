@@ -157,8 +157,8 @@ public:
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 680000;
         consensus.nReduceBlocktimeHeight = 845000;
-        consensus.nMuirGlacierHeight = 300000;
-        consensus.nLondonHeight = 300000;
+        consensus.nMuirGlacierHeight = 303;
+        consensus.nLondonHeight = 305;
         consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");

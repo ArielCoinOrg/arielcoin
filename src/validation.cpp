@@ -6448,14 +6448,17 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
 
                     // process in case the block isn't known yet
                     CBlockIndex* pindex = m_blockman.LookupBlockIndex(hash);
+                    std::cout << "99! " << std::endl;
                     if (!pindex || (pindex->nStatus & BLOCK_HAVE_DATA) == 0) {
                       BlockValidationState state;
                       if (AcceptBlock(pblock, state, nullptr, true, dbp, nullptr)) {
                           nLoaded++;
                       }
+                      std::cout << "999! " << std::endl;
                       if (state.IsError()) {
                           break;
                       }
+                      std::cout << "9999! " << std::endl;
                     } else if (hash != m_params.GetConsensus().hashGenesisBlock && pindex->nHeight % 1000 == 0) {
                         LogPrint(BCLog::REINDEX, "Block Import: already had block %s at height %d\n", hash.ToString(), pindex->nHeight);
                     }

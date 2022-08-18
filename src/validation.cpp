@@ -3396,6 +3396,8 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             LogPrintf("Actual block data does not match hashUTXORoot expected by AAL block\n");
         }
         if(checkBlock.hashStateRoot != block.hashStateRoot){
+            std::cout << "perviy " << checkBlock.ToString() << std::endl;
+            std::cout << "vtoroi " << block.ToString() << std::endl;
             LogPrintf("Actual block data does not match hashStateRoot expected by AAL block\n");
         }
 

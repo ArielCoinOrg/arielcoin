@@ -5501,12 +5501,14 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
 
     if (fNewBlock) *fNewBlock = false;
     AssertLockHeld(cs_main);
+    std::cout << "с1" << block.nNonce64 << std::endl;
 
     CBlockIndex *pindexDummy = nullptr;
     CBlockIndex *&pindex = ppindex ? *ppindex : pindexDummy;
 
     bool accepted_header = m_blockman.AcceptBlockHeader(block, state, m_params, &pindex, *this);
     CheckBlockIndex();
+    std::cout << "с2" << block.nNonce64 << std::endl;
 
     if (!accepted_header)
         return false;
@@ -5517,7 +5519,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
             return error("%s: AcceptBlock(): %s", __func__, state.GetRejectReason().c_str());
         }
     }
-
+    std::cout << "с3" << block.nNonce64 << std::endl;
     // Get prev block index
     CBlockIndex* pindexPrev = nullptr;
     if(pindex->nHeight > 0){
@@ -5526,7 +5528,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
             return state.Invalid(BlockValidationResult::BLOCK_MISSING_PREV, "prev-blk-not-found", strprintf("%s: prev block not found", __func__));
         pindexPrev = (*mi).second;
     }
-
+    std::cout << "с4" << block.nNonce64 << std::endl;
     // Get block height
     int nHeight = pindex->nHeight;
 
@@ -5554,6 +5556,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
             !std::equal(expect.begin(), expect.end(), block.vtx[0]->vin[0].scriptSig.begin()))
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-height", "block height mismatch in coinbase");
     }
+    std::cout << "с5" << block.nNonce64 << std::endl;
 
     // Try to process all requested blocks that we don't have, but only
     // process an unrequested block if it's new and has enough work to
@@ -5595,6 +5598,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
         }
         return error("%s: %s", __func__, state.ToString());
     }
+    std::cout << "с6" << block.nNonce64 << std::endl;
 
     // Header is valid/has work, merkle tree and segwit merkle tree are good...RELAY NOW
     // (but if it does not build on our best tip, let the SendMessages loop relay it)
@@ -5613,11 +5617,11 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
     } catch (const std::runtime_error& e) {
         return AbortNode(state, std::string("System error: ") + e.what());
     }
-
+    std::cout << "с7" << block.nNonce64 << std::endl;
     FlushStateToDisk(state, FlushStateMode::NONE);
 
     CheckBlockIndex();
-
+    std::cout << "с8" << block.nNonce64 << std::endl;
     return true;
 }
 

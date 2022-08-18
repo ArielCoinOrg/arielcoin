@@ -118,6 +118,7 @@ struct Params {
     BIP9Deployment vDeployments[MAX_VERSION_BITS_DEPLOYMENTS];
     /** Proof of work parameters */
     uint256 powLimit;
+    uint256 powLimitGenesis;
     uint256 posLimit;
     uint256 QIP9PosLimit;
     uint256 RBTPosLimit;

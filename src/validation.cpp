@@ -3339,6 +3339,15 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     checkBlock.hashStateRoot = h256Touint(globalState->rootHash());
     checkBlock.hashUTXORoot = h256Touint(globalState->rootHashUTXO());
 
+    if (pindex->nHeight == m_params.GetConsensus().nSmartActivationBlock){
+        globalState->setRoot(dev::sha3(dev::rlp("")));
+        globalState->setRootUTXO(dev::sha3(dev::rlp("")));
+    }
+
+    checkBlock.hashStateRoot = h256Touint(globalState->rootHash());
+    checkBlock.hashUTXORoot = h256Touint(globalState->rootHashUTXO());
+
+
     //If this error happens, it probably means that something with AAL created transactions didn't match up to what is expected
     if((checkBlock.GetHash() != block.GetHash()) && !fJustCheck)
     {

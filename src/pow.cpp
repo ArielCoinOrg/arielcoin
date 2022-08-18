@@ -124,6 +124,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     std::cout<<"GetNextWorkRequired1 "<< pindexLast->nHeight <<std::endl;
     // genesis block
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
+        std::cout<<"GetNextWorkRequired1??? " <<std::endl;
         return bnPowLimit;
     }
     std::cout<<"GetNextWorkRequired2"<<std::endl;

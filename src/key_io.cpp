@@ -39,6 +39,7 @@ public:
         return EncodeBase58Check(data);
     }
 
+
     std::string operator()(const WitnessV0KeyHash& id) const
     {
         std::vector<unsigned char> data = {0};

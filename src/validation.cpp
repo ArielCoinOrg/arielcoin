@@ -6387,30 +6387,35 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
     int64_t nStart = GetTimeMillis();
 
     int nLoaded = 0;
+    std::cout << "1! " << std::endl;
     try {
         // This takes over fileIn and calls fclose() on it in the CBufferedFile destructor
         CBufferedFile blkdat(fileIn, 2*dgpMaxBlockSerSize, dgpMaxBlockSerSize+8, SER_DISK, CLIENT_VERSION);
         uint64_t nRewind = blkdat.GetPos();
         while (!blkdat.eof()) {
             if (ShutdownRequested()) return;
-
+            std::cout << "2! " << std::endl;
             blkdat.SetPos(nRewind);
             nRewind++; // start one byte further next time, in case of failure
             blkdat.SetLimit(); // remove former limit
+            std::cout << "3! " << std::endl;
             unsigned int nSize = 0;
             try {
                 // locate a header
                 unsigned char buf[CMessageHeader::MESSAGE_START_SIZE];
                 blkdat.FindByte(m_params.MessageStart()[0]);
+                std::cout << "4! " << std::endl;
                 nRewind = blkdat.GetPos()+1;
                 blkdat >> buf;
                 if (memcmp(buf, m_params.MessageStart(), CMessageHeader::MESSAGE_START_SIZE)) {
                     continue;
                 }
+                std::cout << "5! " << std::endl;
                 // read size
                 blkdat >> nSize;
                 if (nSize < 80 || nSize > dgpMaxBlockSerSize)
                     continue;
+                std::cout << "6! " << std::endl;
             } catch (const std::exception&) {
                 // no valid block header found; don't complain
                 break;
@@ -6418,6 +6423,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
             try {
                 // read block
                 uint64_t nBlockPos = blkdat.GetPos();
+                std::cout << "7! " << std::endl;
                 if (dbp)
                     dbp->nPos = nBlockPos;
                 blkdat.SetLimit(nBlockPos + nSize);
@@ -6425,6 +6431,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                 CBlock& block = *pblock;
                 blkdat >> block;
                 nRewind = blkdat.GetPos();
+                std::cout << "8! " << std::endl;
 
                 uint256 hash = block.GetHash();
                 {
@@ -6437,6 +6444,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                             mapBlocksUnknownParent.insert(std::make_pair(block.hashPrevBlock, *dbp));
                         continue;
                     }
+                    std::cout << "9! " << std::endl;
 
                     // process in case the block isn't known yet
                     CBlockIndex* pindex = m_blockman.LookupBlockIndex(hash);
@@ -6452,6 +6460,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                         LogPrint(BCLog::REINDEX, "Block Import: already had block %s at height %d\n", hash.ToString(), pindex->nHeight);
                     }
                 }
+                std::cout << "10! " << std::endl;
 
                 // In Bitcoin this only needed to be done for genesis and at the end of block indexing
                 // But for Qtum PoS we need to sync this after every block to ensure txdb is populated for
@@ -6462,6 +6471,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                         break;
                     }
                 }
+                std::cout << "11! " << std::endl;
 
                 NotifyHeaderTip(*this);
 
@@ -6469,6 +6479,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                 std::deque<uint256> queue;
                 queue.push_back(hash);
                 while (!queue.empty()) {
+                    std::cout << "12! " << std::endl;
                     uint256 head = queue.front();
                     queue.pop_front();
                     std::pair<std::multimap<uint256, FlatFilePos>::iterator, std::multimap<uint256, FlatFilePos>::iterator> range = mapBlocksUnknownParent.equal_range(head);
@@ -6490,6 +6501,7 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                         NotifyHeaderTip(*this);
                     }
                 }
+                std::cout << "13! " << std::endl;
             } catch (const std::exception& e) {
                 LogPrintf("%s: Deserialize or I/O error - %s\n", __func__, e.what());
             }

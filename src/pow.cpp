@@ -123,7 +123,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     unsigned int  bnPowLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
     std::cout<<"GetNextWorkRequired1 "<< pindexLast->nHeight <<std::endl;
     // genesis block
-    if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
+    if (pblock.nHeight == 0 || pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
         std::cout<<"GetNextWorkRequired1??? " <<std::endl;
         return bnPowLimit;
     }

@@ -119,7 +119,7 @@ inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params, bool fProofOfStake)
 {
-
+    std::cout<<"POS??? " << fProofOfStake<<std::endl;
     unsigned int  bnPowLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
 
     // genesis block

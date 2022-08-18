@@ -5219,22 +5219,18 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 
     int nHeight = pindex->nHeight;
     uint256 hash = block.GetHash();
-    std::cout<<"HASHPROOF1"<<std::endl;
 
     //reject proof of work at height consensusParams.nLastPOWBlock
     if (block.IsProofOfWork() && nHeight > consensusParams.nLastPOWBlock) {
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "reject-pow", strprintf("UpdateHashProof() : reject proof-of-work at height %d", nHeight));
     }
-    std::cout<<"HASHPROOF2"<<std::endl;
 
     // Check coinstake timestamp
     if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), nHeight, consensusParams)) {
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "timestamp-invalid", strprintf("UpdateHashProof() : coinstake timestamp violation nTimeBlock=%d", block.GetBlockTime()));
     }
-    std::cout<<"block.nBits "<< block.nBits <<std::endl;
-    std::cout<<"GetNextWorkRequired "<< GetNextWorkRequired(pindex->pprev, &block, consensusParams,block.IsProofOfStake()) <<std::endl;
 
     // Check proof-of-work or proof-of-stake
     if (block.nBits != GetNextWorkRequired(pindex->pprev, &block, consensusParams,block.IsProofOfStake())) {
@@ -5256,7 +5252,6 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 //    std::cout<<"==================================================================="<<std::endl;
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", strprintf("UpdateHashProof() : incorrect %s", block.IsProofOfWork() ? "proof-of-work" : "proof-of-stake"));
     }
-    std::cout<<"HASHPROOF4"<<std::endl;
 
     uint256 hashProof;
     // Verify hash target and signature of coinstake tx
@@ -5268,7 +5263,6 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
             return error("UpdateHashProof() : check proof-of-stake failed for block %s", hash.ToString());
         }
     }
-    std::cout<<"HASHPROOF5"<<std::endl;
 
     // PoW is checked in CheckBlock()
     if (block.IsProofOfWork())
@@ -5278,7 +5272,6 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 
     // Record proof hash value
     pindex->hashProof = hashProof;
-    std::cout<<"HASHPROOF6"<<std::endl;
     return true;
 }
 
@@ -5508,27 +5501,22 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
 
     if (fNewBlock) *fNewBlock = false;
     AssertLockHeld(cs_main);
-    std::cout << "с1"<< std::endl;
 
     CBlockIndex *pindexDummy = nullptr;
     CBlockIndex *&pindex = ppindex ? *ppindex : pindexDummy;
 
     bool accepted_header = m_blockman.AcceptBlockHeader(block, state, m_params, &pindex, *this);
     CheckBlockIndex();
-    std::cout << "с2"<< std::endl;
 
     if (!accepted_header)
         return false;
-    std::cout << "сc3"<< std::endl;
 
     if(block.IsProofOfWork()) {
-        std::cout << "сc33"<< std::endl;
         if (!UpdateHashProof(block, state, m_params.GetConsensus(), pindex, CoinsTip()))
         {
             return error("%s: AcceptBlock(): %s", __func__, state.GetRejectReason().c_str());
         }
     }
-    std::cout << "с3"<< std::endl;
     // Get prev block index
     CBlockIndex* pindexPrev = nullptr;
     if(pindex->nHeight > 0){
@@ -5537,7 +5525,6 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
             return state.Invalid(BlockValidationResult::BLOCK_MISSING_PREV, "prev-blk-not-found", strprintf("%s: prev block not found", __func__));
         pindexPrev = (*mi).second;
     }
-    std::cout << "с4"<< std::endl;
     // Get block height
     int nHeight = pindex->nHeight;
 
@@ -5565,7 +5552,6 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
             !std::equal(expect.begin(), expect.end(), block.vtx[0]->vin[0].scriptSig.begin()))
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-height", "block height mismatch in coinbase");
     }
-    std::cout << "с5"<< std::endl;
 
     // Try to process all requested blocks that we don't have, but only
     // process an unrequested block if it's new and has enough work to
@@ -5607,7 +5593,6 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
         }
         return error("%s: %s", __func__, state.ToString());
     }
-    std::cout << "с6"<< std::endl;
 
     // Header is valid/has work, merkle tree and segwit merkle tree are good...RELAY NOW
     // (but if it does not build on our best tip, let the SendMessages loop relay it)
@@ -5626,11 +5611,9 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
     } catch (const std::runtime_error& e) {
         return AbortNode(state, std::string("System error: ") + e.what());
     }
-    std::cout << "с7"<< std::endl;
     FlushStateToDisk(state, FlushStateMode::NONE);
 
     CheckBlockIndex();
-    std::cout << "с8"<< std::endl;
     return true;
 }
 
@@ -6400,35 +6383,29 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
     int64_t nStart = GetTimeMillis();
 
     int nLoaded = 0;
-    std::cout << "1! " << std::endl;
     try {
         // This takes over fileIn and calls fclose() on it in the CBufferedFile destructor
         CBufferedFile blkdat(fileIn, 2*dgpMaxBlockSerSize, dgpMaxBlockSerSize+8, SER_DISK, CLIENT_VERSION);
         uint64_t nRewind = blkdat.GetPos();
         while (!blkdat.eof()) {
             if (ShutdownRequested()) return;
-            std::cout << "2! " << std::endl;
             blkdat.SetPos(nRewind);
             nRewind++; // start one byte further next time, in case of failure
             blkdat.SetLimit(); // remove former limit
-            std::cout << "3! " << std::endl;
             unsigned int nSize = 0;
             try {
                 // locate a header
                 unsigned char buf[CMessageHeader::MESSAGE_START_SIZE];
                 blkdat.FindByte(m_params.MessageStart()[0]);
-                std::cout << "4! " << std::endl;
                 nRewind = blkdat.GetPos()+1;
                 blkdat >> buf;
                 if (memcmp(buf, m_params.MessageStart(), CMessageHeader::MESSAGE_START_SIZE)) {
                     continue;
                 }
-                std::cout << "5! " << std::endl;
                 // read size
                 blkdat >> nSize;
                 if (nSize < 80 || nSize > dgpMaxBlockSerSize)
                     continue;
-                std::cout << "6! " << std::endl;
             } catch (const std::exception&) {
                 // no valid block header found; don't complain
                 break;
@@ -6436,7 +6413,6 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
             try {
                 // read block
                 uint64_t nBlockPos = blkdat.GetPos();
-                std::cout << "7! " << std::endl;
                 if (dbp)
                     dbp->nPos = nBlockPos;
                 blkdat.SetLimit(nBlockPos + nSize);
@@ -6444,7 +6420,6 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                 CBlock& block = *pblock;
                 blkdat >> block;
                 nRewind = blkdat.GetPos();
-                std::cout << "8! " << std::endl;
 
                 uint256 hash = block.GetHash();
                 {
@@ -6457,27 +6432,21 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                             mapBlocksUnknownParent.insert(std::make_pair(block.hashPrevBlock, *dbp));
                         continue;
                     }
-                    std::cout << "9! " << std::endl;
 
                     // process in case the block isn't known yet
                     CBlockIndex* pindex = m_blockman.LookupBlockIndex(hash);
-                    std::cout << "99! " << std::endl;
                     if (!pindex || (pindex->nStatus & BLOCK_HAVE_DATA) == 0) {
                       BlockValidationState state;
-                      std::cout << "999! " << std::endl;
                       if (AcceptBlock(pblock, state, nullptr, true, dbp, nullptr)) {
                           nLoaded++;
                       }
-                      std::cout << "9999! " << std::endl;
                       if (state.IsError()) {
                           break;
                       }
-                      std::cout << "99999! " << std::endl;
                     } else if (hash != m_params.GetConsensus().hashGenesisBlock && pindex->nHeight % 1000 == 0) {
                         LogPrint(BCLog::REINDEX, "Block Import: already had block %s at height %d\n", hash.ToString(), pindex->nHeight);
                     }
                 }
-                std::cout << "10! " << std::endl;
 
                 // In Bitcoin this only needed to be done for genesis and at the end of block indexing
                 // But for Qtum PoS we need to sync this after every block to ensure txdb is populated for
@@ -6488,7 +6457,6 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                         break;
                     }
                 }
-                std::cout << "11! " << std::endl;
 
                 NotifyHeaderTip(*this);
 
@@ -6496,7 +6464,6 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                 std::deque<uint256> queue;
                 queue.push_back(hash);
                 while (!queue.empty()) {
-                    std::cout << "12! " << std::endl;
                     uint256 head = queue.front();
                     queue.pop_front();
                     std::pair<std::multimap<uint256, FlatFilePos>::iterator, std::multimap<uint256, FlatFilePos>::iterator> range = mapBlocksUnknownParent.equal_range(head);
@@ -6518,7 +6485,6 @@ void CChainState::LoadExternalBlockFile(FILE* fileIn, FlatFilePos* dbp)
                         NotifyHeaderTip(*this);
                     }
                 }
-                std::cout << "13! " << std::endl;
             } catch (const std::exception& e) {
                 LogPrintf("%s: Deserialize or I/O error - %s\n", __func__, e.what());
             }

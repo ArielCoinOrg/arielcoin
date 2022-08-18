@@ -265,6 +265,12 @@ public:
         READWRITE(obj.nTime);
         READWRITE(obj.nBits);
         READWRITE(obj.nHeight);
+        if (nSmartActivationBlock <= obj.nHeight){
+            READWRITE(obj.hashStateRoot);
+            READWRITE(obj.hashUTXORoot);
+            READWRITE(obj.prevoutStake);
+            READWRITE(obj.vchBlockSigDlgt);
+        }
     }
 };
 

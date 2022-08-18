@@ -39,6 +39,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
         if (params.fPowNoRetargeting)
             return pindexLast->nBits;
     }
+    std::cout<<"GetNextWorkRequired4"<<std::endl;
     /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     int64_t nPastBlocks = 24;
@@ -47,6 +48,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
     if (!pindexLast || pindexLast->nHeight < nPastBlocks) {
         return bnPowLimit.GetCompact();
     }
+    std::cout<<"GetNextWorkRequired5"<<std::endl;
 
     const CBlockIndex *pindex = pindexLast;
     arith_uint256 bnPastTargetAvg;
@@ -65,6 +67,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
             pindex = pindex->pprev;
         }
     }
+    std::cout<<"GetNextWorkRequired6"<<std::endl;
 
     arith_uint256 bnNew(bnPastTargetAvg);
 
@@ -80,7 +83,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
     // Retarget
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
-
+    std::cout<<"GetNextWorkRequired7"<<std::endl;
     if (bnNew > bnPowLimit) {
         bnNew = bnPowLimit;
     }
@@ -118,12 +121,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 {
 
     unsigned int  bnPowLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
-
+    std::cout<<"GetNextWorkRequired1"<<std::endl;
     // genesis block
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
         return bnPowLimit;
     }
-
+    std::cout<<"GetNextWorkRequired2"<<std::endl;
     // min difficulty
     if (params.fPowAllowMinDifficultyBlocks)
     {
@@ -143,6 +146,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
         return pindexLast->nBits;
     }
+    std::cout<<"GetNextWorkRequired3"<<std::endl;
 
     return DarkGravityWave(pindexLast, params, fProofOfStake);
 }

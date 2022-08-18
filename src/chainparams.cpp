@@ -209,11 +209,11 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x51;
-        pchMessageStart[1] = 0x42;
-        pchMessageStart[2] = 0x49;
-        pchMessageStart[3] = 0x54;
-        nDefaultPort = 8686;
+        pchMessageStart[0] = 0x55;
+        pchMessageStart[1] = 0x41;
+        pchMessageStart[2] = 0x46;
+        pchMessageStart[3] = 0x52;
+        nDefaultPort = 8383;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 0;
@@ -238,9 +238,9 @@ public:
 //        vSeeds.emplace_back("qtum5.dynu.net"); // Qtum mainnet
 //        vSeeds.emplace_back("qtum6.dynu.net"); // Qtum mainnet
 //        vSeeds.emplace_back("qtum7.dynu.net"); // Qtum mainnet
-        vSeeds.emplace_back("seed.arielcoin.org");
-        vSeeds.emplace_back("seed.qubit.black");
-        vSeeds.emplace_back("seed.qubit.red");
+//        vSeeds.emplace_back("seed.arielcoin.org");
+//        vSeeds.emplace_back("seed.qubit.black");
+//        vSeeds.emplace_back("seed.qubit.red");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,70);

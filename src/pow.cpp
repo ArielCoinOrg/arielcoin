@@ -126,7 +126,6 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast == NULL)
         return bnPowLimit;
 
-
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
         std::cout<<"GetNextWorkRequired1??? " <<std::endl;
         return bnPowLimit;

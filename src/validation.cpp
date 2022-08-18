@@ -5233,7 +5233,8 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "timestamp-invalid", strprintf("UpdateHashProof() : coinstake timestamp violation nTimeBlock=%d", block.GetBlockTime()));
     }
-    std::cout<<"HASHPROOF3" <<std::endl;
+    std::cout<<"block.nBits "<< block.nBits <<std::endl;
+    std::cout<<"GetNextWorkRequired "<< GetNextWorkRequired(pindex->pprev, &block, consensusParams,block.IsProofOfStake()) <<std::endl;
 
     // Check proof-of-work or proof-of-stake
     if (block.nBits != GetNextWorkRequired(pindex->pprev, &block, consensusParams,block.IsProofOfStake())) {

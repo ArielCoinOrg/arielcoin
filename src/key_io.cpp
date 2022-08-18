@@ -34,7 +34,7 @@ public:
 
     std::string operator()(const ScriptHash& id) const
     {
-        std::vector<unsigned char> data = m_params.Base58Prefix(CChainParams::SCRIPT_ADDRESS);
+        std::vector<unsigned char> data = m_params.Base58Prefix(CChainParams::SCRIPT_ADDRESS2);
         data.insert(data.end(), id.begin(), id.end());
         return EncodeBase58Check(data);
     }

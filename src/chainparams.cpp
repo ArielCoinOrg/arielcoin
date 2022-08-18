@@ -150,10 +150,10 @@ public:
         consensus.CSVHeight = 1; // 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5
         consensus.SegwitHeight = 1; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
-        consensus.QIP5Height = 300000;
-        consensus.QIP6Height = 300000;
-        consensus.QIP7Height = 300000;
-        consensus.QIP9Height = 300000;
+        consensus.QIP5Height = 300;
+        consensus.QIP6Height = 300;
+        consensus.QIP7Height = 300;
+        consensus.QIP9Height = 300;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 680000;
         consensus.nReduceBlocktimeHeight = 845000;

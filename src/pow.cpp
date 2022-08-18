@@ -125,7 +125,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // genesis block
     if (pindexLast == NULL)
-        return nTargetLimit;
+        return bnPowLimit;
 
 
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {

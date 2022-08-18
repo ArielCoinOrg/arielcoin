@@ -5219,18 +5219,21 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 
     int nHeight = pindex->nHeight;
     uint256 hash = block.GetHash();
+    std::cout<<"HASHPROOF1"<<std::endl;
 
     //reject proof of work at height consensusParams.nLastPOWBlock
     if (block.IsProofOfWork() && nHeight > consensusParams.nLastPOWBlock) {
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "reject-pow", strprintf("UpdateHashProof() : reject proof-of-work at height %d", nHeight));
     }
+    std::cout<<"HASHPROOF2"<<std::endl;
 
     // Check coinstake timestamp
     if (block.IsProofOfStake() && !CheckCoinStakeTimestamp(block.GetBlockTime(), nHeight, consensusParams)) {
 
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "timestamp-invalid", strprintf("UpdateHashProof() : coinstake timestamp violation nTimeBlock=%d", block.GetBlockTime()));
     }
+    std::cout<<"HASHPROOF3"<<std::endl;
 
     // Check proof-of-work or proof-of-stake
     if (block.nBits != GetNextWorkRequired(pindex->pprev, &block, consensusParams,block.IsProofOfStake())) {
@@ -5252,6 +5255,7 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 //    std::cout<<"==================================================================="<<std::endl;
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", strprintf("UpdateHashProof() : incorrect %s", block.IsProofOfWork() ? "proof-of-work" : "proof-of-stake"));
     }
+    std::cout<<"HASHPROOF4"<<std::endl;
 
     uint256 hashProof;
     // Verify hash target and signature of coinstake tx
@@ -5263,6 +5267,7 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
             return error("UpdateHashProof() : check proof-of-stake failed for block %s", hash.ToString());
         }
     }
+    std::cout<<"HASHPROOF5"<<std::endl;
 
     // PoW is checked in CheckBlock()
     if (block.IsProofOfWork())
@@ -5272,6 +5277,7 @@ bool CChainState::UpdateHashProof(const CBlock& block, BlockValidationState& sta
 
     // Record proof hash value
     pindex->hashProof = hashProof;
+    std::cout<<"HASHPROOF6"<<std::endl;
     return true;
 }
 

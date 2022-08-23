@@ -290,7 +290,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     nBlockMaxWeight = blockSizeDGP ? blockSizeDGP * WITNESS_SCALE_FACTOR : nBlockMaxWeight;
 
     if (nHeight == chainparams.GetConsensus().nSmartActivationBlock){
-        globalState->setRoot(uintToh256(m_params.HashStateRoot()));
+        globalState->setRoot(uintToh256(chainparams.HashStateRoot()));
         globalState->setRootUTXO(dev::sha3(dev::rlp("")));
     }
 

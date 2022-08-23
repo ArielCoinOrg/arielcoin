@@ -289,6 +289,11 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     nBlockMaxWeight = blockSizeDGP ? blockSizeDGP * WITNESS_SCALE_FACTOR : nBlockMaxWeight;
 
+    if (pindex->nHeight == m_params.GetConsensus().nSmartActivationBlock){
+        globalState->setRoot(m_params.HashStateRoot());
+        globalState->setRootUTXO(dev::sha3(dev::rlp("")));
+    }
+
     dev::h256 oldHashStateRoot(globalState->rootHash());
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
     ////////////////////////////////////////////////// deploy offline staking contract

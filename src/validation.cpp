@@ -3338,7 +3338,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     checkBlock.hashMerkleRoot = BlockMerkleRoot(checkBlock);
 
     if (pindex->nHeight == m_params.GetConsensus().nSmartActivationBlock){
-        globalState->setRoot(m_params.HashStateRoot());
+        globalState->setRoot(uintToh256(m_params.HashStateRoot()));
         globalState->setRootUTXO(dev::sha3(dev::rlp("")));
     }
 

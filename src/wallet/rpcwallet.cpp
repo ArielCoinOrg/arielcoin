@@ -1034,7 +1034,7 @@ static RPCHelpMan createcontract()
     int height = 0;
     getDgpData(blockGasLimit, minGasPrice, nGasPrice, &height, &chainman);
 
-    if (height < Params().GetConsensus().nSmartActivationBlock))
+    if (height < Params().GetConsensus().nSmartActivationBlock)
         throw JSONRPCError(RPC_TYPE_ERROR, "Smart contracts are not active now");
 
     LOCK(pwallet->cs_wallet);
@@ -1291,7 +1291,7 @@ UniValue SendToContract(CWallet& wallet, const UniValue& params, ChainstateManag
     int height = 0;
     getDgpData(blockGasLimit, minGasPrice, nGasPrice, &height, &chainman);
 
-    if (height < Params().GetConsensus().nSmartActivationBlock))
+    if (height < Params().GetConsensus().nSmartActivationBlock)
         throw JSONRPCError(RPC_TYPE_ERROR, "Smart contracts are not active now");
 
     std::string contractaddress = params[0].get_str();

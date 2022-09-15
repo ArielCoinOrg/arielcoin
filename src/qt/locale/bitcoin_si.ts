@@ -54,7 +54,7 @@
         <translation type="unfinished">ලබන ලිපින</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">මේවා ඔබගේ ගෙවීම් යැවීම සඳහා වන බිට්කොයින් ලිපින වේ. කාසි යැවීමට පෙර සෑම විටම මුදල සහ ලැබීමේ ලිපිනය පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
@@ -141,7 +141,7 @@
         <translation type="unfinished">පසුම්බිය සඳහා පැරණි මුරපදය සහ නව මුරපදය ඇතුළත් කරන්න.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">ඔබේ මුදල් පසුම්බිය සංකේතනය කිරීමෙන් ඔබේ පරිගණකයට අනිෂ්ට මෘදුකාංග (malware) ඇතුලු වීමෙන් කෙරෙන බිට්කොයින් සොරකම් කිරීම් වලින් සම්පූර්ණයෙන්ම වැළැක්වීම කළ නොහැකි බව මතක තබා ගන්න.</translation>
     </message>
     <message>
@@ -260,7 +260,7 @@
         <translation>තොරතුර</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

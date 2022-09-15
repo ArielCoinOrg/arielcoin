@@ -52,7 +52,7 @@ public:
 };
 
 /**
- * @brief The QtumHwiTool class Communicate with the Qtum Hardware Wallet Interface Tool
+ * @brief The QtumHwiTool class Communicate with the Ariel Hardware Wallet Interface Tool
  */
 class QtumHwiTool : public QObject
 {

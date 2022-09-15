@@ -66,13 +66,13 @@
         <translation type="unfinished">Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Estas son tus direcciones Qtum para enviar pagos. Comprueba siempre la cantidad y la dirección de recibo antes de transferir monedas.</translation>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Estas son tus direcciones Ariel para enviar pagos. Comprueba siempre la cantidad y la dirección de recibo antes de transferir monedas.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Ariel addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Estas son tus direcciones Qtum para la recepción de pagos. Usa el botón 'Crear una nueva dirección para recepción' en la pestaña Recibir para crear nuevas direcciones.
+        <translation type="unfinished">Estas son tus direcciones Ariel para la recepción de pagos. Usa el botón 'Crear una nueva dirección para recepción' en la pestaña Recibir para crear nuevas direcciones.
 Firmar solo es posible con direcciones del tipo Legacy.</translation>
     </message>
     <message>
@@ -179,8 +179,8 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Introduce la contraseña antigua y la nueva para la billetera.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Recuerda que cifrar tu billetera no garantiza la protección de tus qtums si tu ordenador es infectado con malware.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Recuerda que cifrar tu billetera no garantiza la protección de tus ariels si tu ordenador es infectado con malware.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -378,8 +378,8 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Proxy está &lt;b&gt;habilitado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar monedas a una dirección Qtum</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Enviar monedas a una dirección Ariel</translation>
     </message>
     <message>
         <source>&amp;Options…</source>
@@ -477,12 +477,12 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation>Información</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction</source>
-        <translation type="unfinished">Cargar una transacción de Qtum parcialmente firmada</translation>
+        <source>Load Partially Signed Ariel Transaction</source>
+        <translation type="unfinished">Cargar una transacción de Ariel parcialmente firmada</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction from clipboard</source>
-        <translation type="unfinished">Cargar una transacción de Qtum parcialmente firmada desde el Portapapeles</translation>
+        <source>Load Partially Signed Ariel Transaction from clipboard</source>
+        <translation type="unfinished">Cargar una transacción de Ariel parcialmente firmada desde el Portapapeles</translation>
     </message>
     <message>
         <source>Close wallet</source>
@@ -513,7 +513,7 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Minimizar</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -692,8 +692,8 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Activar el pruning reduce significativamente el espacio de disco necesario para guardar las transacciones. Todos los bloques son completamente validados de cualquier manera. Revertir esta opción requiere que descarques de nuevo toda la cadena de bloques.</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Abre el puerto del cliente de Qtum en el router automáticamente. Esto solo funciona cuando el router soporta NAT-PMP y está activo. El puerto externo podría ser elegido al azar.</translation>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished">Abre el puerto del cliente de Ariel en el router automáticamente. Esto solo funciona cuando el router soporta NAT-PMP y está activo. El puerto externo podría ser elegido al azar.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -708,8 +708,8 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Mostrar la bandeja del sistema.</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Conéctese a la red de Qtum a través de un proxy SOCKS5 separado para los servicios Tor ocultos.</translation>
+        <source>Connect to the Ariel network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Conéctese a la red de Ariel a través de un proxy SOCKS5 separado para los servicios Tor ocultos.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1101,14 +1101,14 @@ Firmar solo es posible con direcciones del tipo Legacy.</translation>
         <translation type="unfinished">Escoger dirección previamente usada</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">La comisión será deducida de la cantidad enviada. El destinatario recibirá menos qtums que la cantidad introducida en el campo Cantidad. Si hay varios destinatarios seleccionados, la comisión será distribuida a partes iguales.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less ariels than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">La comisión será deducida de la cantidad enviada. El destinatario recibirá menos ariels que la cantidad introducida en el campo Cantidad. Si hay varios destinatarios seleccionados, la comisión será distribuida a partes iguales.</translation>
     </message>
     </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive ariels sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished">Puedes firmar los mensajes con tus direcciones para demostrar que las posees. Ten cuidado de no firmar cualquier cosa vaga, ya que los ataques de phishing pueden tratar de engañarte firmando tu identidad a través de ellos. Firma solo declaraciones totalmente detalladas con las que estés de acuerdo.</translation>
     </message>
     <message>

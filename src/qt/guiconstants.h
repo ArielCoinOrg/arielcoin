@@ -45,8 +45,8 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Qtum"
-#define QAPP_ORG_DOMAIN "qtum.org"
+#define QAPP_ORG_NAME "Ariel"
+#define QAPP_ORG_DOMAIN "arielcoin.org"
 #define QAPP_APP_NAME_DEFAULT "Ariel-Qt"
 #define QAPP_APP_NAME_TESTNET "Ariel-Qt-testnet"
 #define QAPP_APP_NAME_SIGNET "Ariel-Qt-signet"

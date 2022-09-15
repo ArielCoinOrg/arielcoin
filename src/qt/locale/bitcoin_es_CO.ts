@@ -66,13 +66,13 @@
         <translation type="unfinished">Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Estas son tus direcciones de Qtum para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Estas son tus direcciones de Ariel para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Ariel addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Estas son tus direcciones Qtum para recibir pagos. Usa el botón 'Crear una nueva dirección para recibir' en la pestaña 'Recibir' para crear nuevas direcciones.
+        <translation type="unfinished">Estas son tus direcciones Ariel para recibir pagos. Usa el botón 'Crear una nueva dirección para recibir' en la pestaña 'Recibir' para crear nuevas direcciones.
 Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Ingresa la antigua frase de contraseña y la nueva frase de contraseña para la billetera.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Recuerda que cifrar tu billetera no garantiza total protección de robo de tus qtums si tu ordenador es infectado con malware.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Recuerda que cifrar tu billetera no garantiza total protección de robo de tus ariels si tu ordenador es infectado con malware.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -265,8 +265,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Cantidad</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation type="unfinished">Ingresa una dirección de Qtum (Ejemplo: %1)</translation>
+        <source>Enter a Ariel address (e.g. %1)</source>
+        <translation type="unfinished">Ingresa una dirección de Ariel (Ejemplo: %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -391,8 +391,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Proxy &lt;b&gt;habilitado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar monedas a una dirección qtum</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Enviar monedas a una dirección ariel</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -435,7 +435,7 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Firmar &amp;mensaje...</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -443,8 +443,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Qtum concretas</translation>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones Ariel concretas</translation>
     </message>
     <message>
         <source>Close Wallet…</source>
@@ -475,8 +475,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Pide pagos (genera codigos QR and qtum: URls)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="unfinished">Pide pagos (genera codigos QR and ariel: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -522,8 +522,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>Actualizado</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction from clipboard</source>
-        <translation type="unfinished">Cargar una transacción de Qtum parcialmente firmada desde el Portapapeles</translation>
+        <source>Load Partially Signed Ariel Transaction from clipboard</source>
+        <translation type="unfinished">Cargar una transacción de Ariel parcialmente firmada desde el Portapapeles</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -542,8 +542,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">&amp;Direcciones de entrega</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation type="unfinished">Abrir un qtum: URI</translation>
+        <source>Open a ariel: URI</source>
+        <translation type="unfinished">Abrir un ariel: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -562,8 +562,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Cerrar todas las billeteras</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation type="unfinished">Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de Qtum</translation>
+        <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
+        <translation type="unfinished">Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de Ariel</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -595,7 +595,7 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">%1 cliente</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -925,8 +925,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Editar dirección de envio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">La dirección introducida "%1" no es una dirección Qtum valida.</translation>
+        <source>The entered address "%1" is not a valid Ariel address.</source>
+        <translation type="unfinished">La dirección introducida "%1" no es una dirección Ariel valida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -979,8 +979,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation type="unfinished">%1 descargará y almacenará una copia del blockchain de Qtum.</translation>
+        <source>%1 will download and store a copy of the Ariel block chain.</source>
+        <translation type="unfinished">%1 descargará y almacenará una copia del blockchain de Ariel.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1056,12 +1056,12 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Formulario</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
-        <translation type="unfinished">Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de qtum, como se detalla abajo.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ariel network, as detailed below.</source>
+        <translation type="unfinished">Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de ariel, como se detalla abajo.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">La red no aceptará el intentar gastar qtums que están afectados por transacciones aún no mostradas.</translation>
+        <source>Attempting to spend ariels that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">La red no aceptará el intentar gastar ariels que están afectados por transacciones aún no mostradas.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1175,8 +1175,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Gastar cambio sin confirmar</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Qtum en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente Ariel en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1191,8 +1191,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Permitir conexiones entrantes</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Conectar a la red de Qtum a través de un proxy SOCKS5</translation>
+        <source>Connect to the Ariel network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Conectar a la red de Ariel a través de un proxy SOCKS5</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1311,8 +1311,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Qtum después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Ariel después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1409,16 +1409,16 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Error en la solicitud de pago</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation type="unfinished">No se puede iniciar Qtum: controlador de clic para pagar</translation>
+        <source>Cannot start ariel: click-to-pay handler</source>
+        <translation type="unfinished">No se puede iniciar Ariel: controlador de clic para pagar</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Manejo de URI</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation type="unfinished">¡URI no puede ser analizado! Esto puede deberse a una dirección de Qtum no válida o a parámetros de URI mal formados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Ariel address or malformed URI parameters.</source>
+        <translation type="unfinished">¡URI no puede ser analizado! Esto puede deberse a una dirección de Ariel no válida o a parámetros de URI mal formados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1703,8 +1703,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">&amp;mensaje</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation type="unfinished">Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Qtum.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ariel network.</source>
+        <translation type="unfinished">Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Ariel.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2040,8 +2040,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">Peligro: Dirección de Qtum inválida</translation>
+        <source>Warning: Invalid Ariel address</source>
+        <translation type="unfinished">Peligro: Dirección de Ariel inválida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2079,8 +2079,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation type="unfinished">Seleccionar dirección usada anteriormente</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation type="unfinished">Dirección Qtum a enviar el pago</translation>
+        <source>The Ariel address to send the payment to</source>
+        <translation type="unfinished">Dirección Ariel a enviar el pago</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2130,8 +2130,8 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation type="unfinished">Dirección Qtum con la que firmar el mensaje</translation>
+        <source>The Ariel address to sign the message with</source>
+        <translation type="unfinished">Dirección Ariel con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2154,7 +2154,7 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
+        <source>Sign the message to prove you own this Ariel address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -2174,12 +2174,12 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
         <translation>&amp;Firmar Mensaje</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation type="unfinished">La dirección Qtum con la que se firmó el mensaje</translation>
+        <source>The Ariel address the message was signed with</source>
+        <translation type="unfinished">La dirección Ariel con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección de Qtum especificada.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ariel address</source>
+        <translation>Verifica el mensaje para asegurar que fue firmado con la dirección de Ariel especificada.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

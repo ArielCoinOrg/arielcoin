@@ -42,7 +42,7 @@
         <translation>&amp;Dele</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">Hae sunt inscriptiones mittendi pensitationes.  Semper inspice quantitatem et inscriptionem accipiendi antequam nummos mittis.</translation>
     </message>
     <message>
@@ -267,8 +267,8 @@
         <translation type="unfinished">Creare novum casidillium</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Mitte nummos ad inscriptionem Qtum</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Mitte nummos ad inscriptionem Ariel</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -299,12 +299,12 @@
         <translation>Cifra claves privatas quae cassidili tui sunt</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus Qtum ut demonstres te eas possidere</translation>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus Ariel ut demonstres te eas possidere</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Qtum</translation>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Ariel</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -362,7 +362,7 @@
         <translation type="unfinished">&amp;Fenestra</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -451,8 +451,8 @@
         <translation type="unfinished">Muta inscriptionem mittendi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Inscriptio inserta "%1" non valida inscriptio Qtum est.</translation>
+        <source>The entered address "%1" is not a valid Ariel address.</source>
+        <translation type="unfinished">Inscriptio inserta "%1" non valida inscriptio Ariel est.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -523,8 +523,8 @@
         <translation type="unfinished">Cassidile</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis Qtum in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis Ariel in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -598,8 +598,8 @@
         <translation>Schema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Qtum postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Ariel postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -613,8 +613,8 @@
 <context>
     <name>PaymentServer</name>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation type="unfinished">Qtum incipere non potest: cliccare-ad-pensandum handler</translation>
+        <source>Cannot start ariel: click-to-pay handler</source>
+        <translation type="unfinished">Ariel incipere non potest: cliccare-ad-pensandum handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -902,8 +902,8 @@
         <translation>Copia signationem in latibulum systematis</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem Qtum a te possessa esse</translation>
+        <source>Sign the message to prove you own this Ariel address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem Ariel a te possessa esse</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -922,8 +922,8 @@
         <translation>&amp;Verifica Nuntium</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Qtum</translation>
+        <source>Verify the message to ensure it was signed with the specified Ariel address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Ariel</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

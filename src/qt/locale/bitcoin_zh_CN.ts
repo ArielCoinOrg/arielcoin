@@ -147,11 +147,11 @@
         <translation>收款地址</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>您可以给这些QTUM地址付款。在付款之前，务必要检查金额和收款地址是否正确。</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Ariel addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>您可以用这些QTUM地址收款。使用“接收”标签页中的"创建新收款地址"按钮创建新地址。
 只有“传统（legacy）”类型的地址支持签名。</translation>
@@ -265,7 +265,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>输入此钱包的旧密码和新密码。</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
         <translation>请注意，当您的计算机感染恶意软件时，加密钱包并不能完全规避您的QTUM被偷窃的可能。</translation>
     </message>
     <message>
@@ -366,7 +366,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">发送(&amp;S)</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
+        <source>Send coins to a Ariel address</source>
         <translation type="unfinished">向一个QTUM地址发送QTUM</translation>
     </message>
     <message>
@@ -374,8 +374,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">接收(&amp;R)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">请求支付 (生成二维码和 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="unfinished">请求支付 (生成二维码和 ariel: URI)</translation>
     </message>
     <message>
         <source>Smart &amp;Contracts</source>
@@ -514,7 +514,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">签名消息(&amp;M)</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
         <translation type="unfinished">用QTUM地址关联的私钥为消息签名，以证明您拥有这个QTUM地址</translation>
     </message>
     <message>
@@ -522,7 +522,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">验证消息(&amp;V)</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
         <translation type="unfinished">校验消息，确保该消息是由指定的QTUM地址所有者签名的</translation>
     </message>
     <message>
@@ -538,8 +538,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">接收地址</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>打开qtum:开头的URI</translation>
+        <source>Open a ariel: URI</source>
+        <translation>打开ariel:开头的URI</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -586,7 +586,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">命令行选项(&amp;C)</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
         <translation type="unfinished">显示 %1 帮助信息，获取可用命令行选项列表</translation>
     </message>
     <message>
@@ -650,8 +650,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">钱包：</translation>
     </message>
     <message>
-        <source>New version of Qtum wallet is available on the Qtum source code repository: &lt;br /&gt; %1. &lt;br /&gt;It is recommended to download it and update this application</source>
-        <translation type="unfinished">可以通过Qtum源代码仓库获得新版Qtum钱包。建议下载并升级应用。</translation>
+        <source>New version of Ariel wallet is available on the Ariel source code repository: &lt;br /&gt; %1. &lt;br /&gt;It is recommended to download it and update this application</source>
+        <translation type="unfinished">可以通过Ariel源代码仓库获得新版Ariel钱包。建议下载并升级应用。</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -662,7 +662,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 客户端</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform>%n 条到QTUM网络的活动连接</numerusform>
@@ -731,7 +731,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>从文件加载PSBT(&amp;L)...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction</source>
+        <source>Load Partially Signed Ariel Transaction</source>
         <translation>加载部分签名QTUM交易（PSBT）</translation>
     </message>
     <message>
@@ -739,7 +739,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>从剪贴板加载PSBT...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction from clipboard</source>
+        <source>Load Partially Signed Ariel Transaction from clipboard</source>
         <translation>从剪贴板中加载部分签名QTUM交易（PSBT）</translation>
     </message>
     <message>
@@ -1345,8 +1345,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">合约的字节码</translation>
     </message>
     <message>
-        <source>The qtum address that will be used to create the contract.</source>
-        <translation type="unfinished">用于创造合约的Qtum地址</translation>
+        <source>The ariel address that will be used to create the contract.</source>
+        <translation type="unfinished">用于创造合约的Ariel地址</translation>
     </message>
     <message>
         <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
@@ -1507,7 +1507,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>编辑付款地址</translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Qtum address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Ariel address.</source>
         <translation>输入的地址 %1 并不是有效的QTUM地址。</translation>
     </message>
     <message>
@@ -1671,7 +1671,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
+        <source>%1 will download and store a copy of the Ariel block chain.</source>
         <translation>%1 将会下载并存储QTUM区块链。</translation>
     </message>
     <message>
@@ -1710,11 +1710,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>表单</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ariel network, as detailed below.</source>
         <translation>近期交易可能尚未显示，因此当前余额可能不准确。以上信息将在与QTUM网络完全同步后更正。详情如下</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend ariels that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>尝试使用受未可见交易影响的余额将不被网络接受。</translation>
     </message>
     <message>
@@ -1778,7 +1778,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
+        <source>Open ariel URI</source>
         <translation>打开QTUM URI</translation>
     </message>
 </context>
@@ -1890,10 +1890,10 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Full path to a Arielcoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation>指向兼容Qtum Core的脚本的完整路径 (例如 C:\Downloads\hwi.exe 或者 /Users/you/Downloads/hwi.py )。注意: 恶意软件可能会偷窃您的币！</translation>
+        <translation>指向兼容Ariel Core的脚本的完整路径 (例如 C:\Downloads\hwi.exe 或者 /Users/you/Downloads/hwi.py )。注意: 恶意软件可能会偷窃您的币！</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>自动在路由器中打开QTUM端口。只有当您的路由器开启了 UPnP 选项时此功能才有效。</translation>
     </message>
     <message>
@@ -1901,7 +1901,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>使用 &amp;UPnP 映射端口</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
         <translation>自动在路由器中为QTUM客户端打开端口。只有当您的路由器支持 NAT-PMP 功能并开启它，这个功能才会正常工作。外边端口可以是随机的。</translation>
     </message>
     <message>
@@ -1917,7 +1917,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>允许流入连接(&amp;G)</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
+        <source>Connect to the Ariel network through a SOCKS5 proxy.</source>
         <translation>通过 SOCKS5 代理连接QTUM网络。</translation>
     </message>
     <message>
@@ -1989,7 +1989,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>是否需要交易源地址控制功能。</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <source>Connect to the Ariel network through a separate SOCKS5 proxy for Tor onion services.</source>
         <translation>连接QTUM网络时专门为Tor onion服务使用另一个 SOCKS5 代理。</translation>
     </message>
     <message>
@@ -2121,7 +2121,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>表单</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
         <translation>现在显示的消息可能是过期的。在连接上QTUM网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成。</translation>
     </message>
     <message>
@@ -2374,8 +2374,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>要求付款时发生错误</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>无法启动 qtum 协议的“
+        <source>Cannot start ariel: click-to-pay handler</source>
+        <translation>无法启动 ariel 协议的“
 一键支付”处理器</translation>
     </message>
     <message>
@@ -2383,8 +2383,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>URI 处理</translation>
     </message>
     <message>
-        <source>'qtum://' is not a valid URI. Use 'qtum:' instead.</source>
-        <translation>‘qtum://’不是合法的URI。请改用'qtum:'。</translation>
+        <source>'ariel://' is not a valid URI. Use 'ariel:' instead.</source>
+        <translation>‘ariel://’不是合法的URI。请改用'ariel:'。</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2399,7 +2399,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation>你正在使用BIP70 URL，它在未来会被终止支持。</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Ariel address or malformed URI parameters.</source>
         <translation>无法解析 URI 地址！可能是因为QTUM地址无效，或是 URI 参数格式错误。</translation>
     </message>
     <message>
@@ -2468,7 +2468,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Ariel address (e.g. %1)</source>
         <translation>请输入一个QTUM地址 (例如 %1)</translation>
     </message>
     <message>
@@ -2821,7 +2821,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="vanished">代理已被&lt;b&gt;启用&lt;/b&gt;：%1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
+        <source>Send coins to a Ariel address</source>
         <translation type="vanished">向一个QTUM地址发送QTUM</translation>
     </message>
     <message>
@@ -2861,11 +2861,11 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="vanished">对钱包中的私钥加密</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
         <translation type="vanished">用QTUM地址关联的私钥为消息签名，以证明您拥有这个QTUM地址</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
         <translation type="vanished">校验消息，确保该消息是由指定的QTUM地址所有者签名的</translation>
     </message>
     <message>
@@ -2885,8 +2885,8 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="vanished">分页工具栏</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="vanished">请求支付 (生成二维码和 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="vanished">请求支付 (生成二维码和 ariel: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -2901,7 +2901,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="vanished">命令行选项(&amp;C)</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <translation type="vanished">
             <numerusform>%n 条到QTUM网络的活动连接</numerusform>
         </translation>
@@ -2953,7 +2953,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation>从文件加载PSBT...(&amp;L)</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction</source>
+        <source>Load Partially Signed Ariel Transaction</source>
         <translation>加载部分签名QTUM交易（PSBT）</translation>
     </message>
     <message>
@@ -2961,7 +2961,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation>从剪贴板加载PSBT...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Qtum Transaction from clipboard</source>
+        <source>Load Partially Signed Ariel Transaction from clipboard</source>
         <translation>从剪贴板中加载部分签名QTUM交易（PSBT）</translation>
     </message>
     <message>
@@ -2985,8 +2985,8 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="vanished">收款地址(&amp;R)</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>打开qtum:开头的URI</translation>
+        <source>Open a ariel: URI</source>
+        <translation>打开ariel:开头的URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -3013,7 +3013,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation>关闭所有钱包</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
         <translation type="vanished">显示 %1 帮助信息，获取可用命令行选项列表</translation>
     </message>
     <message>
@@ -3553,7 +3553,7 @@ For more information on using this console, type %6.
         <translation>消息(&amp;M)：</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ariel network.</source>
         <translation>可在付款请求上备注一条信息，在打开付款请求时可以看到。注意：该消息不是通过QTUM网络传送。</translation>
     </message>
     <message>
@@ -3976,7 +3976,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>隐藏交易手续费设置</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for ariel transactions than the network can process.</source>
         <translation>当交易量小于可用区块空间时，矿工和中继节点可能会执行最低手续费率限制。按照这个最低费率来支付手续费也是可以的，但请注意，一旦交易需求超出QTUM网络能处理的限度，你的交易可能永远也无法确认。</translation>
     </message>
     <message>
@@ -4062,7 +4062,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>创建未签名交易(&amp;E)</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Creates a Partially Signed Ariel Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>创建一个“部分签名QTUM交易”（PSBT），以用于诸如离线%1钱包，或是兼容PSBT的硬件钱包这类用途。</translation>
     </message>
     <message>
@@ -4129,7 +4129,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>你可以之后再提高手续费（有BIP-125手续费追加的标记）</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Ariel Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>请务必仔细检查您的交易请求。这会产生一个部分签名QTUM交易(PSBT)，可以把保存下来或复制出去，然后就可以对它进行签名，比如用离线%1钱包，或是用兼容PSBT的硬件钱包。</translation>
     </message>
     <message>
@@ -4207,7 +4207,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid Ariel address</source>
         <translation>警告: QTUM地址无效</translation>
     </message>
     <message>
@@ -4258,7 +4258,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>选择以前用过的地址</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
+        <source>The Ariel address to send the payment to</source>
         <translation>付款目的地址</translation>
     </message>
     <message>
@@ -4274,7 +4274,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>用被选单位表示的待发送金额</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less ariels than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>交易费将从发送总额中扣除。接收人将收到比您在金额框中输入的更少的QTUM。如果选中了多个收件人，交易费平分。</translation>
     </message>
     <message>
@@ -4302,8 +4302,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>请为此地址输入一个标签以将它加入用过的地址列表</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>qtum:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过QTUM网络传输。</translation>
+        <source>A message that was attached to the ariel: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ariel network.</source>
+        <translation>ariel:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过QTUM网络传输。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -4393,7 +4393,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">要发送的QTUM数量。默认为0。</translation>
     </message>
     <message>
-        <source>The qtum address that will be used as sender.</source>
+        <source>The ariel address that will be used as sender.</source>
         <translation type="unfinished">将作为发送者的QTUM地址</translation>
     </message>
     <message>
@@ -4534,11 +4534,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>签名消息(&amp;S)</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive ariels sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>您可以用你的地址对消息/协议进行签名，以证明您可以接收发送到该地址的QTUM。注意不要对任何模棱两可或者随机的消息进行签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
+        <source>The Ariel address to sign the message with</source>
         <translation>用来对消息签名的地址</translation>
     </message>
     <message>
@@ -4562,7 +4562,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>复制当前签名至剪切板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
+        <source>Sign the message to prove you own this Ariel address</source>
         <translation>签名消息，证明这个地址属于您。</translation>
     </message>
     <message>
@@ -4586,7 +4586,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>请在下面输入接收者地址、消息（确保换行符、空格符、制表符等完全相同）和签名以验证消息。请仔细核对签名信息，以提防中间人攻击。请注意，这只是证明接收方签名的地址，它不能证明任何交易！</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
+        <source>The Ariel address the message was signed with</source>
         <translation>消息使用的签名地址</translation>
     </message>
     <message>
@@ -4598,7 +4598,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>对消息进行签署得到的签名数据</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
+        <source>Verify the message to ensure it was signed with the specified Ariel address</source>
         <translation>验证消息，确保消息是由指定的QTUM地址签名过的。</translation>
     </message>
     <message>

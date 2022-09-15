@@ -66,8 +66,8 @@
         <translation type="unfinished">Vastuvõtvad aadressid</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Need on sinu Qtum aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Need on sinu Ariel aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -178,8 +178,8 @@
         <translation type="unfinished">Sisesta rahakoti vana salafraas ja uus salafraas.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista qtumide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Pea meeles, et rahakoti krüpteerimine ei välista arielide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -368,8 +368,8 @@
         <translation type="unfinished">Rahakott:</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Saada münte Qtumi aadressile</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Saada münte Arieli aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -404,12 +404,12 @@
         <translation>Krüpteeri oma rahakoti privaatvõtmed</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Qtumi aadressiga</translation>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Arieli aadressiga</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Qtumi aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Arieli aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -428,8 +428,8 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja qtumi: URId)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="unfinished">Loo maksepäring (genereerib QR koodid ja arieli: URId)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -479,7 +479,7 @@
         <translation type="unfinished">%1 klient</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -678,8 +678,8 @@
         <translation type="unfinished">Muuda saatvat aadressi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Sisestatud aadress "%1" ei ole korrektne Qtum aadress.</translation>
+        <source>The entered address "%1" is not a valid Ariel address.</source>
+        <translation type="unfinished">Sisestatud aadress "%1" ei ole korrektne Ariel aadress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -780,8 +780,8 @@
         <translation type="unfinished">Ekspert</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Qtumi kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Arieli kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -859,8 +859,8 @@
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Qtum võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
+        <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Ariel võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -901,8 +901,8 @@
         <translation type="unfinished">Maksepäringu tõrge</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation type="unfinished">Qtum ei käivitu: vajuta-maksa toiming</translation>
+        <source>Cannot start ariel: click-to-pay handler</source>
+        <translation type="unfinished">Ariel ei käivitu: vajuta-maksa toiming</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1306,8 +1306,8 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">Hoiatus: Ebakorrektne Qtum aadress</translation>
+        <source>Warning: Invalid Ariel address</source>
+        <translation type="unfinished">Hoiatus: Ebakorrektne Ariel aadress</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1360,8 +1360,8 @@
         <translation>&amp;Allkirjastamise teade</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation type="unfinished">Qtum aadress millega sõnum allkirjastada</translation>
+        <source>The Ariel address to sign the message with</source>
+        <translation type="unfinished">Ariel aadress millega sõnum allkirjastada</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1384,8 +1384,8 @@
         <translation>Kopeeri praegune signatuur vahemällu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Allkirjasta sõnum Qtumi aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this Ariel address</source>
+        <translation>Allkirjasta sõnum Arieli aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1404,12 +1404,12 @@
         <translation>&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation type="unfinished">Qtum aadress millega sõnum on allkirjastatud</translation>
+        <source>The Ariel address the message was signed with</source>
+        <translation type="unfinished">Ariel aadress millega sõnum on allkirjastatud</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Qtumi aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ariel address</source>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Arieli aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

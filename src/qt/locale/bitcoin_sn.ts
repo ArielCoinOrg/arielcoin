@@ -67,8 +67,8 @@
         <translation type="unfinished">Marii</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation type="unfinished">Nyora kero ye Qtum (sekuti %1)</translation>
+        <source>Enter a Ariel address (e.g. %1)</source>
+        <translation type="unfinished">Nyora kero ye Ariel (sekuti %1)</translation>
     </message>
     <message>
         <source>None</source>
@@ -183,7 +183,7 @@
         <translation>Ruzivo</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

@@ -66,7 +66,7 @@
         <translation type="unfinished">接收地址</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">这些是你的比特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
@@ -173,7 +173,7 @@
         <translation type="unfinished">输入钱包的旧密码和新密码。</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">记住，加密您的钱包并不能完全保护您的比特币不被您电脑中的恶意软件窃取。</translation>
     </message>
     <message>
@@ -335,7 +335,7 @@
         <translation type="unfinished">启用代理:%1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
+        <source>Send coins to a Ariel address</source>
         <translation>发送比特币到一个比特币地址</translation>
     </message>
     <message>
@@ -367,11 +367,11 @@
         <translation>加密您的钱包私钥</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
         <translation>用您的比特币地址签名信息，以证明拥有它们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
         <translation>验证消息，确保它们是用指定的比特币地址签名的</translation>
     </message>
     <message>
@@ -391,7 +391,7 @@
         <translation>标签工具栏</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
         <translation type="unfinished">请求支付(生成二维码和比特币链接)</translation>
     </message>
     <message>
@@ -457,7 +457,7 @@
         <translation type="unfinished">&amp;接受地址</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
+        <source>Open a ariel: URI</source>
         <translation type="unfinished">打开比特币: URI</translation>
     </message>
     <message>
@@ -473,8 +473,8 @@
         <translation type="unfinished">关闭钱包</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation type="unfinished">显示%1帮助消息以获得可能包含Qtum命令行选项的列表</translation>
+        <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
+        <translation type="unfinished">显示%1帮助消息以获得可能包含Ariels命令行选项的列表</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -505,7 +505,7 @@
         <translation type="unfinished">%1 客户端</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -779,7 +779,7 @@
         <translation type="unfinished">编辑发送地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
+        <source>The entered address "%1" is not a valid Ariel address.</source>
         <translation type="unfinished">输入的地址"%1"不是有效的比特币地址。</translation>
     </message>
     <message>
@@ -1098,7 +1098,7 @@
         <translation type="unfinished">粉尘：</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for ariel transactions than the network can process.</source>
         <translation type="unfinished">当交易量小于块的空间时，矿工和中继节点可以强制执行最低费用。只付最低费用就可以了，但注意，一旦比特币交易的需求超出网络的处理能力，就可能导致交易无法确认。</translation>
     </message>
     <message>
@@ -1192,7 +1192,7 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid Ariel address</source>
         <translation type="unfinished">警告：比特币地址无效</translation>
     </message>
     <message>
@@ -1215,11 +1215,11 @@
         <translation type="unfinished">选择以前使用的地址</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
+        <source>The Ariel address to send the payment to</source>
         <translation type="unfinished">支付到的比特币地址</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less ariels than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished">手续费将从发出的总额中扣除。接受者收到的比特币将少于你输入的金额字段。如果选择了多个接受者，手续费将平均分配。</translation>
     </message>
     <message>
@@ -1231,7 +1231,7 @@
         <translation type="unfinished">输入此地址的标签，将其添加到使用的地址列表中</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
+        <source>A message that was attached to the ariel: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ariel network.</source>
         <translation type="unfinished">附在比特币上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过比特币网络发送。</translation>
     </message>
     </context>

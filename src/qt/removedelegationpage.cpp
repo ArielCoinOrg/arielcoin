@@ -82,7 +82,7 @@ void RemoveDelegationPage::setModel(WalletModel *_model)
 
     if (bCreateUnsigned) {
         ui->removeDelegationButton->setText(tr("Cr&eate Unsigned"));
-        ui->removeDelegationButton->setToolTip(tr("Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
+        ui->removeDelegationButton->setToolTip(tr("Creates a Partially Signed Ariel Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
     }
 }
 
@@ -219,7 +219,7 @@ void RemoveDelegationPage::on_removeDelegationClicked()
         if (bCreateUnsigned) {
             questionString.append(tr("Do you want to draft this transaction?"));
             questionString.append("<br /><span style='font-size:10pt;'>");
-            questionString.append(tr("Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
+            questionString.append(tr("Please, review your transaction proposal. This will produce a Partially Signed Ariel Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
             questionString.append("</span>");
             questionString.append(tr("<br /><br />Remove delegation for address:<br />"));
         } else {

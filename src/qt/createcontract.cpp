@@ -123,7 +123,7 @@ void CreateContract::setModel(WalletModel *_model)
 
     if (bCreateUnsigned) {
         ui->pushButtonCreateContract->setText(tr("Cr&eate Unsigned"));
-        ui->pushButtonCreateContract->setToolTip(tr("Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
+        ui->pushButtonCreateContract->setToolTip(tr("Creates a Partially Signed Ariel Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
     }
 }
 
@@ -214,7 +214,7 @@ void CreateContract::on_createContractClicked()
         if (bCreateUnsigned) {
             questionString.append(tr("Do you want to draft this create contract transaction?"));
             questionString.append("<br /><span style='font-size:10pt;'>");
-            questionString.append(tr("This will produce a Partially Signed Qtum Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
+            questionString.append(tr("This will produce a Partially Signed Ariel Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.").arg(PACKAGE_NAME));
             questionString.append("</span>");
         } else {
             questionString.append(tr("Are you sure you want to create contract? <br />"));

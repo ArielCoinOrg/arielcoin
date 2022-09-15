@@ -66,8 +66,8 @@
         <translation type="unfinished">Enderezos de recepción</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Estes son os teus enderezos de Qtum para enviar pagamentos. Asegurate sempre de comprobar a cantidade e maila dirección antes de enviar moedas.</translation>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Estes son os teus enderezos de Ariel para enviar pagamentos. Asegurate sempre de comprobar a cantidade e maila dirección antes de enviar moedas.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -173,8 +173,8 @@
         <translation type="unfinished">Introduce a frase contrasinal anterior mais a nova frase contrasinal para a carteira.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Recorda que encriptar a tua carteira non protexe completamente que os teus qtums poidan ser roubados por malware que afecte ó teu computador.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Recorda que encriptar a tua carteira non protexe completamente que os teus ariels poidan ser roubados por malware que afecte ó teu computador.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -345,8 +345,8 @@
         <translation type="unfinished">Proxy &lt;b&gt;activado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Envía moedas a un enderezo de Qtum</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Envía moedas a un enderezo de Ariel</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -377,12 +377,12 @@
         <translation>Encripta as claves privadas que pertencen á túa carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Asina mensaxes cos teus enderezos de Qtum para probar que che pertencen</translation>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
+        <translation>Asina mensaxes cos teus enderezos de Ariel para probar que che pertencen</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifica mensaxes para asegurar que foron asinados cos enderezos de Qtum especificados</translation>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
+        <translation>Verifica mensaxes para asegurar que foron asinados cos enderezos de Ariel especificados</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -401,8 +401,8 @@
         <translation>Barra de ferramentas das pestanas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Solicita pagamentos (xera un código QR e qtum : URIs)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="unfinished">Solicita pagamentos (xera un código QR e ariel : URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -464,8 +464,8 @@
         <translation type="unfinished">&amp;Enderezos de recepción</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation type="unfinished">Abre una URI de Qtum</translation>
+        <source>Open a ariel: URI</source>
+        <translation type="unfinished">Abre una URI de Ariel</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -480,8 +480,8 @@
         <translation type="unfinished">Pechar carteira</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation type="unfinished">Mostra a %1 mensaxe de axuda para obter unha lista cas posibles opcións de línea de comando de Qtum </translation>
+        <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
+        <translation type="unfinished">Mostra a %1 mensaxe de axuda para obter unha lista cas posibles opcións de línea de comando de Ariel </translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -508,7 +508,7 @@
         <translation type="unfinished">%1 cliente</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -806,8 +806,8 @@
         <translation type="unfinished">Editar enderezo de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">O enderezo introducido "%1" non é un enderezo de Qtum válido.</translation>
+        <source>The entered address "%1" is not a valid Ariel address.</source>
+        <translation type="unfinished">O enderezo introducido "%1" non é un enderezo de Ariel válido.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>

@@ -47,11 +47,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation type="unfinished">Izvēlies adresi uz kuru sūtīt qtums</translation>
+        <translation type="unfinished">Izvēlies adresi uz kuru sūtīt ariels</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation type="unfinished">Izvēlies adresi ar kuru saņemt qtums</translation>
+        <translation type="unfinished">Izvēlies adresi ar kuru saņemt ariels</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -66,8 +66,8 @@
         <translation type="unfinished">Adrešu saņemšana</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Šīs ir jūsu Qtum adreses, kuras izmantojamas maksājumu veikšanai. Vienmēr pārbaudiet summu un saņēmēja adresi pirms monētu nosūtīšanas.</translation>
+        <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Šīs ir jūsu Ariel adreses, kuras izmantojamas maksājumu veikšanai. Vienmēr pārbaudiet summu un saņēmēja adresi pirms monētu nosūtīšanas.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -299,8 +299,8 @@
         <translation type="unfinished">Maciņš:</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Nosūtīt bitkoinus uz Qtum adresi</translation>
+        <source>Send coins to a Ariel address</source>
+        <translation>Nosūtīt bitkoinus uz Ariel adresi</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -331,12 +331,12 @@
         <translation>Šifrēt privātās atslēgas kuras pieder tavam maciņam</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Parakstīt ziņojumus ar savām Qtum adresēm lai pierādītu ka tās pieder tev</translation>
+        <source>Sign messages with your Ariel addresses to prove you own them</source>
+        <translation>Parakstīt ziņojumus ar savām Ariel adresēm lai pierādītu ka tās pieder tev</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Qtum adresēm</translation>
+        <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
+        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Ariel adresēm</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -355,8 +355,8 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Pieprasīt maksājumus (izveido QR kodu un qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and ariel: URIs)</source>
+        <translation type="unfinished">Pieprasīt maksājumus (izveido QR kodu un ariel: URIs)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -399,7 +399,7 @@
         <translation type="unfinished">&amp;Logs</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network.</source>
+        <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -629,15 +629,15 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation type="unfinished">Ieslēgt qtum &amp;kontroles funkcijas</translation>
+        <translation type="unfinished">Ieslēgt ariel &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
         <translation type="unfinished">&amp;Tērēt neapstiprinātu atlikumu</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Uz rūtera automātiski atvērt Qtum klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
+        <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Uz rūtera automātiski atvērt Ariel klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -689,7 +689,7 @@
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation type="unfinished">Vai rādīt Qtum kontroles funkcijas vai nē.</translation>
+        <translation type="unfinished">Vai rādīt Ariel kontroles funkcijas vai nē.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -727,8 +727,8 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Qtum tīklu, taču šis process vēl nav beidzies.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
+        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Ariel tīklu, taču šis process vēl nav beidzies.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -936,7 +936,7 @@
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation type="unfinished">Qtum Kontroles Funkcijas</translation>
+        <translation type="unfinished">Ariel Kontroles Funkcijas</translation>
     </message>
     <message>
         <source>automatically selected</source>
@@ -1089,8 +1089,8 @@
         <translation>Kopēt parakstu uz sistēmas starpliktuvi</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Qtum adreses īpašnieks.</translation>
+        <source>Sign the message to prove you own this Ariel address</source>
+        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Ariel adreses īpašnieks.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>

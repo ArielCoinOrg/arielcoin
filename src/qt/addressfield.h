@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2017 The Qtum Core developers
+// Copyright (c) 2016-2017 The Ariel Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -41,8 +41,8 @@ public:
      * @return Address type
      */
     AddressType addressType() const
-    { 
-        return m_addressType; 
+    {
+        return m_addressType;
     }
 
     /**

@@ -98,29 +98,29 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += qtumd
+  bin_PROGRAMS += arield
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += qtum-node
+  bin_PROGRAMS += ariel-node
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += qtum-cli
+  bin_PROGRAMS += ariel-cli
 endif
 
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += qtum-tx
+  bin_PROGRAMS += ariel-tx
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += qtum-wallet
+  bin_PROGRAMS += ariel-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += qtum-util
+  bin_PROGRAMS += ariel-util
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -950,29 +950,29 @@ qtum_bin_ldadd = \
 
 qtum_bin_ldadd += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS) $(GMP_LIBS) $(GMPXX_LIBS)
 
-qtumd_SOURCES = $(qtum_daemon_sources) init/bitcoind.cpp
-qtumd_CPPFLAGS = $(qtum_bin_cppflags)
-qtumd_CXXFLAGS = $(qtum_bin_cxxflags)
-qtumd_LDFLAGS = $(qtum_bin_ldflags)
-qtumd_LDADD = $(LIBBITCOIN_SERVER) $(qtum_bin_ldadd)
+arield_SOURCES = $(qtum_daemon_sources) init/bitcoind.cpp
+arield_CPPFLAGS = $(qtum_bin_cppflags)
+arield_CXXFLAGS = $(qtum_bin_cxxflags)
+arield_LDFLAGS = $(qtum_bin_ldflags)
+arield_LDADD = $(LIBBITCOIN_SERVER) $(qtum_bin_ldadd)
 
-qtum_node_SOURCES = $(qtum_daemon_sources) init/bitcoin-node.cpp
-qtum_node_CPPFLAGS = $(qtum_bin_cppflags)
-qtum_node_CXXFLAGS = $(qtum_bin_cxxflags)
-qtum_node_LDFLAGS = $(qtum_bin_ldflags)
-qtum_node_LDADD = $(LIBBITCOIN_SERVER) $(qtum_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+ariel_node_SOURCES = $(qtum_daemon_sources) init/bitcoin-node.cpp
+ariel_node_CPPFLAGS = $(qtum_bin_cppflags)
+ariel_node_CXXFLAGS = $(qtum_bin_cxxflags)
+ariel_node_LDFLAGS = $(qtum_bin_ldflags)
+ariel_node_LDADD = $(LIBBITCOIN_SERVER) $(qtum_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # bitcoin-cli binary #
-qtum_cli_SOURCES = bitcoin-cli.cpp
-qtum_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-qtum_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-qtum_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+ariel_cli_SOURCES = bitcoin-cli.cpp
+ariel_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+ariel_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ariel_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-qtum_cli_SOURCES += bitcoin-cli-res.rc
+ariel_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-qtum_cli_LDADD = \
+ariel_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
@@ -983,20 +983,20 @@ qtum_cli_LDADD = \
   $(LIBCRYPTOPP) \
   $(LIBSECP256K1)
 
-qtum_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+ariel_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-qtum_tx_SOURCES = bitcoin-tx.cpp
-qtum_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-qtum_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-qtum_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+ariel_tx_SOURCES = bitcoin-tx.cpp
+ariel_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+ariel_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ariel_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-qtum_tx_SOURCES += bitcoin-tx-res.rc
+ariel_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-qtum_tx_LDADD = \
+ariel_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -1008,32 +1008,32 @@ qtum_tx_LDADD = \
   $(LIBCRYPTOPP) \
   $(LIBSECP256K1)
 
-qtum_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+ariel_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoin-wallet binary #
-qtum_wallet_SOURCES = bitcoin-wallet.cpp validation.cpp rpc/server.cpp
-qtum_wallet_CPPFLAGS = $(qtum_bin_cppflags)
-qtum_wallet_CXXFLAGS = $(qtum_bin_cxxflags)
-qtum_wallet_LDFLAGS = $(qtum_bin_ldflags)
-qtum_wallet_LDADD = $(LIBBITCOIN_WALLET_TOOL) $(qtum_bin_ldadd)
+ariel_wallet_SOURCES = bitcoin-wallet.cpp validation.cpp rpc/server.cpp
+ariel_wallet_CPPFLAGS = $(qtum_bin_cppflags)
+ariel_wallet_CXXFLAGS = $(qtum_bin_cxxflags)
+ariel_wallet_LDFLAGS = $(qtum_bin_ldflags)
+ariel_wallet_LDADD = $(LIBBITCOIN_WALLET_TOOL) $(qtum_bin_ldadd)
 
 if TARGET_WINDOWS
-qtum_wallet_SOURCES += bitcoin-wallet-res.rc
+ariel_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 #
 
 # bitcoin-util binary #
-qtum_util_SOURCES = bitcoin-util.cpp
-qtum_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-qtum_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-qtum_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+ariel_util_SOURCES = bitcoin-util.cpp
+ariel_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+ariel_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ariel_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-qtum_util_SOURCES += bitcoin-util-res.rc
+ariel_util_SOURCES += bitcoin-util-res.rc
 endif
 
-qtum_util_LDADD = \
+ariel_util_LDADD = \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
@@ -1041,7 +1041,7 @@ qtum_util_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-qtum_util_LDADD += $(BOOST_LIBS)
+ariel_util_LDADD += $(BOOST_LIBS)
 #
 
 # bitcoinconsensus library #

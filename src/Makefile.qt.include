@@ -2,10 +2,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/qtum-qt
+bin_PROGRAMS += qt/ariel-qt
 
 if BUILD_BITCOIN_GUI
-  bin_PROGRAMS += qtum-gui
+  bin_PROGRAMS += ariel-gui
 endif
 
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
@@ -680,43 +680,43 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_qtum_qt_OBJECTS) $(qtum_gui_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_ariel_qt_OBJECTS) $(ariel_gui_OBJECTS) : | $(QT_MOC)
 
 # ariel-qt and ariel-gui binaries #
-qtum_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+ariel_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QR_CFLAGS)
-qtum_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+ariel_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qtum_qt_sources = qt/main.cpp
+ariel_qt_sources = qt/main.cpp
 if TARGET_WINDOWS
-  qtum_qt_sources += $(BITCOIN_RC)
+  ariel_qt_sources += $(BITCOIN_RC)
 endif
-qtum_qt_ldadd = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+ariel_qt_ldadd = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qtum_qt_ldadd += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET) $(LIBBITCOIN_SERVER)
+ariel_qt_ldadd += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET) $(LIBBITCOIN_SERVER)
 endif
 if ENABLE_ZMQ
-qtum_qt_ldadd += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+ariel_qt_ldadd += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qtum_qt_ldadd += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+ariel_qt_ldadd += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(LIBSECP256K1) $(LIBCRYPTOPP) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(SQLITE_LIBS) $(LIBFF) $(GMP_LIBS) $(GMPXX_LIBS)
-qtum_qt_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-qtum_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
+ariel_qt_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+ariel_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
 
-qt_qtum_qt_CPPFLAGS = $(qtum_qt_cppflags)
-qt_qtum_qt_CXXFLAGS = $(qtum_qt_cxxflags)
-qt_qtum_qt_SOURCES = $(qtum_qt_sources)
-qt_qtum_qt_LDADD = $(qtum_qt_ldadd)
-qt_qtum_qt_LDFLAGS = $(qtum_qt_ldflags)
-qt_qtum_qt_LIBTOOLFLAGS = $(qtum_qt_libtoolflags)
+qt_ariel_qt_CPPFLAGS = $(ariel_qt_cppflags)
+qt_ariel_qt_CXXFLAGS = $(ariel_qt_cxxflags)
+qt_ariel_qt_SOURCES = $(ariel_qt_sources)
+qt_ariel_qt_LDADD = $(ariel_qt_ldadd)
+qt_ariel_qt_LDFLAGS = $(ariel_qt_ldflags)
+qt_ariel_qt_LIBTOOLFLAGS = $(ariel_qt_libtoolflags)
 
-qtum_gui_CPPFLAGS = $(qtum_qt_cppflags)
-qtum_gui_CXXFLAGS = $(qtum_qt_cxxflags)
-qtum_gui_SOURCES = $(qtum_qt_sources)
-qtum_gui_LDADD = $(qtum_qt_ldadd)
-qtum_gui_LDFLAGS = $(qtum_qt_ldflags)
-qtum_gui_LIBTOOLFLAGS = $(qtum_qt_libtoolflags)
+ariel_gui_CPPFLAGS = $(ariel_qt_cppflags)
+ariel_gui_CXXFLAGS = $(ariel_qt_cxxflags)
+ariel_gui_SOURCES = $(ariel_qt_sources)
+ariel_gui_LDADD = $(ariel_qt_ldadd)
+ariel_gui_LDFLAGS = $(ariel_qt_ldflags)
+ariel_gui_LIBTOOLFLAGS = $(ariel_qt_libtoolflags)
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -748,7 +748,7 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 CLEANFILES += $(CLEAN_QT)
 
 bitcoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_qtum_qt_OBJECTS) qt/bitcoin-qt$(EXEEXT) $(LIBBITCOINQT)
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_ariel_qt_OBJECTS) qt/bitcoin-qt$(EXEEXT) $(LIBBITCOINQT)
 
 bitcoin_qt : qt/bitcoin-qt$(EXEEXT)
 

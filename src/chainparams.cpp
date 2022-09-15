@@ -232,10 +232,6 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-//        vSeeds.emplace_back("qtum3.dynu.net"); // Ariel mainnet
-//        vSeeds.emplace_back("qtum5.dynu.net"); // Ariel mainnet
-//        vSeeds.emplace_back("qtum6.dynu.net"); // Ariel mainnet
-//        vSeeds.emplace_back("qtum7.dynu.net"); // Ariel mainnet
 //        vSeeds.emplace_back("seed.arielcoin.org");
 //        vSeeds.emplace_back("seed.qubit.black");
 //        vSeeds.emplace_back("seed.qubit.red");

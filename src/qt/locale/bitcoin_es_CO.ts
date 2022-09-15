@@ -2714,7 +2714,7 @@ Firmar solo es posible con direcciones del tipo 'Legacy'.</translation>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Los desarrolladores de %s</translation>

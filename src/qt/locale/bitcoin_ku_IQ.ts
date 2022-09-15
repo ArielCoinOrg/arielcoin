@@ -793,7 +793,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same.</source>
         <translation type="unfinished">ناتوانێت گرێدانێکی تایبەت دابین بکات و پەیوەندی دەرکەوی هەبێت لە هەمان کاتدا.</translation>

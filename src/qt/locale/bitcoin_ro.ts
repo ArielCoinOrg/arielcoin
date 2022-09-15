@@ -2900,7 +2900,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Dezvoltatorii %s</translation>

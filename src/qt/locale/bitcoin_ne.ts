@@ -397,7 +397,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation type="unfinished">त्रुटि: आगमन कनेक्सनमा सुन्ने कार्य असफल भयो (सुन्ने कार्यले त्रुटि %s फर्कायो)</translation>

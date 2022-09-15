@@ -192,7 +192,7 @@ void Shutdown(NodeContext& node)
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    util::ThreadRename("qtum-shutoff");
+    util::ThreadRename("ariel-shutoff");
 
 #ifdef ENABLE_WALLET
     // Force stop the stakers before any other components

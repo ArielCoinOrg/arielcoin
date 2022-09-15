@@ -3723,14 +3723,14 @@ Gehen Sie zu Datei &gt; Öffnen Sie die Brieftasche, um eine Brieftasche zu lade
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Die %s-Entwickler</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s korrupt. Versuche mit dem Wallet-Werkzeug qtum-wallet zu retten, oder eine Sicherung wiederherzustellen.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s korrupt. Versuche mit dem Wallet-Werkzeug ariel-wallet zu retten, oder eine Sicherung wiederherzustellen.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3769,8 +3769,8 @@ Gehen Sie zu Datei &gt; Öffnen Sie die Brieftasche, um eine Brieftasche zu lade
         <translation type="unfinished">Fehler: Dumpdatei Identifikationseintrag ist ungültig. Habe "%s" bekommen, aber "%s" erwartet.</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Fehler: Die Version der Speicherauszugsdatei ist %s und wird nicht unterstützt. Diese Version von qtum-wallet unterstützt nur Speicherauszugsdateien der Version 1.</translation>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Fehler: Die Version der Speicherauszugsdatei ist %s und wird nicht unterstützt. Diese Version von ariel-wallet unterstützt nur Speicherauszugsdateien der Version 1.</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

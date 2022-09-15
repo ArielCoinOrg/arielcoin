@@ -3213,14 +3213,14 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">ה %s מפתחים</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s משובש. נסו להשתמש בכלי הארנק qtum-wallet כדי להציל או לשחזר מגיבוי..</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s משובש. נסו להשתמש בכלי הארנק ariel-wallet כדי להציל או לשחזר מגיבוי..</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

@@ -102,7 +102,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += qtum-node
+  bin_PROGRAMS += ariel-node
 endif
 
 if BUILD_BITCOIN_CLI
@@ -115,12 +115,12 @@ endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += qtum-wallet
+  bin_PROGRAMS += ariel-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += qtum-util
+  bin_PROGRAMS += ariel-util
 endif
 
 .PHONY: FORCE check-symbols check-security

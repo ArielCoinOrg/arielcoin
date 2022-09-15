@@ -1410,7 +1410,7 @@
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation type="unfinished">Esta es una compilación de prueba pre-lanzamiento - use bajo su propio riesgo - no utilizar para aplicaciones de minería o mercantes</translation>

@@ -2199,7 +2199,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Do you want to rebuild the block database now?</source>
         <translation type="unfinished">Желаете ли да пресъздадете базата данни с блокове сега?</translation>

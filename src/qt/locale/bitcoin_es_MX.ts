@@ -1252,7 +1252,7 @@ For more information on using this console, type %6.
 
 %7WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.%8</source>
         <extracomment>RPC console welcome message. Placeholders %7 and %8 are style tags for the warning content, and they are not space separated from the rest of the text intentionally.</extracomment>
-        <translation type="unfinished">Bienvenido a la %1 consola RPC. 
+        <translation type="unfinished">Bienvenido a la %1 consola RPC.
 Utilice la flecha arriba y abajo para navegar el historial y %2 para limpiar la consola.
 Utilice%3  y  %4 para aumentar o reducir el tamaño de fuente.
 Escriba %5 para una visión general de los comandos disponibles.
@@ -1922,7 +1922,7 @@ Para obtener más información, escriba %6.
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">No se pudo cambiar la versión %i a la versión anterior %i.  Versión del monedero sin cambios.</translation>

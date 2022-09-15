@@ -3336,14 +3336,14 @@ Přejděte do Soubor &gt; Otevřít peněženku pro načtení peněženky.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Vývojáři %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">Soubor %s je poškozen. Zkus použít qtum-wallet pro opravu nebo obnov zálohu.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">Soubor %s je poškozen. Zkus použít ariel-wallet pro opravu nebo obnov zálohu.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3382,7 +3382,7 @@ Přejděte do Soubor &gt; Otevřít peněženku pro načtení peněženky.
         <translation type="unfinished">Chyba: záznam identifikátoru souboru výpisu je nesprávný. Získáno "%s", očekáváno "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
         <translation type="unfinished">Chyba: verze souboru výpisu není podporována. Tato verze peněženky Qtum podporuje pouze soubory výpisu verze 1. Získán soubor výpisu verze %s</translation>
     </message>
     <message>

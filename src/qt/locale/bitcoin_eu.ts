@@ -1590,7 +1590,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Done loading</source>
         <translation type="unfinished">Zamaketa amaitua</translation>

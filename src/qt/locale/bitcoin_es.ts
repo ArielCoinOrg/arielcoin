@@ -1244,9 +1244,9 @@ Vaya a Archivo&gt; Abrir monedero para cargar un monedero.
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation type="unfinished">%s corrupto. Intente utilizar la monedero herramienta de qtum-monedero para salvar o restaurar una copia de seguridad.</translation>
     </message>
     <message>

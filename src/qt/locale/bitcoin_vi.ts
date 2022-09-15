@@ -2281,7 +2281,7 @@
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same.</source>
         <translation type="unfinished">Không thể cung cấp kết nối nào và có addrman tìm kết nối đi cùng một lúc.</translation>

@@ -429,7 +429,7 @@ Daxil olma, yalnız 'qanuni' tipli ünvanlar ilə mümkündür.</translation>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Fee estimation failed. Fallbackfee is disabled. Wait a few blocks or enable -fallbackfee.</source>
         <translation type="unfinished">Ödəniş təxmin edilmədi. Fallbackfee sıradan çıxarıldı. Bir neçə blok gözləyin və ya Fallbackfee-ni fəallaşdırın.</translation>

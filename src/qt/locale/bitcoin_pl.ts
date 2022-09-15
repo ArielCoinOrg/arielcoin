@@ -2610,7 +2610,7 @@ Korzystanie z opłaty domyślnej może skutkować wysłaniem transakcji, która 
     </message>
     <message>
         <source>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
-        <translation type="unfinished">Wpisz adres, wiadomość oraz sygnaturę (podpis) odbiorcy (upewnij się, że dokładnie skopiujesz wszystkie zakończenia linii, spacje, tabulacje itp.).  Uważaj by nie dodać więcej do podpisu niż do samej podpisywanej wiadomości by uniknąć ataku man-in-the-middle. 
+        <translation type="unfinished">Wpisz adres, wiadomość oraz sygnaturę (podpis) odbiorcy (upewnij się, że dokładnie skopiujesz wszystkie zakończenia linii, spacje, tabulacje itp.).  Uważaj by nie dodać więcej do podpisu niż do samej podpisywanej wiadomości by uniknąć ataku man-in-the-middle.
 Zwróć uwagę, że poprawnie zweryfikowana wiadomość potwierdza to, że nadawca posiada klucz do adresu, natomiast nie potwierdza to, że poprawne wysłanie jakiejkolwiek transakcji!</translation>
     </message>
     <message>
@@ -3237,13 +3237,13 @@ Przejdź do Plik &gt; Otwórz Portfel aby wgrać portfel.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Deweloperzy %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation type="unfinished">%s jest uszkodzony. Spróbuj użyć narzędzia qtum-portfel, aby uratować portfel lub przywrócić kopię zapasową.</translation>
     </message>
     <message>

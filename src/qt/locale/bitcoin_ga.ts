@@ -3181,14 +3181,14 @@ Téigh go Comhad &gt; Oscail Sparán chun sparán a lódáil.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Forbróirí %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">Tá %s truaillithe. Triail an uirlis sparán qtum-wallet a úsáid chun tharrtháil nó chun cúltaca a athbhunú.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">Tá %s truaillithe. Triail an uirlis sparán ariel-wallet a úsáid chun tharrtháil nó chun cúltaca a athbhunú.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

@@ -3832,14 +3832,14 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Разработчики %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s испорчен. Попробуйте восстановить с помощью инструмента qtum-wallet или восстановите из резервной копии.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s испорчен. Попробуйте восстановить с помощью инструмента ariel-wallet или восстановите из резервной копии.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3878,8 +3878,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Ошибка: запись идентификатора дамп-файла неверна. Обнаружено "%s", ожидалось "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Ошибка: версия дамп-файла не поддерживается. Эта версия qtum-wallet поддерживает только дамп-файлы версии 1. Обнаружено дамп-файл версии %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Ошибка: версия дамп-файла не поддерживается. Эта версия ariel-wallet поддерживает только дамп-файлы версии 1. Обнаружено дамп-файл версии %s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

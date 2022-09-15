@@ -1,5 +1,5 @@
 ---
-name: "qtum-core-win-22"
+name: "ariel-core-win-22"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -133,8 +133,8 @@ script: |
 
     #this is a hack since gitian has no natural support for submodules
     cp -r ../../qtum-evmone/* ./src/evmone
-    #make sure this file exists... 
-    cat ./src/evmone/include/evmone/evmone.h 
+    #make sure this file exists...
+    cat ./src/evmone/include/evmone/evmone.h
 
     ./autogen.sh
     CONFIG_SITE=${BASEPREFIX}/${i}/share/config.site ./configure --prefix=/ --disable-ccache --disable-maintainer-mode --disable-dependency-tracking ${CONFIGFLAGS} CFLAGS="${HOST_CFLAGS}" CXXFLAGS="${HOST_CXXFLAGS}"

@@ -699,7 +699,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Insufficient funds</source>
         <translation type="unfinished">ناکافی فنڈز</translation>

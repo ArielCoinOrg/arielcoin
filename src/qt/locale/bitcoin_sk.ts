@@ -3218,7 +3218,7 @@ Choďte do Súbor &gt; Otvoriť Peňaženku, pre načítanie peňaženky.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Vývojári %s</translation>

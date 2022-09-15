@@ -220,7 +220,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
         git clone --recursive https://github.com/qtumproject/qtum.git
         cd qtum
 
-2.  Build qtum-core:
+2.  Build ariel-core:
 
     Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
 

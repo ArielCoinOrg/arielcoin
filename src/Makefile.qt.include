@@ -5,7 +5,7 @@
 bin_PROGRAMS += qt/ariel-qt
 
 if BUILD_BITCOIN_GUI
-  bin_PROGRAMS += qtum-gui
+  bin_PROGRAMS += ariel-gui
 endif
 
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
@@ -682,7 +682,7 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 $(QT_MOC): $(QT_FORMS_H)
 $(qt_libbitcoinqt_a_OBJECTS) $(qt_qtum_qt_OBJECTS) $(qtum_gui_OBJECTS) : | $(QT_MOC)
 
-# ariel-qt and qtum-gui binaries #
+# ariel-qt and ariel-gui binaries #
 qtum_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QR_CFLAGS)
 qtum_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)

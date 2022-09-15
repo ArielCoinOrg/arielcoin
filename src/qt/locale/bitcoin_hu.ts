@@ -3271,7 +3271,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <source>No wallet has been loaded.
 Go to File &gt; Open Wallet to load a wallet.
 - OR -</source>
-        <translation type="unfinished">Nincs tárca megnyitva. 
+        <translation type="unfinished">Nincs tárca megnyitva.
 A Fájl &gt; Megnyitás menüben lehet megnyitni.
 - VAGY -</translation>
     </message>
@@ -3404,13 +3404,13 @@ A Fájl &gt; Megnyitás menüben lehet megnyitni.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">A %s fejlesztők</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation type="unfinished">%s sérült. Megpróbálhatod a qtumt-wallet tárcaj mentő eszközt, vagy mentésből helyreállítani a tárcát.</translation>
     </message>
     <message>

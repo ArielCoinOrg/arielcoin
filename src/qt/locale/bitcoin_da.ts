@@ -3235,14 +3235,14 @@ Gå til Fil &gt; Åbn Pung for, at indlæse en pung.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Udviklerne af %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s beskadiget. Prøv at bruge pung-værktøjet qtum-wallet til, at bjærge eller gendanne en sikkerhedskopi.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s beskadiget. Prøv at bruge pung-værktøjet ariel-wallet til, at bjærge eller gendanne en sikkerhedskopi.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

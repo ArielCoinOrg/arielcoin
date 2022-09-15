@@ -3585,13 +3585,13 @@ Ga naar Bestand &gt; Open portemonee om er één te openen.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">De %s ontwikkelaars</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation type="unfinished">%s is corrupt. Probeer de portemonnee tool qtum-portemonnee om het probleem op te lossen of een backup terug te zetten.</translation>
     </message>
     <message>
@@ -3631,7 +3631,7 @@ Ga naar Bestand &gt; Open portemonee om er één te openen.
         <translation type="unfinished">Fout: Identificatierecord van dumpbestand is onjuist. Gekregen "%s", verwacht "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
         <translation type="unfinished">Fout: Dumpbestandsversie wordt niet ondersteund. Deze versie qtumportemonnee ondersteunt alleen versie 1 dumpbestanden. Dumpbestand met versie %s gekregen</translation>
     </message>
     <message>
@@ -3700,7 +3700,7 @@ Ga naar Bestand &gt; Open portemonee om er één te openen.
     </message>
     <message>
         <source>This error could occur if this wallet was not shutdown cleanly and was last loaded using a build with a newer version of Berkeley DB. If so, please use the software that last loaded this wallet</source>
-        <translation type="unfinished">Deze fout komt mogelijks voor wanneer de portefeuille niet correct is afgesloten en dat deze de laatste keer geladen werd met een nieuwere versie van de Berkeley DB. 
+        <translation type="unfinished">Deze fout komt mogelijks voor wanneer de portefeuille niet correct is afgesloten en dat deze de laatste keer geladen werd met een nieuwere versie van de Berkeley DB.
 Indien dit het geval is, gelieve de software te gebruiken waarmee deze portefeuille de laatste keer werd geladen.</translation>
     </message>
     <message>

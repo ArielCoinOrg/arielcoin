@@ -1358,7 +1358,7 @@
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Unable to generate keys</source>
         <translation type="unfinished">ไม่สามารถสร้างกุญแจ</translation>

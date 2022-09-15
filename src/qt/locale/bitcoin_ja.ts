@@ -3753,14 +3753,14 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">%s の開発者</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%sが破損しています。ウォレットのツールqtum-walletを使って復旧するか、バックアップから復元してみてください。</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%sが破損しています。ウォレットのツールariel-walletを使って復旧するか、バックアップから復元してみてください。</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3799,8 +3799,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">エラー: Dumpfileの識別子レコードが不正です。得られた値は"%s"で、期待値は"%s"です。</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">エラー: Dumpfileのバージョンが未指定です。このバージョンのqtum-walletは、バージョン1のDumpfileのみをサポートします。バージョン%sのDumpfileを取得しました。</translation>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">エラー: Dumpfileのバージョンが未指定です。このバージョンのariel-walletは、バージョン1のDumpfileのみをサポートします。バージョン%sのDumpfileを取得しました。</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

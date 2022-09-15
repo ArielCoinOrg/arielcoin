@@ -1087,7 +1087,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">Mekapansin lang me-corrupt a block database</translation>

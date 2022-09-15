@@ -3382,14 +3382,14 @@ Ir para o arquivo &gt; Abrir carteira para carregar a carteira
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Os programadores de %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s corrompido. Tente usar a ferramenta de carteira qtum-wallet para salvar ou restaurar um backup.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s corrompido. Tente usar a ferramenta de carteira ariel-wallet para salvar ou restaurar um backup.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

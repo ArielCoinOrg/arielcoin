@@ -5738,8 +5738,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation>错误: 转储文件标识符记录不正确。得到的是 "%s"，而预期本应得到的是 "%s"。</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation>错误: 转储文件版本不被支持。这个版本的 qtum-wallet 只支持版本为 1 的转储文件。得到的转储文件版本却是%s</translation>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation>错误: 转储文件版本不被支持。这个版本的 ariel-wallet 只支持版本为 1 的转储文件。得到的转储文件版本却是%s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
@@ -5762,8 +5762,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">错误：监听外部连接失败 (监听返回错误 %s)</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation>%s损坏。请尝试用qtum-wallet钱包工具来对其进行急救。或者用一个备份进行还原。</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation>%s损坏。请尝试用ariel-wallet钱包工具来对其进行急救。或者用一个备份进行还原。</translation>
     </message>
     <message>
         <source>Cannot upgrade a non HD split wallet without upgrading to support pre split keypool. Please use version 169900 or no version specified.</source>
@@ -6364,7 +6364,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="vanished">在MIT协议下分发，参见附带的 %s 文件或 %s</translation>
@@ -6418,8 +6418,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation>错误: 转储文件标识符记录不正确。得到的是 "%s"，而预期本应得到的是 "%s"。</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation>错误: 转储文件版本不被支持。这个版本的 qtum-wallet 只支持版本为 1 的转储文件。得到的转储文件版本却是%s</translation>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation>错误: 转储文件版本不被支持。这个版本的 ariel-wallet 只支持版本为 1 的转储文件。得到的转储文件版本却是%s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
@@ -6718,8 +6718,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="vanished">错误：监听外部连接失败 (监听返回错误 %s)</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation>%s损坏。请尝试用qtum-wallet钱包工具来对其进行急救。或者用一个备份进行还原。</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation>%s损坏。请尝试用ariel-wallet钱包工具来对其进行急救。或者用一个备份进行还原。</translation>
     </message>
     <message>
         <source>Cannot upgrade a non HD split wallet without upgrading to support pre split keypool. Please use version 169900 or no version specified.</source>

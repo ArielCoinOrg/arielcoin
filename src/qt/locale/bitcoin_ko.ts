@@ -5371,7 +5371,7 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">에러：외부 연결에 대한 확인 실패 (확인 신호 회귀 에러 %s)</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation>%s가 손상되었습니다. '비트 코인-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
     </message>
     <message>
@@ -5820,7 +5820,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="vanished">MIT 소프트웨어 라이센스를 통해 배포합니다. 첨부된 %s 파일 또는 %s 를 확인하세요. </translation>
@@ -6070,7 +6070,7 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="vanished">에러：외부 연결에 대한 확인 실패 (확인 신호 회귀 에러 %s)</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation>%s가 손상되었습니다. '비트 코인-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
     </message>
     <message>

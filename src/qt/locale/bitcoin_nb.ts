@@ -3429,14 +3429,14 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">%s-utviklerne</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s korrupt. Prøv å bruk lommebokverktøyet qtum-wallet til å fikse det eller laste en backup.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s korrupt. Prøv å bruk lommebokverktøyet ariel-wallet til å fikse det eller laste en backup.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

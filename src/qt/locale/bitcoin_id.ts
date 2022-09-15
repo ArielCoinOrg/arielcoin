@@ -1809,8 +1809,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Cannot process payment request because BIP70 is not supported.
 Due to widespread security flaws in BIP70 it's strongly recommended that any merchant instructions to switch wallets be ignored.
 If you are receiving this error you should request the merchant provide a BIP21 compatible URI.</source>
-        <translation type="unfinished">Tidak dapat memproses permintaan pembayaran disebabkan BIP70 tidak didukung. 
-Akibat celah keamanan yang meluas di BIP70, sangat disarankan agar mengabaikan petunjuk pedagang apa pun untuk beralih dompet. 
+        <translation type="unfinished">Tidak dapat memproses permintaan pembayaran disebabkan BIP70 tidak didukung.
+Akibat celah keamanan yang meluas di BIP70, sangat disarankan agar mengabaikan petunjuk pedagang apa pun untuk beralih dompet.
 Jika Anda menerima kesalahan ini, Anda harus meminta pedagang untuk memberikan URI yang kompatibel dengan BIP21. </translation>
     </message>
     <message>
@@ -2531,7 +2531,7 @@ Untuk informasi lebih lanjut tentang menggunakan konsol ini, ketik %6.
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
 Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satoshis per kvB" for a transaction size of 500 virtual bytes (half of 1 kvB) would ultimately yield a fee of only 50 satoshis.</source>
-        <translation type="unfinished">Tentukan biaya khusus per kB (1.000 byte) dari ukuran virtual transaksi. 
+        <translation type="unfinished">Tentukan biaya khusus per kB (1.000 byte) dari ukuran virtual transaksi.
 
 Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi per kvB" untuk ukuran transaksi 500 byte virtual (setengah dari 1 kvB) pada akhirnya akan menghasilkan biaya hanya 50 satoshi. </translation>
     </message>
@@ -3567,7 +3567,7 @@ Pergi ke File &gt; Open Wallet untuk memuat dompet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Pengembang %s</translation>
@@ -3609,7 +3609,7 @@ Pergi ke File &gt; Open Wallet untuk memuat dompet.
         <translation type="unfinished">Kesalahan: Rekaman pengenal dumpfile salah. Mendapat "%s", diharapkan "%s". </translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
         <translation type="unfinished">Kesalahan: Versi Dumpfile tidak didukung. Versi dompet qtum ini hanya mendukung dumpfile versi 1. Dumpfile yang didapat adalah versi %s</translation>
     </message>
     <message>

@@ -362,7 +362,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Transaction amount too small</source>
         <translation type="unfinished">Транзакция өте кішкентай</translation>

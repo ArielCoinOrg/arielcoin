@@ -1107,7 +1107,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Do you want to rebuild the block database now?</source>
         <translation type="unfinished">Ці жадаеце вы перабудаваць зараз базу звестак блокаў?</translation>

@@ -2046,7 +2046,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
         <translation type="unfinished">-maxtxfee មានតំម្លៃខ្ពស់ពេក។​ តំម្លៃនេះ អាចគួរត្រូវបានបង់សម្រាប់មួយប្រត្តិបត្តិការ។</translation>

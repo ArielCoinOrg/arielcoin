@@ -3472,14 +3472,14 @@ Vai su File &gt; Apri Portafoglio per caricare un portafoglio.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Sviluppatori di %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s corrotto. Prova a usare la funzione del portafoglio  qtum-wallet per salvare o recuperare il backup</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s corrotto. Prova a usare la funzione del portafoglio  ariel-wallet per salvare o recuperare il backup</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

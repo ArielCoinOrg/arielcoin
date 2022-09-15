@@ -571,19 +571,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Date: %1
 </source>
-        <translation type="unfinished">തീയതി: %1 
+        <translation type="unfinished">തീയതി: %1
 </translation>
     </message>
     <message>
         <source>Amount: %1
 </source>
-        <translation type="unfinished">തുക : %1 
+        <translation type="unfinished">തുക : %1
 </translation>
     </message>
     <message>
         <source>Wallet: %1
 </source>
-        <translation type="unfinished">വാലറ്റ്: %1 
+        <translation type="unfinished">വാലറ്റ്: %1
 </translation>
     </message>
     <message>
@@ -595,13 +595,13 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Label: %1
 </source>
-        <translation type="unfinished">കുറിപ്പ് : %1 
+        <translation type="unfinished">കുറിപ്പ് : %1
 </translation>
     </message>
     <message>
         <source>Address: %1
 </source>
-        <translation type="unfinished">മേൽവിലാസം : %1 
+        <translation type="unfinished">മേൽവിലാസം : %1
 </translation>
     </message>
     <message>
@@ -1260,7 +1260,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
         <translation type="unfinished">-maxtxfee യുടെ മൂല്യം വളരെ വലുതാണ്! ഇത്രയും ഉയര്ന്ന പ്രതിഫലം ഒരൊറ്റ ഇടപാടിൽ നൽകാൻ സാധ്യതയുണ്ട്.</translation>

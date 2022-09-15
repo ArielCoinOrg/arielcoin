@@ -3093,8 +3093,8 @@ Si rebeu aquest error, haureu de sol·licitar al comerciant que proporcioni un U
         <source>No wallet has been loaded.
 Go to File &gt; Open Wallet to load a wallet.
 - OR -</source>
-        <translation type="unfinished">No s'ha carregat cap cartera. 
-Ves a Arxiu &gt; Obrir Cartera per a carregar cartera. 
+        <translation type="unfinished">No s'ha carregat cap cartera.
+Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
 - O -</translation>
     </message>
     <message>
@@ -3222,14 +3222,14 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Els desenvolupadors %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s està malmès. Proveu d’utilitzar l’eina qtum-wallet per recuperar o restaurar una còpia de seguretat.</translation>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s està malmès. Proveu d’utilitzar l’eina ariel-wallet per recuperar o restaurar una còpia de seguretat.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

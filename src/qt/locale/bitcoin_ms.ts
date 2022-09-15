@@ -566,7 +566,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <source>Done loading</source>
         <translation type="unfinished">Baca Selesai</translation>

@@ -4875,7 +4875,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>ariel-core</name>
     <message>
         <location filename="../qtumstrings.cpp" line="+12"/>
         <source>The %s developers</source>
@@ -4883,7 +4883,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <location line="+1"/>
-        <source>%s corrupt. Try using the wallet tool qtum-wallet to salvage or restoring a backup.</source>
+        <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4933,7 +4933,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <location line="+2"/>
-        <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <source>Error: Dumpfile version is not supported. This version of ariel-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

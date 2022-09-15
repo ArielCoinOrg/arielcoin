@@ -1,2 +1,2 @@
-contrib/arield.bash-completion	        arield
-contrib/ariel-cli.bash-completion	ariel-cli
+contrib/qtumd.bash-completion	        arield
+contrib/qtum-cli.bash-completion	ariel-cli

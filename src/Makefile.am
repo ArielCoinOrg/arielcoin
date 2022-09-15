@@ -98,7 +98,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += qtumd
+  bin_PROGRAMS += arield
 endif
 
 if BUILD_BITCOIN_NODE

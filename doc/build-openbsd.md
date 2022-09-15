@@ -2,7 +2,7 @@ OpenBSD build guide
 ======================
 (updated for OpenBSD 6.9)
 
-This guide describes how to build qtumd, qtum-qt, and command-line utilities on OpenBSD.
+This guide describes how to build arield, ariel-qt, and command-line utilities on OpenBSD.
 
 Preparation
 -------------

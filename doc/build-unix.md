@@ -24,7 +24,7 @@ make # use "-j N" for N parallel jobs
 make install # optional
 ```
 
-This will build qtum-qt as well, if the dependencies are met.
+This will build ariel-qt as well, if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -110,7 +110,7 @@ ZMQ dependencies (provides ZMQ API):
 
 GUI dependencies:
 
-If you want to build qtum-qt, make sure that the required packages for Qt development
+If you want to build ariel-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -122,7 +122,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a qtum-qt executable will be
+Once these are installed, they will be found by configure and a ariel-qt executable will be
 built by default.
 
 
@@ -165,7 +165,7 @@ ZMQ dependencies (provides ZMQ API):
 
 GUI dependencies:
 
-If you want to build qtum-qt, make sure that the required packages for Qt development
+If you want to build ariel-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -177,7 +177,7 @@ libqrencode (optional) can be installed with:
 
     sudo dnf install qrencode-devel
 
-Once these are installed, they will be found by configure and a qtum-qt executable will be
+Once these are installed, they will be found by configure and a ariel-qt executable will be
 built by default.
 
 Dependency Build Instructions: CentOS
@@ -189,7 +189,7 @@ Build requirements:
 
     sudo yum install epel-release
     sudo yum install gcc-c++ libtool libdb4-cxx-devel openssl-devel libevent-devel gmp-devel
-    
+
 To build with Qt 5 (recommended) you need the following:
 
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
@@ -232,7 +232,7 @@ Installation package example: `qtum-22.1-x86_64-pc-linux-gnu.tar.gz`
 
 Notes
 -----
-The release is built with GCC and then "strip qtumd" to strip the debug
+The release is built with GCC and then "strip arield" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 miniupnpc

@@ -76,7 +76,7 @@ class TestNode():
         self.index = i
         self.p2p_conn_index = 1
         self.datadir = datadir
-        self.bitcoinconf = os.path.join(self.datadir, "qtum.conf")
+        self.bitcoinconf = os.path.join(self.datadir, "ariel.conf")
         self.stdout_dir = os.path.join(self.datadir, "stdout")
         self.stderr_dir = os.path.join(self.datadir, "stderr")
         self.chain = chain
@@ -208,10 +208,10 @@ class TestNode():
 
         # add environment variable LIBC_FATAL_STDERR_=1 so that libc errors are written to stderr and not the terminal
         subp_env = dict(os.environ, LIBC_FATAL_STDERR_="1")
-        
+
         if not any(arg.startswith('-staking=') for arg in extra_args):
             extra_args.append('-staking=0')
-            
+
         # Disable the spam filter as it may interfere with come tests sending lots and lots of blocks
         if not any(arg.startswith('-headerspamfilter') for arg in extra_args):
             extra_args.append('-headerspamfilter=0')

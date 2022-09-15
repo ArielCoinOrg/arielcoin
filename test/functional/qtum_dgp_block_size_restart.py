@@ -83,7 +83,7 @@ class QtumDGPActivation(BitcoinTestFramework):
         self.node = self.nodes[0]
         self.node.generate(1000 + COINBASE_MATURITY)
         self.BLOCK_SIZE_DGP = DGPState(self.node, "0000000000000000000000000000000000000081")
-        
+
         # Start off by setting ourself as admin
         admin_address = self.node.getnewaddress()
 
@@ -117,7 +117,7 @@ class QtumDGPActivation(BitcoinTestFramework):
         # Now we should only allow new 1MB blocks,
         # however the old 8MB block not cause any errors when restarting since it was accepted at a time when 8MB was the block size limit
 
-        # Restart the qtumd to verify that no crashes occurs on startup
+        # Restart the arield to verify that no crashes occurs on startup
         self.stop_nodes()
         self.start_nodes()
 

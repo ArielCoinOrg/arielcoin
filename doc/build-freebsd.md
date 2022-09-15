@@ -2,7 +2,7 @@
 
 **Updated for FreeBSD [12.2](https://www.freebsd.org/releases/12.2R/announce.html)**
 
-This guide describes how to build qtumd, command-line utilities, and GUI on FreeBSD.
+This guide describes how to build arield, command-line utilities, and GUI on FreeBSD.
 
 ## Dependencies
 
@@ -46,13 +46,13 @@ pkg install autoconf automake boost-libs git gmake libevent libtool pkgconf gmp
 ### 2. Clone Qtum Repo
 Now that `git` and all the required dependencies are installed, let's clone the Qtum Core repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
-git clone https://github.com/qtumproject/qtum --recursive
+git clone https://github.com/qtumproject/ariel --recursive
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run qtumd or the GUI. To enable legacy wallets, you must install `db5`. To enable [descriptor wallets](https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md), `sqlite3` is required. Skip `db5` if you intend to *exclusively* use descriptor wallets
+It is not necessary to build wallet functionality to run arield or the GUI. To enable legacy wallets, you must install `db5`. To enable [descriptor wallets](https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md), `sqlite3` is required. Skip `db5` if you intend to *exclusively* use descriptor wallets
 
 ###### Legacy Wallet Support
 `db5` is required to enable support for legacy wallets. Skip if you don't intend to use legacy wallets

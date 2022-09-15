@@ -21,8 +21,8 @@ _bitcoin_cli() {
     local cur prev words=() cword
     local qtum_cli
 
-    # save and use original argument to invoke qtum-cli for -help, help and RPC
-    # as qtum-cli might not be in $PATH
+    # save and use original argument to invoke ariel-cli for -help, help and RPC
+    # as ariel-cli might not be in $PATH
     qtum_cli="$1"
 
     COMPREPLY=()
@@ -130,7 +130,7 @@ _bitcoin_cli() {
             ;;
     esac
 } &&
-complete -F _qtum_cli qtum-cli
+complete -F _qtum_cli ariel-cli
 
 # Local variables:
 # mode: shell-script

@@ -3,13 +3,13 @@ What is Qtum?
 
 Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org
 
-Welcome to the Qtum Fastlane Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Qtum, we highly recommend using either testnet or regtest mode. 
+Welcome to the Qtum Fastlane Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Qtum, we highly recommend using either testnet or regtest mode.
 
 The major features of the Qtum network include:
 
-1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Qtum. 
+1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Qtum.
 2. A Proof of Stake consensus system which is optimized for Qtum's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Qtum that have created blocks in the past. Staking from smart contracts is under development.
-3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
+3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc.
 4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Qtum. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
 
 Note: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.
@@ -22,7 +22,7 @@ These are some resources that might be helpful in understanding Qtum.
 Basic usage resources:
 
 * [User guide](https://docs.qtum.site/en/)
-* [Qtum-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#qtum-qt-wallet-tutorial)
+* [Qtum-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#ariel-qt-wallet-tutorial)
 * [Qtum staking tutorial](https://github.com/qtumproject/documents/tree/master/en/How-to-Stake-with-Qtum)
 * [Qtum tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/Qtum-on-Raspberry-Pi)
 * [Running Qtum on Amazon AWS using Qtum AMI](https://github.com/qtumproject/documents/tree/master/en/Qtum-AWS)
@@ -56,7 +56,7 @@ Developer's Tools
   * https://github.com/qtumproject/qtumjs
 * A toolkit for building qtum light wallets
   * https://github.com/qtumproject/qtumjs-wallet
-* CORS qtumd RPC proxy for DApp
+* CORS arield RPC proxy for DApp
   * https://github.com/qtumproject/qtumportal
 * Docker images for running qtum services
   * https://github.com/qtumproject/qtum-docker
@@ -67,7 +67,7 @@ Developer's Tools
 What is Qtum Core?
 ------------------
 
-Qtum Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Qtum network. Qtum Core is considered the reference implementation for the Qtum network. 
+Qtum Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Qtum network. Qtum Core is considered the reference implementation for the Qtum network.
 
 Qtum Core currently implements the following:
 
@@ -85,7 +85,7 @@ Qtum Core currently implements the following:
 Alternative Wallets
 -------------------
 
-Qtum Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
+Qtum Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds.
 
 ### Qtum Web Wallet
 
@@ -97,13 +97,13 @@ User documentation https://github.com/qtumproject/documents/tree/master/en/QTUM-
 
 ### Qtum Electrum
 
-A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software. 
+A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software.
 
 Download: https://github.com/qtumproject/qtum-electrum/releases
 
 ### iOS and Android Wallets
 
-These wallets run on mobile devices and synchronize quickly. 
+These wallets run on mobile devices and synchronize quickly.
 
 Android Download: https://play.google.com/store/apps/details?id=org.qtum.newwallet
 
@@ -161,9 +161,9 @@ This is a quick start script for compiling Qtum on Ubuntu
 
     # Note autogen will prompt to install some more dependencies if needed
     ./autogen.sh
-    ./configure 
+    ./configure
     make -j2
-    
+
 ### Build on CentOS
 
 Here is a brief description for compiling Qtum on CentOS, for more details please refer to [the specific document](https://github.com/qtumproject/qtum/blob/master/doc/build-unix.md)
@@ -177,14 +177,14 @@ Here is a brief description for compiling Qtum on CentOS, for more details pleas
     ./bootstrap.sh --prefix=/usr --libdir=/usr/lib64
     ./b2 headers
     sudo ./b2 -j4 install
-    
+
     # Installing Dependencies for Qtum
     sudo yum install epel-release
     sudo yum install libtool libdb4-cxx-devel openssl-devel libevent-devel gmp-devel
-    
+
     # If you want to build the Qt GUI:
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
-    
+
     # Building Qtum
     git clone --recursive https://github.com/qtumproject/qtum.git
     cd qtum
@@ -236,7 +236,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 ### Run
 
-Then you can either run the command-line daemon using `src/qtumd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+Then you can either run the command-line daemon using `src/arield` and `src/ariel-cli`, or you can run the Qt GUI using `src/qt/ariel-qt`
 
 License
 -------

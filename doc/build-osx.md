@@ -2,7 +2,7 @@
 
 **Updated for MacOS [11.2](https://www.apple.com/macos/big-sur/)**
 
-This guide describes how to build qtumd, command-line utilities, and GUI on macOS
+This guide describes how to build arield, command-line utilities, and GUI on macOS
 
 **Note:** The following is for Intel Macs only!
 
@@ -99,7 +99,7 @@ git clone --recursive https://github.com/qtumproject/qtum.git
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run `qtumd` or  `qtum-qt`.
+It is not necessary to build wallet functionality to run `arield` or  `ariel-qt`.
 To enable legacy wallets, you must install `berkeley-db@4`.
 To enable [descriptor wallets](https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md), `sqlite` is required.
 Skip `berkeley-db@4` if you intend to *exclusively* use descriptor wallets.
@@ -292,10 +292,10 @@ make deploy
 
 ## Running Qtum Core
 
-Qtum Core should now be available at `./src/qtumd`.
-If you compiled support for the GUI, it should be available at `./src/qt/qtum-qt`.
+Qtum Core should now be available at `./src/arield`.
+If you compiled support for the GUI, it should be available at `./src/qt/ariel-qt`.
 
-The first time you run `qtumd` or `qtum-qt`, it will start downloading the blockchain.
+The first time you run `arield` or `ariel-qt`, it will start downloading the blockchain.
 This process could take many hours, or even days on slower than average systems.
 
 By default, blockchain and wallet data files will be stored in:
@@ -309,9 +309,9 @@ Before running, you may create an empty configuration file:
 ```shell
 mkdir -p "/Users/${USER}/Library/Application Support/Qtum"
 
-touch "/Users/${USER}/Library/Application Support/Qtum/qtum.conf"
+touch "/Users/${USER}/Library/Application Support/Qtum/ariel.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Qtum/qtum.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/Qtum/ariel.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
@@ -323,8 +323,8 @@ tail -f $HOME/Library/Application\ Support/Qtum/debug.log
 ## Other commands:
 
 ```shell
-./src/qtumd -daemon      # Starts the qtum daemon.
-./src/qtum-cli --help    # Outputs a list of command-line options.
-./src/qtum-cli help      # Outputs a list of RPC commands when the daemon is running.
-./src/qt/qtum-qt -server # Starts the qtum-qt server mode, allows qtum-cli control
+./src/arield -daemon      # Starts the qtum daemon.
+./src/ariel-cli --help    # Outputs a list of command-line options.
+./src/ariel-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/qt/ariel-qt -server # Starts the ariel-qt server mode, allows ariel-cli control
 ```

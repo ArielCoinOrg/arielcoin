@@ -5,11 +5,11 @@
 
 _qtumd() {
     local cur prev words=() cword
-    local qtumd
+    local arield
 
-    # save and use original argument to invoke qtumd for -help
+    # save and use original argument to invoke arield for -help
     # it might not be in $PATH
-    qtumd="$1"
+    arield="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n = cur prev words cword
@@ -45,7 +45,7 @@ _qtumd() {
             ;;
     esac
 } &&
-complete -F _qtumd qtumd qtum-qt
+complete -F _qtumd arield ariel-qt
 
 # Local variables:
 # mode: shell-script

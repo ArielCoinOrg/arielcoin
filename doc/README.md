@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Qtum Core on your native plat
 
 Unpack the files into a directory and run:
 
-- `bin/qtum-qt` (GUI) or
-- `bin/qtumd` (headless)
+- `bin/ariel-qt` (GUI) or
+- `bin/arield` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run qtum-qt.exe.
+Unpack the files into a directory, and then run ariel-qt.exe.
 
 ### macOS
 

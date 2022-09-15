@@ -8,5 +8,5 @@ Type=Application
 Icon=qtum128
 MimeType=x-scheme-handler/qtum;
 Categories=Network;
-StartupWMClass=Qtum-qt
+StartupWMClass=Ariel-qt
 Name[en_US]=ariel-qt

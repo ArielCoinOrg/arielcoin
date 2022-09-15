@@ -2,8 +2,8 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/test/test_qtum-qt
-TESTS += qt/test/test_qtum-qt
+bin_PROGRAMS += qt/test/test_ariel-qt
+TESTS += qt/test/test_ariel-qt
 
 TEST_QT_MOC_CPP = \
   qt/test/moc_apptests.cpp \

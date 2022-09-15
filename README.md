@@ -22,7 +22,7 @@ These are some resources that might be helpful in understanding Qtum.
 Basic usage resources:
 
 * [User guide](https://docs.qtum.site/en/)
-* [Qtum-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#ariel-qt-wallet-tutorial)
+* [Ariel-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#ariel-qt-wallet-tutorial)
 * [Qtum staking tutorial](https://github.com/qtumproject/documents/tree/master/en/How-to-Stake-with-Qtum)
 * [Qtum tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/Qtum-on-Raspberry-Pi)
 * [Running Qtum on Amazon AWS using Qtum AMI](https://github.com/qtumproject/documents/tree/master/en/Qtum-AWS)

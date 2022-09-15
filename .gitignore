@@ -164,7 +164,7 @@ src/ariel-node
 src/ariel-util
 src/bench/bench_qtum
 src/qt/ariel-qt
-src/qt/test/test_qtum-qt
+src/qt/test/test_ariel-qt
 src/test/buildenv.py
 src/test/test_qtum
 src/test/test_qtum_fuzzy

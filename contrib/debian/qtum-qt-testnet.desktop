@@ -8,5 +8,5 @@ Type=Application
 Icon=qtumtestnet128
 MimeType=x-scheme-handler/qtum;
 Categories=Network;
-StartupWMClass=Qtum-qt-testnet
+StartupWMClass=Ariel-qt-testnet
 Name[en_US]=ariel-qt-testnet

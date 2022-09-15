@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Qtum-Qt</string>
+  <string>Ariel-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Qtum-Qt</string>
+  <string>Ariel-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.qtumproject.Qtum-Qt</string>
+  <string>org.qtumproject.Ariel-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

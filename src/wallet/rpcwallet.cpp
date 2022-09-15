@@ -3654,7 +3654,7 @@ static RPCHelpMan gettransaction()
 
     } else {
         if(!request.httpreq)
-            throw JSONRPCError(RPC_INTERNAL_ERROR, "No HTTP connection. Waitconf is available from qtum-cli, not qtum-qt");
+            throw JSONRPCError(RPC_INTERNAL_ERROR, "No HTTP connection. Waitconf is available from ariel-cli, not ariel-qt");
 
         request.PollStart();
         while (true) {

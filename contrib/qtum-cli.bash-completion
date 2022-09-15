@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-# call $qtum-cli for RPC
+# call $ariel-cli for RPC
 _qtum_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()

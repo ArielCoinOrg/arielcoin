@@ -230,7 +230,7 @@ void BitcoinCore::shutdown()
 }
 
 static int qt_argc = 1;
-static const char* qt_argv = "qtum-qt";
+static const char* qt_argv = "ariel-qt";
 
 BitcoinApplication::BitcoinApplication():
     QApplication(qt_argc, const_cast<char **>(&qt_argv)),
@@ -510,7 +510,7 @@ void BitcoinApplication::restartWallet()
 #ifdef ENABLE_WALLET
     // Restart the wallet if needed
     if(!restorePath.isEmpty())
-    { 
+    {
         // Create command line
         QString walletParam = "-wallet=" + restoreName;
         QString commandLine;

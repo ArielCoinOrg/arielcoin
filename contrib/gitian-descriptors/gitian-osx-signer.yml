@@ -43,7 +43,7 @@ script: |
   cd ..
 
   UNSIGNED_TARBALL=qtum-osx-unsigned.tar.gz
-  UNSIGNED_APP=dist/Qtum-Qt.app
+  UNSIGNED_APP=dist/Ariel-Qt.app
   SIGNED=qtum-osx-signed.dmg
   tar -xf ${UNSIGNED_TARBALL}
   OSX_VOLNAME="$(cat osx_volname)"

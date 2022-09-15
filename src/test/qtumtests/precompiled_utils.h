@@ -107,4 +107,4 @@ private:
         tester.performTests(jsondata);\
     } while(false)
 
-#endif // QTUMTESTS_PRECOMPILED_UTILS_H
+#endif // ARIELTESTS_PRECOMPILED_UTILS_H

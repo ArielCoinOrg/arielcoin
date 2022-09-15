@@ -12,9 +12,9 @@
 #include <script/script.h>
 #include <util/strencodings.h>
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
-#include <qtum/qtumtransaction.h>
+#include <ariel/qtumstate.h>
+#include <ariel/qtumDGP.h>
+#include <ariel/qtumtransaction.h>
 #include <validation.h>
 #include <streams.h>
 

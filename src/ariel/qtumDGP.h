@@ -1,7 +1,7 @@
 #ifndef QTUMDGP_H
 #define QTUMDGP_H
 
-#include <qtum/qtumstate.h>
+#include <ariel/qtumstate.h>
 #include <primitives/block.h>
 #include <validation.h>
 #include <util/strencodings.h>

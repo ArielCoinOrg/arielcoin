@@ -35,8 +35,8 @@ public:
     uint64_t nNonce64;
     uint256 mix_hash;
 
-    uint256 hashStateRoot; // qtum; // qtum
-    uint256 hashUTXORoot; // qtum; // qtum
+    uint256 hashStateRoot; // ariel; // ariel
+    uint256 hashUTXORoot; // ariel; // ariel
     // proof-of-stake specific fields
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockSigDlgt; // The delegate is 65 bytes or 0 bytes, it can be added in the signature paramether at the end to avoid compatibility problems
@@ -78,8 +78,8 @@ public:
         nHeight = 0;
         mix_hash.SetNull();
 
-        hashStateRoot.SetNull(); // qtum
-        hashUTXORoot.SetNull(); // qtum
+        hashStateRoot.SetNull(); // ariel
+        hashUTXORoot.SetNull(); // ariel
         vchBlockSigDlgt.clear();
         prevoutStake.SetNull();
     }
@@ -104,7 +104,7 @@ public:
     }
 
     // ppcoin: two types of block: proof-of-work or proof-of-stake
-    virtual bool IsProofOfStake() const //qtum
+    virtual bool IsProofOfStake() const //ariel
     {
         return !prevoutStake.IsNull();
     }
@@ -132,7 +132,7 @@ public:
 
     bool HasProofOfDelegation() const;
 
-    CBlockHeader& operator=(const CBlockHeader& other) //qtum
+    CBlockHeader& operator=(const CBlockHeader& other) //ariel
     {
         if (this != &other)
         {
@@ -188,7 +188,7 @@ public:
         fChecked = false;
     }
 
-    std::pair<COutPoint, unsigned int> GetProofOfStake() const //qtum
+    std::pair<COutPoint, unsigned int> GetProofOfStake() const //ariel
     {
         return IsProofOfStake()? std::make_pair(prevoutStake, nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
@@ -207,8 +207,8 @@ public:
         block.nNonce64       = nNonce64;
         block.mix_hash       = mix_hash;
 
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // ariel
+        block.hashUTXORoot   = hashUTXORoot; // ariel
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
         block.prevoutStake   = prevoutStake;
         return block;

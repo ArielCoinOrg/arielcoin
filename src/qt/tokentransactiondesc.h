@@ -26,4 +26,4 @@ private:
     static QString FormatTxStatus(interfaces::Wallet& wallet, const interfaces::TokenTx& wtx);
 };
 
-#endif // QTUM_QT_TOKENTRANSACTIONDESC_H
+#endif // ARIEL_QT_TOKENTRANSACTIONDESC_H

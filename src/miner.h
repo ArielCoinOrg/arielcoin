@@ -265,7 +265,7 @@ public:
     explicit BlockAssembler(CChainState& chainstate, const CTxMemPool& mempool, const CChainParams& params, CWallet *pwallet);
 #endif
 
-///////////////////////////////////////////// // qtum
+///////////////////////////////////////////// // ariel
     ByteCodeExecResult bceResult;
     uint64_t minGasPrice = 1;
     uint64_t hardBlockGasLimit;
@@ -274,7 +274,7 @@ public:
 /////////////////////////////////////////////
 
     // The original constructed reward tx (either coinbase or coinstake) without gas refund adjustments
-    CMutableTransaction originalRewardTx; // qtum
+    CMutableTransaction originalRewardTx; // ariel
 
     //When GetAdjustedTime() exceeds this, no more transactions will attempt to be added
     int32_t nTimeLimit;

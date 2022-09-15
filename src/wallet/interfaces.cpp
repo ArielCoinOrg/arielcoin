@@ -25,7 +25,7 @@
 #include <wallet/rpcwallet.h>
 #include <wallet/wallet.h>
 #include <key_io.h>
-#include <qtum/qtumdelegation.h>
+#include <ariel/qtumdelegation.h>
 #include <miner.h>
 
 #include <memory>
@@ -334,7 +334,7 @@ bool TokenTxStatus(CWallet& wallet, const uint256& txid, int& block_number, bool
         return false;
     }
     block_number = mi->second.blockNumber;
-    auto it = wallet.mapWallet.find(mi->second.transactionHash); 
+    auto it = wallet.mapWallet.find(mi->second.transactionHash);
     if(it != wallet.mapWallet.end())
     {
         in_mempool = it->second.InMempool();
@@ -1237,8 +1237,8 @@ public:
         LOCK(m_wallet->cs_wallet);
         return m_wallet->GetStakeWeight();
     }
-    int64_t getLastCoinStakeSearchInterval() override 
-    { 
+    int64_t getLastCoinStakeSearchInterval() override
+    {
         return m_wallet->m_last_coin_stake_search_interval;
     }
     bool getWalletUnlockStakingOnly() override

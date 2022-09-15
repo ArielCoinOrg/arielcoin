@@ -371,7 +371,7 @@ static RPCHelpMan getrawtransaction()
         return EncodeHexTx(*tx, RPCSerializationFlags());
     }
 
-    //////////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////////// // ariel
     int nHeight = 0;
     int nConfirmations = 0;
     int nBlockTime = 0;

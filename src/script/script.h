@@ -358,7 +358,7 @@ public:
         return serialize(m_value);
     }
 
-    ///////////////////////////////// qtum
+    ///////////////////////////////// ariel
     static uint64_t vch_to_uint64(const std::vector<unsigned char>& vch)
     {
         if (vch.size() > 8) {
@@ -594,7 +594,7 @@ public:
     unsigned int GetSigOpCount(const CScript& scriptSig) const;
 
     bool IsPayToScriptHash() const;
-    ///////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////// // ariel
     bool IsPayToPubkey() const;
     bool IsPayToPubkeyHash() const;
     /////////////////////////////////////////////////

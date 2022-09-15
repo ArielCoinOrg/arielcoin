@@ -200,14 +200,14 @@ public:
     uint64_t nNonce64{0};
     uint256 mix_hash{0};
 
-    uint256 hashStateRoot{}; // qtum
-    uint256 hashUTXORoot{}; // qtum
+    uint256 hashStateRoot{}; // ariel
+    uint256 hashUTXORoot{}; // ariel
     // block signature - proof-of-stake protect the block by signing the block using a stake holder private key
     std::vector<unsigned char> vchBlockSigDlgt{};
     uint256 nStakeModifier{};
     // proof-of-stake specific fields
     COutPoint prevoutStake{};
-    uint256 hashProof{}; // qtum
+    uint256 hashProof{}; // ariel
     uint64_t nMoneySupply{0};
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
@@ -264,8 +264,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // ariel
+        block.hashUTXORoot   = hashUTXORoot; // ariel
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
         block.prevoutStake   = prevoutStake;
         block.nHeight = nHeight;
@@ -316,7 +316,7 @@ public:
         return pbegin[(pend - pbegin)/2];
     }
 
-    bool IsProofOfWork() const // qtum
+    bool IsProofOfWork() const // ariel
     {
         return !IsProofOfStake();
     }
@@ -416,12 +416,12 @@ public:
         READWRITE(obj.nNonce64);
         READWRITE(obj.mix_hash);
         // if (nSmartActivationBlock < obj.nHeight){
-            READWRITE(obj.hashStateRoot); // qtum
-            READWRITE(obj.hashUTXORoot); // qtum
+            READWRITE(obj.hashStateRoot); // ariel
+            READWRITE(obj.hashUTXORoot); // ariel
             READWRITE(obj.nStakeModifier);
             READWRITE(obj.prevoutStake);
             READWRITE(obj.hashProof);
-            READWRITE(obj.vchBlockSigDlgt); // qtum
+            READWRITE(obj.vchBlockSigDlgt); // ariel
         //}
     }
 
@@ -434,8 +434,8 @@ public:
         block.nTime           = nTime;
         block.nBits           = nBits;
         block.nNonce          = nNonce;
-        block.hashStateRoot   = hashStateRoot; // qtum
-        block.hashUTXORoot    = hashUTXORoot; // qtum
+        block.hashStateRoot   = hashStateRoot; // ariel
+        block.hashUTXORoot    = hashUTXORoot; // ariel
         block.vchBlockSigDlgt     = vchBlockSigDlgt;
         block.prevoutStake    = prevoutStake;
         block.nHeight = nHeight;

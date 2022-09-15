@@ -25,7 +25,7 @@ class uint256;
 class ChainstateManager;
 struct CHeightTxIndexKey;
 struct CHeightTxIndexIteratorKey;
-//////////////////////////////////// //qtum
+//////////////////////////////////// //ariel
 struct CAddressIndexKey;
 struct CAddressUnspentKey;
 struct CAddressUnspentValue;
@@ -106,7 +106,7 @@ public:
     bool ReadFlag(const std::string &name, bool &fValue);
     bool LoadBlockIndexGuts(const Consensus::Params& consensusParams, std::function<CBlockIndex*(const uint256&)> insertBlockIndex);
 
-    ////////////////////////////////////////////////////////////////////////////// // qtum
+    ////////////////////////////////////////////////////////////////////////////// // ariel
     bool WriteHeightIndex(const CHeightTxIndexKey &heightIndex, const std::vector<uint256>& hash);
 
     /**
@@ -158,7 +158,7 @@ public:
     //////////////////////////////////////////////////////////////////////////////
 };
 
-//////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////// // ariel
 struct CHeightTxIndexIteratorKey {
     unsigned int height;
 

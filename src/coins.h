@@ -20,7 +20,7 @@
 #include <functional>
 #include <unordered_map>
 
-////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////// // ariel
 struct CSpentIndexKey {
     uint256 txid;
     unsigned int outputIndex;
@@ -97,7 +97,7 @@ public:
     //! whether containing transaction was a coinbase
     unsigned int fCoinBase : 1;
     unsigned int fCoinStake : 1;
-	
+
     //! at which height this containing transaction was included in the active block chain
     uint32_t nHeight : 30;
 

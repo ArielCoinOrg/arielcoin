@@ -142,7 +142,7 @@ ChainTestingSetup::ChainTestingSetup(const std::string& chainName, const std::ve
     m_node.scheduler->m_service_thread = std::thread(util::TraceThread, "scheduler", [&] { m_node.scheduler->serviceQueue(); });
     GetMainSignals().RegisterBackgroundSignalScheduler(*m_node.scheduler);
 
-////////////////////////////////////////////////////////////// qtum
+////////////////////////////////////////////////////////////// ariel
     const CChainParams& chainparams = Params();
     fRequireStandard = !gArgs.GetBoolArg("-acceptnonstdtxn", !chainparams.RequireStandard());
     dev::eth::NoProof::init();
@@ -194,7 +194,7 @@ ChainTestingSetup::~ChainTestingSetup()
     m_node.chainman.reset();
     pblocktree.reset();
 
-/////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////// // ariel
     delete globalState.release();
     globalSealEngine.reset();
 ///////////////////////////////////////////////

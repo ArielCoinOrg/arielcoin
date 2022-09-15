@@ -1,7 +1,7 @@
 #ifndef QTUM_CONVERT_H
 #define QTUM_CONVERT_H
 
-////////////////////////////////////////////////////// qtum
+////////////////////////////////////////////////////// ariel
 #include <uint256.h>
 #include <libdevcore/Common.h>
 #include <libdevcore/CommonData.h>
@@ -62,4 +62,4 @@ inline uint160 u160Touint(const dev::u160& in)
 }
 //////////////////////////////////////////////////////
 
-#endif // QTUM_CONVERT_H
+#endif // ARIEL_CONVERT_H

@@ -321,14 +321,14 @@ BITCOIN_CORE_H = \
   zmq/zmqpublishnotifier.h \
   zmq/zmqrpc.h \
   zmq/zmqutil.h \
-  qtum/qtumstate.h \
-  qtum/qtumtransaction.h \
-  qtum/qtumDGP.h \
-  qtum/storageresults.h \
-  qtum/qtumutils.h \
-  qtum/qtumdelegation.h \
-  qtum/qtumtoken.h \
-  qtum/qtumledger.h \
+  ariel/qtumstate.h \
+  ariel/qtumtransaction.h \
+  ariel/qtumDGP.h \
+  ariel/storageresults.h \
+  ariel/qtumutils.h \
+  ariel/qtumdelegation.h \
+  ariel/qtumtoken.h \
+  ariel/qtumledger.h \
   api.h
 
 obj/build.h: FORCE
@@ -401,9 +401,9 @@ libbitcoin_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  qtum/qtumstate.cpp \
-  qtum/storageresults.cpp \
-  qtum/qtumledger.cpp \
+  ariel/qtumstate.cpp \
+  ariel/storageresults.cpp \
+  ariel/qtumledger.cpp \
   $(BITCOIN_CORE_H)
 
 if ENABLE_WALLET
@@ -656,10 +656,10 @@ libbitcoin_common_a_SOURCES = \
   script/signingprovider.cpp \
   script/standard.cpp \
   warnings.cpp \
-  qtum/qtumutils.cpp \
-  qtum/qtumDGP.cpp \
-  qtum/qtumtoken.cpp \
-  qtum/qtumdelegation.cpp \
+  ariel/qtumutils.cpp \
+  ariel/qtumDGP.cpp \
+  ariel/qtumtoken.cpp \
+  ariel/qtumdelegation.cpp \
   util/contractabi.cpp \
   libff/libff/algebra/curves/public_params.hpp \
   libff/libff/algebra/curves/curve_utils.hpp \

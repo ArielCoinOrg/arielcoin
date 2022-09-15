@@ -182,7 +182,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Reţineti: criptarea portofelului dvs. nu vă poate proteja în totalitate qtum-urile împotriva furtului de malware care vă infectează computerul.</translation>
+        <translation type="unfinished">Reţineti: criptarea portofelului dvs. nu vă poate proteja în totalitate ariel-urile împotriva furtului de malware care vă infectează computerul.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -555,7 +555,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Cereţi plăţi (generează coduri QR şi qtum-uri: URls)</translation>
+        <translation type="unfinished">Cereţi plăţi (generează coduri QR şi ariel-uri: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>

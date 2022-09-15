@@ -253,4 +253,4 @@ private:
     QtumHwiToolPriv* d;
 };
 
-#endif // QTUMHWITOOL_H
+#endif // ARIELHWITOOL_H

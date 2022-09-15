@@ -12,7 +12,7 @@
 extern std::unique_ptr<QtumState> globalState;
 
 inline void initState(){
-    boost::filesystem::path pathTemp;		
+    boost::filesystem::path pathTemp;
     pathTemp = fs::temp_directory_path() / strprintf("test_bitcoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
     boost::filesystem::create_directories(pathTemp);
     const std::string dirQtum = pathTemp.string();
@@ -77,4 +77,4 @@ inline std::pair<std::vector<ResultExecute>, ByteCodeExecResult> executeBC(std::
     return std::make_pair(res, bceExecRes);
 }
 
-#endif // QTUMTESTS_TEST_UTILS_H
+#endif // ARIELTESTS_TEST_UTILS_H

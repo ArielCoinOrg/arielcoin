@@ -1247,7 +1247,7 @@ Vaya a Archivo&gt; Abrir monedero para cargar un monedero.
     <name>ariel-core</name>
     <message>
         <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s corrupto. Intente utilizar la monedero herramienta de qtum-monedero para salvar o restaurar una copia de seguridad.</translation>
+        <translation type="unfinished">%s corrupto. Intente utilizar la monedero herramienta de ariel-monedero para salvar o restaurar una copia de seguridad.</translation>
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>

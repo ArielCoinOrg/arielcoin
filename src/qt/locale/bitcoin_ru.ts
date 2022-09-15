@@ -67,12 +67,12 @@
     </message>
     <message>
         <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Это ваши qtum-адреса для отправки платежей. Всегда проверяйте сумму и адрес получателя перед отправкой перевода.</translation>
+        <translation type="unfinished">Это ваши ariel-адреса для отправки платежей. Всегда проверяйте сумму и адрес получателя перед отправкой перевода.</translation>
     </message>
     <message>
         <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Это ваши qtum-адреса для получения платежей. Используйте кнопку «Создать новый адрес для получения» на вкладке Получить, чтобы создать новые адреса.
+        <translation type="unfinished">Это ваши ariel-адреса для получения платежей. Используйте кнопку «Создать новый адрес для получения» на вкладке Получить, чтобы создать новые адреса.
 Подписание возможно только с адресами типа "legacy".</translation>
     </message>
     <message>
@@ -295,7 +295,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Enter a Qtum address (e.g. %1)</source>
-        <translation type="unfinished">Введите qtum-адрес (напр. %1)</translation>
+        <translation type="unfinished">Введите ariel-адрес (напр. %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -495,7 +495,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Qtum address</source>
-        <translation>Отправить средства на qtum-адрес</translation>
+        <translation>Отправить средства на ariel-адрес</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -547,7 +547,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Подписывайте сообщения вашими qtum-адресами, чтобы доказать, что вы ими владеете</translation>
+        <translation>Подписывайте сообщения вашими ariel-адресами, чтобы доказать, что вы ими владеете</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -555,7 +555,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Проверяйте сообщения, чтобы убедиться, что они подписаны конкретными qtum-адресами</translation>
+        <translation>Проверяйте сообщения, чтобы убедиться, что они подписаны конкретными ariel-адресами</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -679,11 +679,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction</source>
-        <translation type="unfinished">Загрузить частично подписанную qtum-транзакцию (PSBT)</translation>
+        <translation type="unfinished">Загрузить частично подписанную ariel-транзакцию (PSBT)</translation>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction from clipboard</source>
-        <translation type="unfinished">Загрузить частично подписанную qtum-транзакцию из буфера обмена</translation>
+        <translation type="unfinished">Загрузить частично подписанную ariel-транзакцию из буфера обмена</translation>
     </message>
     <message>
         <source>Node window</source>

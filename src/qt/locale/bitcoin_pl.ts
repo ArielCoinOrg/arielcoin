@@ -3244,7 +3244,7 @@ Przejdź do Plik &gt; Otwórz Portfel aby wgrać portfel.
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s jest uszkodzony. Spróbuj użyć narzędzia qtum-portfel, aby uratować portfel lub przywrócić kopię zapasową.</translation>
+        <translation type="unfinished">%s jest uszkodzony. Spróbuj użyć narzędzia ariel-portfel, aby uratować portfel lub przywrócić kopię zapasową.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

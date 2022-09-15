@@ -8,14 +8,14 @@
 #include <uint256.h>
 #include <util/convert.h>
 #include <primitives/transaction.h>
-#include <qtum/qtumtransaction.h>
+#include <ariel/qtumtransaction.h>
 
 #include <libethereum/Executive.h>
 #include <libethcore/SealEngine.h>
 
 class CChain;
 
-using OnOpFunc = std::function<void(uint64_t, uint64_t, dev::eth::Instruction, dev::bigint, dev::bigint, 
+using OnOpFunc = std::function<void(uint64_t, uint64_t, dev::eth::Instruction, dev::bigint, dev::bigint,
     dev::bigint, dev::eth::VMFace const*, dev::eth::ExtVMFace const*)>;
 using plusAndMinus = std::pair<dev::u256, dev::u256>;
 using valtype = std::vector<unsigned char>;
@@ -72,7 +72,7 @@ namespace qtum{
 class CondensingTX;
 
 class QtumState : public dev::eth::State {
-    
+
 public:
 
     QtumState();
@@ -155,11 +155,11 @@ struct TemporaryState{
     dev::h256 oldHashStateRoot;
     dev::h256 oldHashUTXORoot;
 
-    TemporaryState(std::unique_ptr<QtumState>& _globalStateRef) : 
+    TemporaryState(std::unique_ptr<QtumState>& _globalStateRef) :
         globalStateRef(_globalStateRef),
-        oldHashStateRoot(globalStateRef->rootHash()), 
+        oldHashStateRoot(globalStateRef->rootHash()),
         oldHashUTXORoot(globalStateRef->rootHashUTXO()) {}
-                
+
     void SetRoot(dev::h256 newHashStateRoot, dev::h256 newHashUTXORoot)
     {
         globalStateRef->setRoot(newHashStateRoot);

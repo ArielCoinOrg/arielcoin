@@ -37,7 +37,7 @@
 #include <wallet/external_signer_scriptpubkeyman.h>
 #include <miner.h>
 #include <node/blockstorage.h>
-#include <qtum/qtumledger.h>
+#include <ariel/qtumledger.h>
 
 #include <univalue.h>
 

@@ -1705,7 +1705,7 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
                     break;
                 }
 
-                /////////////////////////////////////////////////////////// qtum
+                /////////////////////////////////////////////////////////// ariel
                 if((args.IsArgSet("-dgpstorage") && args.IsArgSet("-dgpevm")) || (!args.IsArgSet("-dgpstorage") && args.IsArgSet("-dgpevm")) ||
                   (!args.IsArgSet("-dgpstorage") && !args.IsArgSet("-dgpevm"))){
                     fGettingValuesDGP = true;
@@ -1806,7 +1806,7 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
                 break;
             }
 
-            /////////////////////////////////////////////////////////// qtum
+            /////////////////////////////////////////////////////////// ariel
             {
                 LOCK(cs_main);
                 CChain& active_chain = chainman.ActiveChain();

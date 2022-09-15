@@ -12,7 +12,7 @@
 #include <libdevcrypto/Hash.h>
 #include <libdevcrypto/LibSnark.h>
 #include <libethcore/Common.h>
-#include <qtum/qtumutils.h>
+#include <ariel/qtumutils.h>
 using namespace std;
 using namespace dev;
 using namespace dev::eth;

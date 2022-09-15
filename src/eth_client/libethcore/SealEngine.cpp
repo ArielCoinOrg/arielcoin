@@ -157,8 +157,8 @@ SealEngineFace* SealEngineRegistrar::create(ChainOperationParams const& _params)
 
 EVMSchedule const& SealEngineBase::evmSchedule(u256 const& _blockNumber) const
 {
-	//////////////////////////////////////////////////////// // qtum
-	if (u256(0) == chainParams().EIP158ForkBlock && 
+	//////////////////////////////////////////////////////// // ariel
+	if (u256(0) == chainParams().EIP158ForkBlock &&
 		u256(0) == chainParams().EIP150ForkBlock &&
 		u256(0) == chainParams().homesteadForkBlock &&
 		 false  == chainParams().allowFutureBlocks){

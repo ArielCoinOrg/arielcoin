@@ -23,7 +23,7 @@ static constexpr uint8_t DB_COINS{'c'};
 static constexpr uint8_t DB_BLOCK_FILES{'f'};
 static constexpr uint8_t DB_BLOCK_INDEX{'b'};
 
-////////////////////////////////////////// // qtum
+////////////////////////////////////////// // ariel
 static constexpr uint8_t DB_HEIGHTINDEX{'h'};
 static constexpr uint8_t DB_STAKEINDEX{'s'};
 static constexpr uint8_t DB_DELEGATEINDEX{'d'};
@@ -35,7 +35,7 @@ static constexpr uint8_t DB_FLAG{'F'};
 static constexpr uint8_t DB_REINDEX_FLAG{'R'};
 static constexpr uint8_t DB_LAST_BLOCK{'l'};
 
-////////////////////////////////////////// // qtum
+////////////////////////////////////////// // ariel
 static constexpr uint8_t DB_ADDRESSINDEX{'a'};
 static constexpr uint8_t DB_ADDRESSUNSPENTINDEX{'u'};
 static constexpr uint8_t DB_TIMESTAMPINDEX{'S'};
@@ -307,7 +307,7 @@ bool CBlockTreeDB::ReadFlag(const std::string &name, bool &fValue) {
     return true;
 }
 
-/////////////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////////////// // ariel
 bool CBlockTreeDB::WriteHeightIndex(const CHeightTxIndexKey &heightIndex, const std::vector<uint256>& hash) {
     CDBBatch batch(*this);
     batch.Write(std::make_pair(DB_HEIGHTINDEX, heightIndex), hash);
@@ -709,11 +709,11 @@ bool CBlockTreeDB::LoadBlockIndexGuts(const Consensus::Params& consensusParams, 
                 pindexNew->nMoneySupply   = diskindex.nMoneySupply;
                 pindexNew->nStatus        = diskindex.nStatus;
                 pindexNew->nTx            = diskindex.nTx;
-                pindexNew->hashStateRoot  = diskindex.hashStateRoot; // qtum
-                pindexNew->hashUTXORoot   = diskindex.hashUTXORoot; // qtum
+                pindexNew->hashStateRoot  = diskindex.hashStateRoot; // ariel
+                pindexNew->hashUTXORoot   = diskindex.hashUTXORoot; // ariel
                 pindexNew->nStakeModifier = diskindex.nStakeModifier;
                 pindexNew->prevoutStake   = diskindex.prevoutStake;
-                pindexNew->vchBlockSigDlgt    = diskindex.vchBlockSigDlgt; // qtum
+                pindexNew->vchBlockSigDlgt    = diskindex.vchBlockSigDlgt; // ariel
 
 //                if (diskindex.nHeight < Params().GetConsensus().nSmartActivationBlock){
 //                    pindexNew->hashStateRoot = Params().HashUTXORoot();

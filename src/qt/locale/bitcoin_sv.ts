@@ -1085,7 +1085,7 @@ Försök igen.</translation>
     <name>OpenURIDialog</name>
     <message>
         <source>Open qtum URI</source>
-        <translation type="unfinished">Öppna qtum-URI</translation>
+        <translation type="unfinished">Öppna ariel-URI</translation>
     </message>
     </context>
 <context>

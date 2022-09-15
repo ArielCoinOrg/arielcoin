@@ -18,7 +18,7 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
     if (tx.vout.empty())
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-vout-empty");
     // Size limits (this doesn't take the witness into account, as that hasn't been checked for malleability)
-    if (::GetSerializeSize(tx, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) > MAX_TRANSACTION_BASE_SIZE || 
+    if (::GetSerializeSize(tx, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) > MAX_TRANSACTION_BASE_SIZE ||
         ::GetSerializeSize(tx, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) * WITNESS_SCALE_FACTOR > dgpMaxBlockWeight)
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-oversize");
 
@@ -37,7 +37,7 @@ bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-txouttotal-toolarge");
 
 #ifndef BUILD_BITCOIN_INTERNAL
-        /////////////////////////////////////////////////////////// // qtum
+        /////////////////////////////////////////////////////////// // ariel
         if (txout.scriptPubKey.HasOpCall() || txout.scriptPubKey.HasOpCreate() || txout.scriptPubKey.HasOpSender()) {
             std::vector<std::vector<unsigned char>> vSolutions;
             TxoutType whichType = Solver(txout.scriptPubKey, vSolutions, true);

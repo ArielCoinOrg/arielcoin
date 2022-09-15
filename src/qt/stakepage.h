@@ -63,4 +63,4 @@ private:
     void updateAnnualROI();
 };
 
-#endif // QTUM_QT_STAKEPAGE_H
+#endif // ARIEL_QT_STAKEPAGE_H

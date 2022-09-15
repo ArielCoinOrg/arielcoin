@@ -35,7 +35,7 @@
 #include <wallet/wallet.h>
 #include <wallet/walletdb.h>
 #include <wallet/walletutil.h>
-#include <qtum/qtumdelegation.h>
+#include <ariel/qtumdelegation.h>
 #include <util/signstr.h>
 #include <interfaces/wallet.h>
 #include <rpc/contract_util.h>

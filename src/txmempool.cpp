@@ -1151,7 +1151,7 @@ void CTxMemPool::SetIsLoaded(bool loaded)
     m_is_loaded = loaded;
 }
 
-/////////////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////////////// // ariel
 void CTxMemPool::addAddressIndex(const CTxMemPoolEntry &entry, const CCoinsViewCache &view)
 {
     LOCK(cs);

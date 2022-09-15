@@ -1,4 +1,4 @@
-﻿#include <qtum/qtumtoken.h>
+﻿#include <ariel/qtumtoken.h>
 #include <validation.h>
 #include <util/moneystr.h>
 #include <util/contractabi.h>
@@ -607,7 +607,7 @@ bool QtumToken::exec(const std::vector<std::string> &input, int func, std::vecto
 
     // Execute the command and get the result
     std::string result;
-    d->errorMessage.clear();    
+    d->errorMessage.clear();
     if(!(d->tokenExec->exec(sendTo, d->lstParams, result, d->errorMessage)))
         return false;
 

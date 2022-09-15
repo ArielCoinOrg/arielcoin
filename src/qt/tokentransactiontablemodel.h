@@ -121,4 +121,4 @@ public Q_SLOTS:
     friend class TokenTransactionTablePriv;
 };
 
-#endif // QTUM_QT_TOKENTOKENTRANSACTIONTABLEMODEL_H
+#endif // ARIEL_QT_TOKENTOKENTRANSACTIONTABLEMODEL_H

@@ -2,7 +2,7 @@
 #include <qtumtests/test_utils.h>
 #include <script/standard.h>
 #include <chainparams.h>
-#include <qtum/qtumdelegation.h>
+#include <ariel/qtumdelegation.h>
 
 namespace DelegationTest{
 

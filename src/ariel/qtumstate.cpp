@@ -3,7 +3,7 @@
 #include <validation.h>
 #include <chainparams.h>
 #include <script/script.h>
-#include <qtum/qtumstate.h>
+#include <ariel/qtumstate.h>
 #include <libevm/VMFace.h>
 #include <validation.h>
 
@@ -166,7 +166,7 @@ Vin* QtumState::vin(dev::Address const& _addr)
         std::string stateBack = stateUTXO.at(_addr);
         if (stateBack.empty())
             return nullptr;
-            
+
         dev::RLP state(stateBack);
         auto i = cacheUTXO.emplace(
             std::piecewise_construct,
@@ -185,7 +185,7 @@ Vin* QtumState::vin(dev::Address const& _addr)
 
 //     qtum::commit(cacheUTXO, stateUTXO, m_cache);
 //     cacheUTXO.clear();
-        
+
 //     m_touched += dev::eth::commit(m_cache, m_state);
 //     m_changeLog.clear();
 //     m_cache.clear();

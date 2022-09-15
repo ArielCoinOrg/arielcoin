@@ -77,7 +77,7 @@ public:
     }
     virtual std::pair<bool, bytes> executePrecompiled(Address const& _a, bytesConstRef _in, u256 const&) const { return m_params.precompiled.at(_a).execute(_in); }
 
-////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////// // ariel
     void setQtumSchedule(EVMSchedule _qtumSchedule) const { qtumSchedule = _qtumSchedule; }
 
     EVMSchedule& getQtumSchedule() const { return qtumSchedule; }
@@ -96,7 +96,7 @@ private:
     mutable Mutex x_options;
     std::unordered_map<std::string, bytes> m_options;
 
-    mutable EVMSchedule qtumSchedule; // qtum
+    mutable EVMSchedule qtumSchedule; // ariel
 
     ChainOperationParams m_params;
 };

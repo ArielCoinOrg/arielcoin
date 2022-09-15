@@ -29,7 +29,7 @@
 #include <wallet/walletutil.h>
 #include <consensus/params.h>
 #include <pos.h>
-#include <qtum/qtumdelegation.h>
+#include <ariel/qtumdelegation.h>
 
 #include <algorithm>
 #include <atomic>

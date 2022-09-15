@@ -42,17 +42,17 @@
 
 #include <consensus/consensus.h>
 
-/////////////////////////////////////////// qtum
+/////////////////////////////////////////// ariel
 class CWalletTx;
 class CWallet;
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
+#include <ariel/qtumstate.h>
+#include <ariel/qtumDGP.h>
 #include <libethereum/ChainParams.h>
 #include <libethereum/LastBlockHashesFace.h>
 #include <libethashseal/GenesisInfo.h>
 #include <script/standard.h>
-#include <qtum/storageresults.h>
+#include <ariel/storageresults.h>
 
 
 extern std::unique_ptr<QtumState> globalState;
@@ -139,7 +139,7 @@ static const uint64_t DEFAULT_GAS_LIMIT_OP_SEND=250000;
 static const CAmount DEFAULT_GAS_PRICE=0.00000040*COIN;
 static const CAmount MAX_RPC_GAS_PRICE=0.00000100*COIN;
 
-static const size_t MAX_CONTRACT_VOUTS = 1000; // qtum
+static const size_t MAX_CONTRACT_VOUTS = 1000; // ariel
 
 //! -stakingminutxovalue default
 static const CAmount DEFAULT_STAKING_MIN_UTXO_VALUE = 100 * COIN;
@@ -395,7 +395,7 @@ public:
 /** Initializes the script-execution cache */
 void InitScriptExecutionCache();
 
-///////////////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////////////// // ariel
 bool GetAddressIndex(uint256 addressHash, int type,
                      std::vector<std::pair<CAddressIndexKey, CAmount> > &addressIndex,
                      int start = 0, int end = 0);
@@ -455,7 +455,7 @@ extern std::unique_ptr<StorageResults> pstorageresult;
 
 bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, const Consensus::Params& consensusParams, CAmount nFees, CAmount gasRefunds, CAmount nActualStakeReward, const std::vector<CTxOut>& vouts, CAmount nValueCoinPrev, bool delegateOutputExist, CChain& chain);
 
-//////////////////////////////////////////////////////// qtum
+//////////////////////////////////////////////////////// ariel
 bool GetSpentCoinFromBlock(const CBlockIndex* pindex, COutPoint prevout, Coin* coin);
 
 bool GetSpentCoinFromMainChain(const CBlockIndex* pforkPrev, COutPoint prevoutStake, Coin* coin, CChain& chain);

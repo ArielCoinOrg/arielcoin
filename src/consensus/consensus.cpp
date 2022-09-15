@@ -7,7 +7,7 @@ unsigned int dgpMaxBlockSerSize = 30000000;
 /** The maximum allowed weight for a block, see BIP 141 (network rule) */
 unsigned int dgpMaxBlockWeight = 30000000;
 
-unsigned int dgpMaxBlockSize = dgpMaxBlockWeight - 4000; // qtum
+unsigned int dgpMaxBlockSize = dgpMaxBlockWeight - 4000; // ariel
 
 /** The maximum allowed number of signature check operations in a block (network rule) */
 int64_t dgpMaxBlockSigOps = 80000;

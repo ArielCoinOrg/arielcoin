@@ -8,7 +8,7 @@
 #include <qt/walletmodel.h>
 #include <util/strencodings.h>
 #include <util/system.h>
-#include <qtum/qtumledger.h>
+#include <ariel/qtumledger.h>
 #include <chainparams.h>
 #include <outputtype.h>
 

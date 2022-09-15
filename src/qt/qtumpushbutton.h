@@ -21,4 +21,4 @@ private:
     QIcon m_downIcon;
 };
 
-#endif // QTUMPUSHBUTTON_H
+#endif // ARIELPUSHBUTTON_H

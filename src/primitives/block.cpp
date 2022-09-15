@@ -110,8 +110,8 @@ std::string CBlock::ToString() const
         hashPrevBlock.ToString(),
         hashMerkleRoot.ToString(),
         nTime, nBits, nNonce,
-        hashStateRoot.ToString(), // qtum
-        hashUTXORoot.ToString(), // qtum
+        hashStateRoot.ToString(), // ariel
+        hashUTXORoot.ToString(), // ariel
         HexStr(vchBlockSigDlgt),
         IsProofOfStake() ? "PoS" : "PoW",
         prevoutStake.ToString(),

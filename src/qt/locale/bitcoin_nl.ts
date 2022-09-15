@@ -1344,7 +1344,7 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
     <name>OpenURIDialog</name>
     <message>
         <source>Open qtum URI</source>
-        <translation type="unfinished">Open qtum-URI</translation>
+        <translation type="unfinished">Open ariel-URI</translation>
     </message>
     </context>
 <context>
@@ -3592,7 +3592,7 @@ Ga naar Bestand &gt; Open portemonee om er één te openen.
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s is corrupt. Probeer de portemonnee tool qtum-portemonnee om het probleem op te lossen of een backup terug te zetten.</translation>
+        <translation type="unfinished">%s is corrupt. Probeer de portemonnee tool ariel-portemonnee om het probleem op te lossen of een backup terug te zetten.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>

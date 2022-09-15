@@ -98,29 +98,29 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += arield
+  bin_PROGRAMS += qtumd
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += ariel-node
+  bin_PROGRAMS += qtum-node
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += ariel-cli
+  bin_PROGRAMS += qtum-cli
 endif
 
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += ariel-tx
+  bin_PROGRAMS += qtum-tx
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += ariel-wallet
+  bin_PROGRAMS += qtum-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += ariel-util
+  bin_PROGRAMS += qtum-util
 endif
 
 .PHONY: FORCE check-symbols check-security

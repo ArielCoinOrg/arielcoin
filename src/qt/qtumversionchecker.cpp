@@ -9,7 +9,7 @@
 #include <QRegularExpressionMatchIterator>
 #include <QTimer>
 
-#define paternVersion "qtum-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
+#define paternVersion "ariel-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
 QtumVersionChecker::QtumVersionChecker(QObject *parent) : QObject(parent)
 {

@@ -6,8 +6,8 @@ define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2022)
 define(_COPYRIGHT_HOLDERS,[The %s Developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Qtum Core]])
-AC_INIT([Qtum Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/qtumproject/qtum/issues],[qtum],[https://qtum.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Ariel Core]])
+AC_INIT([Ariel Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/qtumproject/qtum/issues],[qtum],[https://qtum.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -19,15 +19,15 @@ if test "x$PKG_CONFIG" = x; then
   AC_MSG_ERROR([pkg-config not found])
 fi
 
-BITCOIN_DAEMON_NAME=qtumd
-BITCOIN_GUI_NAME=qtum-qt
-BITCOIN_CLI_NAME=qtum-cli
-BITCOIN_TX_NAME=qtum-tx
-BITCOIN_UTIL_NAME=qtum-util
-BITCOIN_WALLET_TOOL_NAME=qtum-wallet
+BITCOIN_DAEMON_NAME=arield
+BITCOIN_GUI_NAME=ariel-qt
+BITCOIN_CLI_NAME=ariel-cli
+BITCOIN_TX_NAME=ariel-tx
+BITCOIN_UTIL_NAME=ariel-util
+BITCOIN_WALLET_TOOL_NAME=ariel-wallet
 dnl Multi Process
-BITCOIN_MP_NODE_NAME=qtum-node
-BITCOIN_MP_GUI_NAME=qtum-gui
+BITCOIN_MP_NODE_NAME=ariel-node
+BITCOIN_MP_GUI_NAME=ariel-gui
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -291,7 +291,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess qtum-node, qtum-wallet, and qtum-gui executables in addition to monolithic qtumd and qtum-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess ariel-node, ariel-wallet, and ariel-gui executables in addition to monolithic arield and ariel-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
@@ -596,31 +596,31 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build qtum-cli qtum-tx qtum-util qtum-wallet (default=yes)])],
+  [build ariel-cli ariel-tx ariel-util ariel-wallet (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
 AC_ARG_ENABLE([util-cli],
   [AS_HELP_STRING([--enable-util-cli],
-  [build qtum-cli])],
+  [build ariel-cli])],
   [build_bitcoin_cli=$enableval],
   [build_bitcoin_cli=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-tx],
   [AS_HELP_STRING([--enable-util-tx],
-  [build qtum-tx])],
+  [build ariel-tx])],
   [build_bitcoin_tx=$enableval],
   [build_bitcoin_tx=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-wallet],
   [AS_HELP_STRING([--enable-util-wallet],
-  [build qtum-wallet])],
+  [build ariel-wallet])],
   [build_bitcoin_wallet=$enableval],
   [build_bitcoin_wallet=$build_bitcoin_utils])
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build qtum-util])],
+  [build ariel-util])],
   [build_bitcoin_util=$enableval],
   [build_bitcoin_util=$build_bitcoin_utils])
 
@@ -632,7 +632,7 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build qtumd daemon (default=yes)])],
+  [build arield daemon (default=yes)])],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 
@@ -1634,23 +1634,23 @@ if test x$build_multiprocess != xno; then
   AC_SUBST(MPGEN_PREFIX)
 fi
 
-AC_MSG_CHECKING([whether to build qtumd])
+AC_MSG_CHECKING([whether to build arield])
 AM_CONDITIONAL([BUILD_BITCOIND], [test x$build_bitcoind = xyes])
 AC_MSG_RESULT($build_bitcoind)
 
-AC_MSG_CHECKING([whether to build qtum-cli])
+AC_MSG_CHECKING([whether to build ariel-cli])
 AM_CONDITIONAL([BUILD_BITCOIN_CLI], [test x$build_bitcoin_cli = xyes])
 AC_MSG_RESULT($build_bitcoin_cli)
 
-AC_MSG_CHECKING([whether to build qtum-tx])
+AC_MSG_CHECKING([whether to build ariel-tx])
 AM_CONDITIONAL([BUILD_BITCOIN_TX], [test x$build_bitcoin_tx = xyes])
 AC_MSG_RESULT($build_bitcoin_tx)
 
-AC_MSG_CHECKING([whether to build qtum-wallet])
+AC_MSG_CHECKING([whether to build ariel-wallet])
 AM_CONDITIONAL([BUILD_BITCOIN_WALLET], [test x$build_bitcoin_wallet = xyes])
 AC_MSG_RESULT($build_bitcoin_wallet)
 
-AC_MSG_CHECKING([whether to build qtum-util])
+AC_MSG_CHECKING([whether to build ariel-util])
 AM_CONDITIONAL([BUILD_BITCOIN_UTIL], [test x$build_bitcoin_util = xyes])
 AC_MSG_RESULT($build_bitcoin_util)
 

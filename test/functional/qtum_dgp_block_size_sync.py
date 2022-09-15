@@ -10,7 +10,7 @@ from test_framework.blocktools import *
 import io
 
 """
-Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see qtum-dgp.py
+Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see ariel-dgp.py
 """
 class QtumDGPBlockSizeSyncTest(BitcoinTestFramework):
     def set_test_params(self):
@@ -116,7 +116,7 @@ class QtumDGPBlockSizeSyncTest(BitcoinTestFramework):
         self.BLOCK_SIZE_DGP = DGPState(self.node, "0000000000000000000000000000000000000081")
         self.is_network_split = False
         self.connect_nodes(0, 1)
-        
+
         # Start off by setting ourself as admin
         admin_address = self.node.getnewaddress()
 

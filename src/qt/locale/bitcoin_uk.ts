@@ -546,7 +546,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Підтвердіть, що ви є власником повідомлення підписавши його вашою Qtum-адресою</translation>
+        <translation>Підтвердіть, що ви є власником повідомлення підписавши його вашою Ariel-адресою</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -554,7 +554,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Qtum-адресою</translation>
+        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Ariel-адресою</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -1938,7 +1938,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation type="unfinished">Неможливо обробити URI! Причиною цього може бути некоректна qtum-адреса або неправильні параметри URI.</translation>
+        <translation type="unfinished">Неможливо обробити URI! Причиною цього може бути некоректна ariel-адреса або неправильні параметри URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2726,7 +2726,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
-        <translation type="unfinished">Якщо обсяг транзакцій менше, ніж простір у блоках, майнери, а також вузли ретрансляції можуть стягувати мінімальну плату. Сплата лише цієї мінімальної суми може призвести до ніколи не підтверджуваної транзакції, коли буде більше попиту на qtum-транзакції, ніж мережа може обробити.</translation>
+        <translation type="unfinished">Якщо обсяг транзакцій менше, ніж простір у блоках, майнери, а також вузли ретрансляції можуть стягувати мінімальну плату. Сплата лише цієї мінімальної суми може призвести до ніколи не підтверджуваної транзакції, коли буде більше попиту на ariel-транзакції, ніж мережа може обробити.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2959,7 +2959,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">Увага: Неприпустима qtum-адреса.</translation>
+        <translation type="unfinished">Увага: Неприпустима ariel-адреса.</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3129,7 +3129,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Qtum-адресою</translation>
+        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Ariel-адресою</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

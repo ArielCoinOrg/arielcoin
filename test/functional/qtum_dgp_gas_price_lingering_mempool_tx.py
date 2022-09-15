@@ -10,7 +10,7 @@ from test_framework.blocktools import *
 
 
 """
-Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see qtum-dgp.py
+Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see ariel-dgp.py
 """
 class QtumDGPGasPriceLingeringMempoolTxTest(BitcoinTestFramework):
     def set_test_params(self):

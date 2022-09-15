@@ -366,7 +366,7 @@
     </message>
     <message>
         <source>Send coins to a Qtum address</source>
-        <translation>მონეტების გაგზავნა Qtum-მისამართზე</translation>
+        <translation>მონეტების გაგზავნა Ariel-მისამართზე</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,11 +398,11 @@
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>მესიჯებზე ხელმოწერა თქვენი Qtum-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
+        <translation>მესიჯებზე ხელმოწერა თქვენი Ariel-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული Qtum-მისამართით</translation>
+        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული Ariel-მისამართით</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -741,7 +741,7 @@
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">შეყვანილი მისამართი "%1" არ არის ვალიდური Qtum-მისამართი.</translation>
+        <translation type="unfinished">შეყვანილი მისამართი "%1" არ არის ვალიდური Ariel-მისამართი.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -895,7 +895,7 @@
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>როუტერში Qtum-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
+        <translation>როუტერში Ariel-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -990,7 +990,7 @@
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება Qtum-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
+        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება Ariel-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1455,7 +1455,7 @@
     </message>
     <message>
         <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">ყურადღება: არასწორია Qtum-მისამართი</translation>
+        <translation type="unfinished">ყურადღება: არასწორია Ariel-მისამართი</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1565,7 +1565,7 @@
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული Qtum-მისამართით</translation>
+        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული Ariel-მისამართით</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

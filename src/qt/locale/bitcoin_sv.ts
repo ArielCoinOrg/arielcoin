@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Detta är dina Qtum-adresser för att skicka betalningar. Kontrollera alltid belopp och mottagaradress innan du skickar qtum.</translation>
+        <translation type="unfinished">Detta är dina Ariel-adresser för att skicka betalningar. Kontrollera alltid belopp och mottagaradress innan du skickar qtum.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -257,7 +257,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Enter a Qtum address (e.g. %1)</source>
-        <translation type="unfinished">Ange en Qtum-adress (t.ex. %1)</translation>
+        <translation type="unfinished">Ange en Ariel-adress (t.ex. %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -387,7 +387,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Send coins to a Qtum address</source>
-        <translation>Skicka qtum till en Qtum-adress</translation>
+        <translation>Skicka qtum till en Ariel-adress</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -419,11 +419,11 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Signera meddelanden med dina Qtum-adresser för att bevisa att du äger dem</translation>
+        <translation>Signera meddelanden med dina Ariel-adresser för att bevisa att du äger dem</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Qtum-adresser</translation>
+        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Ariel-adresser</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -911,7 +911,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Den angivna adressen "%1" är inte en giltig Qtum-adress.</translation>
+        <translation type="unfinished">Den angivna adressen "%1" är inte en giltig Ariel-adress.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1050,7 +1050,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
-        <translation type="unfinished">Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserats med Qtum-nätverket enligt informationen nedan.</translation>
+        <translation type="unfinished">Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserats med Ariel-nätverket enligt informationen nedan.</translation>
     </message>
     <message>
         <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1180,7 +1180,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Qtum-klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
+        <translation>Öppna automatiskt Ariel-klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1196,7 +1196,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Anslut till Qtum-nätverket genom en SOCKS5-proxy.</translation>
+        <translation type="unfinished">Anslut till Ariel-nätverket genom en SOCKS5-proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1319,7 +1319,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Qtum-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
+        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Ariel-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1417,7 +1417,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation type="unfinished">URI kan inte parsas! Detta kan orsakas av en ogiltig Qtum-adress eller felaktiga URI-parametrar.</translation>
+        <translation type="unfinished">URI kan inte parsas! Detta kan orsakas av en ogiltig Ariel-adress eller felaktiga URI-parametrar.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1743,7 +1743,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation type="unfinished">Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Qtum-nätverket.</translation>
+        <translation type="unfinished">Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Ariel-nätverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2135,7 +2135,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">Varning: Ogiltig Qtum-adress</translation>
+        <translation type="unfinished">Varning: Ogiltig Ariel-adress</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2174,7 +2174,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>The Qtum address to send the payment to</source>
-        <translation type="unfinished">Qtum-adress att sända betalning till</translation>
+        <translation type="unfinished">Ariel-adress att sända betalning till</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2218,7 +2218,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation type="unfinished">Ett meddelande som bifogades qtum: -URIn och som sparas med transaktionen som referens. Obs: Meddelandet sänds inte över Qtum-nätverket.</translation>
+        <translation type="unfinished">Ett meddelande som bifogades qtum: -URIn och som sparas med transaktionen som referens. Obs: Meddelandet sänds inte över Ariel-nätverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2245,7 +2245,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>The Qtum address to sign the message with</source>
-        <translation type="unfinished">Qtum-adress att signera meddelandet med</translation>
+        <translation type="unfinished">Ariel-adress att signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2269,7 +2269,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Qtum-adress</translation>
+        <translation>Signera meddelandet för att bevisa att du äger denna Ariel-adress</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2293,7 +2293,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>The Qtum address the message was signed with</source>
-        <translation type="unfinished">Qtum-adress som meddelandet signerades med</translation>
+        <translation type="unfinished">Ariel-adress som meddelandet signerades med</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2301,7 +2301,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Qtum-adress</translation>
+        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Ariel-adress</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

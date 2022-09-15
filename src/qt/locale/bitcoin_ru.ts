@@ -1198,7 +1198,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Введенный адрес "%1" не является действительным qtum-адресом.</translation>
+        <translation type="unfinished">Введенный адрес "%1" не является действительным ariel-адресом.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1548,7 +1548,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт qtum-клиента на маршрутизаторе. Работает, если ваш маршрутизатор поддерживает UPnP, и данная функция на нём включена.</translation>
+        <translation>Автоматически открыть порт ariel-клиента на маршрутизаторе. Работает, если ваш маршрутизатор поддерживает UPnP, и данная функция на нём включена.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1556,7 +1556,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Автоматически открыть порт qtum-клиента на роутере. Работает? если ваш роутер поддерживает NAT-PMP, и данная функция на нём включена. Внешний порт может быть случайным.</translation>
+        <translation type="unfinished">Автоматически открыть порт ariel-клиента на роутере. Работает? если ваш роутер поддерживает NAT-PMP, и данная функция на нём включена. Внешний порт может быть случайным.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1959,7 +1959,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation type="unfinished">Не удалось обработать URI! Это может быть вызвано тем, что qtum-адрес неверен или параметры URI неправильно сформированы.</translation>
+        <translation type="unfinished">Не удалось обработать URI! Это может быть вызвано тем, что ariel-адрес неверен или параметры URI неправильно сформированы.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2837,7 +2837,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Создает частично подписанную qtum-транзакцию (PSBT), чтобы использовать её, например, с офлайновым кошельком %1, или PSBT-совместимым аппаратным кошельком.</translation>
+        <translation type="unfinished">Создает частично подписанную ariel-транзакцию (PSBT), чтобы использовать её, например, с офлайновым кошельком %1, или PSBT-совместимым аппаратным кошельком.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2912,7 +2912,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Пожалуйста, ещё раз просмотрите черновик вашей транзакции. Будет создана частично подписанная qtum-транзакция (PSBT), которую можно сохранить или скопировать, после чего подписать, например, офлайновым кошельком %1 или PSBT-совместимым аппаратным кошельком.</translation>
+        <translation type="unfinished">Пожалуйста, ещё раз просмотрите черновик вашей транзакции. Будет создана частично подписанная ariel-транзакция (PSBT), которую можно сохранить или скопировать, после чего подписать, например, офлайновым кошельком %1 или PSBT-совместимым аппаратным кошельком.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -2984,7 +2984,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Warning: Invalid Qtum address</source>
-        <translation type="unfinished">Предупреждение: неверный qtum-адрес</translation>
+        <translation type="unfinished">Предупреждение: неверный ariel-адрес</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3023,7 +3023,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>The Qtum address to send the payment to</source>
-        <translation type="unfinished">Qtum-адрес, на который нужно отправить платёж</translation>
+        <translation type="unfinished">Ariel-адрес, на который нужно отправить платёж</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3094,7 +3094,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>The Qtum address to sign the message with</source>
-        <translation type="unfinished">Qtum-адрес, которым подписать сообщение</translation>
+        <translation type="unfinished">Ariel-адрес, которым подписать сообщение</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3118,7 +3118,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Подписать сообщение, чтобы доказать владение qtum-адресом</translation>
+        <translation>Подписать сообщение, чтобы доказать владение ariel-адресом</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3142,7 +3142,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>The Qtum address the message was signed with</source>
-        <translation type="unfinished">Qtum-адрес, которым было подписано сообщение</translation>
+        <translation type="unfinished">Ariel-адрес, которым было подписано сообщение</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3154,7 +3154,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно действительно подписано указанным qtum-адресом</translation>
+        <translation>Проверить сообщение, чтобы убедиться, что оно действительно подписано указанным ariel-адресом</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

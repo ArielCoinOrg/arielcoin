@@ -22,11 +22,11 @@ These are some resources that might be helpful in understanding Qtum.
 Basic usage resources:
 
 * [User guide](https://docs.qtum.site/en/)
-* [Ariel-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#ariel-qt-wallet-tutorial)
+* [Ariel-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Ariel-Wallet-Tutorial#ariel-qt-wallet-tutorial)
 * [Qtum staking tutorial](https://github.com/qtumproject/documents/tree/master/en/How-to-Stake-with-Qtum)
-* [Qtum tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/Qtum-on-Raspberry-Pi)
-* [Running Qtum on Amazon AWS using Qtum AMI](https://github.com/qtumproject/documents/tree/master/en/Qtum-AWS)
-* [Encrypting and unlocking wallet](https://github.com/qtumproject/documents/tree/master/en/Encrypt-and-Unlock-Qtum-Wallet)
+* [Qtum tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/Ariel-on-Raspberry-Pi)
+* [Running Qtum on Amazon AWS using Qtum AMI](https://github.com/qtumproject/documents/tree/master/en/Ariel-AWS)
+* [Encrypting and unlocking wallet](https://github.com/qtumproject/documents/tree/master/en/Encrypt-and-Unlock-Ariel-Wallet)
 * [Testnet guide](https://github.com/qtumproject/documents/blob/master/en/Testnet-User-Guide.md)
 * [Block explorer](https://qtum.info), [Older explorer](https://explorer.qtum.org)
 

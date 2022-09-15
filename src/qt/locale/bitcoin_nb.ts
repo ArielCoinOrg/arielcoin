@@ -281,7 +281,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Enter a Qtum address (e.g. %1)</source>
-        <translation type="unfinished">Oppgi en Qtum-adresse (f.eks. %1)</translation>
+        <translation type="unfinished">Oppgi en Ariel-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>Internal</source>
@@ -646,7 +646,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation type="unfinished">Vis %1-hjelpemeldingen for å få en liste over mulige Qtum-kommandolinjealternativer</translation>
+        <translation type="unfinished">Vis %1-hjelpemeldingen for å få en liste over mulige Ariel-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -684,8 +684,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Qtum network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform> %n aktiv tilkobling til Qtum-nettverket.</numerusform>
-            <numerusform>%n aktive tilkoblinger til Qtum-nettverket.</numerusform>
+            <numerusform> %n aktiv tilkobling til Ariel-nettverket.</numerusform>
+            <numerusform>%n aktive tilkoblinger til Ariel-nettverket.</numerusform>
         </translation>
     </message>
     <message>
@@ -1081,7 +1081,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Den angitte adressen "%1" er ikke en gyldig Qtum-adresse.</translation>
+        <translation type="unfinished">Den angitte adressen "%1" er ikke en gyldig Ariel-adresse.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1410,7 +1410,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Koble til Qtum-nettverket gjennom en SOCKS5 proxy.</translation>
+        <translation type="unfinished">Koble til Ariel-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1549,7 +1549,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Qtum-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
+        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Ariel-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2177,7 +2177,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation type="unfinished">En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Qtum-nettverket.</translation>
+        <translation type="unfinished">En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Ariel-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2678,7 +2678,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>The Qtum address to send the payment to</source>
-        <translation type="unfinished">Qtum-adressen betalingen skal sendes til</translation>
+        <translation type="unfinished">Ariel-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2722,7 +2722,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation type="unfinished">En melding som var tilknyttet qtumen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Qtum-nettverket.</translation>
+        <translation type="unfinished">En melding som var tilknyttet qtumen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Ariel-nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2745,7 +2745,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>The Qtum address to sign the message with</source>
-        <translation type="unfinished">Qtum-adressen meldingen skal signeres med</translation>
+        <translation type="unfinished">Ariel-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2769,7 +2769,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Signer meldingen for å bevise at du eier denne Qtum-adressen</translation>
+        <translation>Signer meldingen for å bevise at du eier denne Ariel-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2793,7 +2793,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>The Qtum address the message was signed with</source>
-        <translation type="unfinished">Qtum-adressen meldingen ble signert med</translation>
+        <translation type="unfinished">Ariel-adressen meldingen ble signert med</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2805,7 +2805,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Qtum-adressen</translation>
+        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Ariel-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

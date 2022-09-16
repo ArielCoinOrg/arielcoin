@@ -1,4 +1,4 @@
-/*-------------------------------------------- 
+/*--------------------------------------------
 Widget CSS
 --------------------------------------------*/
 QWidget{
@@ -8,7 +8,7 @@ QWidget{
 Main Window CSS
 --------------------------------------------*/
 QMainWindow{
-    background-color: #4f9fde;
+    background-color: #de8f4f;
     border: 0px solid transparent;
     background-image: url(":/styles/theme3/app-icons/bg");
     background-position: bottom left;
@@ -26,8 +26,8 @@ QMainWindow::separator {
     padding: 0px;
     margin: 0px;
 }
-QMainWindow .QFrame#frameBalances, 
-#frameOtherTokens, 
+QMainWindow .QFrame#frameBalances,
+#frameOtherTokens,
 #frameRecentTransactions,
 #frameRequest,
 #frameFee{
@@ -82,7 +82,7 @@ NavigationBar #hLineLogo,
 NavigationBar #hLineStatus{
     border-top: 1px solid #61a9e1;
 }
-/*-------------------------------------------- 
+/*--------------------------------------------
 Line Edit CSS
 --------------------------------------------*/
 QLineEdit{
@@ -184,7 +184,7 @@ Group Box CSS
 --------------------------------------------*/
 QGroupBox
 {
-    border: 0px solid transparent; 
+    border: 0px solid transparent;
     margin-top: 20px;
     background-color: #f2f7fd;
 }
@@ -571,7 +571,7 @@ QStatusBar QLabel::disabled{
     color: rgba(107, 128, 175, 20%);
 }
 UnitDisplayStatusBarControl {
-    color: #ffffff; 
+    color: #ffffff;
     background: transparent;
     border: 1px solid #73bdec;
     border-radius: 12px;
@@ -729,7 +729,7 @@ QCheckBox:indicator:indeterminate:hover {
     image: url(:/styles/theme2/app-icons/checkbox_indeterminate_hover);
 }
 QCheckBox:indicator:unchecked:disabled {
-    image: url(:/styles/theme2/app-icons/checkbox_unchecked_disabled);  
+    image: url(:/styles/theme2/app-icons/checkbox_unchecked_disabled);
 }
 QCheckBox:indicator:checked:disabled {
     image: url(:/styles/theme2/app-icons/checkbox_checked_disabled);
@@ -767,7 +767,7 @@ QRadioButton::indicator::checked:hover {
     image: url(:/styles/theme2/app-icons/radiobutton_checked_hover);
 }
 QRadioButton:indicator:unchecked:disabled {
-    image: url(:/styles/theme2/app-icons/radiobutton_unchecked_disabled);  
+    image: url(:/styles/theme2/app-icons/radiobutton_unchecked_disabled);
 }
 QRadioButton:indicator:checked:disabled {
     image: url(:/styles/theme2/app-icons/radiobutton_checked_disabled);
@@ -818,7 +818,7 @@ QBalloonTip QPushButton::disabled {
 Push Button CSS
 --------------------------------------------*/
 QPushButton {
-    color: #26a1e3; 
+    color: #26a1e3;
     background: transparent;
     border: 1px solid #d5dde9;
     border-radius: 14px;
@@ -944,13 +944,13 @@ Modal Overlay CSS
     background-color: #26a1e3;
     border-radius: 4px;
 }
-#ModalOverlay QLabel { 
-    color: #6b80af;  
+#ModalOverlay QLabel {
+    color: #6b80af;
 }
-#ModalOverlay #labelNumberOfBlocksLeft, 
-#ModalOverlay #labelLastBlockTime, 
-#ModalOverlay #labelSyncDone, 
-#ModalOverlay #labelProgressIncrease, 
+#ModalOverlay #labelNumberOfBlocksLeft,
+#ModalOverlay #labelLastBlockTime,
+#ModalOverlay #labelSyncDone,
+#ModalOverlay #labelProgressIncrease,
 #ModalOverlay #labelEstimatedTimeLeft{
     color: #b5bfd7;
 }
@@ -971,12 +971,12 @@ Watch Only Widget CSS
 #watchOnlyWidget{
     padding: 4px;
 }
-#watchOnlyWidget QAbstractItemView::item, 
+#watchOnlyWidget QAbstractItemView::item,
 #watchOnlyWidget QAbstractItemView::item:selected {
     padding: 4px;
     padding-left: 8px;
     padding-right: 8px;
-} 
+}
 #watchOnlyWidget QAbstractItemView {
     padding: 4px;
     padding-left: 0px;
@@ -986,11 +986,11 @@ Watch Only Widget CSS
 Tab Bar close button CSS
 --------------------------------------------*/
 QToolButton#tabBarTool {
-    padding: 2px; 
+    padding: 2px;
 }
-QToolButton#tabBarTool::hover{ 
-    padding-top: 1px; 
-    padding-bottom: 1px; 
+QToolButton#tabBarTool::hover{
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 /*--------------------------------------------
 Stake Page Widget CSS

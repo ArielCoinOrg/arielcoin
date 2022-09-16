@@ -574,7 +574,7 @@ static RPCHelpMan getdifficulty()
     UniValue obj(UniValue::VOBJ);
     const CBlockIndex* tip = chainman.ActiveChain().Tip();
     obj.pushKV("proof-of-work",        GetDifficulty(GetLastBlockIndex(tip, false)));
-    obj.pushKV("proof-of-stake",       GetDifficulty(GetLastBlockIndex(tip, true)));
+//    obj.pushKV("proof-of-stake",       GetDifficulty(GetLastBlockIndex(tip, true)));
     return obj;
 },
     };

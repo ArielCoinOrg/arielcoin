@@ -36,16 +36,8 @@ Development resources:
 * [Ariel Book - A Developer's Guide To QTUM](http://book.qtum.site/en/)
 * [Ariel contract usage](https://docs.qtum.site/en/QRC20-Token-Introduce.html)
 * [Deploying a custom token to Ariel ](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [Ariel JS document](https://ArielCoinOrg.github.io/qtumjs-doc/)
 * [Smart contract ICO example](http://book.qtum.site/en/part3/ico.htm)
 * [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
-
-General Info about Ariel :
-
-* [CIRCLERESEARCH Ariel Primer](https://www.circle.com/marketing/pdfs/research/circle-research-qtum.pdf)
-* [Ariel 's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
-* [Technical article explaining Ariel 's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
-
 
 Developer's Tools
 -----------------
@@ -118,13 +110,13 @@ This light wallet runs in your Chrome browser as a browser extension, based on t
 
 Make sure to check out these resources as well for more information and to keep up to date with all the latest news about Ariel . At least 1 developer is always around, so if you're developing on Ariel and need help, we'd love to welcome you to our community.
 
-*	@Ariel on Twitter https://twitter.com/qtum
+*	@Ariel on Twitter https://twitter.com/ariel_coin
 * Ariel blog https://blog.arielcoin.org/
-*	Ariel Telegram Group https://t.me/qtumofficial, other languages available
-* Ariel Discord https://discordapp.com/invite/wRfmkQ9
-*	/r/Ariel on Reddit https://www.reddit.com/r/Qtum/
+*	Ariel Telegram Group https://t.me/ArielCoin, other languages available
+* Ariel Discord https://discord.gg/NJTnajuuYJ
+*	/r/Ariel on Reddit https://www.reddit.com/r/ArielCoin/
 *	Arielcoin.org https://arielcoin.org
-*	Ariel on Facebook https://www.facebook.com/QtumOfficial/
+*	Ariel on Facebook https://www.facebook.com/ArielCoin.org
 
 ### Ariel Smart Contract Limitations
 
@@ -157,7 +149,7 @@ This is a quick start script for compiling Ariel on Ubuntu
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
 
     git clone https://github.com/ArielCoinOrg/arielcoin --recursive
-    cd qtum
+    cd arielcoin
 
     # Note autogen will prompt to install some more dependencies if needed
     ./autogen.sh
@@ -187,7 +179,7 @@ Here is a brief description for compiling Ariel on CentOS, for more details plea
 
     # Building Ariel
     git clone --recursive https://github.com/ArielCoinOrg/arielcoin.git
-    cd qtum
+    cd arielcoin
     ./autogen.sh
     ./configure
     make -j4
@@ -215,14 +207,14 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 #### Build Ariel Core
 
-1. Clone the qtum source code and cd into `qtum`
+1. Clone the ariel source code and cd into `ariel`
 
         git clone --recursive https://github.com/ArielCoinOrg/arielcoin.git
-        cd qtum
+        cd arielcoin
 
 2.  Build ariel-core:
 
-    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
+    Configure and build the headless ariel binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 

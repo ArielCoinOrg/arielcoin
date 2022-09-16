@@ -623,7 +623,7 @@ void SetupServerArgs(ArgsManager& argsman)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/qtumproject/qtum>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/ArielCoinOrg/arielcoin>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i").translated, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

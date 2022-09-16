@@ -150,16 +150,16 @@ public:
         consensus.CSVHeight = 1; // 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5
         consensus.SegwitHeight = 1; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
-        consensus.QIP5Height = 300;
-        consensus.QIP6Height = 300;
-        consensus.QIP7Height = 300;
-        consensus.QIP9Height = 300;
+        consensus.QIP5Height = 3000000;
+        consensus.QIP6Height = 3000000;
+        consensus.QIP7Height = 3000000;
+        consensus.QIP9Height = 3000000;
+        consensus.nMuirGlacierHeight = 3000001;
+        consensus.nLondonHeight = 3000005;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
-        consensus.nOfflineStakeHeight = 680000;
-        consensus.nReduceBlocktimeHeight = 845000;
-        consensus.nMuirGlacierHeight = 303;
-        consensus.nLondonHeight = 305;
-        consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.nOfflineStakeHeight = 680000000;
+        consensus.nReduceBlocktimeHeight = 845000000;
+        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 minutes
@@ -207,10 +207,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x55;
-        pchMessageStart[1] = 0x41;
-        pchMessageStart[2] = 0x46;
-        pchMessageStart[3] = 0x52;
+        pchMessageStart[0] = 0x51;
+        pchMessageStart[1] = 0x42;
+        pchMessageStart[2] = 0x49;
+        pchMessageStart[3] = 0x54;
         nDefaultPort = 8383;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 0;
@@ -274,17 +274,17 @@ public:
         consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
-        consensus.nLastPOWBlock = 300000;
-        consensus.nLastBigReward = 5000;
+        consensus.nLastPOWBlock = 3000000;
+        consensus.nLastBigReward = 3000000;
         consensus.nMPoSRewardRecipients = 10;
         consensus.nFirstMPoSBlock = consensus.nLastPOWBlock +
                                     consensus.nMPoSRewardRecipients +
                                     consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 679999;
+        consensus.nLastMPoSBlock = 3000000;
 
 
-        consensus.nFixUTXOCacheHFHeight = 100000;
-        consensus.nEnableHeaderSignatureHeight = 399100;
+        consensus.nFixUTXOCacheHFHeight = 3000000;
+        consensus.nEnableHeaderSignatureHeight = 3000000;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking

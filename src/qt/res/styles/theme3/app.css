@@ -31,10 +31,10 @@ QMainWindow .QFrame#frameBalances,
 #frameRecentTransactions,
 #frameRequest,
 #frameFee{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 QMainWindow .QFrame#frameContract{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 QFrame#hLine,
 #hLine2,
@@ -52,10 +52,10 @@ QFrame#vLine,
     border-left: 1px solid transparent;
 }
 WalletFrame{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 QDialog{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 QLabel{
     color: #6b80af;
@@ -121,7 +121,7 @@ QAbstractItemView#autoCompleterPopup::item:selected {
 List Viev CSS
 --------------------------------------------*/
 QListView {
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
     border: none;
 }
 /*--------------------------------------------
@@ -186,7 +186,7 @@ QGroupBox
 {
     border: 0px solid transparent;
     margin-top: 20px;
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 QGroupBox::title {
     color: #6b80af;
@@ -599,7 +599,7 @@ UnitDisplayStatusBarControl QMenu{
 Progress Bar CSS
 --------------------------------------------*/
 QProgressBar {
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
     font: 10pt;
     color: #94ccf2;
     border-radius: 0px;
@@ -640,13 +640,13 @@ QTabBar::tab:disabled {
 QTabWidget::pane {
     border: none;
     border-top: none;
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 TitleBar QTabBar::tab {
     padding: 5px 0px;
 }
 #widgetTitle, #widgetWallet {
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 /*--------------------------------------------
 MenuBar CSS
@@ -783,7 +783,7 @@ QWidget#buttonsContainerWhite,
     background: #ffffff;
 }
 QWidget#ReceiveRequestDialog {
-    background: #d17f2c;
+    background: #f2f7fd;
 }
 QTextEdit#outUri {
     border: none;
@@ -846,7 +846,7 @@ QScrollArea {
     border:none;
 }
 QWidget#scrollAreaWidgetContents, QWidget#detailWidget {
-    background: #d17f2c;
+    background: #f2f7fd;
 }
 .ABIFunctionField{
 	background: transparent;
@@ -855,13 +855,13 @@ QWidget#scrollAreaWidgetContents, QWidget#detailWidget {
 Debug Dialog CSS
 --------------------------------------------*/
 QWidget#RPCConsole{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 /*--------------------------------------------
 Shut Down Window CSS
 --------------------------------------------*/
 QWidget#shutdownWindow{
-    background-color: #d17f2c;
+    background-color: #f2f7fd;
 }
 /*--------------------------------------------
 Tool Button CSS

@@ -1104,6 +1104,11 @@ static RPCHelpMan getblocktemplate()
     result.pushKV("bits", strprintf("%08x", pblock->nBits));
     result.pushKV("height", (int64_t)(pindexPrev->nHeight+1));
 
+    if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
+//        result.pushKV("hashStateRoot", HexStr(consensusParams.signet_challenge));
+//        result.pushKV("hashUTXORoot", HexStr(consensusParams.signet_challenge));
+    }
+
     if (consensusParams.signet_blocks) {
         result.pushKV("signet_challenge", HexStr(consensusParams.signet_challenge));
     }

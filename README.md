@@ -46,11 +46,11 @@ Developer's Tools
   * https://github.com/ArielCoinOrg/solar
 * DApp JavaScript Library
   * https://github.com/ArielCoinOrg/qtumjs
-* A toolkit for building qtum light wallets
+* A toolkit for building ariel light wallets
   * https://github.com/ArielCoinOrg/qtumjs-wallet
 * CORS arield RPC proxy for DApp
   * https://github.com/ArielCoinOrg/qtumportal
-* Docker images for running qtum services
+* Docker images for running ariel services
   * https://github.com/ArielCoinOrg/qtum-docker
 * qtum.info API that powers the block explorer and the QTUM Web wallet
   * https://github.com/ArielCoinOrg/qtuminfo-api#qtuminfo-api-documentation

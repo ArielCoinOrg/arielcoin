@@ -973,8 +973,8 @@ static RPCHelpMan getblocktemplate()
         uint256 txHash = tx.GetHash();
         setTxIndex[txHash] = i++;
 
-        if (tx.IsCoinBase())
-            continue;
+//        if (tx.IsCoinBase())
+//            continue;
 
         UniValue entry(UniValue::VOBJ);
 

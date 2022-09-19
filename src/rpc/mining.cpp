@@ -1105,8 +1105,8 @@ static RPCHelpMan getblocktemplate()
     result.pushKV("height", (int64_t)(pindexPrev->nHeight+1));
 
     if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
-        result.pushKV("hashStateRoot", uint256(h256Touint(dev::h256(globalState->rootHash()))).ToString());
-        result.pushKV("hashUTXORoot", uint256(h256Touint(dev::h256(globalState->rootHashUTXO()))).ToString());
+        result.pushKV("hashStateRoot", pblock.rootHash().ToString());
+        result.pushKV("hashUTXORoot", pblock.rootHashUTXO().ToString());
     }
 
     if (consensusParams.signet_blocks) {

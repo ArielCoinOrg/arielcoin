@@ -1105,8 +1105,8 @@ static RPCHelpMan getblocktemplate()
     result.pushKV("height", (int64_t)(pindexPrev->nHeight+1));
 
     if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
-        if (pindex->nHeight == m_params.GetConsensus().nSmartActivationBlock){
-            globalState->setRoot(uintToh256(m_params.HashStateRoot()));
+        if (pindex->nHeight == consensusParams.nSmartActivationBlock){
+            globalState->setRoot(uintToh256(Params().HashStateRoot()));
             globalState->setRootUTXO(dev::sha3(dev::rlp("")));
         }
         result.pushKV("hashStateRoot", uint256(h256Touint(dev::h256(globalState->rootHash()))).ToString());

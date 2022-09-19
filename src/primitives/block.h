@@ -60,8 +60,8 @@ public:
         if (nSmartActivationBlock <= obj.nHeight){
             READWRITE(obj.hashStateRoot);
             READWRITE(obj.hashUTXORoot);
-            READWRITE(obj.prevoutStake);
-            READWRITE(obj.vchBlockSigDlgt);
+//            READWRITE(obj.prevoutStake);
+//            READWRITE(obj.vchBlockSigDlgt);
         }
     }
 
@@ -268,8 +268,8 @@ public:
         if (nSmartActivationBlock <= obj.nHeight){
             READWRITE(obj.hashStateRoot);
             READWRITE(obj.hashUTXORoot);
-            READWRITE(obj.prevoutStake);
-            READWRITE(obj.vchBlockSigDlgt);
+//            READWRITE(obj.prevoutStake);
+//            READWRITE(obj.vchBlockSigDlgt);
         }
     }
 };

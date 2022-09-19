@@ -1144,7 +1144,7 @@ static RPCHelpMan getblocktemplate()
     if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
         result.pushKV("hashStateRoot", pblock->hashStateRoot.ToString());
         result.pushKV("hashUTXORoot", pblock->hashUTXORoot.ToString());
-        result.pushKV("transactions", coinbase_transactions);
+        result.pushKV("coinbase_transactions", coinbase_transactions);
     }
 
     if (consensusParams.signet_blocks) {

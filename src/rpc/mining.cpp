@@ -1025,7 +1025,7 @@ static RPCHelpMan getblocktemplate()
             if (out.nValue != (int64_t)pblock->vtx[0]->vout[0].nValue && out.nValue != 0){
                 UniValue trout(UniValue::VOBJ);
                 trout.pushKV("value", out.nValue);
-                trout.pushKV("scriptPubKey", out.scriptPubKey.get_str());
+                trout.pushKV("scriptPubKey", out.scriptPubKey);
                 deps.push_back(trout)
             }
         }

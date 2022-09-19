@@ -2287,6 +2287,7 @@ bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, 
     for(size_t i = 0; i < vouts.size(); i++){
         it=std::find(vTempVouts.begin(), vTempVouts.end(), vouts[i]);
         if(it==vTempVouts.end()){
+            LogPrintf("ERROR: gas\n");
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gas-refund-missing", "CheckReward(): Gas refund missing");
         }else{
             vTempVouts.erase(it);

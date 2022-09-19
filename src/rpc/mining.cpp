@@ -966,6 +966,8 @@ static RPCHelpMan getblocktemplate()
     UniValue aCaps(UniValue::VARR); aCaps.push_back("proposal");
 
     UniValue transactions(UniValue::VARR);
+    UniValue coinbase_transactions(UniValue::VARR);
+
     std::map<uint256, int64_t> setTxIndex;
     int i = 0;
     for (const auto& it : pblock->vtx) {
@@ -973,8 +975,8 @@ static RPCHelpMan getblocktemplate()
         uint256 txHash = tx.GetHash();
         setTxIndex[txHash] = i++;
 
-//        if (tx.IsCoinBase())
-//            continue;
+        if (tx.IsCoinBase())
+            continue;
 
         UniValue entry(UniValue::VOBJ);
 
@@ -1001,6 +1003,41 @@ static RPCHelpMan getblocktemplate()
         entry.pushKV("weight", GetTransactionWeight(tx));
 
         transactions.push_back(entry);
+    }
+
+    for (const auto& it : pblock->vtx) {
+        const CTransaction& tx = *it;
+        uint256 txHash = tx.GetHash();
+        setTxIndex[txHash] = i++;
+
+        if (!tx.IsCoinBase())
+            continue;
+
+        UniValue entry(UniValue::VOBJ);
+
+        entry.pushKV("data", EncodeHexTx(tx));
+        entry.pushKV("txid", txHash.GetHex());
+        entry.pushKV("hash", tx.GetWitnessHash().GetHex());
+
+        UniValue deps(UniValue::VARR);
+        for (const CTxIn &in : tx.vin)
+        {
+            if (setTxIndex.count(in.prevout.hash))
+                deps.push_back(setTxIndex[in.prevout.hash]);
+        }
+        entry.pushKV("depends", deps);
+
+        int index_in_template = i - 1;
+        entry.pushKV("fee", pblocktemplate->vTxFees[index_in_template]);
+        int64_t nTxSigOps = pblocktemplate->vTxSigOpsCost[index_in_template];
+        if (fPreSegWit) {
+            CHECK_NONFATAL(nTxSigOps % WITNESS_SCALE_FACTOR == 0);
+            nTxSigOps /= WITNESS_SCALE_FACTOR;
+        }
+        entry.pushKV("sigops", nTxSigOps);
+        entry.pushKV("weight", GetTransactionWeight(tx));
+
+        coinbase_transactions.push_back(entry);
     }
 
     UniValue aux(UniValue::VOBJ);
@@ -1107,6 +1144,7 @@ static RPCHelpMan getblocktemplate()
     if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
         result.pushKV("hashStateRoot", pblock->hashStateRoot.ToString());
         result.pushKV("hashUTXORoot", pblock->hashUTXORoot.ToString());
+        result.pushKV("transactions", coinbase_transactions);
     }
 
     if (consensusParams.signet_blocks) {

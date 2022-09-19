@@ -1020,10 +1020,14 @@ static RPCHelpMan getblocktemplate()
         entry.pushKV("hash", tx.GetWitnessHash().GetHex());
 
         UniValue deps(UniValue::VARR);
-        for (const CTxIn &in : tx.vin)
+        for (const CTxOut &out : tx.vout)
         {
-            if (setTxIndex.count(in.prevout.hash))
-                deps.push_back(setTxIndex[in.prevout.hash]);
+            if (out.value != (int64_t)pblock->vtx[0]->vout[0].nValue && out.value != 0){
+                UniValue trout(UniValue::VOBJ);
+                trout.pushKV("value", out.value);
+                trout.pushKV("scriptPubKey", out.scriptPubKey["address"].get_str());
+                deps.push_back(trout)
+            }
         }
         entry.pushKV("depends", deps);
 

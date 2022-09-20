@@ -1023,10 +1023,12 @@ static RPCHelpMan getblocktemplate()
         UniValue deps(UniValue::VARR);
         for (const CTxOut &out : tx.vout)
         {
-            UniValue trout(UniValue::VOBJ);
-            ScriptPubKeyToUniv(out.scriptPubKey, trout, true);
-            trout.pushKV("nValue", out.nValue);
-            deps.push_back(trout);
+            if (out.nValue != (int64_t)pblock->vtx[0]->vout[0].nValue && out.nValue != 0){
+                UniValue trout(UniValue::VOBJ);
+                ScriptPubKeyToUniv(out.scriptPubKey, trout, true);
+                trout.pushKV("nValue", out.nValue);
+                deps.push_back(trout);
+            }
         }
         entry.pushKV("depends", deps);
 

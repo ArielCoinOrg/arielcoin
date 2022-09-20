@@ -94,6 +94,7 @@ static UniValue GetNetworkHashPS(int lookup, int height, const CChain& active_ch
     return workDiff.getdouble() / timeDiff;
 }
 
+
 static RPCHelpMan getnetworkhashps()
 {
     return RPCHelpMan{"getnetworkhashps",
@@ -1024,8 +1025,7 @@ static RPCHelpMan getblocktemplate()
         {
             if (out.nValue != (int64_t)pblock->vtx[0]->vout[0].nValue && out.nValue != 0){
                 UniValue trout(UniValue::VOBJ);
-                trout.pushKV("value", out.nValue);
-                trout.pushKV("scriptPubKey", out.scriptPubKey);
+                ScriptPubKeyToUniv(out.ScriptPubKey, trout, true)
                 deps.push_back(trout)
             }
         }

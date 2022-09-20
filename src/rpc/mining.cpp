@@ -1014,12 +1014,6 @@ static RPCHelpMan getblocktemplate()
         if (!tx.IsCoinBase())
             continue;
 
-        UniValue entry(UniValue::VOBJ);
-
-        entry.pushKV("data", EncodeHexTx(tx));
-        entry.pushKV("txid", txHash.GetHex());
-        entry.pushKV("hash", tx.GetWitnessHash().GetHex());
-
         UniValue deps(UniValue::VARR);
         for (const CTxOut &out : tx.vout)
         {
@@ -1030,7 +1024,6 @@ static RPCHelpMan getblocktemplate()
                 deps.push_back(trout);
             }
         }
-        entry.pushKV("depends", deps);
 
         int index_in_template = i - 1;
         entry.pushKV("fee", pblocktemplate->vTxFees[index_in_template]);
@@ -1149,7 +1142,7 @@ static RPCHelpMan getblocktemplate()
     if (pindexPrev->nHeight+1 >= consensusParams.nSmartActivationBlock) {
         result.pushKV("hashStateRoot", pblock->hashStateRoot.ToString());
         result.pushKV("hashUTXORoot", pblock->hashUTXORoot.ToString());
-        result.pushKV("coinbase_transactions", coinbase_transactions);
+        result.pushKV("coinbase_outputs", deps);
     }
 
     if (consensusParams.signet_blocks) {

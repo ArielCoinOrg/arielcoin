@@ -1025,6 +1025,7 @@ static RPCHelpMan getblocktemplate()
         {
             UniValue trout(UniValue::VOBJ);
             ScriptPubKeyToUniv(out.scriptPubKey, trout, true);
+            trout.pushKV("nValue", out.nValue);
             deps.push_back(trout);
         }
         entry.pushKV("depends", deps);

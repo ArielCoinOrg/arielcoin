@@ -2283,28 +2283,23 @@ bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, 
     size_t offset = block.IsProofOfStake() ? 1 : 0;
     std::vector<CTxOut> vTempVouts=block.vtx[offset]->vout;
     std::vector<CTxOut>::iterator it;
-    LogPrintf("ERROR: f1\n");
     for(size_t i = 0; i < vouts.size(); i++){
         it=std::find(vTempVouts.begin(), vTempVouts.end(), vouts[i]);
         if(it==vTempVouts.end()){
-            LogPrintf("ERROR: gas\n");
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gas-refund-missing", "CheckReward(): Gas refund missing");
         }else{
             vTempVouts.erase(it);
         }
     }
-    LogPrintf("ERROR: f2\n");
     // Check block reward
     if (block.IsProofOfWork())
     {
         // Check proof-of-work reward
-        LogPrintf("ERROR: f3\n");
         CAmount blockReward = nFees + GetBlockSubsidy(nHeight, consensusParams);
         if (block.vtx[offset]->GetValueOut() > blockReward) {
             LogPrintf("ERROR: ConnectBlock(): coinbase pays too much (actual=%d vs limit=%d)\n", block.vtx[offset]->GetValueOut(), blockReward);
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-amount");
         }
-        LogPrintf("ERROR: f4\n");
     }
     else
     {

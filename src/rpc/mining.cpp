@@ -967,7 +967,6 @@ static RPCHelpMan getblocktemplate()
     UniValue aCaps(UniValue::VARR); aCaps.push_back("proposal");
 
     UniValue transactions(UniValue::VARR);
-    UniValue coinbase_transactions(UniValue::VARR);
 
     std::map<uint256, int64_t> setTxIndex;
     int i = 0;
@@ -1024,18 +1023,6 @@ static RPCHelpMan getblocktemplate()
                 deps.push_back(trout);
             }
         }
-
-        int index_in_template = i - 1;
-        entry.pushKV("fee", pblocktemplate->vTxFees[index_in_template]);
-        int64_t nTxSigOps = pblocktemplate->vTxSigOpsCost[index_in_template];
-        if (fPreSegWit) {
-            CHECK_NONFATAL(nTxSigOps % WITNESS_SCALE_FACTOR == 0);
-            nTxSigOps /= WITNESS_SCALE_FACTOR;
-        }
-        entry.pushKV("sigops", nTxSigOps);
-        entry.pushKV("weight", GetTransactionWeight(tx));
-
-        coinbase_transactions.push_back(entry);
     }
 
     UniValue aux(UniValue::VOBJ);

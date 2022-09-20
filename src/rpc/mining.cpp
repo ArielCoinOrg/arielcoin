@@ -1005,24 +1005,16 @@ static RPCHelpMan getblocktemplate()
         transactions.push_back(entry);
     }
 
-    for (const auto& it : pblock->vtx) {
-        const CTransaction& tx = *it;
-        uint256 txHash = tx.GetHash();
-        setTxIndex[txHash] = i++;
+    UniValue deps(UniValue::VARR);
 
-        if (!tx.IsCoinBase())
-            continue;
-
-        UniValue deps(UniValue::VARR);
-        for (const CTxOut &out : tx.vout)
-        {
+    for (const CTxOut &out : pblock->vtx[0]->vout)
+    {
             if (out.nValue != (int64_t)pblock->vtx[0]->vout[0].nValue && out.nValue != 0){
                 UniValue trout(UniValue::VOBJ);
                 ScriptPubKeyToUniv(out.scriptPubKey, trout, true);
                 trout.pushKV("nValue", out.nValue);
                 deps.push_back(trout);
             }
-        }
     }
 
     UniValue aux(UniValue::VOBJ);

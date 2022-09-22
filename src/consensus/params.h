@@ -20,10 +20,8 @@ enum BuriedDeployment : int16_t {
     DEPLOYMENT_HEIGHTINCB = std::numeric_limits<int16_t>::min(),
     DEPLOYMENT_CLTV,
     DEPLOYMENT_DERSIG,
-    DEPLOYMENT_CSV,
-    DEPLOYMENT_SEGWIT,
 };
-constexpr bool ValidDeployment(BuriedDeployment dep) { return dep <= DEPLOYMENT_SEGWIT; }
+constexpr bool ValidDeployment(BuriedDeployment dep) { return dep <= DEPLOYMENT_DERSIG; }
 
 enum DeploymentPos : uint16_t {
     DEPLOYMENT_TESTDUMMY,
@@ -149,10 +147,6 @@ struct Params {
             return BIP65Height;
         case DEPLOYMENT_DERSIG:
             return BIP66Height;
-        case DEPLOYMENT_CSV:
-            return CSVHeight;
-        case DEPLOYMENT_SEGWIT:
-            return SegwitHeight;
         } // no default case, so the compiler can warn about missing cases
         return std::numeric_limits<int>::max();
     }

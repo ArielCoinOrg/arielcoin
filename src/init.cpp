@@ -1957,11 +1957,7 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
         }
     }
 
-    if (DeploymentEnabled(chainparams.GetConsensus(), Consensus::DEPLOYMENT_SEGWIT)) {
-        // Advertise witness capabilities.
-        // The option to not set NODE_WITNESS is only used in the tests and should be removed.
-        nLocalServices = ServiceFlags(nLocalServices | NODE_WITNESS);
-    }
+    nLocalServices = ServiceFlags(nLocalServices | NODE_WITNESS);
 
     // ********************************************************* Step 11: import blocks
 

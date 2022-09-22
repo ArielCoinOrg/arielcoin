@@ -289,13 +289,13 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     nBlockMaxWeight = blockSizeDGP ? blockSizeDGP * WITNESS_SCALE_FACTOR : nBlockMaxWeight;
 
-    LogPrint(BCLog::BENCH, "Fail 1\n");
+    LogPrintf("Fail 1\n");
 
     if (nHeight == chainparams.GetConsensus().nSmartActivationBlock){
         globalState->setRoot(uintToh256(chainparams.HashStateRoot()));
         globalState->setRootUTXO(dev::sha3(dev::rlp("")));
     }
-    LogPrint(BCLog::BENCH, "Fail 2\n");
+    LogPrintf("Fail 2\n");
 
     dev::h256 oldHashStateRoot(globalState->rootHash());
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
@@ -337,7 +337,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     pblock->nNonce64         = 0;
     pblock->nHeight          = nHeight;
     pblocktemplate->vTxSigOpsCost[0] = WITNESS_SCALE_FACTOR * GetLegacySigOpCount(*pblock->vtx[0]);
-    LogPrint(BCLog::BENCH, "Fail 3\n");
+    LogPrintf("Fail 3\n");
     BlockValidationState state;
     if (!fProofOfStake && !TestBlockValidity(state, chainparams, m_chainstate, *pblock, pindexPrev, false, false)) {
         throw std::runtime_error(strprintf("%s: TestBlockValidity failed: %s", __func__, state.ToString()));

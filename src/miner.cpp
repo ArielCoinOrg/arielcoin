@@ -289,6 +289,11 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     nBlockMaxWeight = blockSizeDGP ? blockSizeDGP * WITNESS_SCALE_FACTOR : nBlockMaxWeight;
 
+
+    dev::h256 oldHashStateRoot(globalState->rootHash());
+    dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
+    ////////////////////////////////////////////////// deploy offline staking contract
+
     LogPrintf("Fail 1\n");
 
     if (nHeight == chainparams.GetConsensus().nSmartActivationBlock){
@@ -297,9 +302,6 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     }
     LogPrintf("Fail 2\n");
 
-    dev::h256 oldHashStateRoot(globalState->rootHash());
-    dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
-    ////////////////////////////////////////////////// deploy offline staking contract
     if(nHeight == chainparams.GetConsensus().nOfflineStakeHeight){
         globalState->deployDelegationsContract();
     }

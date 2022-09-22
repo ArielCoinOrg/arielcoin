@@ -197,7 +197,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x01"); // 1883974
         consensus.defaultAssumeValid = uint256S(""); // 1883974
 
-        hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // ariel
+        hashStateRoot = uint256(h256Touint(dev::h256("1656c3b91a1707248030d74f0ca29e6e966a70a3e208c537f3805cbac3e79e87"))); // ariel
         hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // ariel
 
         /**

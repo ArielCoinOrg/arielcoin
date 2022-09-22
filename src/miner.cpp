@@ -296,7 +296,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     LogPrintf("Fail 1\n");
     LogPrintf("Fail 11  %u \n", uint256(h256Touint(dev::h256(globalState->rootHash()))).ToString());
-    LogPrintf("Fail 12  %u\n", , uint256(chainparams.HashStateRoot()).ToString());
+    LogPrintf("Fail 12  %u \n", uint256(chainparams.HashStateRoot()).ToString());
 
     if (nHeight == chainparams.GetConsensus().nSmartActivationBlock){
         globalState->setRoot(uintToh256(chainparams.HashStateRoot()));

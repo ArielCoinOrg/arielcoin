@@ -261,20 +261,20 @@ public:
 
         consensus.nBlocktimeDownscaleFactor = 5;
         consensus.nCoinbaseMaturity = 100;
-        consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
+        consensus.nRBTCoinbaseMaturity = 1;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
-        consensus.nLastPOWBlock = 3000000;
-        consensus.nLastBigReward = 3000000;
+        consensus.nLastPOWBlock = 300000000;
+        consensus.nLastBigReward = 300000000;
         consensus.nMPoSRewardRecipients = 10;
         consensus.nFirstMPoSBlock = consensus.nLastPOWBlock +
                                     consensus.nMPoSRewardRecipients +
                                     consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 3000000;
+        consensus.nLastMPoSBlock = 300000000;
 
 
         consensus.nFixUTXOCacheHFHeight = 310;
-        consensus.nEnableHeaderSignatureHeight = 3000000;
+        consensus.nEnableHeaderSignatureHeight = 300000000;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking

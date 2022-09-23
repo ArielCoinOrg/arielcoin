@@ -263,7 +263,7 @@ public:
 
 
         consensus.nCoinbaseMaturity = 100;
-        consensus.nRBTCoinbaseMaturity = 1;
+        consensus.nRBTCoinbaseMaturity = 100;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
         consensus.nLastPOWBlock = 300000000;

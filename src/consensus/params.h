@@ -125,7 +125,7 @@ struct Params {
     bool fPowNoRetargeting;
     bool fPoSNoRetargeting;
     int64_t nPowTargetSpacing;
-    int64_t newPowTargetSpacing
+    int64_t newPowTargetSpacing;
     int64_t nRBTPowTargetSpacing;
     int64_t nPowTargetTimespan;
     int64_t nPowTargetTimespanV2;

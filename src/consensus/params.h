@@ -68,6 +68,7 @@ struct BIP9Deployment {
 struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
+    int newSubsidyHalvingInterval;
     int nSubsidyHalvingIntervalV2;
     /* Block hash that is excepted from BIP16 enforcement */
     int BIP16Height;

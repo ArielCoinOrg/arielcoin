@@ -553,14 +553,14 @@ static RPCHelpMan syncwithvalidationinterfacequeue()
 static RPCHelpMan getdifficulty()
 {
     return RPCHelpMan{"getdifficulty",
-                "\nReturns the proof-of-work difficulty as a multiple of the minimum difficulty.\n"
-                "\nReturns the proof-of-stake difficulty as a multiple of the minimum difficulty.\n",
+                "\nReturns the proof-of-work difficulty as a multiple of the minimum difficulty.\n",
+//                "\nReturns the proof-of-stake difficulty as a multiple of the minimum difficulty.\n",
                 {},
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
                     {
-                        {RPCResult::Type::NUM, "proof-of-work", "the proof-of-work difficulty as a multiple of the minimum difficulty."},
-                        {RPCResult::Type::NUM, "proof-of-stake", "the proof-of-stake difficulty as a multiple of the minimum difficulty."},
+                        {RPCResult::Type::NUM, "proof-of-work", "the proof-of-work difficulty as a multiple of the minimum difficulty."}
+//                        {RPCResult::Type::NUM, "proof-of-stake", "the proof-of-stake difficulty as a multiple of the minimum difficulty."},
                     }
                 },
                 RPCExamples{
@@ -1715,68 +1715,6 @@ RPCHelpMan gettransactionreceipt()
     };
 }
 
-RPCHelpMan getdelegationinfoforaddress()
-{
-    return RPCHelpMan{"getdelegationinfoforaddress",
-                "\nGet delegation information for an address.\n",
-                {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address string"},
-                },
-                RPCResult{
-                    RPCResult::Type::OBJ, "", "",
-                    {
-                        {RPCResult::Type::STR, "staker", "The staker address"},
-                        {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
-                        {RPCResult::Type::NUM, "blockHeight", "The block height"},
-                        {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
-                        {RPCResult::Type::BOOL, "verified", "Verify delegation"},
-                    }},
-                RPCExamples{
-                    HelpExampleCli("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-            + HelpExampleRpc("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-                },
-        [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
-{
-
-    ChainstateManager& chainman = EnsureAnyChainman(request.context);
-    LOCK(cs_main);
-
-    // Parse the public key hash address
-    std::string strAddress = request.params[0].get_str();
-
-    CTxDestination dest = DecodeDestination(strAddress);
-    if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid address");
-    }
-
-    if (!std::holds_alternative<PKHash>(dest)) {
-        throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to public key hash");
-    }
-
-    // Get delegation for an address
-    QtumDelegation qtumDelegation;
-    Delegation delegation;
-    PKHash pkhash = std::get<PKHash>(dest);
-    uint160 address = uint160(pkhash);
-    if(!qtumDelegation.GetDelegation(address, delegation, chainman.ActiveChainstate())) {
-        throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegation");
-    }
-    bool verified = qtumDelegation.VerifyDelegation(address, delegation);
-
-    // Fill the json object with information
-    UniValue result(UniValue::VOBJ);
-    std::string strStaker = delegation.staker != uint160() ? EncodeDestination(PKHash(delegation.staker)) : "";
-    result.pushKV("staker", strStaker);
-    result.pushKV("fee", (int64_t)delegation.fee);
-    result.pushKV("blockHeight", (int64_t)delegation.blockHeight);
-    result.pushKV("PoD", HexStr(delegation.PoD));
-    result.pushKV("verified", verified);
-
-    return result;
-},
-    };
-}
-
 class DelegationsStakerFilter : public IDelegationFilter
 {
 public:
@@ -1811,87 +1749,6 @@ uint64_t getDelegateWeight(const uint160& keyid, const std::map<COutPoint, uint3
     return weight;
 }
 
-RPCHelpMan getdelegationsforstaker()
-{
-    return RPCHelpMan{"getdelegationsforstaker",
-                "requires -logevents to be enabled\n"
-                "\nGet the current list of delegates for a super staker.\n",
-                {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address string for staker"},
-                },
-               RPCResult{
-            RPCResult::Type::ARR, "", "",
-                {
-                    {RPCResult::Type::OBJ, "", "",
-                        {
-                            {RPCResult::Type::STR, "delegate", "The delegate address"},
-                            {RPCResult::Type::STR, "staker", "The staker address"},
-                            {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
-                            {RPCResult::Type::NUM, "blockHeight", "The block height"},
-                            {RPCResult::Type::NUM, "weight", "Delegate weight, displayed when address index is enabled"},
-                            {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
-                        }}
-                }},
-                RPCExamples{
-                    HelpExampleCli("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-            + HelpExampleRpc("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-                },
-        [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
-{
-
-    if (!fLogEvents)
-        throw JSONRPCError(RPC_INTERNAL_ERROR, "Events indexing disabled");
-
-    ChainstateManager& chainman = EnsureAnyChainman(request.context);
-    LOCK(cs_main);
-
-    // Parse the public key hash address
-    std::string strAddress = request.params[0].get_str();
-
-    CTxDestination dest = DecodeDestination(strAddress);
-    if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_TYPE_ERROR, "Invalid address");
-    }
-
-    if (!std::holds_alternative<PKHash>(dest)) {
-        throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to public key hash");
-    }
-
-    // Get delegations for staker
-    QtumDelegation qtumDelegation;
-    std::vector<DelegationEvent> events;
-    PKHash pkhash = std::get<PKHash>(dest);
-    uint160 address = uint160(pkhash);
-    DelegationsStakerFilter filter(address);
-    if(!qtumDelegation.FilterDelegationEvents(events, filter, chainman)) {
-        throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegations for staker");
-    }
-    std::map<uint160, Delegation> delegations = qtumDelegation.DelegationsFromEvents(events);
-
-    // Get chain parameters
-    std::map<COutPoint, uint32_t> immatureStakes = GetImmatureStakes(chainman);
-    int height = chainman.ActiveChain().Height();
-
-    // Fill the json object with information
-    UniValue result(UniValue::VARR);
-    for (std::map<uint160, Delegation>::iterator it=delegations.begin(); it!=delegations.end(); it++){
-        UniValue delegation(UniValue::VOBJ);
-        delegation.pushKV("delegate", EncodeDestination(PKHash(it->first)));
-        delegation.pushKV("staker", EncodeDestination(PKHash(it->second.staker)));
-        delegation.pushKV("fee", (int64_t)it->second.fee);
-        delegation.pushKV("blockHeight", (int64_t)it->second.blockHeight);
-        if(fAddressIndex)
-        {
-            delegation.pushKV("weight", getDelegateWeight(it->first, immatureStakes, height));
-        }
-        delegation.pushKV("PoD", HexStr(it->second.PoD));
-        result.push_back(delegation);
-    }
-
-    return result;
-},
-    };
-}
 //////////////////////////////////////////////////////////////////////
 
 RPCHelpMan listcontracts()
@@ -3912,8 +3769,6 @@ static const CRPCCommand commands[] =
 
     { "blockchain",         &waitforlogs,                        },
     { "blockchain",         &getestimatedannualroi,              },
-    { "blockchain",         &getdelegationinfoforaddress,        },
-    { "blockchain",         &getdelegationsforstaker,            },
 
     /* Not shown in help */
     { "hidden",              &invalidateblock,                   },

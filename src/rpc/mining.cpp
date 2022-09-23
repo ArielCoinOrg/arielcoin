@@ -533,7 +533,7 @@ static RPCHelpMan getmininginfo()
     if (BlockAssembler::m_last_block_num_txs) obj.pushKV("currentblocktx", *BlockAssembler::m_last_block_num_txs);
 
     diff.pushKV("proof-of-work",   GetDifficulty(GetLastBlockIndex(pindexBestHeader, false)));
-    diff.pushKV("proof-of-stake",  GetDifficulty(GetLastBlockIndex(pindexBestHeader, true)));
+//    diff.pushKV("proof-of-stake",  GetDifficulty(GetLastBlockIndex(pindexBestHeader, true)));
     diff.pushKV("search-interval", (int)lastCoinStakeSearchInterval);
     obj.pushKV("difficulty",       diff);
 
@@ -553,82 +553,6 @@ static RPCHelpMan getmininginfo()
 
     obj.pushKV("chain",            Params().NetworkIDString());
     obj.pushKV("warnings",         GetWarnings(false).original);
-    return obj;
-},
-    };
-}
-
-static RPCHelpMan getstakinginfo()
-{
-    return RPCHelpMan{"getstakinginfo",
-                "\nReturns an object containing staking-related information.",
-                {},
-                RPCResult{
-                    RPCResult::Type::OBJ, "", "",
-                    {
-                        {RPCResult::Type::BOOL, "enabled", "'true' if staking is enabled"},
-                        {RPCResult::Type::BOOL, "staking", "'true' if wallet is currently staking"},
-                        {RPCResult::Type::STR, "errors", "error messages"},
-                        {RPCResult::Type::NUM, "pooledtx", "The size of the mempool"},
-                        {RPCResult::Type::NUM, "difficulty", "The current difficulty"},
-                        {RPCResult::Type::NUM, "search-interval", "The staker search interval"},
-                        {RPCResult::Type::NUM, "weight", "The staker weight"},
-                        {RPCResult::Type::NUM, "netstakeweight", "Network stake weight"},
-                        {RPCResult::Type::NUM, "expectedtime", "Expected time to earn reward"},
-                    }
-                },
-                RPCExamples{
-                    HelpExampleCli("getstakinginfo", "")
-            + HelpExampleRpc("getstakinginfo", "")
-                },
-        [&](const RPCHelpMan& self, const JSONRPCRequest& request) -> UniValue
-{
-
-    NodeContext& node = EnsureAnyNodeContext(request.context);
-
-    uint64_t nWeight = 0;
-    uint64_t nStakerWeight = 0;
-    uint64_t nDelegateWeight = 0;
-    uint64_t lastCoinStakeSearchInterval = 0;
-#ifdef ENABLE_WALLET
-    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
-    CWallet* const pwallet = wallet.get();
-
-    if (pwallet)
-    {
-        LOCK(pwallet->cs_wallet);
-        nWeight = pwallet->GetStakeWeight(&nStakerWeight, &nDelegateWeight);
-        lastCoinStakeSearchInterval = pwallet->m_enabled_staking ? pwallet->m_last_coin_stake_search_interval : 0;
-    }
-#endif
-
-    LOCK(cs_main);
-    const CTxMemPool& mempool = EnsureMemPool(node);
-
-    uint64_t nNetworkWeight = GetPoSKernelPS();
-    bool staking = lastCoinStakeSearchInterval && nWeight;
-    const Consensus::Params& consensusParams = Params().GetConsensus();
-    int64_t nTargetSpacing = consensusParams.TargetSpacing(pindexBestHeader->nHeight);
-    uint64_t nExpectedTime = staking ? (nTargetSpacing * nNetworkWeight / nWeight) : 0;
-
-    UniValue obj(UniValue::VOBJ);
-
-    obj.pushKV("enabled", gArgs.GetBoolArg("-staking", true));
-    obj.pushKV("staking", staking);
-    obj.pushKV("errors", GetWarnings("statusbar").original);
-
-    if (BlockAssembler::m_last_block_num_txs) obj.pushKV("currentblocktx", *BlockAssembler::m_last_block_num_txs);
-    obj.pushKV("pooledtx", (uint64_t)mempool.size());
-
-    obj.pushKV("difficulty", GetDifficulty(GetLastBlockIndex(pindexBestHeader, true)));
-    obj.pushKV("search-interval", (int)lastCoinStakeSearchInterval);
-
-    obj.pushKV("weight", (uint64_t)nStakerWeight);
-    obj.pushKV("delegateweight", (uint64_t)nDelegateWeight);
-    obj.pushKV("netstakeweight", (uint64_t)nNetworkWeight);
-
-    obj.pushKV("expectedtime", nExpectedTime);
-
     return obj;
 },
     };
@@ -1466,7 +1390,6 @@ static const CRPCCommand commands[] =
     { "mining",              &submitheader,            },
 
     { "mining",              &getsubsidy,              },
-    { "mining",              &getstakinginfo,          },
 
     { "generating",          &generatetoaddress,       },
     { "generating",          &generatetodescriptor,    },

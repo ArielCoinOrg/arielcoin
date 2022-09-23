@@ -1452,8 +1452,11 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
     if (nHeight >= consensusParams.nReduceBlocktimeHeight)
     {
-        nSubsidy = nSubsidy / 5;
-        for (int i = consensusParams.newSubsidyHalvingInterval; i <= nHeight+consensusParams.nReduceBlocktimeHeight*4; i += consensusParams.newSubsidyHalvingInterval) {
+        int64_t nBlocktimeDownscaleFactor = consensus.nBlocktimeDownscaleFactor;
+        nSubsidy = nSubsidy / consensus.nBlocktimeDownscaleFactor;
+        if (nBlocktimeDownscaleFactor <= 1)
+            nBlocktimeDownscaleFactor = 2;
+        for (int i = consensusParams.newSubsidyHalvingInterval; i <= nHeight+consensusParams.nReduceBlocktimeHeight*(nBlocktimeDownscaleFactor-1); i += consensusParams.newSubsidyHalvingInterval) {
             nSubsidy -= nSubsidy/25;
         }
     }

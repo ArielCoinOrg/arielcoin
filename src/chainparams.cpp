@@ -160,15 +160,17 @@ public:
         consensus.nMuirGlacierHeight = 301;
         consensus.nLondonHeight = 302;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
-        consensus.nOfflineStakeHeight = 680000000;
-        consensus.nReduceBlocktimeHeight = 600;
-        consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
-        consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 minutes
-        consensus.nPowTargetTimespanV2 = 4000;
-        consensus.nRBTPowTargetTimespan = 1000;
         consensus.nPowTargetSpacing = 60;
         consensus.newPowTargetSpacing = 12;
+        consensus.nReduceBlocktimeHeight = 600;
+
+        consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
+        consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 minutes
+        consensus.nPowTargetTimespanV2 = 24 * 60 * 60;
+        consensus.nRBTPowTargetTimespan = 1000;
+
         consensus.nRBTPowTargetSpacing = 32;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -273,6 +275,7 @@ public:
                                     consensus.nMPoSRewardRecipients +
                                     consensus.nCoinbaseMaturity;
         consensus.nLastMPoSBlock = 300000000;
+        consensus.nOfflineStakeHeight = 680000000;
 
 
 

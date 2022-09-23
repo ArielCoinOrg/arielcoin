@@ -358,8 +358,8 @@ void BitcoinGUI::createActions()
 //    tabGroup->addAction(walletStakeAction);
 //
 //    stakeAction = new QAction(tr("Staking"), this);
-    delegationAction = new QAction(tr("Delegations"), this);
-    superStakerAction = new QAction(tr("Super Staking"), this);
+//    delegationAction = new QAction(tr("Delegations"), this);
+//    superStakerAction = new QAction(tr("Super Staking"), this);
 
     QRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/qrctoken"), tr("&ARC Tokens"), this);
     QRCTokenAction->setStatusTip(tr("ARC Tokens (send, receive or add Tokens in list)"));
@@ -393,10 +393,10 @@ void BitcoinGUI::createActions()
     connect(QRCTokenAction, SIGNAL(triggered()), this, SLOT(gotoTokenPage()));
 //    connect(stakeAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
 //    connect(stakeAction, &QAction::triggered, this, &BitcoinGUI::gotoStakePage);
-    connect(delegationAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(delegationAction, SIGNAL(triggered()), this, SLOT(gotoDelegationPage()));
-    connect(superStakerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
-    connect(superStakerAction, SIGNAL(triggered()), this, SLOT(gotoSuperStakerPage()));
+//    connect(delegationAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+//    connect(delegationAction, SIGNAL(triggered()), this, SLOT(gotoDelegationPage()));
+//    connect(superStakerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+//    connect(superStakerAction, SIGNAL(triggered()), this, SLOT(gotoSuperStakerPage()));
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(tr("E&xit"), this);
@@ -942,8 +942,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     usedReceivingAddressesAction->setEnabled(enabled);
     openAction->setEnabled(enabled);
 //    stakeAction->setEnabled(enabled);
-    delegationAction->setEnabled(enabled);
-    superStakerAction->setEnabled(enabled);
+//    delegationAction->setEnabled(enabled);
+//    superStakerAction->setEnabled(enabled);
 //    walletStakeAction->setEnabled(enabled);
     m_load_psbt_action->setEnabled(enabled);
     m_load_psbt_clipboard_action->setEnabled(enabled);
@@ -1081,13 +1081,13 @@ void BitcoinGUI::gotoTokenPage()
 
 void BitcoinGUI::gotoDelegationPage()
 {
-    delegationAction->setChecked(true);
+//    delegationAction->setChecked(true);
     if (walletFrame) walletFrame->gotoDelegationPage();
 }
 
 void BitcoinGUI::gotoSuperStakerPage()
 {
-    superStakerAction->setChecked(true);
+//    superStakerAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSuperStakerPage();
 }
 

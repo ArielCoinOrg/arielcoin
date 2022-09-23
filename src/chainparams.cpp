@@ -135,8 +135,10 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
+        consensus.nFixUTXOCacheHFHeight = 310;
+        consensus.nBlocktimeDownscaleFactor = 5;
         consensus.nSubsidyHalvingInterval = 525600;// initial interval
-        consensus.newSubsidyHalvingInterval = 525600*5;// initial interval
+        consensus.newSubsidyHalvingInterval = consensus.nSubsidyHalvingInterval*consensus.nBlocktimeDownscaleFactor;// initial interval
 
         consensus.nMinimumDifficultyBlocks = 550;
         consensus.BIP16Height = 1;
@@ -259,7 +261,7 @@ public:
 
         };
 
-        consensus.nBlocktimeDownscaleFactor = 5;
+
         consensus.nCoinbaseMaturity = 100;
         consensus.nRBTCoinbaseMaturity = 1;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
@@ -273,7 +275,7 @@ public:
         consensus.nLastMPoSBlock = 300000000;
 
 
-        consensus.nFixUTXOCacheHFHeight = 310;
+
         consensus.nEnableHeaderSignatureHeight = 300000000;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;

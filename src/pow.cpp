@@ -69,11 +69,13 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
 
     int64_t nActualTimespan = pindexLast->GetBlockTime() - pindex->GetBlockTime();
     // NOTE: is this accurate? nActualTimespan counts it for (nPastBlocks - 1) blocks only...
+    int64_t nPowTargetSpacing
+
     if (pindexLast->nHeight < params.nReduceBlocktimeHeight)
     {
-        int64_t nPowTargetSpacing = params.nPowTargetSpacing;
+        nPowTargetSpacing = params.nPowTargetSpacing;
     } else {
-        int64_t nPowTargetSpacing = params.newPowTargetSpacing;
+        nPowTargetSpacing = params.newPowTargetSpacing;
     }
 
     int64_t nTargetTimespan = nPastBlocks * nPowTargetSpacing;

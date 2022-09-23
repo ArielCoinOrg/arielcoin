@@ -923,7 +923,7 @@ void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned
 
 bool CanStake()
 {
-    bool canStake = gArgs.GetBoolArg("-staking", DEFAULT_STAKE);
+    bool canStake = DEFAULT_STAKE; //gArgs.GetBoolArg("-staking", DEFAULT_STAKE);
 
     if(canStake)
     {

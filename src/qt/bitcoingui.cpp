@@ -350,14 +350,14 @@ void BitcoinGUI::createActions()
     sendToContractAction = new QAction(tr("Send To"), this);
     callContractAction = new QAction(tr("Call"), this);
 
-    walletStakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
-    walletStakeAction->setStatusTip(tr("Show stake of wallet"));
-    walletStakeAction->setToolTip(walletStakeAction->statusTip());
-    walletStakeAction->setCheckable(true);
-    walletStakeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
-    tabGroup->addAction(walletStakeAction);
-
-    stakeAction = new QAction(tr("Staking"), this);
+//    walletStakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
+//    walletStakeAction->setStatusTip(tr("Show stake of wallet"));
+//    walletStakeAction->setToolTip(walletStakeAction->statusTip());
+//    walletStakeAction->setCheckable(true);
+//    walletStakeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
+//    tabGroup->addAction(walletStakeAction);
+//
+//    stakeAction = new QAction(tr("Staking"), this);
     delegationAction = new QAction(tr("Delegations"), this);
     superStakerAction = new QAction(tr("Super Staking"), this);
 
@@ -391,8 +391,8 @@ void BitcoinGUI::createActions()
     connect(callContractAction, SIGNAL(triggered()), this, SLOT(gotoCallContractPage()));
     connect(QRCTokenAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(QRCTokenAction, SIGNAL(triggered()), this, SLOT(gotoTokenPage()));
-    connect(stakeAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(stakeAction, &QAction::triggered, this, &BitcoinGUI::gotoStakePage);
+//    connect(stakeAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
+//    connect(stakeAction, &QAction::triggered, this, &BitcoinGUI::gotoStakePage);
     connect(delegationAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(delegationAction, SIGNAL(triggered()), this, SLOT(gotoDelegationPage()));
     connect(superStakerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -678,11 +678,11 @@ void BitcoinGUI::createToolBars()
         contractActions.append(sendToContractAction);
         contractActions.append(callContractAction);
         appNavigationBar->mapGroup(smartContractAction, contractActions);
-        QList<QAction*> walletStakeActions;
-        walletStakeActions.append(stakeAction);
-        walletStakeActions.append(delegationAction);
-        walletStakeActions.append(superStakerAction);
-        appNavigationBar->mapGroup(walletStakeAction, walletStakeActions);
+//        QList<QAction*> walletStakeActions;
+//        walletStakeActions.append(stakeAction);
+//        walletStakeActions.append(delegationAction);
+//        walletStakeActions.append(superStakerAction);
+//        appNavigationBar->mapGroup(walletStakeAction, walletStakeActions);
         appNavigationBar->addAction(QRCTokenAction);
         appNavigationBar->buildUi();
         overviewAction->setChecked(true);
@@ -941,10 +941,10 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     usedSendingAddressesAction->setEnabled(enabled);
     usedReceivingAddressesAction->setEnabled(enabled);
     openAction->setEnabled(enabled);
-    stakeAction->setEnabled(enabled);
+//    stakeAction->setEnabled(enabled);
     delegationAction->setEnabled(enabled);
     superStakerAction->setEnabled(enabled);
-    walletStakeAction->setEnabled(enabled);
+//    walletStakeAction->setEnabled(enabled);
     m_load_psbt_action->setEnabled(enabled);
     m_load_psbt_clipboard_action->setEnabled(enabled);
     signTxHardwareAction->setEnabled(enabled);
@@ -1120,7 +1120,7 @@ void BitcoinGUI::gotoCallContractPage()
 
 void BitcoinGUI::gotoStakePage()
 {
-    stakeAction->setChecked(true);
+//    stakeAction->setChecked(true);
     if (walletFrame) walletFrame->gotoStakePage();
 }
 

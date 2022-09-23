@@ -136,6 +136,8 @@ public:
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 525600;// initial interval
+        consensus.newSubsidyHalvingInterval = 525600*5;// initial interval
+
         consensus.nMinimumDifficultyBlocks = 550;
         consensus.BIP16Height = 1;
         consensus.BIP34Height = 1;
@@ -157,13 +159,14 @@ public:
         consensus.nLondonHeight = 302;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 680000000;
-        consensus.nReduceBlocktimeHeight = 845000000;
+        consensus.nReduceBlocktimeHeight = 600;
         consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 minutes
         consensus.nPowTargetTimespanV2 = 4000;
         consensus.nRBTPowTargetTimespan = 1000;
         consensus.nPowTargetSpacing = 60;
+        consensus.newPowTargetSpacing = 12;
         consensus.nRBTPowTargetSpacing = 32;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -256,7 +259,7 @@ public:
 
         };
 
-        consensus.nBlocktimeDownscaleFactor = 4;
+        consensus.nBlocktimeDownscaleFactor = 5;
         consensus.nCoinbaseMaturity = 100;
         consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)

@@ -31,7 +31,7 @@ namespace {
     }
 }
 
-unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake) {
+unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake, arith_uint256  bnPowLimit) {
     if(fProofOfStake){
         if (params.fPoSNoRetargeting)
             return pindexLast->nBits;
@@ -40,7 +40,6 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
             return pindexLast->nBits;
     }
     /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
-    const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     int64_t nPastBlocks = 24;
 
     // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
@@ -70,7 +69,14 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
 
     int64_t nActualTimespan = pindexLast->GetBlockTime() - pindex->GetBlockTime();
     // NOTE: is this accurate? nActualTimespan counts it for (nPastBlocks - 1) blocks only...
-    int64_t nTargetTimespan = nPastBlocks * params.nPowTargetSpacing;
+    if (pindexLast->nHeight < params.nReduceBlocktimeHeight)
+    {
+        int64_t nPowTargetSpacing = params.nPowTargetSpacing;
+    } else {
+        int64_t nPowTargetSpacing = params.newPowTargetSpacing;
+    }
+
+    int64_t nTargetTimespan = nPastBlocks * nPowTargetSpacing;
 
     if (nActualTimespan < nTargetTimespan/3)
         nActualTimespan = nTargetTimespan/3;
@@ -108,22 +114,21 @@ inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool
         } else {
             return UintToArith256(params.RBTPosLimit);
         }
-    } else {
-        return UintToArith256(params.powLimit);
     }
+    return UintToArith256(params.powLimit);
 }
 
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params, bool fProofOfStake)
 {
-    unsigned int  bnPowLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
+    arith_uint256  bnPowLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake);
 
     // genesis block
     if (pindexLast == NULL)
         return UintToArith256(params.powLimitGenesis).GetCompact();
 
     if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
-        return bnPowLimit;
+        return bnPowLimit.GetCompact();
     }
     // min difficulty
     if (params.fPowAllowMinDifficultyBlocks)
@@ -133,19 +138,19 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // then allow mining of a min-difficulty block.
         int nHeight = pindexLast->nHeight + 1;
         if (pblock->GetBlockTime() > pindexLast->GetBlockTime() + params.TargetSpacing(nHeight)*2)
-            return bnPowLimit;
+            return bnPowLimit.GetCompact();
         else
         {
             // Return the last non-special-min-difficulty-rules-block
             const CBlockIndex* pindex = pindexLast;
-            while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval(pindex->nHeight) != 0 && pindex->nBits == bnPowLimit)
+            while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval(pindex->nHeight) != 0 && pindex->nBits == bnPowLimit.GetCompact())
                 pindex = pindex->pprev;
             return pindex->nBits;
         }
         return pindexLast->nBits;
     }
 
-    return DarkGravityWave(pindexLast, params, fProofOfStake);
+    return DarkGravityWave(pindexLast, params, fProofOfStake, bnPowLimit);
 }
 
 

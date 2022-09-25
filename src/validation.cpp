@@ -5150,8 +5150,12 @@ static bool ContextualCheckBlock(const CBlock& block, BlockValidationState& stat
 
     // Enforce BIP113 (Median Time Past).
     int nLockTimeFlags = 0;
-    assert(pindexPrev != nullptr);
-    nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
+
+
+    if ((pindexPrev == nullptr ? 0 : pindexPrev->nHeight + 1) >= 1){
+        assert(pindexPrev != nullptr);
+        nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
+    }
 
     int64_t nLockTimeCutoff = (nLockTimeFlags & LOCKTIME_MEDIAN_TIME_PAST)
                               ? pindexPrev->GetMedianTimePast()

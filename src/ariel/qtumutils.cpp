@@ -45,7 +45,7 @@ bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &s
     // Convert the data into format usable for btc
     CPubKey pubKey;
     LogPrintf("arl_dilithiumrecover 22 \n");
-    uint256 message = uint256(hash);
+    uint256 message = h256Touint(hash);
     LogPrintf("arl_dilithiumrecover 2 %s\n", message.ToString());
 
     // Recover public key from compact signature (65 bytes)

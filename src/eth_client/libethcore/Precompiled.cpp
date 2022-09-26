@@ -94,8 +94,10 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
     LogPrintf("arl_dilithiumrecover 11 \n");
     LogPrintf("arl_dilithiumrecover size %s\n", _in.size());
-    dev::bytes signature = _in.cropped(32, 1952+3293).toBytes();
+
     dev::bytes hash = _in.cropped(0, 32).toBytes();
+    dev::bytes signature = _in.cropped(32, 1952+3293).toBytes();
+
 
     LogPrintf("arl_dilithiumrecover size %s\n", signature.size());
 

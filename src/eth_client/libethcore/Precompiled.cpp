@@ -13,6 +13,7 @@
 #include <libdevcrypto/LibSnark.h>
 #include <libethcore/Common.h>
 #include <ariel/qtumutils.h>
+#include <logging.h>
 using namespace std;
 using namespace dev;
 using namespace dev::eth;
@@ -93,12 +94,14 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
     dev::bytes hash;
     dev::bytes signature;
+    LogPrintf("arl_dilithiumrecover 11");
 
 
     memcpy(&hash, _in.data(), 32);
     memcpy(&signature, _in.data()+32, 1952+3293);
 
     h256 ret;
+    LogPrintf("arl_dilithiumrecover 12");
     try
     {
         bool recovered = false;
@@ -107,9 +110,10 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
         {
             return {true, ret.asBytes()};
         }
+        LogPrintf("arl_dilithiumrecover 13");
     }
     catch (...) {}
-
+    LogPrintf("arl_dilithiumrecover 14");
     return {true, {}};
 }
 

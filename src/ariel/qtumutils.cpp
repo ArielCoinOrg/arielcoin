@@ -3,7 +3,8 @@
 #include <pubkey.h>
 #include <util/convert.h>
 #include <logging.h>
-
+#include <uint256.h>
+#include <arith_uint256.h>
 
 using namespace dev;
 

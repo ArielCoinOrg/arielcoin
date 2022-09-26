@@ -100,7 +100,7 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 
 
     LogPrintf("arl_dilithiumrecover _in %s\n", _in.toString());
-    LogPrintf("arl_dilithiumrecover _in.cropped(32, 1952+3293) %s\n", _in.cropped(32, 1952+3293).toString());
+//    LogPrintf("arl_dilithiumrecover _in.cropped(32, 1952+3293) %s\n", _in.cropped(32, 1952+3293).toString());
 
 
 

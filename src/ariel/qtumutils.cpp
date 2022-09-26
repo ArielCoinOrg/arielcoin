@@ -44,7 +44,7 @@ bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &p
     CPubKey pubKey(pubkeybytes);
     std::vector<unsigned char> vchSig;
     vchSig += signaturebytes;
-    uint256 mesage = uint256((hash);
+    uint256 mesage = uint256(hash);
 
     // Recover public key from compact signature (65 bytes)
     // The public key can be compressed (33 bytes) or uncompressed (65 bytes)

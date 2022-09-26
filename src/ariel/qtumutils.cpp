@@ -40,14 +40,13 @@ bool qtumutils::btc_ecrecover(const dev::h256 &hash, const dev::u256 &v, const d
     return false;
 }
 
-bool qtumutils::arl_dilithiumrecover(const dev::h256 &hash, const std::vector<unsigned char> &signaturebytes, dev::h256 &key)
+bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &signaturebytes, dev::h256 &key)
 {
     LogPrintf("arl_dilithiumrecover 1 \n");
     // Convert the data into format usable for btc
     CPubKey pubKey;
-
     LogPrintf("arl_dilithiumrecover 22 \n");
-    uint256 mesage = h256Touint(hash);
+    uint256 mesage = uint256(hash);
     LogPrintf("arl_dilithiumrecover 2 \n");
 
     // Recover public key from compact signature (65 bytes)
@@ -56,14 +55,10 @@ bool qtumutils::arl_dilithiumrecover(const dev::h256 &hash, const std::vector<un
     if(pubKey.RecoverCompact(mesage, signaturebytes))
     {
         // Get the pubkeyhash
-        LogPrintf("arl_dilithiumrecover 23 \n");
         CKeyID id = pubKey.GetID();
-        LogPrintf("arl_dilithiumrecover 24 \n");
         size_t padding = sizeof(key) - sizeof(id);
-        LogPrintf("arl_dilithiumrecover 25 \n");
         memset(key.data(), 0, padding);
         memcpy(key.data() + padding, id.begin(), sizeof(id));
-        LogPrintf("arl_dilithiumrecover 27 \n");
         return true;
     }
     LogPrintf("arl_dilithiumrecover 3");

@@ -45,16 +45,14 @@ bool qtumutils::arl_dilithiumrecover(const dev::h256 &hash, const dev::bytes &si
     LogPrintf("arl_dilithiumrecover 1 \n");
     // Convert the data into format usable for btc
     CPubKey pubKey;
-    std::vector<unsigned char> vchSig = signaturebytes;
-
-    LogPrintf("arl_dilithiumrecover 22 \n");
+    LogPrintf("arl_dilithiumrecover 22 %s \n", sizeof(signaturebytes));
     uint256 mesage = h256Touint(hash);
     LogPrintf("arl_dilithiumrecover 2 \n");
 
     // Recover public key from compact signature (65 bytes)
     // The public key can be compressed (33 bytes) or uncompressed (65 bytes)
     // Pubkeyhash is RIPEMD160 hash of the public key, handled both types
-    if(pubKey.RecoverCompact(mesage, vchSig))
+    if(pubKey.RecoverCompact(mesage, signaturebytes))
     {
         // Get the pubkeyhash
         LogPrintf("arl_dilithiumrecover 23 \n");

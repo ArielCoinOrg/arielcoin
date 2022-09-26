@@ -57,10 +57,14 @@ bool qtumutils::arl_dilithiumrecover(const dev::h256 &hash, const dev::bytes &si
     if(pubKey.RecoverCompact(mesage, vchSig))
     {
         // Get the pubkeyhash
+        LogPrintf("arl_dilithiumrecover 23 \n");
         CKeyID id = pubKey.GetID();
+        LogPrintf("arl_dilithiumrecover 24 \n");
         size_t padding = sizeof(key) - sizeof(id);
+        LogPrintf("arl_dilithiumrecover 25 \n");
         memset(key.data(), 0, padding);
         memcpy(key.data() + padding, id.begin(), sizeof(id));
+        LogPrintf("arl_dilithiumrecover 27 \n");
         return true;
     }
     LogPrintf("arl_dilithiumrecover 3");

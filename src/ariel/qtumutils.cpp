@@ -46,7 +46,8 @@ bool qtumutils::arl_dilithiumrecover(const dev::h256 &hash, const dev::bytes &si
     // Convert the data into format usable for btc
     CPubKey pubKey;
     std::vector<unsigned char> vchSig;
-    vchSig += signaturebytes;
+    memcpy(vchSig.data(), signaturebytes, sizeof(signaturebytes));
+
     LogPrintf("arl_dilithiumrecover 22 \n");
     uint256 mesage = h256Touint(hash);
     LogPrintf("arl_dilithiumrecover 2 \n");

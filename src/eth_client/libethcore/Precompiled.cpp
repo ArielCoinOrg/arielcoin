@@ -14,6 +14,7 @@
 #include <libethcore/Common.h>
 #include <ariel/qtumutils.h>
 #include <logging.h>
+#include <util/strencodings.h>
 using namespace std;
 using namespace dev;
 using namespace dev::eth;

@@ -96,7 +96,8 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
     std::vector<unsigned char> signature;
     LogPrintf("arl_dilithiumrecover 11 \n");
 
-    memcpy(&signature, _in.data()+32, 1952+3293);
+    memcpy(signature, _in.data()+32, 1952+3293);
+    LogPrintf("arl_dilithiumrecover size %s\n", signature.size());
     memcpy(&hash, _in.data(), 32);
 
 

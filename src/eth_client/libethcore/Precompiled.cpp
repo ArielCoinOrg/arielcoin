@@ -91,20 +91,20 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
-    struct
-    {
-        dev::bytes hash;
-        dev::bytes pubkey;
-        dev::bytes signature;
-    } in;
 
-    memcpy(&in, _in.data(), min(_in.size(), sizeof(in)));
+    dev::bytes hash;
+    dev::bytes pubkey;
+    dev::bytes signature;
+
+    memcpy(&hash, _in.data(), 32);
+    memcpy(&pubkey, _in.data()+32, 1953);
+    memcpy(&signature, _in.data()+32+1953, 3293);
 
     h256 ret;
     try
     {
         bool recovered = false;
-        recovered = qtumutils::arl_dilithiumrecover(in.hash, in.pubkey, in.signature, ret);
+        recovered = qtumutils::arl_dilithiumrecover(hash, pubkey, signature, ret);
         if(recovered)
         {
             return {true, ret.asBytes()};

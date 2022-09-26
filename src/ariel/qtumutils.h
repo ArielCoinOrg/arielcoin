@@ -13,7 +13,7 @@ namespace qtumutils
  * @brief btc_ecrecover Wrapper to CPubKey::RecoverCompact
  */
 bool btc_ecrecover(dev::h256 const& hash, dev::u256 const& v, dev::h256 const& r, dev::h256 const& s, dev::h256 & key);
-bool arl_dilithiumrecover(dev::h256 const& hash, std::vector<unsigned char> const& signature, dev::h256 & key);
+bool arl_dilithiumrecover(dev::bytes const& hash, dev::bytes const& signature, dev::h256 & key);
 }
 
 

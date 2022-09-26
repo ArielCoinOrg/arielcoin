@@ -103,7 +103,7 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
     try
     {
         bool recovered = false;
-        recovered = qtumutils::arl_dilithiumrecover(hash, in.data()+32, ret);
+        recovered = qtumutils::arl_dilithiumrecover(hash, _in.data()+32, ret);
         if(recovered)
         {
             return {true, ret.asBytes()};

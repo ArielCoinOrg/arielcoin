@@ -92,7 +92,7 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
-    dev::bytes hash;
+    h256 hash;
     dev::bytes signature;
     LogPrintf("arl_dilithiumrecover 11 \n");
 

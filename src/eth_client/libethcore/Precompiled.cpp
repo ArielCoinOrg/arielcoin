@@ -92,7 +92,6 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
-    h256 hash;
     LogPrintf("arl_dilithiumrecover 11 \n");
     LogPrintf("arl_dilithiumrecover size %s\n", _in.size());
     dev::bytes signature = _in.cropped(32, 1952+3293).toBytes();

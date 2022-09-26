@@ -46,7 +46,7 @@ bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &s
     CPubKey pubKey;
     LogPrintf("arl_dilithiumrecover 22 \n");
     uint256 message = uint256(hash);
-    LogPrintf("arl_dilithiumrecover 2 %s\n", message);
+    LogPrintf("arl_dilithiumrecover 2 %s\n", message.ToString());
 
     // Recover public key from compact signature (65 bytes)
     // The public key can be compressed (33 bytes) or uncompressed (65 bytes)

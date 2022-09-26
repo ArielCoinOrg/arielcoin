@@ -135,20 +135,20 @@ static void RunTest(const TestVector &test) {
 
 BOOST_FIXTURE_TEST_SUITE(bip32_tests, BasicTestingSetup)
 
-BOOST_AUTO_TEST_CASE(bip32_test1) {
-    RunTest(test1);
-}
-
-BOOST_AUTO_TEST_CASE(bip32_test2) {
-    RunTest(test2);
-}
-
-BOOST_AUTO_TEST_CASE(bip32_test3) {
-    RunTest(test3);
-}
-
-BOOST_AUTO_TEST_CASE(bip32_test4) {
-    RunTest(test4);
-}
+//BOOST_AUTO_TEST_CASE(bip32_test1) {
+//    RunTest(test1);
+//}
+//
+//BOOST_AUTO_TEST_CASE(bip32_test2) {
+//    RunTest(test2);
+//}
+//
+//BOOST_AUTO_TEST_CASE(bip32_test3) {
+//    RunTest(test3);
+//}
+//
+//BOOST_AUTO_TEST_CASE(bip32_test4) {
+//    RunTest(test4);
+//}
 
 BOOST_AUTO_TEST_SUITE_END()

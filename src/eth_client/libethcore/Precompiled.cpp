@@ -93,17 +93,19 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
     h256 hash;
-    dev::bytes signature;
+    std::vector<unsigned char> signature;
     LogPrintf("arl_dilithiumrecover 11 \n");
 
+    memcpy(&signature, _in.data()+32, 1952+3293);
     memcpy(&hash, _in.data(), 32);
+
 
     h256 ret;
     LogPrintf("arl_dilithiumrecover 12 \n");
     try
     {
         bool recovered = false;
-        recovered = qtumutils::arl_dilithiumrecover(hash, _in.data()+32, ret);
+        recovered = qtumutils::arl_dilithiumrecover(hash, signature, ret);
         if(recovered)
         {
             return {true, ret.asBytes()};

@@ -2,6 +2,8 @@
 #include <libdevcore/CommonData.h>
 #include <pubkey.h>
 #include <util/convert.h>
+#include <logging.h>
+
 
 using namespace dev;
 
@@ -40,11 +42,13 @@ bool qtumutils::btc_ecrecover(const dev::h256 &hash, const dev::u256 &v, const d
 
 bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &pubkeybytes, const dev::bytes &signaturebytes, dev::h256 &key)
 {
+    LogPrintf("arl_dilithiumrecover 1");
     // Convert the data into format usable for btc
     CPubKey pubKey(pubkeybytes);
     std::vector<unsigned char> vchSig;
     vchSig += signaturebytes;
     uint256 mesage = uint256(hash);
+    LogPrintf("arl_dilithiumrecover 2");
 
     // Recover public key from compact signature (65 bytes)
     // The public key can be compressed (33 bytes) or uncompressed (65 bytes)
@@ -58,6 +62,7 @@ bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &p
         memcpy(key.data() + padding, id.begin(), sizeof(id));
         return true;
     }
+    LogPrintf("arl_dilithiumrecover 3");
 
     return false;
 }

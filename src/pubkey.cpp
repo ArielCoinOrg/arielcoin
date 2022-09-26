@@ -13,7 +13,7 @@
 #include <span.h>
 #include <uint256.h>
 #include <api.h>
-
+#include <logging.h>
 #include <algorithm>
 #include <cassert>
 

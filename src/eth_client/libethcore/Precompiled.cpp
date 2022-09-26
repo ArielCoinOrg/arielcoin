@@ -91,11 +91,8 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
-    struct
-    {
-        dev::bytes hash;
-        dev::bytes signature;
-    } in;
+    dev::bytes hash;
+    dev::bytes signature;
 
 
     memcpy(&hash, _in.data(), 32);

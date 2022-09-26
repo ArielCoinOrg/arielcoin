@@ -276,7 +276,7 @@ bool CPubKey::RecoverCompact(const uint256 &hash, const std::vector<unsigned cha
     if( r == 0){
         return true;
     }else {
-        printf("\n--- RecoverCompact verify is failed.\n");
+        LogPrintf("\n--- RecoverCompact verify is failed.\n");
         return false;
     }
 }

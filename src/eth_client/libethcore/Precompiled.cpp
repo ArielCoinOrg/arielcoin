@@ -94,14 +94,14 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
     dev::bytes hash;
     dev::bytes signature;
-    LogPrintf("arl_dilithiumrecover 11");
+    LogPrintf("arl_dilithiumrecover 11 \n");
 
 
     memcpy(&hash, _in.data(), 32);
     memcpy(&signature, _in.data()+32, 1952+3293);
 
     h256 ret;
-    LogPrintf("arl_dilithiumrecover 12");
+    LogPrintf("arl_dilithiumrecover 12 \n");
     try
     {
         bool recovered = false;
@@ -110,10 +110,10 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
         {
             return {true, ret.asBytes()};
         }
-        LogPrintf("arl_dilithiumrecover 13");
+        LogPrintf("arl_dilithiumrecover 13 \n");
     }
     catch (...) {}
-    LogPrintf("arl_dilithiumrecover 14");
+    LogPrintf("arl_dilithiumrecover 14 \n");
     return {true, {}};
 }
 

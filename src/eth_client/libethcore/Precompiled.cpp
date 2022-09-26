@@ -83,6 +83,38 @@ ETH_REGISTER_PRECOMPILED(btc_ecrecover)(bytesConstRef _in)
     return {true, {}};
 }
 
+ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
+(bytesConstRef /*_in*/, ChainOperationParams const& /*_chainParams*/, u256 const& /*_blockNumber*/)
+{
+    return 3000;
+}
+
+ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
+{
+    struct
+    {
+        dev::bytes hash;
+        dev::bytes pubkey;
+        dev::bytes signature;
+    } in;
+
+    memcpy(&in, _in.data(), min(_in.size(), sizeof(in)));
+
+    h256 ret;
+    try
+    {
+        bool recovered = false;
+        recovered = qtumutils::arl_dilithiumrecover(in.hash, in.pubkey, in.signature, ret);
+        if(recovered)
+        {
+            return {true, ret.asBytes()};
+        }
+    }
+    catch (...) {}
+
+    return {true, {}};
+}
+
 ETH_REGISTER_PRECOMPILED(ecrecover)(bytesConstRef _in)
 {
     struct

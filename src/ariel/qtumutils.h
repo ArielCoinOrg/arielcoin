@@ -15,4 +15,7 @@ namespace qtumutils
 bool btc_ecrecover(dev::h256 const& hash, dev::u256 const& v, dev::h256 const& r, dev::h256 const& s, dev::h256 & key);
 }
 
+bool arl_dilithiumrecover(dev::bytes const& hash, dev::bytes const& pubkeybytes, dev::bytes const& signature, dev::h256 & key);
+}
+
 #endif

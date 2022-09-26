@@ -37,3 +37,27 @@ bool qtumutils::btc_ecrecover(const dev::h256 &hash, const dev::u256 &v, const d
 
     return false;
 }
+
+bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &pubkeybytes, const dev::bytes &signaturebytes, dev::h256 &key)
+{
+    // Convert the data into format usable for btc
+    CPubKey pubKey(pubkeybytes);
+    std::vector<unsigned char> vchSig;
+    vchSig += signaturebytes;
+    uint256 mesage = uint256((hash);
+
+    // Recover public key from compact signature (65 bytes)
+    // The public key can be compressed (33 bytes) or uncompressed (65 bytes)
+    // Pubkeyhash is RIPEMD160 hash of the public key, handled both types
+    if(pubKey.RecoverCompact(mesage, vchSig))
+    {
+        // Get the pubkeyhash
+        CKeyID id = pubKey.GetID();
+        size_t padding = sizeof(key) - sizeof(id);
+        memset(key.data(), 0, padding);
+        memcpy(key.data() + padding, id.begin(), sizeof(id));
+        return true;
+    }
+
+    return false;
+}

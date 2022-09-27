@@ -263,16 +263,11 @@ bool CPubKey::RecoverLaxDER(const uint256 &hash, const std::vector<unsigned char
 }
 
 bool CPubKey::RecoverCompact(const uint256 &hash, const std::vector<unsigned char>& vchSig) {
-    LogPrintf("arl_dilithiumrecover 31 \n");
     unsigned int mlen = vchSig.size()-(SIZE-1);
-    LogPrintf("arl_dilithiumrecover 32 %s\n", mlen);
     unsigned char *pch=(unsigned char *)begin();
-    LogPrintf("arl_dilithiumrecover 33 \n");
     memcpy(pch+1, vchSig.data()+mlen, SIZE-1);
-    LogPrintf("arl_dilithiumrecover 34 \n");
     pch[0]=7;
     int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_verify(vchSig.data(),mlen,hash.begin(),32,pch+1);
-    LogPrintf("arl_dilithiumrecover 35 \n");
     if( r == 0){
         return true;
     }else {

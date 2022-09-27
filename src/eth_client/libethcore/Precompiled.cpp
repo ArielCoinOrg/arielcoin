@@ -93,20 +93,10 @@ ETH_REGISTER_PRECOMPILED_PRICER(arl_dilithiumrecover)
 
 ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
 {
-    LogPrintf("arl_dilithiumrecover 11 \n");
-    LogPrintf("arl_dilithiumrecover size %s\n", _in.size());
-
     dev::bytes hash = _in.cropped(32, 32).toBytes();
     dev::bytes signature = _in.cropped(64, 1952+3293).toBytes();
 
-
-    LogPrintf("arl_dilithiumrecover _in %s\n", HexStr(_in));
-//    LogPrintf("arl_dilithiumrecover _in.cropped(32, 1952+3293) %s\n", _in.cropped(32, 1952+3293).toString());
-
-
-
     h256 ret;
-    LogPrintf("arl_dilithiumrecover 12 \n");
     try
     {
         bool recovered = false;
@@ -115,10 +105,8 @@ ETH_REGISTER_PRECOMPILED(arl_dilithiumrecover)(bytesConstRef _in)
         {
             return {true, ret.asBytes()};
         }
-        LogPrintf("arl_dilithiumrecover 13 \n");
     }
     catch (...) {}
-    LogPrintf("arl_dilithiumrecover 14 \n");
     return {true, {}};
 }
 

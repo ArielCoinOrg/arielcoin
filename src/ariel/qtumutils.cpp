@@ -41,12 +41,9 @@ bool qtumutils::btc_ecrecover(const dev::h256 &hash, const dev::u256 &v, const d
 
 bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &signaturebytes, dev::h256 &key)
 {
-    LogPrintf("arl_dilithiumrecover 1 \n");
     // Convert the data into format usable for btc
     CPubKey pubKey;
-    LogPrintf("arl_dilithiumrecover 22 \n");
     uint256 message = uint256(hash);
-    LogPrintf("arl_dilithiumrecover 2 %s\n", message.ToString());
 
     // Recover public key from compact signature (65 bytes)
     // The public key can be compressed (33 bytes) or uncompressed (65 bytes)
@@ -60,7 +57,6 @@ bool qtumutils::arl_dilithiumrecover(const dev::bytes &hash, const dev::bytes &s
         memcpy(key.data() + padding, id.begin(), sizeof(id));
         return true;
     }
-    LogPrintf("arl_dilithiumrecover 3");
 
     return false;
 }

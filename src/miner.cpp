@@ -294,15 +294,10 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
     ////////////////////////////////////////////////// deploy offline staking contract
 
-    LogPrintf("Fail 1\n");
-    LogPrintf("Fail 11  %u \n", uint256(h256Touint(dev::h256(globalState->rootHash()))).ToString());
-    LogPrintf("Fail 12  %u \n", uint256(chainparams.HashStateRoot()).ToString());
-
     if (nHeight == chainparams.GetConsensus().nSmartActivationBlock){
         globalState->setRoot(uintToh256(chainparams.HashStateRoot()));
         globalState->setRootUTXO(dev::sha3(dev::rlp("")));
     }
-    LogPrintf("Fail 2\n");
 
     if(nHeight == chainparams.GetConsensus().nOfflineStakeHeight){
         globalState->deployDelegationsContract();

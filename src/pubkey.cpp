@@ -237,6 +237,8 @@ std::optional<std::pair<XOnlyPubKey, bool>> XOnlyPubKey::CreateTapTweak(const ui
 bool CPubKey::Verify(const uint256 &hash, const std::vector<unsigned char>& vchSig) const {
     if (!IsValid())
         return false;
+    if (vchSig.size() != COMPACT_SIGNATURE_SIZE)
+        return false;
     int r = PQCLEAN_DILITHIUM3_CLEAN_crypto_sign_verify(vchSig.data(),vchSig.size(),hash.begin(),32,begin()+1);
     if( r == 0){
         return true;
@@ -264,6 +266,8 @@ bool CPubKey::RecoverLaxDER(const uint256 &hash, const std::vector<unsigned char
 
 bool CPubKey::RecoverCompact(const uint256 &hash, const std::vector<unsigned char>& vchSig) {
     unsigned int mlen = vchSig.size()-(SIZE-1);
+    if (mlen != COMPACT_SIGNATURE_SIZE)
+        return false;
     unsigned char *pch=(unsigned char *)begin();
     memcpy(pch+1, vchSig.data()+mlen, SIZE-1);
     pch[0]=7;

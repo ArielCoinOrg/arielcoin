@@ -131,7 +131,7 @@ bool DecryptKey(const CKeyingMaterial& vMasterKey, const std::vector<unsigned ch
     if(!DecryptSecret(vMasterKey, vchCryptedSecret, vchPubKey.GetHash(), vchSecret))
         return false;
 
-    if (vchSecret.size() != 32)
+    if (vchSecret.size() != PQCLEAN_DILITHIUM3_CLEAN_CRYPTO_SECRETKEYBYTES)
         return false;
 
     key.Set(vchSecret.begin(), vchSecret.end(), vchPubKey.IsCompressed());

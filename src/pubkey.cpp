@@ -13,7 +13,7 @@
 #include <span.h>
 #include <uint256.h>
 #include <api.h>
-#include <logging.h>
+//#include <logging.h>
 #include <algorithm>
 #include <cassert>
 
@@ -271,7 +271,7 @@ bool CPubKey::RecoverCompact(const uint256 &hash, const std::vector<unsigned cha
     if( r == 0){
         return true;
     }else {
-        LogPrintf("\n--- RecoverCompact verify is failed.\n");
+        //LogPrintf("\n--- RecoverCompact verify is failed.\n");
         return false;
     }
 }

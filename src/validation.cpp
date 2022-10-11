@@ -1914,7 +1914,8 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
 
                 if (pfClean == NULL && fAddressIndex) {
                     const auto &undo = txundo.vprevout[j];
-                    const bool isTxCoinStake = tx.IsCoinStake() || tx.IsCoinBase();
+                    const bool isTxCoinStake = tx.IsCoinStake();
+                    const bool isTxCoinBase = tx.IsCoinBase();
                     const CTxIn input = tx.vin[j];
                     const CTxOut &prevout = view.GetOutputFor(input);
 
@@ -1929,7 +1930,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                         // undo spending activity
                         addressIndex.push_back(std::make_pair(CAddressIndexKey(dest.index(), uint256(addressBytes), pindex->nHeight, i, hash, j, true), prevout.nValue * -1));
                         // restore unspent index
-                        addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(dest.index(), uint256(addressBytes), input.prevout.hash, input.prevout.n), CAddressUnspentValue(prevout.nValue, prevout.scriptPubKey, undo.nHeight, isTxCoinStake)));
+                        addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(dest.index(), uint256(addressBytes), input.prevout.hash, input.prevout.n), CAddressUnspentValue(prevout.nValue, prevout.scriptPubKey, undo.nHeight, isTxCoinStake, isTxCoinBase)));
                     }
                 }
             }
@@ -3287,6 +3288,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             for (unsigned int k = 0; k < tx.vout.size(); k++) {
                 const CTxOut &out = tx.vout[k];
                 const bool isTxCoinStake = tx.IsCoinStake();
+                const bool isTxCoinBase = tx.IsCoinBase();
 
                 CTxDestination dest;
                 if (ExtractDestination({tx.GetHash(), k}, out.scriptPubKey, dest)) {
@@ -3299,7 +3301,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                     // record receiving activity
                     addressIndex.push_back(std::make_pair(CAddressIndexKey(dest.index(), uint256(addressBytes), pindex->nHeight, i, tx.GetHash(), k, false), out.nValue));
                     // record unspent output
-                    addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(dest.index(), uint256(addressBytes), tx.GetHash(), k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight, isTxCoinStake)));
+                    addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(dest.index(), uint256(addressBytes), tx.GetHash(), k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight, isTxCoinStake, isTxCoinBase)));
                 }
             }
         }

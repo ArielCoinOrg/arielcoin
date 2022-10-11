@@ -391,13 +391,14 @@ struct CAddressUnspentValue {
     int blockHeight;
     bool coinStake;
 
-    SERIALIZE_METHODS(CAddressUnspentValue, obj) { READWRITE(obj.satoshis, *(CScriptBase*)(&obj.script), obj.blockHeight, obj.coinStake); }
+    SERIALIZE_METHODS(CAddressUnspentValue, obj) { READWRITE(obj.satoshis, *(CScriptBase*)(&obj.script), obj.blockHeight, obj.coinStake, obj.coinBase); }
 
-    CAddressUnspentValue(CAmount sats, CScript scriptPubKey, int height, bool isStake) {
+    CAddressUnspentValue(CAmount sats, CScript scriptPubKey, int height, bool isStake, bool isCoinbase) {
         satoshis = sats;
         script = scriptPubKey;
         blockHeight = height;
         coinStake = isStake;
+        coinBase = isCoinbase;
     }
 
     CAddressUnspentValue() {
@@ -409,6 +410,7 @@ struct CAddressUnspentValue {
         script.clear();
         blockHeight = 0;
         coinStake = false;
+        coinBase = false;
     }
 
     bool IsNull() const {

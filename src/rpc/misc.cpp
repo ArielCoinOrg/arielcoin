@@ -530,6 +530,7 @@ RPCHelpMan getaddressutxos()
         output.pushKV("satoshis", it->second.satoshis);
         output.pushKV("height", it->second.blockHeight);
         output.pushKV("isStake", it->second.coinStake);
+        output.pushKV("isBase", it->second.coinBase);
         utxos.push_back(output);
     }
 

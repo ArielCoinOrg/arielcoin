@@ -390,6 +390,7 @@ struct CAddressUnspentValue {
     CScript script;
     int blockHeight;
     bool coinStake;
+    bool coinBase;
 
     SERIALIZE_METHODS(CAddressUnspentValue, obj) { READWRITE(obj.satoshis, *(CScriptBase*)(&obj.script), obj.blockHeight, obj.coinStake, obj.coinBase); }
 

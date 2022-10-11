@@ -1914,7 +1914,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
 
                 if (pfClean == NULL && fAddressIndex) {
                     const auto &undo = txundo.vprevout[j];
-                    const bool isTxCoinStake = tx.IsCoinStake();
+                    const bool isTxCoinStake = tx.IsCoinStake() || tx.IsCoinBase();
                     const CTxIn input = tx.vin[j];
                     const CTxOut &prevout = view.GetOutputFor(input);
 

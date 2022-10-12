@@ -139,7 +139,7 @@ public:
         consensus.nBlocktimeDownscaleFactor = 5;
         consensus.nSubsidyHalvingInterval = 525600;// initial interval
         consensus.newSubsidyHalvingInterval = consensus.nSubsidyHalvingInterval*consensus.nBlocktimeDownscaleFactor;// initial interval
-        consensus.nMinimumDifficultyBlocks = 550;
+        consensus.nMinimumDifficultyBlocks = 10;
         consensus.BIP16Height = 1;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("");

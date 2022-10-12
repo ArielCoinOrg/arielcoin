@@ -135,11 +135,10 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         consensus.signet_blocks = false;
         consensus.signet_challenge.clear();
-        consensus.nFixUTXOCacheHFHeight = 310;
+
         consensus.nBlocktimeDownscaleFactor = 5;
         consensus.nSubsidyHalvingInterval = 525600;// initial interval
         consensus.newSubsidyHalvingInterval = consensus.nSubsidyHalvingInterval*consensus.nBlocktimeDownscaleFactor;// initial interval
-
         consensus.nMinimumDifficultyBlocks = 550;
         consensus.BIP16Height = 1;
         consensus.BIP34Height = 1;
@@ -148,21 +147,22 @@ public:
         consensus.BIP65Height = 1; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 1; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
 
-        consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitGenesis = uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.CSVHeight = 1; // 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5
         consensus.SegwitHeight = 1; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
-        consensus.QIP5Height = 300;
-        consensus.QIP6Height = 300;
-        consensus.QIP7Height = 300;
-        consensus.QIP9Height = 300;
-        consensus.nMuirGlacierHeight = 301;
-        consensus.nLondonHeight = 302;
+        consensus.QIP5Height = 121779;
+        consensus.QIP6Height = 121779;
+        consensus.QIP7Height = 121779;
+        consensus.QIP9Height = 121779;
+        consensus.nFixUTXOCacheHFHeight = 121779;
+        consensus.nMuirGlacierHeight = 121780;
+        consensus.nLondonHeight = 121782;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nPowTargetSpacing = 60;
         consensus.newPowTargetSpacing = 12;
-        consensus.nReduceBlocktimeHeight = 600;
+        consensus.nReduceBlocktimeHeight = 2080510000;
 
         consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -205,7 +205,7 @@ public:
         pchMessageStart[1] = 0x42;
         pchMessageStart[2] = 0x49;
         pchMessageStart[3] = 0x54;
-        nDefaultPort = 8383;
+        nDefaultPort = 8686;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 0;
@@ -268,18 +268,18 @@ public:
         consensus.nRBTCoinbaseMaturity = 100;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
-        consensus.nLastPOWBlock = 300000000;
-        consensus.nLastBigReward = 300000000;
+        consensus.nLastPOWBlock = 2080510000;
+        consensus.nLastBigReward = 2080510000;
         consensus.nMPoSRewardRecipients = 10;
         consensus.nFirstMPoSBlock = consensus.nLastPOWBlock +
                                     consensus.nMPoSRewardRecipients +
                                     consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 300000000;
-        consensus.nOfflineStakeHeight = 680000000;
+        consensus.nLastMPoSBlock = 2080510000;
+        consensus.nOfflineStakeHeight = 2080510000;
 
 
 
-        consensus.nEnableHeaderSignatureHeight = 300000000;
+        consensus.nEnableHeaderSignatureHeight = 2080510000;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking

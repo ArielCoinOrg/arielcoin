@@ -18,7 +18,7 @@
  * of the block.
  */
 
-static const int nSmartActivationBlock = 319400;
+static const int nSmartActivationBlock = 400400;
 
 class CBlockHeader
 {

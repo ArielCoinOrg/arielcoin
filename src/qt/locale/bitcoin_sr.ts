@@ -159,7 +159,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Потврди шифрирање новчаника</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
         <translation type="unfinished">Упозорење: Уколико шифрираш новчаник и изгубиш своју лозинку, &lt;b&gt;ИЗГУБИЋЕШ СВЕ СВОЈЕ БИТКОИНЕ&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -239,7 +239,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>QtumApplication</name>
+    <name>ArielApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">Интерна грешка</translation>
@@ -337,7 +337,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Општи преглед</translation>
@@ -1008,7 +1008,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
+        <source>Ariel</source>
         <translation type="unfinished">Биткоин</translation>
     </message>
     <message>

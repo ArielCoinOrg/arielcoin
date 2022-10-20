@@ -122,7 +122,7 @@
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>E&amp;xit</source>
         <translation>Buda</translation>

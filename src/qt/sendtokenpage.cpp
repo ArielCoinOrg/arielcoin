@@ -85,7 +85,7 @@ void SendTokenPage::setModel(WalletModel *_model)
     if (m_model && m_model->getOptionsModel())
         connect(m_model->getOptionsModel(), &OptionsModel::displayUnitChanged, this, &SendTokenPage::updateDisplayUnit);
 
-    // update the display unit, to not use the default ("QTUM")
+    // update the display unit, to not use the default ("ARIEL")
     updateDisplayUnit();
 
     bCreateUnsigned = m_model->createUnsigned();

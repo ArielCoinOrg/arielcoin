@@ -203,7 +203,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Send</source>
         <translation>&amp;ناردن</translation>

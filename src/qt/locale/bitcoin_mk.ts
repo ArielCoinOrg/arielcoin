@@ -149,7 +149,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Преглед</translation>
@@ -341,7 +341,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
+        <source>Ariel</source>
         <translation type="unfinished">Биткоин</translation>
     </message>
     <message numerus="yes">

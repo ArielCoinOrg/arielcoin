@@ -1382,8 +1382,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-//    if (copyright_devs.find("Qtum Core") == std::string::npos) {
-//        strCopyrightHolders += "\n" + strPrefix + "The Qtum Core Developers";
+//    if (copyright_devs.find("Ariel Core") == std::string::npos) {
+//        strCopyrightHolders += "\n" + strPrefix + "The Ariel Core Developers";
 //    }
     return strCopyrightHolders;
 }

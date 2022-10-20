@@ -617,7 +617,7 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Qtum.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Ariel.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
         return GetSpecialFolderPath(CSIDL_STARTUP) / "Ariel (testnet).lnk";
     return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Ariel (%s).lnk", chain);

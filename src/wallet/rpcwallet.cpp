@@ -291,7 +291,7 @@ bool SetDefaultSignSenderAddress(const CWallet& wallet, CTxDestination& destAdre
 static RPCHelpMan getnewaddress()
 {
     return RPCHelpMan{"getnewaddress",
-                "\nReturns a new Qtum address for receiving payments.\n"
+                "\nReturns a new Ariel address for receiving payments.\n"
                 "If 'label' is specified, it is added to the address book \n"
                 "so payments received with the address will be associated with 'label'.\n",
                 {
@@ -299,7 +299,7 @@ static RPCHelpMan getnewaddress()
                     {"address_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -addresstype"}, "The address type to use. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\"."},
                 },
                 RPCResult{
-                    RPCResult::Type::STR, "address", "The new qtum address"
+                    RPCResult::Type::STR, "address", "The new ariel address"
                 },
                 RPCExamples{
                     HelpExampleCli("getnewaddress", "")
@@ -345,7 +345,7 @@ static RPCHelpMan getnewaddress()
 static RPCHelpMan getrawchangeaddress()
 {
     return RPCHelpMan{"getrawchangeaddress",
-                "\nReturns a new Qtum address, for receiving change.\n"
+                "\nReturns a new Ariel address, for receiving change.\n"
                 "This is for use with raw transactions, NOT normal use.\n",
                 {
                     {"address_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -changetype"}, "The address type to use. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\"."},
@@ -394,7 +394,7 @@ static RPCHelpMan setlabel()
     return RPCHelpMan{"setlabel",
                 "\nSets the label associated with the given address.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address to be associated with a label."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address to be associated with a label."},
                     {"label", RPCArg::Type::STR, RPCArg::Optional::NO, "The label to assign to the address."},
                 },
                 RPCResult{RPCResult::Type::NONE, "", ""},
@@ -411,7 +411,7 @@ static RPCHelpMan setlabel()
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address");
     }
 
     std::string label = LabelFromValue(request.params[1]);
@@ -433,7 +433,7 @@ void ParseRecipients(const UniValue& address_amounts, const UniValue& subtract_f
     for (const std::string& address: address_amounts.getKeys()) {
         CTxDestination dest = DecodeDestination(address);
         if (!IsValidDestination(dest)) {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + address);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Ariel address: ") + address);
         }
 
         if (destinations.count(dest)) {
@@ -531,7 +531,7 @@ static CTransactionRef SplitUTXOs(std::shared_ptr<CWallet> const pwallet, const 
     if (nValue > nTotal)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Insufficient funds");
 
-    // Parse Qtum address
+    // Parse Ariel address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     // Split into utxos with nValue
@@ -648,7 +648,7 @@ static RPCHelpMan sendtoaddress()
                 "\nSend an amount to a given address." +
         HELP_REQUIRING_PASSPHRASE,
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address to send to."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address to send to."},
                     {"amount", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "The amount in " + CURRENCY_UNIT + " to send. eg 0.1"},
                     {"comment", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "A comment used to store what the transaction is for.\n"
                                          "This is not part of the transaction, just kept in your wallet."},
@@ -665,7 +665,7 @@ static RPCHelpMan sendtoaddress()
                                          "dirty if they have previously been used in a transaction. If true, this also activates avoidpartialspends, grouping outputs by their addresses."},
                     {"fee_rate", RPCArg::Type::AMOUNT, RPCArg::DefaultHint{"not set, fall back to wallet fee estimation"}, "Specify a fee rate in " + CURRENCY_ATOM + "/vB."},
                     {"verbose", RPCArg::Type::BOOL, RPCArg::Default{false}, "If true, return extra information about the transaction."},
-                    {"senderaddress", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum address that will be used to send money from."},
+                    {"senderaddress", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel address that will be used to send money from."},
                     {"changetosender", RPCArg::Type::BOOL, RPCArg::Default{false}, "Return the change to the sender."},
                 },
                 {
@@ -681,15 +681,15 @@ static RPCHelpMan sendtoaddress()
                     },
                 },
                 RPCExamples{
-                    "\nSend 0.1 QTUM\n"
+                    "\nSend 0.1 ARIEL\n"
                     + HelpExampleCli("sendtoaddress", "\"" + EXAMPLE_ADDRESS[0] + "\" 0.1") +
-                    "\nSend 0.1 QTUM with a confirmation target of 6 blocks in economical fee estimate mode using positional arguments\n"
+                    "\nSend 0.1 ARIEL with a confirmation target of 6 blocks in economical fee estimate mode using positional arguments\n"
                     + HelpExampleCli("sendtoaddress", "\"" + EXAMPLE_ADDRESS[0] + "\" 0.1 \"donation\" \"sean's outpost\" false true 6 economical") +
-                    "\nSend 0.1 QTUM with a fee rate of 1.1 " + CURRENCY_ATOM + "/vB, subtract fee from amount, BIP125-replaceable, using positional arguments\n"
+                    "\nSend 0.1 ARIEL with a fee rate of 1.1 " + CURRENCY_ATOM + "/vB, subtract fee from amount, BIP125-replaceable, using positional arguments\n"
                     + HelpExampleCli("sendtoaddress", "\"" + EXAMPLE_ADDRESS[0] + "\" 0.1 \"drinks\" \"room77\" true true null \"unset\" null 1.1") +
-                    "\nSend 0.2 QTUM with a confirmation target of 6 blocks in economical fee estimate mode using named arguments\n"
+                    "\nSend 0.2 ARIEL with a confirmation target of 6 blocks in economical fee estimate mode using named arguments\n"
                     + HelpExampleCli("-named sendtoaddress", "address=\"" + EXAMPLE_ADDRESS[0] + "\" amount=0.2 conf_target=6 estimate_mode=\"economical\"") +
-                    "\nSend 0.5 QTUM with a fee rate of 25 " + CURRENCY_ATOM + "/vB using named arguments\n"
+                    "\nSend 0.5 ARIEL with a fee rate of 25 " + CURRENCY_ATOM + "/vB using named arguments\n"
                     + HelpExampleCli("-named sendtoaddress", "address=\"" + EXAMPLE_ADDRESS[0] + "\" amount=0.5 fee_rate=25")
                     + HelpExampleCli("-named sendtoaddress", "address=\"" + EXAMPLE_ADDRESS[0] + "\" amount=0.5 fee_rate=25 subtractfeefromamount=false replaceable=true avoid_reuse=true comment=\"2 pizzas\" comment_to=\"jeremy\" verbose=true")
                     + HelpExampleCli("sendtoaddress", "\"" + EXAMPLE_ADDRESS[0] + "\", 0.1, \"donation\", \"seans outpost\", false, null, null, \"\", false, \"" + EXAMPLE_ADDRESS[1] + "\", true")
@@ -747,7 +747,7 @@ static RPCHelpMan sendtoaddress()
     if (!request.params[11].isNull()){
     senderAddress = DecodeDestination(request.params[11].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address to send from");
         else
             fHasSender=true;
     }
@@ -801,7 +801,7 @@ static RPCHelpMan splitutxosforaddress()
                 "\nSplit an address coins into utxo between min and max value." +
                     HELP_REQUIRING_PASSPHRASE,
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address to split utxos."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address to split utxos."},
                     {"minvalue", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "Select utxo which value is smaller than value (minimum 0.1 COIN)"},
                     {"maxvalue", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "Select utxo which value is greater than value (minimum 0.1 COIN)"},
                     {"maxoutputs", RPCArg::Type::NUM, RPCArg::Default{100}, "Maximum outputs to create"},
@@ -836,7 +836,7 @@ static RPCHelpMan splitutxosforaddress()
     CTxDestination address = DecodeDestination(request.params[0].get_str());
 
     if (!IsValidDestination(address)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address");
     }
     CScript scriptPubKey = GetScriptForDestination(address);
     if (!pwallet->IsMine(scriptPubKey)) {
@@ -997,8 +997,8 @@ static RPCHelpMan createcontract()
                 {
                     {"bytecode", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "contract bytcode."},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_CREATE)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice QTUM price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
-                    {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum address that will be used to create the contract."},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice ARIEL price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel address that will be used to create the contract."},
                     {"broadcast", RPCArg::Type::BOOL, RPCArg::Default{true}, "Whether to broadcast the transaction or not."},
                     {"changetosender", RPCArg::Type::BOOL, RPCArg::Default{true}, "Return the change to the sender."},
                     {"psbt", RPCArg::Type::BOOL, RPCArg::Optional::OMITTED_NAMED_ARG, "Create partially signed transaction."},
@@ -1071,7 +1071,7 @@ static RPCHelpMan createcontract()
     if (!request.params[3].isNull()){
         senderAddress = DecodeDestination(request.params[3].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address to send from");
         if (!IsValidContractSenderAddress(senderAddress))
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid contract sender address. Only P2PK and P2PKH allowed");
         else
@@ -1343,7 +1343,7 @@ UniValue SendToContract(CWallet& wallet, const UniValue& params, ChainstateManag
     if (!params[5].isNull()){
         senderAddress = DecodeDestination(params[5].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address to send from");
         if (!IsValidContractSenderAddress(senderAddress))
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid contract sender address. Only P2PK and P2PKH allowed");
         else
@@ -1704,8 +1704,8 @@ static RPCHelpMan sendtocontract()
                         {"datahex", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "data to send."},
                         {"amount", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The amount in " + CURRENCY_UNIT + " to send. eg 0.1, default: 0"},
                         {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
-                        {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum address that will be used as sender."},
+                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                        {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel address that will be used as sender."},
                         {"broadcast", RPCArg::Type::BOOL, RPCArg::Default{true}, "Whether to broadcast the transaction or not."},
                         {"changetosender", RPCArg::Type::BOOL, RPCArg::Default{true}, "Return the change to the sender."},
                         {"psbt", RPCArg::Type::BOOL, RPCArg::Optional::OMITTED_NAMED_ARG, "Create partially signed transaction."},
@@ -1755,9 +1755,9 @@ static RPCHelpMan removedelegationforaddress()
                     "\nRemove delegation for address." +
                     HELP_REQUIRING_PASSPHRASE,
                     {
-                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address to remove delegation, the address will be used as sender too."},
+                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address to remove delegation, the address will be used as sender too."},
                         {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     },
                     RPCResult{
                         RPCResult::Type::OBJ, "", "",
@@ -1814,11 +1814,11 @@ static RPCHelpMan setdelegateforaddress()
                     "\nSet delegate for address." +
                     HELP_REQUIRING_PASSPHRASE,
                     {
-                        {"staker", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address for the staker."},
+                        {"staker", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address for the staker."},
                         {"fee", RPCArg::Type::NUM, RPCArg::Optional::NO, "Percentage of the reward that will be paid to the staker."},
-                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address that contain the coins that will be delegated to the staker, the address will be used as sender too."},
+                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address that contain the coins that will be delegated to the staker, the address will be used as sender too."},
                         {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_CREATE)+", max: "+i64tostr(blockGasLimit)},
-                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                        {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "gasPrice Ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     },
                     RPCResult{
                         RPCResult::Type::OBJ, "", "",
@@ -2158,7 +2158,7 @@ static RPCHelpMan listsuperstakervaluesforaddress()
                     "\nList super staker configuration values for address." +
                     HELP_REQUIRING_PASSPHRASE,
                     {
-                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The super staker Qtum address."},
+                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The super staker Ariel address."},
                     },
                     RPCResult{
                         RPCResult::Type::OBJ, "", "",
@@ -2227,7 +2227,7 @@ static RPCHelpMan removesuperstakervaluesforaddress()
                     "\nRemove super staker configuration values for address." +
                     HELP_REQUIRING_PASSPHRASE,
                     {
-                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The super staker Qtum address."},
+                        {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The super staker Ariel address."},
                     },
                     RPCResult{RPCResult::Type::NONE, "", ""},
                     RPCExamples{
@@ -2300,7 +2300,7 @@ static RPCHelpMan listaddressgroupings()
                         {
                             {RPCResult::Type::ARR_FIXED, "", "",
                             {
-                                {RPCResult::Type::STR, "address", "The qtum address"},
+                                {RPCResult::Type::STR, "address", "The ariel address"},
                                 {RPCResult::Type::STR_AMOUNT, "amount", "The amount in " + CURRENCY_UNIT},
                                 {RPCResult::Type::STR, "label", /* optional */ true, "The label"},
                             }},
@@ -2352,7 +2352,7 @@ static RPCHelpMan signmessage()
                 "\nSign a message with the private key of an address" +
         HELP_REQUIRING_PASSPHRASE,
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address to use for the private key."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address to use for the private key."},
                     {"message", RPCArg::Type::STR, RPCArg::Optional::NO, "The message to create a signature of."},
                 },
                 RPCResult{
@@ -2415,7 +2415,7 @@ static CAmount GetReceived(const CWallet& wallet, const UniValue& params, bool b
         // Get the address
         CTxDestination dest = DecodeDestination(params[0].get_str());
         if (!IsValidDestination(dest)) {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Ariel address");
         }
         CScript script_pub_key = GetScriptForDestination(dest);
         if (!wallet.IsMine(script_pub_key)) {
@@ -2454,7 +2454,7 @@ static RPCHelpMan getreceivedbyaddress()
     return RPCHelpMan{"getreceivedbyaddress",
                 "\nReturns the total amount received by the given address in transactions with at least minconf confirmations.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address for transactions."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address for transactions."},
                     {"minconf", RPCArg::Type::NUM, RPCArg::Default{1}, "Only include transactions confirmed at least this many times."},
                 },
                 RPCResult{
@@ -2613,7 +2613,7 @@ static RPCHelpMan sendmany()
                     {"dummy", RPCArg::Type::STR, RPCArg::Optional::NO, "Must be set to \"\" for backwards compatibility.", "\"\""},
                     {"amounts", RPCArg::Type::OBJ_USER_KEYS, RPCArg::Optional::NO, "The addresses and amounts",
                         {
-                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "The qtum address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value"},
+                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "The ariel address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value"},
                         },
                     },
                     {"minconf", RPCArg::Type::NUM, RPCArg::Optional::OMITTED_NAMED_ARG, "Ignored dummy value"},
@@ -2706,7 +2706,7 @@ static RPCHelpMan sendmanywithdupes()
                     {"dummy", RPCArg::Type::STR, RPCArg::Optional::NO, "Must be set to \"\" for backwards compatibility.", "\"\""},
                     {"amounts", RPCArg::Type::OBJ, RPCArg::Optional::NO, "A json object with addresses and amounts",
                         {
-                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "The qtum address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value"},
+                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "The ariel address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value"},
                         },
                     },
                     {"minconf", RPCArg::Type::NUM, RPCArg::Optional::OMITTED_NAMED_ARG, "Ignored dummy value"},
@@ -2788,7 +2788,7 @@ static RPCHelpMan sendmanywithdupes()
     for (const std::string& name_ : keys) {
         CTxDestination dest = DecodeDestination(name_);
         if (!IsValidDestination(dest)) {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Ariel address: ") + name_);
         }
 
         destinations.insert(dest);
@@ -2835,15 +2835,15 @@ static RPCHelpMan addmultisigaddress()
 {
     return RPCHelpMan{"addmultisigaddress",
                 "\nAdd an nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.\n"
-                "Each key is a Qtum address or hex-encoded public key.\n"
+                "Each key is a Ariel address or hex-encoded public key.\n"
                 "This functionality is only intended for use with non-watchonly addresses.\n"
                 "See `importaddress` for watchonly p2sh address support.\n"
                 "If 'label' is specified, assign address to that label.\n",
                 {
                     {"nrequired", RPCArg::Type::NUM, RPCArg::Optional::NO, "The number of required signatures out of the n keys or addresses."},
-                    {"keys", RPCArg::Type::ARR, RPCArg::Optional::NO, "A json array of qtum addresses or hex-encoded public keys",
+                    {"keys", RPCArg::Type::ARR, RPCArg::Optional::NO, "A json array of ariel addresses or hex-encoded public keys",
                         {
-                            {"key", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "qtum address or hex-encoded public key"},
+                            {"key", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "ariel address or hex-encoded public key"},
                         },
                         },
                     {"label", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "A label to assign the addresses to."},
@@ -3312,7 +3312,7 @@ static RPCHelpMan listtransactions()
                         {RPCResult::Type::OBJ, "", "", Cat(Cat<std::vector<RPCResult>>(
                         {
                             {RPCResult::Type::BOOL, "involvesWatchonly", "Only returns true if imported addresses were involved in transaction."},
-                            {RPCResult::Type::STR, "address", "The qtum address of the transaction."},
+                            {RPCResult::Type::STR, "address", "The ariel address of the transaction."},
                             {RPCResult::Type::STR, "category", "The transaction category.\n"
                                 "\"send\"                  Transactions sent.\n"
                                 "\"receive\"               Non-coinbase and non-coinstake transactions received.\n"
@@ -3426,7 +3426,7 @@ static RPCHelpMan listsinceblock()
                             {RPCResult::Type::OBJ, "", "", Cat(Cat<std::vector<RPCResult>>(
                             {
                                 {RPCResult::Type::BOOL, "involvesWatchonly", "Only returns true if imported addresses were involved in transaction."},
-                                {RPCResult::Type::STR, "address", "The qtum address of the transaction."},
+                                {RPCResult::Type::STR, "address", "The ariel address of the transaction."},
                                 {RPCResult::Type::STR, "category", "The transaction category.\n"
                                     "\"send\"                  Transactions sent.\n"
                                     "\"receive\"               Non-coinbase transactions received.\n"
@@ -3571,7 +3571,7 @@ static RPCHelpMan gettransaction()
                             {RPCResult::Type::OBJ, "", "",
                             {
                                 {RPCResult::Type::BOOL, "involvesWatchonly", "Only returns true if imported addresses were involved in transaction."},
-                                {RPCResult::Type::STR, "address", "The qtum address involved in the transaction."},
+                                {RPCResult::Type::STR, "address", "The ariel address involved in the transaction."},
                                 {RPCResult::Type::STR, "category", "The transaction category.\n"
                                     "\"send\"                  Transactions sent.\n"
                                     "\"receive\"               Non-coinbase and non-coinstake transactions received.\n"
@@ -3844,7 +3844,7 @@ static RPCHelpMan walletpassphrase()
 {
     return RPCHelpMan{"walletpassphrase",
                 "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-                "This is needed prior to performing transactions related to private keys such as sending QTUM and staking\n"
+                "This is needed prior to performing transactions related to private keys such as sending ARIEL and staking\n"
             "\nNote:\n"
             "Issuing the walletpassphrase command while the wallet is already unlocked will set a new unlock\n"
             "time that overrides the old one.\n",
@@ -4057,7 +4057,7 @@ static RPCHelpMan encryptwallet()
                 RPCExamples{
             "\nEncrypt your wallet\n"
             + HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending qtum\n"
+            "\nNow set the passphrase to use the wallet, such as for signing or sending ariel\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can do something like sign\n"
             + HelpExampleCli("signmessage", "\"address\" \"test message\"") +
@@ -4910,9 +4910,9 @@ static RPCHelpMan listunspent()
                 {
                     {"minconf", RPCArg::Type::NUM, RPCArg::Default{1}, "The minimum confirmations to filter"},
                     {"maxconf", RPCArg::Type::NUM, RPCArg::Default{9999999}, "The maximum confirmations to filter"},
-                    {"addresses", RPCArg::Type::ARR, RPCArg::Default{UniValue::VARR}, "The qtum addresses to filter",
+                    {"addresses", RPCArg::Type::ARR, RPCArg::Default{UniValue::VARR}, "The ariel addresses to filter",
                         {
-                            {"address", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "qtum address"},
+                            {"address", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "ariel address"},
                         },
                     },
                     {"include_unsafe", RPCArg::Type::BOOL, RPCArg::Default{true}, "Include outputs that are not safe to spend\n"
@@ -4933,7 +4933,7 @@ static RPCHelpMan listunspent()
                         {
                             {RPCResult::Type::STR_HEX, "txid", "the transaction id"},
                             {RPCResult::Type::NUM, "vout", "the vout value"},
-                            {RPCResult::Type::STR, "address", "the qtum address"},
+                            {RPCResult::Type::STR, "address", "the ariel address"},
                             {RPCResult::Type::STR, "label", "The associated label, or \"\" for the default label"},
                             {RPCResult::Type::STR, "scriptPubKey", "the script key"},
                             {RPCResult::Type::STR_AMOUNT, "amount", "the transaction output amount in " + CURRENCY_UNIT},
@@ -4982,7 +4982,7 @@ static RPCHelpMan listunspent()
             const UniValue& input = inputs[idx];
             CTxDestination dest = DecodeDestination(input.get_str());
             if (!IsValidDestination(dest)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Ariel address: ") + input.get_str());
             }
             if (!destinations.insert(dest).second) {
                 throw JSONRPCError(RPC_INVALID_PARAMETER, std::string("Invalid parameter, duplicated address: ") + input.get_str());
@@ -5177,7 +5177,7 @@ void FundTransaction(CWallet& wallet, CMutableTransaction& tx, CAmount& fee_out,
             CTxDestination dest = DecodeDestination(change_address_str);
 
             if (!IsValidDestination(dest)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Change address must be a valid qtum address");
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Change address must be a valid ariel address");
             }
 
             coinControl.destChange = dest;
@@ -5282,7 +5282,7 @@ static RPCHelpMan fundrawtransaction()
                             {"include_unsafe", RPCArg::Type::BOOL, RPCArg::Default{false}, "Include inputs that are not safe to spend (unconfirmed transactions from outside keys and unconfirmed replacement transactions).\n"
                                                           "Warning: the resulting transaction may become invalid if one of the unsafe inputs disappears.\n"
                                                           "If that happens, you will need to fund the transaction with different inputs and republish it."},
-                            {"changeAddress", RPCArg::Type::STR, RPCArg::DefaultHint{"pool address"}, "The qtum address to receive the change"},
+                            {"changeAddress", RPCArg::Type::STR, RPCArg::DefaultHint{"pool address"}, "The ariel address to receive the change"},
                             {"changePosition", RPCArg::Type::NUM, RPCArg::DefaultHint{"random"}, "The index of the change output"},
                             {"change_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -changetype"}, "The output type to use. Only valid if changeAddress is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\"."},
                             {"includeWatching", RPCArg::Type::BOOL, RPCArg::DefaultHint{"true for watch-only wallets, otherwise false"}, "Also select inputs which are watch only.\n"
@@ -5899,15 +5899,15 @@ static UniValue AddressBookDataToJSON(const CAddressBookData& data, const bool v
 RPCHelpMan getaddressinfo()
 {
     return RPCHelpMan{"getaddressinfo",
-                "\nReturn information about the given qtum address.\n"
+                "\nReturn information about the given ariel address.\n"
                 "Some of the information will only be present if the address is in the active wallet.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address for which to get information."},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The ariel address for which to get information."},
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
                     {
-                        {RPCResult::Type::STR, "address", "The qtum address validated."},
+                        {RPCResult::Type::STR, "address", "The ariel address validated."},
                         {RPCResult::Type::STR_HEX, "scriptPubKey", "The hex-encoded scriptPubKey generated by the address."},
                         {RPCResult::Type::BOOL, "ismine", "If the address is yours."},
                         {RPCResult::Type::BOOL, "iswatchonly", "If the address is watchonly."},
@@ -6161,7 +6161,7 @@ static RPCHelpMan send()
                 {
                     {"", RPCArg::Type::OBJ_USER_KEYS, RPCArg::Optional::OMITTED, "",
                         {
-                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT + ""},
+                            {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the ariel address, the value (float or string) is the amount in " + CURRENCY_UNIT + ""},
                         },
                         },
                     {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
@@ -6182,7 +6182,7 @@ static RPCHelpMan send()
                                                           "Warning: the resulting transaction may become invalid if one of the unsafe inputs disappears.\n"
                                                           "If that happens, you will need to fund the transaction with different inputs and republish it."},
                     {"add_to_wallet", RPCArg::Type::BOOL, RPCArg::Default{true}, "When false, returns a serialized transaction which will not be added to the wallet or broadcast"},
-                    {"change_address", RPCArg::Type::STR_HEX, RPCArg::DefaultHint{"pool address"}, "The qtum address to receive the change"},
+                    {"change_address", RPCArg::Type::STR_HEX, RPCArg::DefaultHint{"pool address"}, "The ariel address to receive the change"},
                     {"change_position", RPCArg::Type::NUM, RPCArg::DefaultHint{"random"}, "The index of the change output"},
                     {"change_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -changetype"}, "The output type to use. Only valid if change_address is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\"."},
                     {"conf_target", RPCArg::Type::NUM, RPCArg::DefaultHint{"wallet -txconfirmtarget"}, "Confirmation target in blocks"},
@@ -6225,13 +6225,13 @@ static RPCHelpMan send()
                 }
         },
         RPCExamples{""
-        "\nSend 0.1 QTUM with a confirmation target of 6 blocks in economical fee estimate mode\n"
+        "\nSend 0.1 ARIEL with a confirmation target of 6 blocks in economical fee estimate mode\n"
         + HelpExampleCli("send", "'{\"" + EXAMPLE_ADDRESS[0] + "\": 0.1}' 6 economical\n") +
-        "Send 0.2 QTUM with a fee rate of 1.1 " + CURRENCY_ATOM + "/vB using positional arguments\n"
+        "Send 0.2 ARIEL with a fee rate of 1.1 " + CURRENCY_ATOM + "/vB using positional arguments\n"
         + HelpExampleCli("send", "'{\"" + EXAMPLE_ADDRESS[0] + "\": 0.2}' null \"unset\" 1.1\n") +
-        "Send 0.2 QTUM with a fee rate of 1 " + CURRENCY_ATOM + "/vB using the options argument\n"
+        "Send 0.2 ARIEL with a fee rate of 1 " + CURRENCY_ATOM + "/vB using the options argument\n"
         + HelpExampleCli("send", "'{\"" + EXAMPLE_ADDRESS[0] + "\": 0.2}' null \"unset\" null '{\"fee_rate\": 1}'\n") +
-        "Send 0.3 QTUM with a fee rate of 25 " + CURRENCY_ATOM + "/vB using named arguments\n"
+        "Send 0.3 ARIEL with a fee rate of 25 " + CURRENCY_ATOM + "/vB using named arguments\n"
         + HelpExampleCli("-named send", "outputs='{\"" + EXAMPLE_ADDRESS[0] + "\": 0.3}' fee_rate=25\n") +
         "Create a transaction that should confirm the next block, with a specific input, and return result without adding to wallet or broadcasting to the network\n"
         + HelpExampleCli("send", "'{\"" + EXAMPLE_ADDRESS[0] + "\": 0.1}' 1 economical '{\"add_to_wallet\": false, \"inputs\": [{\"txid\":\"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0\", \"vout\":1}]}'")
@@ -6518,7 +6518,7 @@ static RPCHelpMan walletcreatefundedpsbt()
                         {
                             {"", RPCArg::Type::OBJ_USER_KEYS, RPCArg::Optional::OMITTED, "",
                                 {
-                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT + ""},
+                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the ariel address, the value (float or string) is the amount in " + CURRENCY_UNIT + ""},
                                 },
                                 },
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
@@ -6535,7 +6535,7 @@ static RPCHelpMan walletcreatefundedpsbt()
                             {"include_unsafe", RPCArg::Type::BOOL, RPCArg::Default{false}, "Include inputs that are not safe to spend (unconfirmed transactions from outside keys and unconfirmed replacement transactions).\n"
                                                           "Warning: the resulting transaction may become invalid if one of the unsafe inputs disappears.\n"
                                                           "If that happens, you will need to fund the transaction with different inputs and republish it."},
-                            {"changeAddress", RPCArg::Type::STR_HEX, RPCArg::DefaultHint{"pool address"}, "The qtum address to receive the change"},
+                            {"changeAddress", RPCArg::Type::STR_HEX, RPCArg::DefaultHint{"pool address"}, "The ariel address to receive the change"},
                             {"changePosition", RPCArg::Type::NUM, RPCArg::DefaultHint{"random"}, "The index of the change output"},
                             {"change_type", RPCArg::Type::STR, RPCArg::DefaultHint{"set by -changetype"}, "The output type to use. Only valid if changeAddress is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\"."},
                             {"includeWatching", RPCArg::Type::BOOL, RPCArg::DefaultHint{"true for watch-only wallets, otherwise false"}, "Also select inputs which are watch only"},
@@ -6700,7 +6700,7 @@ static RPCHelpMan walletdisplayaddress()
     return RPCHelpMan{"walletdisplayaddress",
         "Display address on an external signer for verification.",
         {
-            {"address",     RPCArg::Type::STR, RPCArg::Optional::NO, /* default_val */ "", "qtum address to display"},
+            {"address",     RPCArg::Type::STR, RPCArg::Optional::NO, /* default_val */ "", "ariel address to display"},
         },
         RPCResult{
             RPCResult::Type::OBJ,"","",
@@ -6746,11 +6746,11 @@ static RPCHelpMan arc20approve()
                 "\nOwner approves an address to spend some amount of tokens.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner qtum address."},
-                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender qtum address."},
+                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner ariel address."},
+                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender ariel address."},
                     {"amount", RPCArg::Type::STR, RPCArg::Optional::NO,  "The amount of tokens. eg 0.1"},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     {"checkoutputs", RPCArg::Type::BOOL, RPCArg::Default{true}, "Check outputs before send"},
                 },
                 RPCResult{
@@ -6853,11 +6853,11 @@ static RPCHelpMan arc20transfer()
                 "\nSend token amount to a given address.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner qtum address."},
-                    {"addressto", RPCArg::Type::STR, RPCArg::Optional::NO,  "The qtum address to send funds to."},
+                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner ariel address."},
+                    {"addressto", RPCArg::Type::STR, RPCArg::Optional::NO,  "The ariel address to send funds to."},
                     {"amount", RPCArg::Type::STR, RPCArg::Optional::NO,  "The amount of tokens to send. eg 0.1"},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     {"checkoutputs", RPCArg::Type::BOOL, RPCArg::Default{true}, "Check outputs before send"},
                 },
                 RPCResult{
@@ -6970,12 +6970,12 @@ static RPCHelpMan arc20transferfrom()
                 "\nSend token amount from selected address to a given address.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner qtum address."},
-                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender qtum address."},
-                    {"receiveraddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token receiver qtum address."},
+                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner ariel address."},
+                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender ariel address."},
+                    {"receiveraddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token receiver ariel address."},
                     {"amount", RPCArg::Type::STR, RPCArg::Optional::NO,  "The amount of token to send. eg 0.1"},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     {"checkoutputs", RPCArg::Type::BOOL, RPCArg::Default{true}, "Check outputs before send"},
                  },
                 RPCResult{
@@ -7089,10 +7089,10 @@ static RPCHelpMan arc20burn()
                 "\nBurns token amount from owner address.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner qtum address."},
+                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner ariel address."},
                     {"amount", RPCArg::Type::STR, RPCArg::Optional::NO,  "The amount of tokens to burn. eg 0.1"},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     {"checkoutputs", RPCArg::Type::BOOL, RPCArg::Default{true}, "Check outputs before send"},
                 },
                 RPCResult{
@@ -7204,11 +7204,11 @@ static RPCHelpMan arc20burnfrom()
                 "\nBurns token amount from a given address.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner qtum address."},
-                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender qtum address."},
+                    {"owneraddress", RPCArg::Type::STR, RPCArg::Optional::NO, "The token owner ariel address."},
+                    {"spenderaddress", RPCArg::Type::STR, RPCArg::Optional::NO,  "The token spender ariel address."},
                     {"amount", RPCArg::Type::STR, RPCArg::Optional::NO,  "The amount of token to burn. eg 0.1"},
                     {"gaslimit", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)},
-                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
+                    {"gasprice", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The ariel price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)},
                     {"checkoutputs", RPCArg::Type::BOOL, RPCArg::Default{true}, "Check outputs before send"},
                  },
                 RPCResult{

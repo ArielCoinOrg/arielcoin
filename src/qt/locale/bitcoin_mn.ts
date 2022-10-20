@@ -218,7 +218,7 @@
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Transactions</source>
         <translation>Гүйлгээнүүд</translation>
@@ -391,7 +391,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
+        <source>Ariel</source>
         <translation type="unfinished">Биткойн</translation>
     </message>
     <message numerus="yes">

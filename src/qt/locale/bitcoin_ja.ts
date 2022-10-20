@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ウォレットの暗号化の承諾</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
         <translation type="unfinished">警告: ウォレットの暗号化後にパスフレーズを忘れてしまった場合、&lt;b&gt;あなたの Ariel はすべて失われます&lt;/b&gt;！</translation>
     </message>
     <message>
@@ -245,7 +245,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>QtumApplication</name>
+    <name>ArielApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">暴走例外が発生</translation>
@@ -403,7 +403,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>概要(&amp;O)</translation>
@@ -1590,7 +1590,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Connect to the Ariel network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Tor onion service用の別のSOCKS5プロキシを介してQtumネットワークに接続します。</translation>
+        <translation type="unfinished">Tor onion service用の別のSOCKS5プロキシを介してArielネットワークに接続します。</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>

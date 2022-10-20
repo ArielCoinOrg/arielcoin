@@ -51,7 +51,7 @@
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation type="unfinished">Qtumleri alacağınız adresi seçin</translation>
+        <translation type="unfinished">Arielleri alacağınız adresi seçin</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -166,8 +166,8 @@ Cüzdan kilidini aç.</translation>
         <translation type="unfinished">Cüzdan şifrelemeyi onayla</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Uyarı: Cüzdanınızı şifreler ve parolanızı unutursanız &lt;b&gt;TÜM QTUMLERINIZI KAYBEDERSİNİZ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
+        <translation type="unfinished">Uyarı: Cüzdanınızı şifreler ve parolanızı unutursanız &lt;b&gt;TÜM ARIELLERINIZI KAYBEDERSİNİZ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -246,7 +246,7 @@ Cüzdan kilidini aç.</translation>
     </message>
 </context>
 <context>
-    <name>QtumApplication</name>
+    <name>ArielApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Sızıntı istisnası</translation>
@@ -364,7 +364,7 @@ Cüzdan kilidini aç.</translation>
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>Genel durum</translation>
@@ -614,7 +614,7 @@ Cüzdan kilidini aç.</translation>
     </message>
     <message>
         <source>Open a ariel: URI</source>
-        <translation type="unfinished">Qtum’i aç.</translation>
+        <translation type="unfinished">Ariel’i aç.</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -2114,7 +2114,7 @@ Cüzdan kilidini aç.</translation>
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Qtumi Gönder</translation>
+        <translation>Arieli Gönder</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2984,7 +2984,7 @@ Cüzdan kilidini aç.</translation>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">Qtumi Gönder</translation>
+        <translation type="unfinished">Arieli Gönder</translation>
     </message>
     <message>
         <source>Increasing transaction fee failed</source>

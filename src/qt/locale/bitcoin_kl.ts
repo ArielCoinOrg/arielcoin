@@ -126,7 +126,7 @@
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>Wallet:</source>
         <translation type="unfinished">Aningaasivik:</translation>

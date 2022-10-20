@@ -102,8 +102,8 @@ static int AppInitRawTx(int argc, char* argv[])
         std::string strUsage = PACKAGE_NAME " ariel-tx utility version " + FormatFullVersion() + "\n";
         if (!gArgs.IsArgSet("-version")) {
             strUsage += "\n"
-                "Usage:  ariel-tx [options] <hex-tx> [commands]  Update hex-encoded qtum transaction\n"
-                "or:     ariel-tx [options] -create [commands]   Create hex-encoded qtum transaction\n"
+                "Usage:  ariel-tx [options] <hex-tx> [commands]  Update hex-encoded ariel transaction\n"
+                "or:     ariel-tx [options] -create [commands]   Create hex-encoded ariel transaction\n"
                 "\n";
             strUsage += gArgs.GetHelpMessage();
         }

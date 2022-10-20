@@ -213,7 +213,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
         <context-group purpose="location"><context context-type="linenumber">110</context></context-group>
       </trans-unit>
       <trans-unit id="_msg39">
-        <source xml:space="preserve">Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source xml:space="preserve">Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
         <target xml:space="preserve"></target>
         <context-group purpose="location"><context context-type="linenumber">111</context></context-group>
       </trans-unit>
@@ -1386,8 +1386,8 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
     </group>
     <group restype="x-trolltech-linguist-context" resname="Intro">
       <trans-unit id="_msg256">
-        <source xml:space="preserve">Qtum</source>
-        <target xml:space="preserve" state="needs-review-translation">Qtum</target>
+        <source xml:space="preserve">Ariel</source>
+        <target xml:space="preserve" state="needs-review-translation">Ariel</target>
         <context-group purpose="location"><context context-type="linenumber">139</context></context-group>
       </trans-unit>
       <trans-unit id="_msg257">

@@ -153,7 +153,7 @@
         <translation type="unfinished">确认钱包密码</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
         <translation type="unfinished">注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的比特币。</translation>
     </message>
     <message>
@@ -276,7 +276,7 @@
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>ArielGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;概述</translation>
@@ -825,7 +825,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
+        <source>Ariel</source>
         <translation type="unfinished">比特币</translation>
     </message>
     <message numerus="yes">

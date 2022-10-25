@@ -81,11 +81,11 @@ void AddSuperStakerPage::on_addSuperStakerButton_clicked()
 {
     if(m_model)
     {
-        bool fSuperStake = m_model->wallet().getEnabledSuperStaking();
-        if(!fSuperStake)
-        {
-            QMessageBox::information(this, tr("Super staking"), tr("Enable super staking from the option menu in order to start the super staker."));
-        }
+//        bool fSuperStake = m_model->wallet().getEnabledSuperStaking();
+//        if(!fSuperStake)
+//        {
+//            QMessageBox::information(this, tr("Super staking"), tr("Enable super staking from the option menu in order to start the super staker."));
+//        }
 
         QString stakerAddress = ui->lineEditStakerAddress->currentText();
 

@@ -230,86 +230,10 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="HWIToolLabel">
-           <property name="text">
-            <string>HWI tool path</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="reserveBalanceLabel">
-           <property name="text">
-            <string>Reserve</string>
-           </property>
-           <property name="textFormat">
-            <enum>Qt::PlainText</enum>
-           </property>
-           <property name="buddy">
-            <cstring>threadsScriptVerif</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout2">
-           <item>
-            <widget class="QLineEdit" name="txtStakeLedgerId">
-             <property name="toolTip">
-              <string>Fingerprint of the ledger that you want to be used for staking with hardware wallet</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="toolStakeLedgerId">
-             <property name="text">
-              <string>...</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="stakeLedgerIdlabel">
-           <property name="text">
-            <string>Select Ledger device for staking</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <layout class="QHBoxLayout" name="horizontalLayout_3_Main_3">
-           <item>
-            <widget class="BitcoinAmountField" name="reserveBalance">
-             <property name="toolTip">
-              <string>Reserve amount that will not be used for staking</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_3_Main_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>0</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
          <item row="7" column="0" colspan="2">
           <widget class="QCheckBox" name="logEvents">
            <property name="text">
             <string>Enable  log &amp;events</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0" colspan="2">
-          <widget class="QCheckBox" name="superStaking">
-           <property name="text">
-            <string>Enable s&amp;uper staking</string>
            </property>
           </widget>
          </item>
@@ -399,43 +323,6 @@
              <string>Check for &amp;updates</string>
             </property>
            </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="signPSBTHWITool">
-            <property name="text">
-             <string>Sign PSBT with HWI tool</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBoxHww">
-         <property name="title">
-          <string>External Signer (e.g. hardware wallet)</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayoutHww">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayoutHww">
-            <item>
-             <widget class="QLabel" name="externalSignerPathLabel">
-              <property name="text">
-               <string>&amp;External signer script path</string>
-              </property>
-              <property name="buddy">
-               <cstring>externalSignerPath</cstring>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="externalSignerPath">
-              <property name="toolTip">
-               <string>Full path to a Ariel Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
           </item>
          </layout>
         </widget>

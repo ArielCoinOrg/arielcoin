@@ -81,7 +81,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     ui->proxyPortTorLabel->setEnabled(false);
     ui->proxyPortTor->setValidator(new QIntValidator(1, 65535, this));
 
-    ui->reserveBalance->setNotifyAlways(false);
+//    ui->reserveBalance->setNotifyAlways(false);
 
     connect(ui->connectSocks, &QPushButton::toggled, ui->proxyIp, &QWidget::setEnabled);
     connect(ui->connectSocks, &QPushButton::toggled, ui->proxyIpLabel, &QWidget::setEnabled);
@@ -109,9 +109,9 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
         ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWallet));
         ui->thirdPartyTxUrlsLabel->setVisible(false);
         ui->thirdPartyTxUrls->setVisible(false);
-        ui->reserveBalanceLabel->setVisible(false);
-        ui->reserveBalance->setVisible(false);
-        ui->superStaking->setVisible(false);
+//        ui->reserveBalanceLabel->setVisible(false);
+//        ui->reserveBalance->setVisible(false);
+//        ui->superStaking->setVisible(false);
         ui->txtHWIToolPath->setVisible(false);
         ui->toolHWIPath->setVisible(false);
         ui->HWIToolLabel->setVisible(false);
@@ -257,9 +257,9 @@ void OptionsDialog::setModel(OptionsModel *_model)
     connect(ui->databaseCache, qOverload<int>(&QSpinBox::valueChanged), this, &OptionsDialog::showRestartWarning);
     connect(ui->externalSignerPath, &QLineEdit::textChanged, [this]{ showRestartWarning(); });
     connect(ui->logEvents, &QCheckBox::clicked, this, &OptionsDialog::showRestartWarning);
-    connect(ui->superStaking, &QCheckBox::clicked, this, &OptionsDialog::showRestartWarning);
+//    connect(ui->superStaking, &QCheckBox::clicked, this, &OptionsDialog::showRestartWarning);
     connect(ui->threadsScriptVerif, qOverload<int>(&QSpinBox::valueChanged), this, &OptionsDialog::showRestartWarning);
-    connect(ui->reserveBalance, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
+//    connect(ui->reserveBalance, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->txtHWIToolPath, SIGNAL(textChanged(const QString &)), this, SLOT(showRestartWarning()));
     connect(ui->txtStakeLedgerId, SIGNAL(textChanged(const QString &)), this, SLOT(showRestartWarning()));
     /* Wallet */
@@ -295,8 +295,8 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->prune, OptionsModel::Prune);
     mapper->addMapping(ui->pruneSize, OptionsModel::PruneSize);
     mapper->addMapping(ui->logEvents, OptionsModel::LogEvents);
-    mapper->addMapping(ui->superStaking, OptionsModel::SuperStaking);
-    mapper->addMapping(ui->reserveBalance, OptionsModel::ReserveBalance);
+//    mapper->addMapping(ui->superStaking, OptionsModel::SuperStaking);
+//    mapper->addMapping(ui->reserveBalance, OptionsModel::ReserveBalance);
     mapper->addMapping(ui->txtHWIToolPath, OptionsModel::HWIToolPath);
     mapper->addMapping(ui->txtStakeLedgerId, OptionsModel::StakeLedgerId);
 

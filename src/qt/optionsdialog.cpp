@@ -132,8 +132,8 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
 
 #ifndef ENABLE_EXTERNAL_SIGNER
     //: "External signing" means using devices such as hardware wallets.
-    ui->externalSignerPath->setToolTip(tr("Compiled without external signing support (required for external signing)"));
-    ui->externalSignerPath->setEnabled(false);
+//    ui->externalSignerPath->setToolTip(tr("Compiled without external signing support (required for external signing)"));
+//    ui->externalSignerPath->setEnabled(false);
 #endif
     /* Display elements init */
     QDir translations(":translations");
@@ -255,7 +255,7 @@ void OptionsDialog::setModel(OptionsModel *_model)
     connect(ui->prune, &QCheckBox::clicked, this, &OptionsDialog::togglePruneWarning);
     connect(ui->pruneSize, qOverload<int>(&QSpinBox::valueChanged), this, &OptionsDialog::showRestartWarning);
     connect(ui->databaseCache, qOverload<int>(&QSpinBox::valueChanged), this, &OptionsDialog::showRestartWarning);
-    connect(ui->externalSignerPath, &QLineEdit::textChanged, [this]{ showRestartWarning(); });
+//    connect(ui->externalSignerPath, &QLineEdit::textChanged, [this]{ showRestartWarning(); });
     connect(ui->logEvents, &QCheckBox::clicked, this, &OptionsDialog::showRestartWarning);
 //    connect(ui->superStaking, &QCheckBox::clicked, this, &OptionsDialog::showRestartWarning);
     connect(ui->threadsScriptVerif, qOverload<int>(&QSpinBox::valueChanged), this, &OptionsDialog::showRestartWarning);
@@ -303,7 +303,7 @@ void OptionsDialog::setMapper()
     /* Wallet */
     mapper->addMapping(ui->spendZeroConfChange, OptionsModel::SpendZeroConfChange);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
-    mapper->addMapping(ui->externalSignerPath, OptionsModel::ExternalSignerPath);
+//    mapper->addMapping(ui->externalSignerPath, OptionsModel::ExternalSignerPath);
     mapper->addMapping(ui->zeroBalanceAddressToken, OptionsModel::ZeroBalanceAddressToken);
     mapper->addMapping(ui->useChangeAddress, OptionsModel::UseChangeAddress);
     mapper->addMapping(ui->checkForUpdates, OptionsModel::CheckForUpdates);

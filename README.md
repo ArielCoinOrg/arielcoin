@@ -21,40 +21,13 @@ These are some resources that might be helpful in understanding Ariel .
 
 Basic usage resources:
 
-* [User guide](https://docs.qtum.site/en/)
-* [Ariel-Qt Wallet Tutorial](https://github.com/ArielCoinOrg/documents/tree/master/en/Ariel-Wallet-Tutorial#ariel-qt-wallet-tutorial)
-* [Ariel staking tutorial](https://github.com/ArielCoinOrg/documents/tree/master/en/How-to-Stake-with-Qtum)
-* [Ariel tutorial on Raspberry Pi](https://github.com/ArielCoinOrg/documents/tree/master/en/Ariel-on-Raspberry-Pi)
-* [Running Ariel on Amazon AWS using Ariel AMI](https://github.com/ArielCoinOrg/documents/tree/master/en/Ariel-AWS)
-* [Encrypting and unlocking wallet](https://github.com/ArielCoinOrg/documents/tree/master/en/Encrypt-and-Unlock-Ariel-Wallet)
-* [Testnet guide](https://github.com/ArielCoinOrg/documents/blob/master/en/Testnet-User-Guide.md)
-* [Block explorer](https://qtum.info), [Older explorer](https://explorer.arielcoin.org)
-
-
-Development resources:
-
-* [Ariel Book - A Developer's Guide To QTUM](http://book.qtum.site/en/)
-* [Ariel contract usage](https://docs.qtum.site/en/QRC20-Token-Introduce.html)
-* [Deploying a custom token to Ariel ](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [Smart contract ICO example](http://book.qtum.site/en/part3/ico.htm)
-* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
-
-Developer's Tools
------------------
-
-* Smart contract deployment tool
-  * https://github.com/ArielCoinOrg/solar
-* DApp JavaScript Library
-  * https://github.com/ArielCoinOrg/qtumjs
-* A toolkit for building ariel light wallets
-  * https://github.com/ArielCoinOrg/qtumjs-wallet
-* CORS arield RPC proxy for DApp
-  * https://github.com/ArielCoinOrg/qtumportal
-* Docker images for running ariel services
-  * https://github.com/ArielCoinOrg/qtum-docker
-* qtum.info API that powers the block explorer and the QTUM Web wallet
-  * https://github.com/ArielCoinOrg/qtuminfo-api#qtuminfo-api-documentation
-
+* [Ariel-Qt Wallet Tutorial](https://github.com/likloadm/documents/tree/master/en/Ariel-Wallet-Tutorial#ariel-qt-wallet-tutorial)
+* [Ariel staking tutorial](https://github.com/likloadm/documents/tree/master/en/How-to-Stake-with-Qtum)
+* [Ariel tutorial on Raspberry Pi](https://github.com/likloadm/documents/tree/master/en/Ariel-on-Raspberry-Pi)
+* [Running Ariel on Amazon AWS using Ariel AMI](https://github.com/likloadm/documents/tree/master/en/Ariel-AWS)
+* [Encrypting and unlocking wallet](https://github.com/likloadm/documents/tree/master/en/Encrypt-and-Unlock-Ariel-Wallet)
+* [Testnet guide](https://github.com/likloadm/documents/blob/master/en/Testnet-User-Guide.md)
+* [Block explorer](https://explorer.arielcoin.org)
 
 What is Ariel Core?
 ------------------
@@ -63,8 +36,8 @@ Ariel Core is our primary mainnet wallet. It implements a full node and is capab
 
 Ariel Core currently implements the following:
 
-* Sending/Receiving QTUM coins
-* Sending/Receiving QRC20 tokens on the Ariel network
+* Sending/Receiving Ariel coins
+* Sending/Receiving ARC20 tokens on the Ariel network
 * Staking and creating blocks for the Ariel network
 * Creating and interacting with smart contracts
 * Running a full node for distributing the blockchain to other users
@@ -83,7 +56,7 @@ Ariel Core uses a full node model, and thus requires downloading the entire bloc
 
 A browser wallet that supports the Ledger hardware wallet, offline cold wallet, restoration from mobile wallets, creation of QRC20 tokens and QRC1155 NFTs.
 
-Web site https://qtumwallet.org
+Web site https://arl.cash
 
 User documentation https://github.com/ArielCoinOrg/documents/tree/master/en/QTUM-WebWallet-usage
 
@@ -91,17 +64,9 @@ User documentation https://github.com/ArielCoinOrg/documents/tree/master/en/QTUM
 
 A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software.
 
-Download: https://github.com/ArielCoinOrg/qtum-electrum/releases
+Download: https://github.com/ArielCoinOrg/electrum-arielcoin/releases
 
-### iOS and Android Wallets
-
-These wallets run on mobile devices and synchronize quickly.
-
-Android Download: https://play.google.com/store/apps/details?id=org.qtum.newwallet
-
-iOS Download: https://github.com/ArielCoinOrg/qtum-ios (open source, deprecated)
-
-### Qnekt Chrome Wallet
+### Arielt Chrome Wallet
 
 This light wallet runs in your Chrome browser as a browser extension, based on the popular MetaMask wallet.
 
@@ -111,9 +76,9 @@ This light wallet runs in your Chrome browser as a browser extension, based on t
 Make sure to check out these resources as well for more information and to keep up to date with all the latest news about Ariel . At least 1 developer is always around, so if you're developing on Ariel and need help, we'd love to welcome you to our community.
 
 *	@Ariel on Twitter https://twitter.com/ariel_coin
-* Ariel blog https://blog.arielcoin.org/
+*   Ariel blog https://blog.arielcoin.org/
 *	Ariel Telegram Group https://t.me/ArielCoin, other languages available
-* Ariel Discord https://discord.gg/NJTnajuuYJ
+*   Ariel Discord https://discord.gg/NJTnajuuYJ
 *	/r/Ariel on Reddit https://www.reddit.com/r/ArielCoin/
 *	Arielcoin.org https://arielcoin.org
 *	Ariel on Facebook https://www.facebook.com/ArielCoin.org

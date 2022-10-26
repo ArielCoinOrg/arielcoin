@@ -21,12 +21,6 @@ These are some resources that might be helpful in understanding Ariel .
 
 Basic usage resources:
 
-* [Ariel-Qt Wallet Tutorial](https://github.com/likloadm/documents/tree/master/en/Ariel-Wallet-Tutorial#ariel-qt-wallet-tutorial)
-* [Ariel staking tutorial](https://github.com/likloadm/documents/tree/master/en/How-to-Stake-with-Qtum)
-* [Ariel tutorial on Raspberry Pi](https://github.com/likloadm/documents/tree/master/en/Ariel-on-Raspberry-Pi)
-* [Running Ariel on Amazon AWS using Ariel AMI](https://github.com/likloadm/documents/tree/master/en/Ariel-AWS)
-* [Encrypting and unlocking wallet](https://github.com/likloadm/documents/tree/master/en/Encrypt-and-Unlock-Ariel-Wallet)
-* [Testnet guide](https://github.com/likloadm/documents/blob/master/en/Testnet-User-Guide.md)
 * [Block explorer](https://explorer.arielcoin.org)
 
 What is Ariel Core?

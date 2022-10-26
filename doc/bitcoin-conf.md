@@ -49,7 +49,7 @@ rpcport=4000
 
 ## Configuration File Path
 
-The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `ariel.conf` and it is located in the Qtum data directory, but both the Qtum data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
+The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `ariel.conf` and it is located in the Ariel data directory, but both the Ariel data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
 
 The `includeconf=<file>` option in the `ariel.conf` file can be used to include additional configuration files.
 
@@ -57,7 +57,7 @@ The `includeconf=<file>` option in the `ariel.conf` file can be used to include 
 
 Operating System | Data Directory | Example Path
 -- | -- | --
-Windows | `%APPDATA%\Qtum\` | `C:\Users\username\AppData\Roaming\Qtum\ariel.conf`
+Windows | `%APPDATA%\Ariel\` | `C:\Users\username\AppData\Roaming\Ariel\ariel.conf`
 Linux | `$HOME/.ariel/` | `/home/username/.ariel/ariel.conf`
 macOS | `$HOME/Library/Application Support/Ariel/` | `/Users/username/Library/Application Support/Ariel/ariel.conf`
 

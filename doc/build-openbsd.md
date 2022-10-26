@@ -17,7 +17,7 @@ pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.8)
 pkg_add bash
 
-git clone https://github.com/qtumproject/qtum --recursive
+git clone https://github.com/arielcoinorg/arielcoin --recursive
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -48,7 +48,7 @@ from the root of the repository. Then set `BDB_PREFIX` for the next section:
 export BDB_PREFIX="$PWD/db4"
 ```
 
-### Building Qtum Core
+### Building Ariel Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

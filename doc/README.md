@@ -1,15 +1,15 @@
-Qtum Core
+Ariel Core
 =============
 
 Setup
 ---------------------
-Qtum Core is the original Qtum client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Qtum transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Ariel Core is the original Ariel client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Ariel transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Qtum Core, visit [qtumcore.org](https://www.qtumcore.org/).
+To download Ariel Core, visit [arielcoin.org](https://www.arielcoin.org/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Qtum Core on your native platform.
+The following are some helpful notes on how to run Ariel Core on your native platform.
 
 ### Unix
 
@@ -24,7 +24,7 @@ Unpack the files into a directory, and then run ariel-qt.exe.
 
 ### macOS
 
-Drag Qtum Core to your applications folder, and then run Qtum Core.
+Drag Ariel Core to your applications folder, and then run Ariel Core.
 
 ### Need Help?
 

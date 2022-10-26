@@ -76,7 +76,7 @@ Obviously, it is important to build and run the tests at appropriate times -- bu
 ```sh
 make src/arield src/ariel-cli
 make src/qt/ariel-qt
-make -C src qtum_bench
+make -C src ariel_bench
 ```
 
 (You can and should combine this with `-j`, as above, for a parallel build.)

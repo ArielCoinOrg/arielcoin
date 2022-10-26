@@ -1,4 +1,4 @@
-# Multiprocess Qtum
+# Multiprocess Ariel
 
 On unix systems, the `--enable-multiprocess` build option can be passed to `./configure` to build new `ariel-node`, `ariel-wallet`, and `ariel-gui` executables alongside existing `arield` and `ariel-qt` executables.
 

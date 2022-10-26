@@ -1,12 +1,12 @@
 WINDOWS BUILD NOTES
 ====================
 
-Below are some notes on how to build Qtum Core for Windows.
+Below are some notes on how to build Ariel Core for Windows.
 
-The options known to work for building Qtum Core on Windows are:
+The options known to work for building Ariel Core on Windows are:
 
 * On Linux, using the [Mingw-w64](https://mingw-w64.org/doku.php) cross compiler tool chain. Ubuntu Bionic 18.04 is required
-and is the platform used to build the Qtum Core Windows release binaries.
+and is the platform used to build the Ariel Core Windows release binaries.
 * On Windows, using [Windows
 Subsystem for Linux (WSL)](https://docs.microsoft.com/windows/wsl/about) and the Mingw-w64 cross compiler tool chain.
 * On Windows, using a native compiler tool chain such as [Visual Studio](https://www.visualstudio.com). See [README.md](/build_msvc/README.md).
@@ -72,8 +72,8 @@ If you want to build the windows installer with `make deploy` you need [NSIS](ht
 
 Acquire the source in the usual way:
 
-    git clone https://github.com/qtumproject/qtum --recursive
-    cd qtum
+    git clone https://github.com/arielcoinorg/arielcoin --recursive
+    cd arielcoin
 
 ## Building for 64-bit Windows
 
@@ -104,8 +104,8 @@ Press <enter> to keep the current choice[*], or type selection number:
 
 Once the toolchain is installed the build steps are common:
 
-Note that for WSL the Qtum Core source path MUST be somewhere in the default mount file system, for
-example /usr/src/qtum, AND not under /mnt/d/. If this is not the case the dependency autoconf scripts will fail.
+Note that for WSL the Ariel Core source path MUST be somewhere in the default mount file system, for
+example /usr/src/ariel, AND not under /mnt/d/. If this is not the case the dependency autoconf scripts will fail.
 This means you cannot use a directory that is located directly on the host Windows file system to perform the build.
 
 Additional WSL Note: WSL support for [launching Win32 applications](https://docs.microsoft.com/en-us/archive/blogs/wsl/windows-and-ubuntu-interoperability#launching-win32-applications-from-within-wsl)
@@ -135,9 +135,9 @@ Installation
 After building using the Windows subsystem it can be useful to copy the compiled
 executables to a directory on the Windows drive in the same directory structure
 as they appear in the release `.zip` archive. This can be done in the following
-way. This will install to `c:\workspace\qtum`, for example:
+way. This will install to `c:\workspace\ariel`, for example:
 
-    make install DESTDIR=/mnt/c/workspace/qtum
+    make install DESTDIR=/mnt/c/workspace/ariel
 
 You can also create an installer using:
 
@@ -150,5 +150,5 @@ Footnotes
 compiler options to allow a choice between either posix or win32 threads. The default option is win32 threads which is the more
 efficient since it will result in binary code that links directly with the Windows kernel32.lib. Unfortunately, the headers
 required to support win32 threads conflict with some of the classes in the C++11 standard library, in particular std::mutex.
-It's not possible to build the Qtum Core code using the win32 version of the Mingw-w64 cross compilers (at least not without
-modifying headers in the Qtum Core source code).
+It's not possible to build the Ariel Core code using the win32 version of the Mingw-w64 cross compilers (at least not without
+modifying headers in the Ariel Core source code).

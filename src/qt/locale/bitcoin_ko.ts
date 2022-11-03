@@ -148,12 +148,12 @@
     </message>
     <message>
         <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>송금이 가능한 ARIEL 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
+        <translation>송금이 가능한 Ariel 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
     </message>
     <message>
         <source>These are your Ariel addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation>지불 수신용 ARIEL주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.
+        <translation>지불 수신용 Ariel 주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.
 서명은 '레거시' 타입의 주소만 가능합니다.</translation>
     </message>
     <message>
@@ -254,7 +254,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
-        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 ARIEL을 잃게됩니다&lt;/b&gt;！</translation>
+        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 Ariel을 잃게됩니다&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -270,7 +270,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
-        <translation>지갑을 암호화 해도 컴퓨터에 바이러스가 있을시 안전하기 않다는 것을 참고하세요.</translation>
+        <translation>지갑을 암호화한다고 해서 컴퓨터를 감염시키는 맬웨어에 의해 Ariel이 도난당하는 것을 완전히 보호할 수는 없다는 점을 기억하십시오.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -371,7 +371,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Ariel address</source>
-        <translation type="unfinished">ARIEL 주소로 ARIEL 코인 보내기</translation>
+        <translation type="unfinished">Ariel 주소로 Ariel 코인 보내기</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
@@ -383,11 +383,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Smart &amp;Contracts</source>
-        <translation type="unfinished">스마트 컨트랙트</translation>
+        <translation type="unfinished">컨트랙트</translation>
     </message>
     <message>
         <source>Smart contracts</source>
-        <translation type="unfinished">스마트 컨트랙트</translation>
+        <translation type="unfinished">컨트랙트</translation>
     </message>
     <message>
         <source>Create</source>
@@ -527,7 +527,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Ariel addresses to prove you own them</source>
-        <translation type="unfinished">소유하고 있는 ARIEL 주소의 키로 메시지 서명을 하여 해당 ARIEL 주소의 소유권을 증명하세요. </translation>
+        <translation type="unfinished">소유하고 있는 Ariel 주소의 키로 메시지 서명을 하여 해당 Ariel 주소의 소유권을 증명하세요. </translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -535,7 +535,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
-        <translation type="unfinished">메시지 검증. 메시지에 특정 퀀텀 주소의 서명이 있는지 확인 </translation>
+        <translation type="unfinished">메시지 검증. 메시지에 특정 Ariel 주소의 서명이 있는지 확인 </translation>
     </message>
     <message>
         <source>Node window</source>
@@ -559,7 +559,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Open a ariel: URI</source>
-        <translation>ariel: URI 열기</translation>
+        <translation>Ariel: URI 열기</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -677,7 +677,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>ARIEL 네트워크에 %n 개의 연결이 활성화 되고 있습니다.</numerusform>
+            <numerusform>Ariel 네트워크에 %n 개의 연결이 활성화 되고 있습니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -745,7 +745,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Ariel Transaction</source>
-        <translation>부분적으로 서명된 ARIEL 트랜잭션 불러오기</translation>
+        <translation>부분적으로 서명된 Ariel 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>Load PSBT from clipboard…</source>
@@ -753,7 +753,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Ariel Transaction from clipboard</source>
-        <translation>클립보드로부터 부분적으로 서명된 ARIEL 트랜잭션 불러오기</translation>
+        <translation>클립보드로부터 부분적으로 서명된 Ariel 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -773,7 +773,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Ariel</source>
-        <translation type="unfinished">ARIEL</translation>
+        <translation type="unfinished">Ariel</translation>
     </message>
     <message>
         <source>Error</source>
@@ -924,7 +924,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>CallContract</name>
     <message>
         <source>Call Contract</source>
-        <translation>스마트 컨트랙트 불러오기</translation>
+        <translation>컨트랙트 불러오기</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -1381,7 +1381,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Create Contract</source>
-        <translation>스마트 컨트랙트 생성하기</translation>
+        <translation>컨트랙트 생성하기</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -1433,7 +1433,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Create contract</source>
-        <translation type="unfinished">스마트 컨트랙트 생성하기</translation>
+        <translation type="unfinished">컨트랙트 생성하기</translation>
     </message>
     <message>
         <source>Gas limit. Default = %1, Max = %2</source>
@@ -1441,7 +1441,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Gas price: ARIEL price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 ARIEL 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 Ariel 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
 </context>
 <context>
@@ -1480,7 +1480,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address &quot;%1&quot; is not a valid Ariel address.</source>
-        <translation>입력한 주소 %1는 유효한 ARIEL 주소가 아닙니다. </translation>
+        <translation>입력한 주소 %1는 유효한 Ariel 주소가 아닙니다. </translation>
     </message>
     <message>
         <source>Address &quot;%1&quot; already exists as a receiving address with label &quot;%2&quot; and so cannot be added as a sending address.</source>
@@ -1629,7 +1629,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Ariel</source>
-        <translation>ARIEL</translation>
+        <translation>Ariel</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -1648,7 +1648,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 will download and store a copy of the Ariel block chain.</source>
-        <translation>%1이 ARIEL 블록체인을 다운로드 및 저장할 예정입니다. </translation>
+        <translation>%1이 Ariel 블록체인을 다운로드 및 저장할 예정입니다. </translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1687,11 +1687,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ariel network, as detailed below.</source>
-        <translation>최근 거래 미반영으로 잔액이 정확하지 않을 수 있습니다. 해당 정보는 퀀텀 네트워크 동기화 후 수정될 예정입니다. 제세한 내용은 아래와 같습니다. </translation>
+        <translation>최근 거래 미반영으로 잔액이 정확하지 않을 수 있습니다. 해당 정보는 Ariel 네트워크 동기화 후 수정될 예정입니다. 자세한 내용은 아래와 같습니다. </translation>
     </message>
     <message>
         <source>Attempting to spend ariels that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>네트워크는 미확인된 거래에 속한 ARIEL 사용을 승인하지 않습니다 </translation>
+        <translation>네트워크는 미확인된 거래에 속한 Ariel 사용을 승인하지 않습니다 </translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1711,7 +1711,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Progress increase per hour</source>
-        <translation>시간당 진도 증감</translation>
+        <translation>시간당 프로세스 증가</translation>
     </message>
     <message>
         <source>calculating…</source>
@@ -1727,7 +1727,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 is currently syncing.  It will download headers and blocks from peers and validate them until reaching the tip of the block chain.</source>
-        <translation>%1가 현재 동기화 중입니다. 이것은 피어에서 헤더와 블록을 다운로드하고 블록 체인의 끝에 도달 할 때까지 유효성을 검사합니다.</translation>
+        <translation>%1가 현재 동기화 중입니다. 이것은 피어에서 헤더와 블록을 다운로드하고 블록체인의 끝에 도달 할 때까지 유효성을 검사합니다.</translation>
     </message>
     <message>
         <source>Unknown. Syncing Headers (%1, %2%)…</source>
@@ -1738,9 +1738,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">지갑 백업 안내</translation>
     </message>
     <message>
-        <source>Please backup your wallet as soon
-Please make sure to keep an updated antivirus and operating system. We can not recover Your funds if you visit phishing site or lose your backup. Please make sure to keep backups of your private keys or files. We do not store your private keys on this wallet. And you as a user, are entirely responsible for your funds and your own security.</source>
-        <translation type="unfinished"></translation>
+        <source>Please backup your wallet as soon. Please make sure to keep an updated antivirus and operating system. We can not recover Your funds if you visit phishing site or lose your backup. Please make sure to keep backups of your private keys or files. We do not store your private keys on this wallet. And you as a user, are entirely responsible for your funds and your own security.</source>
+        <translation type="unfinished">빨리 지갑을 백업하세요. 최신 바이러스 백신 및 운영 체제를 유지하십시오. 피싱 사이트를 방문하거나 백업을 분실한 경우 자금을 복구할 수 없습니다. 개인 키 또는 파일의 백업을 유지하십시오. 우리는 이 지갑에 개인 키를 저장하지 않습니다. 그리고 사용자는 자금과 보안에 대해 전적으로 책임이 있습니다.</translation>
     </message>
     <message>
         <source>Maybe later</source>
@@ -1755,7 +1754,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     <name>OpenURIDialog</name>
     <message>
         <source>Open ariel URI</source>
-        <translation>ARIEL URI 열기</translation>
+        <translation>Ariel URI 열기</translation>
     </message>
 </context>
 <context>
@@ -1809,15 +1808,15 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Shows if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
-        <translation>해당 종류의 네트워크로 피어 연결 시 제공된 SOCKS5 프록시의 사용 여부 표시</translation>
+        <translation>제공된 기본 SOCKS5 프록시가 이 네트워크 유형을 통해 피어에 도달하는 데 사용되는지 여부를 표시합니다.</translation>
     </message>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
-        <translation>해당 옵션을 선택할 경우, 윈도우를 닫아도 프로그램 종료가 아닌 최소화가 진행되고 메뉴에서 &apos;종료&apos;를 선택해야만 프로그램이 종료됩니다. </translation>
+        <translation>창이 닫힐 때 응용 프로그램을 종료하는 대신 최소화하십시오. 이 옵션이 활성화되면 메뉴에서 종료를 선택한 후에만 응용 프로그램이 닫힙니다.</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>서드파티 URL（블록 익스플로러 등)은 거래 탭 팝업 메뉴에 표시됩니다. URL의 %s 는 거래 해시로 대체됩니다. 여러 URL은 | 세로줄을 통해 분리됩니다. </translation>
+        <translation>거래 탭에 컨텍스트 메뉴 항목으로 표시되는 타사 URL(예: 블록 탐색기). URL의 %s은(는) 트랜잭션 해시로 대체됩니다. 여러 URL은 세로 막대 |로 구분됩니다 </translation>
     </message>
     <message>
         <source>Open the %1 configuration file from the working directory.</source>
@@ -1865,7 +1864,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction cannot be used until that transaction has at least one confirmation. This also affects how your balance is computed.</source>
-        <translation>승인 대기 중인 잔액 사용 기능을 비활성화하면 잔액이 포함된 거래가 최소 한번의 승인을 받기까지 잔액을 사용할 수 없게 됩니다. 해당 기능은 잔액 표시에도 영향을 줄 예정입니다. </translation>
+        <translation>승인 대기 중인 잔액 사용 기능을 비활성화하면 잔액이 포함된 거래가 최소 한번의 승인을 받기까지 잔액을 사용할 수 없게 됩니다. 해당 기능은 잔액 표시에도 영향을 줍니다. </translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1873,7 +1872,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Automatically open the Ariel client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터에서 ARIEL 클라이언트 포트를 자동적으로 엽니다. 라우터에서 UPnP를 지원하고 활성화 했을 경우에만 동작합니다.</translation>
+        <translation>라우터에서 Ariel 클라이언트 포트를 자동적으로 엽니다. 라우터에서 UPnP를 지원하고 활성화 했을 경우에만 동작합니다.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1881,7 +1880,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Automatically open the Ariel client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>라우터에서 ARIEL 클라이언트 포트를 자동으로 엽니다. 이는 라우터가 NAT-PMP를 지원하고 활성화 된 경우에만 작동합니다. 외부 포트는 무작위 일 수 있습니다.</translation>
+        <translation>라우터에서 Ariel 클라이언트 포트를 자동으로 엽니다. 이는 라우터가 NAT-PMP를 지원하고 활성화 된 경우에만 작동합니다. 외부 포트는 무작위일 수 있습니다.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1897,7 +1896,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Connect to the Ariel network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 프록시를 통해 ARIEL 네트워크에 연결합니다.</translation>
+        <translation>SOCKS5 프록시를 통해 Ariel 네트워크에 연결합니다.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1925,7 +1924,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Show the icon in the system tray.</source>
-        <translation>시스템 트레이에 있는 아이콘 숨기기</translation>
+        <translation>시스템 트레이로 아이콘 숨기기</translation>
     </message>
     <message>
         <source>&amp;Show tray icon</source>
@@ -1961,7 +1960,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>인터페이스 및 송금에 표시될 디폴트 단위를 선택하세요</translation>
+        <translation>인터페이스와 코인을 보낼 때 표시할 기본 세분화 단위를 선택합니다.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1981,7 +1980,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Options set in this dialog are overridden by the command line or in the configuration file:</source>
-        <translation>해당 대화창의 설정은 커멘드 라인 또는 설정 파일을 통해 수정되었습니다：</translation>
+        <translation>해당 대화창의 설정은 커멘드 라인 또는 설정 파일을 통해 재정의되었습니다：</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -2084,7 +2083,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ariel network after a connection is established, but this process has not completed yet.</source>
-        <translation>현재 표시된 내용은 지난 정보일 수 있습니다. 퀀텀 네트워크에 연결 후 동기화를 실행하지만 아직 완료되진 않았습니다. </translation>
+        <translation>현재 표시된 내용은 지난 정보일 수 있습니다. Ariel 네트워크에 연결 후 동기화를 실행하지만 아직 완료되진 않았습니다. </translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2249,11 +2248,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Transaction broadcast successfully! Transaction ID: %1</source>
-        <translation>거래가 성공적으로 전파되었습니다! 거래 ID : %1</translation>
+        <translation>거래가 성공적으로 브로드캐스트됐습니다. 거래 ID : %1</translation>
     </message>
     <message>
         <source>Transaction broadcast failed: %1</source>
-        <translation>거래 전파에 실패: %1</translation>
+        <translation>거래 브로드캐스트에 실패: %1</translation>
     </message>
     <message>
         <source>PSBT copied to clipboard.</source>
@@ -2293,7 +2292,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Transaction is missing some information about inputs.</source>
-        <translation>거래에 입력에 대한 일부 정보가 없습니다.</translation>
+        <translation>거래의 입력에 대한 정보 일부가 없습니다.</translation>
     </message>
     <message>
         <source>Transaction still needs signature(s).</source>
@@ -2309,7 +2308,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Transaction is fully signed and ready for broadcast.</source>
-        <translation>거래가 모두 서명되었고, 전파될 준비가 되었습니다.</translation>
+        <translation>거래가 모두 서명되었고, 브로드캐스트될 준비가 되었습니다.</translation>
     </message>
     <message>
         <source>Transaction status is unknown.</source>
@@ -2324,8 +2323,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Cannot start ariel: click-to-pay handler</source>
-        <translation>无法启动 ariel 协议的“
-一键支付”处理器</translation>
+        <translation>ariel을 시작할 수 없음: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2337,7 +2335,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Ariel address or malformed URI parameters.</source>
-        <translation>URI 주소를 분석할 수 없습니다. 무효한 퀀텀 주소 또는 URI 파라미터 서식 오류일 수 있습니다. </translation>
+        <translation>URI 주소를 분석할 수 없습니다. 무효한 Ariel 주소 또는 URI 파라미터 서식 오류일 수 있습니다. </translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2399,7 +2397,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Enter a Ariel address (e.g. %1)</source>
-        <translation>ARIEL 주소를 입력해주세요 (예시, %1)</translation>
+        <translation>Ariel 주소를 입력해주세요 (예시, %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -2692,15 +2690,15 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Click to disable network activity.</source>
-        <translation type="vanished">네트워크 활동 비활성화</translation>
+        <translation type="vanished">네트워크 활동을 비활성화하려면 클릭합니다.</translation>
     </message>
     <message>
         <source>Network activity disabled.</source>
-        <translation type="vanished">네트워크 활동 금지 </translation>
+        <translation type="vanished">네트워크 활동 비활성화됨 </translation>
     </message>
     <message>
         <source>Click to enable network activity again.</source>
-        <translation type="vanished">네트워크 활동 활성화</translation>
+        <translation type="vanished">네트워크 활동을 다시 활성화하려면 클릭하십시오.</translation>
     </message>
     <message>
         <source>Syncing Headers (%1%)...</source>
@@ -2708,7 +2706,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
-        <translation type="vanished">블록 데이터를 위한 목록을 다시 생성하고 있습니다. </translation>
+        <translation type="vanished">디스크에서 블록 재인덱싱...</translation>
     </message>
     <message>
         <source>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
@@ -2716,7 +2714,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Send coins to a Ariel address</source>
-        <translation type="vanished">ARIEL 주소로 ARIEL 코인 보내기</translation>
+        <translation type="vanished">Ariel 주소로 Ariel 코인 보내기</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -2732,7 +2730,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Ariel</source>
-        <translation type="vanished">ARIEL</translation>
+        <translation type="vanished">Ariel</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -2756,11 +2754,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Sign messages with your Ariel addresses to prove you own them</source>
-        <translation type="vanished">소유하고 있는 ARIEL 주소의 키로 메시지 서명을 하여 해당 ARIEL 주소의 소유권을 증명하세요. </translation>
+        <translation type="vanished">소유하고 있는 Ariel 주소의 키로 메시지 서명을 하여 해당 Ariel 주소의 소유권을 증명하세요. </translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
-        <translation type="vanished">메시지 검증. 메시지에 특정 퀀텀 주소의 서명이 있는지 확인 </translation>
+        <translation type="vanished">지정된 Ariel 주소로 서명되었는지 확인하기 위해 메시지를 확인합니다. </translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -2797,7 +2795,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     <message numerus="yes">
         <source>%n active connection(s) to Ariel network.</source>
         <translation type="vanished">
-            <numerusform>ARIEL네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
+            <numerusform>Ariel네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -2848,7 +2846,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Load Partially Signed Ariel Transaction</source>
-        <translation>부분적으로 서명된 ARIEL 트랜잭션 불러오기</translation>
+        <translation>부분적으로 서명된 Ariel 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>Load PSBT from clipboard...</source>
@@ -2856,7 +2854,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Load Partially Signed Ariel Transaction from clipboard</source>
-        <translation>클립보드로부터 부분적으로 서명된 ARIEL 트랜잭션 불러오기</translation>
+        <translation>클립보드로부터 부분적으로 서명된 Ariel 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -2904,7 +2902,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
-        <translation type="vanished">%1 도움 정보 표시로 사용 가능한 커멘드 라인 옵션 리스트 불러오기</translation>
+        <translation type="vanished">%1 도움 정보 표시로 사용 가능한 Ariel 커멘드 라인 옵션 리스트 불러오기</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -2952,11 +2950,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Connecting to peers...</source>
-        <translation type="vanished">노드에 연결중입니다. </translation>
+        <translation type="vanished">피어에 연결중입니다. </translation>
     </message>
     <message>
         <source>Catching up...</source>
-        <translation type="vanished">업데이트</translation>
+        <translation type="vanished">따라잡기</translation>
     </message>
     <message>
         <source>Date: %1
@@ -3091,7 +3089,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Wallet: </source>
-        <translation></translation>
+        <translation>지갑:</translation>
     </message>
     <message>
         <source>(none)</source>
@@ -3115,11 +3113,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Banned peers</source>
-        <translation>노드 블랙리스트</translation>
+        <translation>차단된 피어</translation>
     </message>
     <message>
         <source>Select a peer to view detailed information.</source>
-        <translation>노드를 선택하여 자세한 정보를 확인하세요</translation>
+        <translation>피어를 선택하여 자세한 정보를 확인하세요</translation>
     </message>
     <message>
         <source>Version</source>
@@ -3139,7 +3137,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The mapped Autonomous System used for diversifying peer selection.</source>
-        <translation>피어 선택을 다양 화하는 데 사용되는 매핑 된 자율 시스템입니다.</translation>
+        <translation>피어의 다양한 선택에 사용되는 매핑된 자율 시스템입니다.</translation>
     </message>
     <message>
         <source>Mapped AS</source>
@@ -3259,7 +3257,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Ban for</source>
-        <translation>1% 동안 금지</translation>
+        <translation>1% 동안 차단</translation>
     </message>
     <message>
         <source>&amp;Unban</source>
@@ -3312,7 +3310,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation type="unfinished">현재 데이터 디렉토리에서 %1 디버그 로그 파일 열기. 사이즈가 큰 로그 파일은 시간이 좀 걸릴 예정입니다. </translation>
+        <translation type="unfinished">현재 데이터 디렉토리에서 %1 디버그 로그 파일 열기. 사이즈가 큰 로그 파일은 시간이 걸립니다.</translation>
     </message>
 </context>
 <context>
@@ -3331,7 +3329,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ariel network.</source>
-        <translation>지불 요청에 메시지를 추가할 수 있습니다. 지불 요청 확인 시 메시지 확인이 가능합니다. 주의: 메시지는 퀀텀 네트워크를 통해 전달되는 것은 아닙니다. </translation>
+        <translation>지불 요청에 메시지를 추가할 수 있습니다. 지불 요청 확인 시 메시지 확인이 가능합니다. 주의: 메시지는 Ariel 네트워크를 통해 전달되는 것은 아닙니다. </translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -3540,7 +3538,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Requested</source>
-        <translation>총액</translation>
+        <translation>요청됨</translation>
     </message>
 </context>
 <context>
@@ -3618,7 +3616,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>코인 통제 기능</translation>
+        <translation>코인 컨트럴 기능</translation>
     </message>
     <message>
         <source>Inputs…</source>
@@ -3646,7 +3644,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Fee:</source>
-        <translation>비용: </translation>
+        <translation>수수료: </translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -3718,7 +3716,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for ariel transactions than the network can process.</source>
-        <translation>거래량이 블록에 남은 공간보다 적은 경우, 채굴자나 중계 노드들이 최소 수수료를 허용할 수 있습니다. 최소 수수료만 지불하는건 괜찮지만, 네트워크가 처리할 수 있는 용량을 넘는 ARIEL 거래가 있을 경우에는 이 거래가 승인이 안될 수 있다는 점을 유의하세요.</translation>
+        <translation>블록의 공간보다 거래량이 적을 경우 채굴자와 중계 노드가 최소 수수료를 부과할 수 있습니다. 이 최소 수수료만 지불하는 것은 괜찮지만 네트워크가 처리할 수 있는 것보다 ariel 트랜잭션에 대한 수요가 더 많아지면 트랜잭션이 확인되지 않을 수 있습니다.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -3726,7 +3724,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Confirmation time target:</source>
-        <translation>시간 목표 확인</translation>
+        <translation>확인 시간 목표</translation>
     </message>
     <message>
         <source>Enable Replace-By-Fee</source>
@@ -3790,7 +3788,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Creates a Partially Signed Ariel Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>오프라인 %1 지갑 또는 PSBT가 호환되는 하드웨어 지갑과의 사용을 위한 '부분적으로 서명 된 비트 코인 트랜잭션(PSBT)'를 생성합니다.</translation>
+        <translation>오프라인 %1 지갑 또는 PSBT가 호환되는 하드웨어 지갑과의 사용을 위한 '부분적으로 서명 된 Ariel 트랜잭션(PSBT)'를 생성합니다.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -3806,7 +3804,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Do you want to draft this transaction?</source>
-        <translation>이 거래 초안을 작성 하시겠습니까?</translation>
+        <translation>이 거래를 작성하시겠습니까?</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -3834,7 +3832,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Ariel Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>거래 제안을 검토해 주십시오. 이것은 당신이 저장하거나 복사한 뒤 e.g. 오프라인 %1 지갑 또는 PSBT 호환 하드웨어 지갑으로 서명할 수 있는 PSBT (부분적으로 서명된 ARIEL 트랜잭션)를 생성할 것입니다.</translation>
+        <translation>거래 제안을 검토해 주십시오. 이것은 당신이 저장하거나 복사한 뒤 e.g. 오프라인 %1 지갑 또는 PSBT 호환 하드웨어 지갑으로 서명할 수 있는 PSBT (부분적으로 서명된 Ariel 트랜잭션)를 생성할 것입니다.</translation>
     </message>
     <message>
         <source>from wallet %1</source>
@@ -3912,7 +3910,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Warning: Invalid Ariel address</source>
-        <translation>경고: 무효한 ARIEL 주소</translation>
+        <translation>경고: 무효한 Ariel 주소</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3979,7 +3977,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less ariels than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>거래 수수료가 송금 총액에서 차감됩니다. 받는이가 받을 금액은 입력하신 금액보다 적을 예정이고 여러 명이 받는다면 수수료는 균등하게 차감될 예정입니다. </translation>
+        <translation>거래 수수료가 송금 총액에서 차감됩니다. 받는 이가 받을 금액은 입력하신 금액보다 적을 예정이고 여러 명이 받는다면 수수료는 균등하게 차감될 예정입니다. </translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -4007,7 +4005,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>A message that was attached to the ariel: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ariel network.</source>
-        <translation>퀀텀 URI에 첨부된 메시지는 참조를 위해 거래와 함께 저장됩니다. 주의: 메시지는 퀀텀 네트워크를 통해 전달되는 것은 아닙니다. </translation>
+        <translation>Ariel URI에 첨부된 메시지는 참조를 위해 거래와 함께 저장됩니다. 주의: 메시지는 Ariel 네트워크를 통해 전달되는 것은 아닙니다. </translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -4058,7 +4056,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Send to Contract</source>
-        <translation type="vanished">스마트 컨트랙트로 보내기</translation>
+        <translation type="vanished">컨트랙트로 보내기</translation>
     </message>
     <message>
         <source>Form</source>
@@ -4086,7 +4084,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Send To Contract</source>
-        <translation type="unfinished">스마트 컨트랙트로 보내기</translation>
+        <translation type="unfinished">컨트랙트로 보내기</translation>
     </message>
     <message>
         <source>The contract address that will receive the funds and data.</source>
@@ -4098,7 +4096,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The ariel address that will be used as sender.</source>
-        <translation type="unfinished">보낸 주소로 사용될 퀀텀 주소</translation>
+        <translation type="unfinished">보낸 주소로 사용될 Ariel 주소</translation>
     </message>
     <message>
         <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
@@ -4126,7 +4124,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Send to contract</source>
-        <translation type="unfinished">스마트 컨트랙트로 보내기</translation>
+        <translation type="unfinished">컨트랙트로 보내기</translation>
     </message>
     <message>
         <source>Gas limit. Default = %1, Max = %2</source>
@@ -4239,11 +4237,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive ariels sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 ARIEL을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
+        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 Ariel을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
     </message>
     <message>
         <source>The Ariel address to sign the message with</source>
-        <translation>메시지 서명에 사용된 퀀텀 주소</translation>
+        <translation>메시지 서명에 사용된 Ariel 주소</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -4267,7 +4265,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Sign the message to prove you own this Ariel address</source>
-        <translation>메시지 서명을 통해 퀀텀 주소의 소유권을 증명하세요</translation>
+        <translation>메시지 서명을 통해 Ariel 주소의 소유권을 증명하세요</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -4291,7 +4289,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The Ariel address the message was signed with</source>
-        <translation>메시지 서명에 사용된 퀀텀 주소</translation>
+        <translation>메시지 서명에 사용된 Ariel 주소</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -4299,11 +4297,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>The signature given when the message was signed</source>
-        <translation>메세지의 서명되었을 때의 시그니처</translation>
+        <translation>메시지가 서명될 때 주어진 서명</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Ariel address</source>
-        <translation>메시지 검증을 통해 지정된 퀀텀 주소를 통해 서명한 것을 확인하세요. </translation>
+        <translation>메시지 검증을 통해 지정된 Ariel 주소를 통해 서명한 것을 확인하세요. </translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -5364,7 +5362,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
-        <translation>하나 이상의 양파 바인딩 주소가 제공됩니다. 자동으로 생성 된 Tor onion 서비스에 %s 사용.</translation>
+        <translation>하나 이상의 onion 바인딩 주소가 제공됩니다. 자동으로 생성 된  Tor onion 서비스에 %s 사용.</translation>
     </message>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
@@ -5372,7 +5370,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
-        <translation>%s가 손상되었습니다. '비트 코인-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
+        <translation>%s가 손상되었습니다. 'Ariel-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
@@ -5396,7 +5394,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>SQLiteDatabase: Unknown sqlite wallet schema version %d. Only version %d is supported</source>
-        <translation>에스큐엘라이트 데이터베이스 : 알 수 없는 에스큐엘라이트 지갑 스키마 버전 %d. %d 버전만 지원합니다.</translation>
+        <translation>SQLiteDatabase: 알 수 없는 sqlite 지갑 스키마 버전 %d. %d 버전만 지원합니다.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -5624,15 +5622,15 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>SQLiteDatabase: Failed to execute statement to verify database: %s</source>
-        <translation>에스큐엘라이트 데이터베이스 : 데이터베이스를 확인하는 실행문 출력을 실패하였습니다 : %s.</translation>
+        <translation>SQLiteDatabase: 데이터베이스를 확인하는 실행문 출력을 실패하였습니다 : %s.</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to prepare statement to verify database: %s</source>
-        <translation>에스큐엘라이트 데이터베이스 : 데이터베이스를 확인하는 실행문 준비에 실패하였습니다 : %s.</translation>
+        <translation>SQLiteDatabase: 데이터베이스를 확인하는 실행문 준비에 실패하였습니다 : %s.</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Unexpected application id. Expected %u, got %u</source>
-        <translation>에스큐엘라이트 데이터베이스 : 예상 못한 어플리케이션 아이디. 예정: %u, 받음: %u</translation>
+        <translation>SQLiteDatabase: 예상 못한 어플리케이션 아이디. 예정: %u, 받음: %u</translation>
     </message>
     <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
@@ -5859,7 +5857,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
-        <translation>하나 이상의 양파 바인딩 주소가 제공됩니다. 자동으로 생성 된 Tor onion 서비스에 %s 사용.</translation>
+        <translation>하나 이상의 onion 바인딩 주소가 제공됩니다. 자동으로 생성 된 Tor onion 서비스에 %s 사용.</translation>
     </message>
     <message>
         <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong, %s will not work properly.</source>
@@ -5995,15 +5993,15 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>SQLiteDatabase: Failed to execute statement to verify database: %s</source>
-        <translation>에스큐엘라이트 데이터베이스 : 데이터베이스를 확인하는 실행문 출력을 실패하였습니다 : %s.</translation>
+        <translation>SQLiteDatabase: 데이터베이스를 확인하는 실행문 출력을 실패하였습니다 : %s.</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Failed to prepare statement to verify database: %s</source>
-        <translation>에스큐엘라이트 데이터베이스 : 데이터베이스를 확인하는 실행문 준비에 실패하였습니다 : %s.</translation>
+        <translation>SQLiteDatabase: 데이터베이스를 확인하는 실행문 준비에 실패하였습니다 : %s.</translation>
     </message>
     <message>
         <source>SQLiteDatabase: Unexpected application id. Expected %u, got %u</source>
-        <translation>에스큐엘라이트 데이터베이스 : 예상 못한 어플리케이션 아이디. 예정: %u, 받음: %u</translation>
+        <translation>SQLiteDatabase: 예상 못한 어플리케이션 아이디. 예정: %u, 받음: %u</translation>
     </message>
     <message>
         <source>Specified blocks directory &quot;%s&quot; does not exist.</source>
@@ -6071,7 +6069,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>%s corrupt. Try using the wallet tool ariel-wallet to salvage or restoring a backup.</source>
-        <translation>%s가 손상되었습니다. '비트 코인-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
+        <translation>%s가 손상되었습니다. 'Ariel 코인-지갑'을 사용하여 백업을 구제하거나 복원하십시오.</translation>
     </message>
     <message>
         <source>Invalid amount for -maxtxfee=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>

@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>These are your Ariel addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">这些是你的比特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
+        <translation type="unfinished">这些是你的Ariel支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -107,7 +107,7 @@
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(没有标签)</translation>
+        <translation type="unfinished">(无标签)</translation>
     </message>
 </context>
 <context>
@@ -154,7 +154,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ARIELS&lt;/b&gt;!</source>
-        <translation type="unfinished">注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的比特币。</translation>
+        <translation type="unfinished">注意：如果加密了钱包又丢失了密码，您将&lt;b&gt;丢失所有的Ariel。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -162,7 +162,7 @@
     </message>
     <message>
         <source>Wallet encrypted</source>
-        <translation type="unfinished">加密钱包</translation>
+        <translation type="unfinished">已加密钱包</translation>
     </message>
     <message>
         <source>Enter the new passphrase for the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Remember that encrypting your wallet cannot fully protect your ariels from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">记住，加密您的钱包并不能完全保护您的比特币不被您电脑中的恶意软件窃取。</translation>
+        <translation type="unfinished">记住，加密您的钱包并不能完全保护您的Ariel不被您电脑中的恶意软件窃取。</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
-        <translation type="unfinished">钱包即将被加密编码。</translation>
+        <translation type="unfinished">即将被加密钱包</translation>
     </message>
     <message>
         <source>Your wallet is about to be encrypted. </source>
-        <translation type="unfinished">你的钱包即将被加密编码。</translation>
+        <translation type="unfinished">你的钱包即将被加密。</translation>
     </message>
     <message>
         <source>Your wallet is now encrypted. </source>
-        <translation type="unfinished">你的钱包已被加密编码。</translation>
+        <translation type="unfinished">你的钱包已被加密。</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -229,50 +229,38 @@
     </message>
     <message>
         <source>Banned Until</source>
-        <translation type="unfinished">禁止到</translation>
+        <translation type="unfinished">禁止至</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
-        <translation type="unfinished">总计</translation>
+        <translation type="unfinished">金额</translation>
     </message>
     <message numerus="yes">
         <source>%n second(s)</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>%n 秒</translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>%n 分</translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">%n 小时</translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">%n 天</translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">%n 周</translation>
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">%n 年</translation>
     </message>
     </context>
 <context>
@@ -319,7 +307,7 @@
     </message>
     <message>
         <source>Create a new wallet</source>
-        <translation type="unfinished">创建一个新的钱包</translation>
+        <translation type="unfinished">创建新的钱包</translation>
     </message>
     <message>
         <source>Wallet:</source>
@@ -328,7 +316,7 @@
     <message>
         <source>Network activity disabled.</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation type="unfinished">禁用网络活动。</translation>
+        <translation type="unfinished">网络活动已禁用。</translation>
     </message>
     <message>
         <source>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
@@ -336,7 +324,7 @@
     </message>
     <message>
         <source>Send coins to a Ariel address</source>
-        <translation>发送比特币到一个比特币地址</translation>
+        <translation>发送币到一个Ariel地址</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -352,7 +340,7 @@
     </message>
     <message>
         <source>&amp;Receive</source>
-        <translation>&amp;接受</translation>
+        <translation>&amp;接收</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -368,11 +356,11 @@
     </message>
     <message>
         <source>Sign messages with your Ariel addresses to prove you own them</source>
-        <translation>用您的比特币地址签名信息，以证明拥有它们</translation>
+        <translation>用您的Ariel地址签名信息，以证明拥有它们</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Ariel addresses</source>
-        <translation>验证消息，确保它们是用指定的比特币地址签名的</translation>
+        <translation>验证消息，确保它们是用指定的Ariel地址签名的</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -392,7 +380,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and ariel: URIs)</source>
-        <translation type="unfinished">请求支付(生成二维码和比特币链接)</translation>
+        <translation type="unfinished">请求支付(生成二维码和Ariel: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -408,9 +396,7 @@
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>交易历史%n个块已处理。</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -422,7 +408,7 @@
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>之后的交易还不可见。</translation>
+        <translation>后面的交易还不可见。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -442,11 +428,11 @@
     </message>
     <message>
         <source>Node window</source>
-        <translation type="unfinished">结点窗口</translation>
+        <translation type="unfinished">节点窗口</translation>
     </message>
     <message>
         <source>Open node debugging and diagnostic console</source>
-        <translation type="unfinished">打开结点的调试和诊断控制台</translation>
+        <translation type="unfinished">打开节点的调试和诊断控制台</translation>
     </message>
     <message>
         <source>&amp;Sending addresses</source>
@@ -454,11 +440,11 @@
     </message>
     <message>
         <source>&amp;Receiving addresses</source>
-        <translation type="unfinished">&amp;接受地址</translation>
+        <translation type="unfinished">&amp;接收地址</translation>
     </message>
     <message>
         <source>Open a ariel: URI</source>
-        <translation type="unfinished">打开比特币: URI</translation>
+        <translation type="unfinished">打开Ariel: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -474,7 +460,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Ariel command-line options</source>
-        <translation type="unfinished">显示%1帮助消息以获得可能包含Ariels命令行选项的列表</translation>
+        <translation type="unfinished">显示%1帮助消息以获得可能包含Ariel命令行选项的列表</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -507,45 +493,31 @@
     <message numerus="yes">
         <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">%n个Ariel网络活动连接</translation>
     </message>
     <message>
-        <source>Date: %1
-</source>
-        <translation type="unfinished">日期：%1
-</translation>
+        <source>Date: %1</source>
+        <translation type="unfinished">日期：%1</translation>
     </message>
     <message>
-        <source>Amount: %1
-</source>
-        <translation type="unfinished">总计：%1
-</translation>
+        <source>Amount: %1</source>
+        <translation type="unfinished">金额：%1</translation>
     </message>
     <message>
-        <source>Wallet: %1
-</source>
-        <translation type="unfinished">钱包：%1
-</translation>
+        <source>Wallet: %1</source>
+        <translation type="unfinished">钱包：%1</translation>
     </message>
     <message>
-        <source>Type: %1
-</source>
-        <translation type="unfinished">类型：%1
-</translation>
+        <source>Type: %1</source>
+        <translation type="unfinished">类型：%1</translation>
     </message>
     <message>
-        <source>Label: %1
-</source>
-        <translation type="unfinished">标签：%1
-</translation>
+        <source>Label: %1</source>
+        <translation type="unfinished">标签：%1</translation>
     </message>
     <message>
-        <source>Address: %1
-</source>
-        <translation type="unfinished">地址：%1
-</translation>
+        <source>Address: %1</source>
+        <translation type="unfinished">地址：%1</translation>
     </message>
     <message>
         <source>Sent transaction</source>
@@ -580,7 +552,7 @@
     <name>CoinControlDialog</name>
     <message>
         <source>Coin Selection</source>
-        <translation type="unfinished">币种选择</translation>
+        <translation type="unfinished">选币</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -592,7 +564,7 @@
     </message>
     <message>
         <source>Amount:</source>
-        <translation type="unfinished">总计：</translation>
+        <translation type="unfinished">金额：</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -604,15 +576,15 @@
     </message>
     <message>
         <source>After Fee:</source>
-        <translation type="unfinished">扣除费用后：</translation>
+        <translation type="unfinished">扣除手续费后：</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation type="unfinished">变化：</translation>
+        <translation type="unfinished">找零：</translation>
     </message>
     <message>
         <source>(un)select all</source>
-        <translation type="unfinished">(未)选择所有</translation>
+        <translation type="unfinished">(取消)选择所有</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -624,15 +596,15 @@
     </message>
     <message>
         <source>Amount</source>
-        <translation type="unfinished">总计</translation>
+        <translation type="unfinished">金额</translation>
     </message>
     <message>
         <source>Received with label</source>
-        <translation type="unfinished">收到，夹带标签</translation>
+        <translation type="unfinished">接收标签</translation>
     </message>
     <message>
         <source>Received with address</source>
-        <translation type="unfinished">收到，夹带地址</translation>
+        <translation type="unfinished">接收地址</translation>
     </message>
     <message>
         <source>Date</source>
@@ -656,11 +628,11 @@
     </message>
     <message>
         <source>Copy fee</source>
-        <translation type="unfinished">复制费用</translation>
+        <translation type="unfinished">复制手续费</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation type="unfinished">复制扣除费用</translation>
+        <translation type="unfinished">复制扣除手续费后</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -668,11 +640,11 @@
     </message>
     <message>
         <source>Copy change</source>
-        <translation type="unfinished">复制改变</translation>
+        <translation type="unfinished">复制找零</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
-        <translation type="unfinished">(%1 锁住)</translation>
+        <translation type="unfinished">(%1 锁定)</translation>
     </message>
     <message>
         <source>yes</source>
@@ -687,12 +659,12 @@
         <translation type="unfinished">如果任何接收方接收到的金额小于当前粉尘交易的阈值，则此标签将变为红色。</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 satoshi(s) per input.</source>
-        <translation type="unfinished">每个输入可以改变+/- %1 satoshi(s)。</translation>
+        <source>Can vary +/- %1 Seashell(s) per input.</source>
+        <translation type="unfinished">每个输入可以改变 +/- %1 Seashell(s)。</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(没有标签)</translation>
+        <translation type="unfinished">(无标签)</translation>
     </message>
     </context>
 <context>
@@ -737,7 +709,7 @@
     </message>
     <message>
         <source>Make a blank wallet. Blank wallets do not initially have private keys or scripts. Private keys and addresses can be imported, or an HD seed can be set, at a later time.</source>
-        <translation type="unfinished">创建一个空白钱包。空白钱包没有起始的私钥和脚本。稍后可以倒入私钥和地址、设置HD种子。</translation>
+        <translation type="unfinished">创建一个空白钱包。空白钱包开始没有私钥或脚本。稍后可以导入私钥和地址、设置HD种子。</translation>
     </message>
     <message>
         <source>Make Blank Wallet</source>
@@ -780,7 +752,7 @@
     </message>
     <message>
         <source>The entered address "%1" is not a valid Ariel address.</source>
-        <translation type="unfinished">输入的地址"%1"不是有效的比特币地址。</translation>
+        <translation type="unfinished">输入的地址"%1"不是有效的Ariel地址。</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -788,7 +760,7 @@
     </message>
     <message>
         <source>The entered address "%1" is already in the address book with label "%2".</source>
-        <translation type="unfinished">输入的地址“%1”在标签为“%2”的地址簿中已存在</translation>
+        <translation type="unfinished">输入的地址“%1”在地址簿中已存在，标签为“%2”</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -796,7 +768,7 @@
     </message>
     <message>
         <source>New key generation failed.</source>
-        <translation type="unfinished">新的密钥生成失败</translation>
+        <translation type="unfinished">新密钥生成失败</translation>
     </message>
 </context>
 <context>
@@ -815,7 +787,7 @@
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>路径已存在，并非目录。</translation>
+        <translation>路径已存在且并非目录。</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
@@ -826,14 +798,12 @@
     <name>Intro</name>
     <message>
         <source>Ariel</source>
-        <translation type="unfinished">比特币</translation>
+        <translation type="unfinished">Ariel</translation>
     </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
         <extracomment>Explanatory text on the capability of the current prune target.</extracomment>
-        <translation type="unfinished">
-            <numerusform />
-        </translation>
+        <translation type="unfinished">（足够恢复%n天前的备份）</translation>
     </message>
     <message>
         <source>Error</source>
@@ -845,7 +815,7 @@
     </message>
     <message>
         <source>Welcome to %1.</source>
-        <translation type="unfinished">欢迎到 %1。</translation>
+        <translation type="unfinished">欢迎来到 %1。</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -853,7 +823,7 @@
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation>使用自定数据目录</translation>
+        <translation>使用自定义数据目录</translation>
     </message>
 </context>
 <context>
@@ -983,7 +953,7 @@
     <name>RPCConsole</name>
     <message>
         <source>Node window</source>
-        <translation type="unfinished">结点窗口</translation>
+        <translation type="unfinished">节点窗口</translation>
     </message>
     <message>
         <source>Last block time</source>
@@ -1010,7 +980,7 @@
     <name>ReceiveCoinsDialog</name>
     <message>
         <source>&amp;Amount:</source>
-        <translation type="unfinished">&amp;总计：</translation>
+        <translation type="unfinished">&amp;金额：</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
@@ -1029,7 +999,7 @@
     <name>ReceiveRequestDialog</name>
     <message>
         <source>Amount:</source>
-        <translation type="unfinished">总计：</translation>
+        <translation type="unfinished">金额：</translation>
     </message>
     <message>
         <source>Wallet:</source>
@@ -1048,7 +1018,7 @@
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(没有标签)</translation>
+        <translation type="unfinished">(无标签)</translation>
     </message>
     </context>
 <context>
@@ -1067,7 +1037,7 @@
     </message>
     <message>
         <source>Amount:</source>
-        <translation type="unfinished">总计：</translation>
+        <translation type="unfinished">金额：</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -1075,15 +1045,15 @@
     </message>
     <message>
         <source>After Fee:</source>
-        <translation type="unfinished">扣除费用后：</translation>
+        <translation type="unfinished">扣除手续费后：</translation>
     </message>
     <message>
         <source>Change:</source>
-        <translation type="unfinished">变化：</translation>
+        <translation type="unfinished">找零：</translation>
     </message>
     <message>
         <source>Warning: Fee estimation is currently not possible.</source>
-        <translation type="unfinished">警告:目前无法估算费用。</translation>
+        <translation type="unfinished">警告:目前无法估算手续费。</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -1099,11 +1069,11 @@
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for ariel transactions than the network can process.</source>
-        <translation type="unfinished">当交易量小于块的空间时，矿工和中继节点可以强制执行最低费用。只付最低费用就可以了，但注意，一旦比特币交易的需求超出网络的处理能力，就可能导致交易无法确认。</translation>
+        <translation type="unfinished">当交易量小于块的空间时，矿工和中继节点可以强制执行最低手续费。只付最低手续费就可以了，但注意，一旦Ariel交易的需求超出网络的处理能力，就可能导致交易无法确认。</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
-        <translation type="unfinished">太低的费用可能导致永远无法确认交易(阅读工具提示)</translation>
+        <translation type="unfinished">太低的手续费可能导致永远无法确认交易(阅读提示)</translation>
     </message>
     <message>
         <source>Confirmation time target:</source>
@@ -1111,7 +1081,7 @@
     </message>
     <message>
         <source>With Replace-By-Fee (BIP-125) you can increase a transaction's fee after it is sent. Without this, a higher fee may be recommended to compensate for increased transaction delay risk.</source>
-        <translation type="unfinished">通过 Replace-By-Fee (BIP-125) 您可以在交易发送后增加交易费用。没有这个，可能会建议收取更高的费用，以补偿交易延迟风险的增加。</translation>
+        <translation type="unfinished">通过 Replace-By-Fee (BIP-125) 您可以在交易发送后增加交易手续费。没有这个，可能会建议收取更高的手续费，以补偿交易延迟风险的增加。</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1123,11 +1093,11 @@
     </message>
     <message>
         <source>Copy fee</source>
-        <translation type="unfinished">复制费用</translation>
+        <translation type="unfinished">复制手续费</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation type="unfinished">复制扣除费用</translation>
+        <translation type="unfinished">复制扣除手续费后</translation>
     </message>
     <message>
         <source>Copy bytes</source>
@@ -1135,15 +1105,15 @@
     </message>
     <message>
         <source>Copy change</source>
-        <translation type="unfinished">复制改变</translation>
+        <translation type="unfinished">复制更改</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
-        <translation type="unfinished">确定发送么？</translation>
+        <translation type="unfinished">确定发送？</translation>
     </message>
     <message>
         <source>You can increase the fee later (signals Replace-By-Fee, BIP-125).</source>
-        <translation type="unfinished">稍后您可以增加费用( 信号 Replace-By-Fee，BIP-125）。</translation>
+        <translation type="unfinished">稍后您可以增加手续费(信号 Replace-By-Fee，BIP-125）。</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -1155,19 +1125,19 @@
     </message>
     <message>
         <source>The recipient address is not valid. Please recheck.</source>
-        <translation type="unfinished">收款人地址无效，请再次确认。</translation>
+        <translation type="unfinished">收款地址无效，请再次确认。</translation>
     </message>
     <message>
         <source>The amount to pay must be larger than 0.</source>
-        <translation type="unfinished">支付的总额必须大于0。</translation>
+        <translation type="unfinished">支付的金额必须大于0。</translation>
     </message>
     <message>
         <source>The amount exceeds your balance.</source>
-        <translation type="unfinished">总额超过你的余额。</translation>
+        <translation type="unfinished">金额超过你的余额。</translation>
     </message>
     <message>
         <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation type="unfinished">当包含%1交易费用时，总额超过你的余额。</translation>
+        <translation type="unfinished">当包含%1交易手续费时，金额超过你的余额。</translation>
     </message>
     <message>
         <source>Duplicate address found: addresses should only be used once each.</source>
@@ -1179,7 +1149,7 @@
     </message>
     <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
-        <translation type="unfinished">高于%1的手续费被认为非常高的手续费。</translation>
+        <translation type="unfinished">高于%1的手续费被认为非常高。</translation>
     </message>
     <message>
         <source>Payment request expired.</source>
@@ -1187,13 +1157,11 @@
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>估计在%n个块以后确认。</translation>
     </message>
     <message>
         <source>Warning: Invalid Ariel address</source>
-        <translation type="unfinished">警告：比特币地址无效</translation>
+        <translation type="unfinished">警告：Ariel地址无效</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1201,7 +1169,7 @@
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(没有标签)</translation>
+        <translation type="unfinished">(无标签)</translation>
     </message>
 </context>
 <context>
@@ -1216,11 +1184,11 @@
     </message>
     <message>
         <source>The Ariel address to send the payment to</source>
-        <translation type="unfinished">支付到的比特币地址</translation>
+        <translation type="unfinished">Ariel接收地址</translation>
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less ariels than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">手续费将从发出的总额中扣除。接受者收到的比特币将少于你输入的金额字段。如果选择了多个接受者，手续费将平均分配。</translation>
+        <translation type="unfinished">手续费将从发出的金额中扣除。接收者收到的Ariel将少于你输入的金额字段。如果选择了多个接收者，手续费将平均分配。</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -1232,7 +1200,7 @@
     </message>
     <message>
         <source>A message that was attached to the ariel: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ariel network.</source>
-        <translation type="unfinished">附在比特币上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过比特币网络发送。</translation>
+        <translation type="unfinished">附在Ariel上的消息:URI将与交易一起存储以供参考。注意：此信息不会通过Ariel网络发送。</translation>
     </message>
     </context>
 <context>
@@ -1246,9 +1214,7 @@
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>打开更多的%n块</translation>
     </message>
     <message>
         <source>Date</source>
@@ -1256,9 +1222,7 @@
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>%n个块后成熟</translation>
     </message>
     <message>
         <source>Transaction fee</source>
@@ -1266,7 +1230,7 @@
     </message>
     <message>
         <source>Amount</source>
-        <translation type="unfinished">总计</translation>
+        <translation type="unfinished">金额</translation>
     </message>
     </context>
 <context>
@@ -1281,13 +1245,11 @@
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation>
-            <numerusform />
-        </translation>
+        <translation>打开更多的%n块</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(没有标签)</translation>
+        <translation type="unfinished">(无标签)</translation>
     </message>
     </context>
 <context>
@@ -1354,7 +1316,7 @@
     </message>
     <message>
         <source>Transaction too large</source>
-        <translation type="unfinished">超额转账</translation>
+        <translation type="unfinished">转账过大</translation>
     </message>
     </context>
 </TS>

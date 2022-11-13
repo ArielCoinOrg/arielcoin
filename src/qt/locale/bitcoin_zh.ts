@@ -390,7 +390,6 @@
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation>交易历史%n个块已处理。</translation>
     </message>
     <message>
         <source>%1 behind</source>

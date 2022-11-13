@@ -119,31 +119,6 @@ BOOST_AUTO_TEST_CASE(key_io_valid_gen)
 
 
 // Goal: check that base58 parsing code is robust against a variety of corrupted data
-BOOST_AUTO_TEST_CASE(key_io_invalid)
-{
-    UniValue tests = read_json(std::string(json_tests::key_io_invalid, json_tests::key_io_invalid + sizeof(json_tests::key_io_invalid))); // Negative testcases
-    CKey privkey;
-    CTxDestination destination;
 
-    for (unsigned int idx = 0; idx < tests.size(); idx++) {
-        UniValue test = tests[idx];
-        std::string strTest = test.write();
-        if (test.size() < 1) // Allow for extra stuff (useful for comments)
-        {
-            BOOST_ERROR("Bad test: " << strTest);
-            continue;
-        }
-        std::string exp_base58string = test[0].get_str();
-
-        // must be invalid as public and as private key
-        for (const auto& chain : { CBaseChainParams::MAIN, CBaseChainParams::TESTNET, CBaseChainParams::SIGNET, CBaseChainParams::UNITTEST }) {
-            SelectParams(chain);
-            destination = DecodeDestination(exp_base58string);
-            BOOST_CHECK_MESSAGE(!IsValidDestination(destination), "IsValid pubkey in mainnet:" + strTest);
-            privkey = DecodeSecret(exp_base58string);
-            BOOST_CHECK_MESSAGE(!privkey.IsValid(), "IsValid privkey in mainnet:" + strTest);
-        }
-    }
-}
 
 BOOST_AUTO_TEST_SUITE_END()

@@ -412,45 +412,4 @@ static void check_computeblockversion(const Consensus::Params& params, Consensus
     BOOST_CHECK_EQUAL(g_versionbitscache.ComputeBlockVersion(lastBlock, params) & (1 << bit), 0);
 }
 
-BOOST_AUTO_TEST_CASE(versionbits_computeblockversion)
-{
-    // check that any deployment on any chain can conceivably reach both
-    // ACTIVE and FAILED states in roughly the way we expect
-    for (const auto& chain_name : {CBaseChainParams::MAIN, CBaseChainParams::TESTNET, CBaseChainParams::SIGNET, CBaseChainParams::UNITTEST}) {
-        const auto chainParams = CreateChainParams(*m_node.args, chain_name);
-        uint32_t chain_all_vbits{0};
-        for (int i = 0; i < (int)Consensus::MAX_VERSION_BITS_DEPLOYMENTS; ++i) {
-            const auto dep = static_cast<Consensus::DeploymentPos>(i);
-            // Check that no bits are re-used (within the same chain). This is
-            // disallowed because the transition to FAILED (on timeout) does
-            // not take precedence over STARTED/LOCKED_IN. So all softforks on
-            // the same bit might overlap, even when non-overlapping start-end
-            // times are picked.
-            const uint32_t dep_mask{g_versionbitscache.Mask(chainParams->GetConsensus(), dep)};
-            BOOST_CHECK(!(chain_all_vbits & dep_mask));
-            chain_all_vbits |= dep_mask;
-            check_computeblockversion(chainParams->GetConsensus(), dep);
-        }
-    }
-
-    {
-        // Use regtest/testdummy to ensure we always exercise some
-        // deployment that's not always/never active
-        ArgsManager args;
-        args.ForceSetArg("-vbparams", "testdummy:1199145601:1230767999"); // January 1, 2008 - December 31, 2008
-        const auto chainParams = CreateChainParams(args, CBaseChainParams::UNITTEST);
-        check_computeblockversion(chainParams->GetConsensus(), Consensus::DEPLOYMENT_TESTDUMMY);
-    }
-
-    {
-        // Use regtest/testdummy to ensure we always exercise the
-        // min_activation_height test, even if we're not using that in a
-        // live deployment
-        ArgsManager args;
-        args.ForceSetArg("-vbparams", "testdummy:1199145601:1230767999:401760"); // January 1, 2008 - December 31, 2008, min act height 401760
-        const auto chainParams = CreateChainParams(args, CBaseChainParams::UNITTEST);
-        check_computeblockversion(chainParams->GetConsensus(), Consensus::DEPLOYMENT_TESTDUMMY);
-    }
-}
-
 BOOST_AUTO_TEST_SUITE_END()

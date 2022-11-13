@@ -243,23 +243,18 @@
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
-        <translation>%n 分</translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation type="unfinished">%n 小时</translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
-        <translation type="unfinished">%n 天</translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation type="unfinished">%n 周</translation>
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation type="unfinished">%n 年</translation>
     </message>
     </context>
 <context>

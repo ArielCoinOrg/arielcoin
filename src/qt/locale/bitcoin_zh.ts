@@ -486,7 +486,6 @@
     <message numerus="yes">
         <source>%n active connection(s) to Ariel network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
-        <translation type="unfinished">%n个Ariel网络活动连接</translation>
     </message>
     <message>
         <source>Date: %1</source>

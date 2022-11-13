@@ -1211,7 +1211,6 @@
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation>%n个块后成熟</translation>
     </message>
     <message>
         <source>Transaction fee</source>

@@ -1148,7 +1148,6 @@
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>估计在%n个块以后确认。</translation>
     </message>
     <message>
         <source>Warning: Invalid Ariel address</source>

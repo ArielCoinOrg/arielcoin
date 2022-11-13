@@ -1204,7 +1204,6 @@
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation>打开更多的%n块</translation>
     </message>
     <message>
         <source>Date</source>

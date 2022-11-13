@@ -475,7 +475,6 @@ public:
             vSeeds = args.GetArgs("-signetseednode");
         }
 
-        strNetworkID = CBaseChainParams::SIGNET;
         consensus.signet_blocks = true;
         consensus.signet_challenge.assign(bin.begin(), bin.end());
         consensus.nSubsidyHalvingInterval = 985500;

@@ -12,7 +12,6 @@
 
 const std::string CBaseChainParams::MAIN = "main";
 const std::string CBaseChainParams::TESTNET = "test";
-const std::string CBaseChainParams::SIGNET = "signet";
 const std::string CBaseChainParams::REGTEST = "regtest";
 const std::string CBaseChainParams::UNITTEST = "unittest";
 
@@ -47,8 +46,6 @@ std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const std::string& chain
         return std::make_unique<CBaseChainParams>("", 3889, 3891);
     } else if (chain == CBaseChainParams::TESTNET) {
         return std::make_unique<CBaseChainParams>("testnet3", 13889, 13891);
-    } else if (chain == CBaseChainParams::SIGNET) {
-        return std::make_unique<CBaseChainParams>("signet", 33889, 33891);
     } else if (chain == CBaseChainParams::REGTEST) {
         return std::make_unique<CBaseChainParams>("regtest", 13889, 13891);
     } else if (chain == CBaseChainParams::UNITTEST) {

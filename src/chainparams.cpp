@@ -318,7 +318,7 @@ public:
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 2080510000;
         consensus.nReduceBlocktimeHeight = 2080510000;
-        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimitGenesis = uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
@@ -406,10 +406,6 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data as of block f948d21fffc54b511638b4c2c73dfa8f1c50661fbf3187a553bf939c361116ea (height 1935143)
-        	1653075072,
-			4040228,
-			0.06307789999321026
         };
 
         consensus.nBlocktimeDownscaleFactor = 4;

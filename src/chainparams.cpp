@@ -319,6 +319,7 @@ public:
         consensus.nOfflineStakeHeight = 2080510000;
         consensus.nReduceBlocktimeHeight = 2080510000;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimitGenesis = uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
         consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -345,8 +346,8 @@ public:
         // Replace 0xffffc0 with the activation block number
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080510000;
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001568777684de8c59f80"); // 1930000
-        consensus.defaultAssumeValid = uint256S("0xf4836510a70e25d5c70554abbbcb346abd66af540f616d806fb1c20335c1e874"); // 1930000
+        consensus.nMinimumChainWork = uint256S("0x01"); // 1883974
+        consensus.defaultAssumeValid = uint256S(""); // 1883974
 
         hashStateRoot = uint256(h256Touint(dev::h256("abf3d0f418df6975665739fae5ad3506f7a86f020809d21ae63b43168d7ae5a9"))); // ariel
         hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // ariel

@@ -307,14 +307,17 @@ public:
         consensus.CSVHeight = 6048; // 00000000025e930139bac5c6c31a403776da130831ab85be56578f3fa75369bb
         consensus.SegwitHeight = 6048; // 00000000002b980fcd729daaa248fd9316a5200e9b367f4ff2c42453e84201ca
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
-        consensus.QIP5Height = 446320;
-        consensus.QIP6Height = 446320;
-        consensus.QIP7Height = 446320;
-        consensus.QIP9Height = 446320;
-        consensus.nOfflineStakeHeight = 625000;
-        consensus.nReduceBlocktimeHeight = 806600;
-        consensus.nMuirGlacierHeight = 806600;
-        consensus.nLondonHeight = 1967616;
+        nSmartActivationBlock = 400000;
+        consensus.QIP5Height = nSmartActivationBlock;
+        consensus.QIP6Height = nSmartActivationBlock;
+        consensus.QIP7Height = nSmartActivationBlock;
+        consensus.QIP9Height = nSmartActivationBlock;
+        consensus.nFixUTXOCacheHFHeight = nSmartActivationBlock;
+        consensus.nMuirGlacierHeight = nSmartActivationBlock+1;
+        consensus.nLondonHeight = nSmartActivationBlock+2;
+        consensus.nSmartActivationBlock = nSmartActivationBlock;
+        consensus.nOfflineStakeHeight = 2080510000;
+        consensus.nReduceBlocktimeHeight = 2080510000;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
@@ -340,18 +343,18 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
         // Min block number for activation, the number must be divisible by 2016
         // Replace 0xffffc0 with the activation block number
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 1967616;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080510000;
 
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001568777684de8c59f80"); // 1930000
         consensus.defaultAssumeValid = uint256S("0xf4836510a70e25d5c70554abbbcb346abd66af540f616d806fb1c20335c1e874"); // 1930000
 
-        pchMessageStart[0] = 0x0d;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x15;
-        pchMessageStart[3] = 0x06;
-        nDefaultPort = 13888;
+        pchMessageStart[0] = 0x74;
+        pchMessageStart[1] = 0x61;
+        pchMessageStart[2] = 0x72;
+        pchMessageStart[3] = 0x6c;
+        nDefaultPort = 18686;
         nPruneAfterHeight = 1000;
-        m_assumed_blockchain_size = 6;
+        m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 1;
 
         genesis = CreateGenesisBlock(1645356868, 0, 0x1e00ffff, 1, 50 * COIN, 1, uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"));
@@ -362,15 +365,16 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("qtum4.dynu.net"); // Ariel testnet
+//        vSeeds.emplace_back("qtum4.dynu.net"); // Ariel testnet
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,120);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,132);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,127);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x57, 0x28, 0xAF};
+        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x57, 0x37, 0xB6};
 
-        bech32_hrp = "tq";
+        bech32_hrp = "tarl";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_test), std::end(chainparams_seed_test));
 
@@ -399,20 +403,19 @@ public:
         };
 
         consensus.nBlocktimeDownscaleFactor = 4;
-        consensus.nCoinbaseMaturity = 500;
+        consensus.nCoinbaseMaturity = 100;
         consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
         consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // ariel halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
-        consensus.nLastPOWBlock = 5000;
-        consensus.nLastBigReward = 5000;
+        consensus.nLastPOWBlock = 2080510000;
+        consensus.nLastBigReward = 2080510000;
         consensus.nMPoSRewardRecipients = 10;
         consensus.nFirstMPoSBlock = consensus.nLastPOWBlock +
                                     consensus.nMPoSRewardRecipients +
                                     consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 624999;
+        consensus.nLastMPoSBlock = 2080510000;
 
-        consensus.nFixUTXOCacheHFHeight = 84500;
-        consensus.nEnableHeaderSignatureHeight = 391993;
+        consensus.nEnableHeaderSignatureHeight = 2080510000;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
@@ -450,7 +453,7 @@ public:
         consensus.nLondonHeight = nSmartActivationBlock+2;
         consensus.nSmartActivationBlock = nSmartActivationBlock;
         consensus.nOfflineStakeHeight = 1;
-        consensus.nReduceBlocktimeHeight = 0;
+        consensus.nReduceBlocktimeHeight = 2080510000;
         consensus.nMuirGlacierHeight = 0;
         consensus.nLondonHeight = 0;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -535,7 +538,7 @@ public:
         consensus.nLastMPoSBlock = 0;
 
         consensus.nFixUTXOCacheHFHeight=0;
-        consensus.nEnableHeaderSignatureHeight = 0;
+        consensus.nEnableHeaderSignatureHeight = 2080510000;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;

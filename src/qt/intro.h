@@ -31,7 +31,7 @@ class Intro : public QDialog
 
 public:
     explicit Intro(QWidget *parent = nullptr,
-                   int64_t blockchain_size_gb = 0, int64_t chain_state_size_gb = 0);
+                   int64_t blockchain_size_gb = 8, int64_t chain_state_size_gb = 0);
     ~Intro();
 
     QString getDataDirectory();

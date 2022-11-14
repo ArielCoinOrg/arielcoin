@@ -15,6 +15,10 @@
 // Used to serialize the header without signature
 // Workaround due to removing serialization templates in Bitcoin Core 0.18
 
+
+int nSmartActivationBlock;
+
+
 uint256 CBlockHeader::GetHash() const
 {
         return KAWPOWHash_OnlyMix(*this);

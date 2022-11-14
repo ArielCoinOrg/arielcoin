@@ -348,6 +348,9 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001568777684de8c59f80"); // 1930000
         consensus.defaultAssumeValid = uint256S("0xf4836510a70e25d5c70554abbbcb346abd66af540f616d806fb1c20335c1e874"); // 1930000
 
+        hashStateRoot = uint256(h256Touint(dev::h256("abf3d0f418df6975665739fae5ad3506f7a86f020809d21ae63b43168d7ae5a9"))); // ariel
+        hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // ariel
+
         pchMessageStart[0] = 0x74;
         pchMessageStart[1] = 0x61;
         pchMessageStart[2] = 0x72;
@@ -479,7 +482,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 0; // No activation delay
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 2080510000; // No activation delay
+
+        hashStateRoot = uint256(h256Touint(dev::h256("abf3d0f418df6975665739fae5ad3506f7a86f020809d21ae63b43168d7ae5a9"))); // ariel
+        hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // ariel
 
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};

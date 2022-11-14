@@ -377,12 +377,12 @@ public:
         // nodes with support for servicebits filtering should be at the top
 //        vSeeds.emplace_back("qtum4.dynu.net"); // Ariel testnet
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,132);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,127);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x57, 0x28, 0xAF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x57, 0x37, 0xB6};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,70);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,23);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,125);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x07, 0x88, 0xB2, 0x1E};
+        base58Prefixes[EXT_SECRET_KEY] = {0x07, 0x88, 0xAD, 0xE4};
 
         bech32_hrp = "tarl";
 

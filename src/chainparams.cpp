@@ -300,10 +300,10 @@ public:
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 525600; // ariel halving every 4 years
         consensus.BIP16Height = 1;
-        consensus.BIP34Height = 0;
+        consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("");
-        consensus.BIP65Height = 0; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
-        consensus.BIP66Height = 0; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
+        consensus.BIP65Height = 1; // 00000000007f6655f22f98e72ed80d8b06dc761d5da09df0fa1dc4be4f861eb6
+        consensus.BIP66Height = 1; // 000000002104c8c45e99a8853285a3b592602a3ccde2b832481da85e9e4ba182
         consensus.CSVHeight = 1; // 00000000025e930139bac5c6c31a403776da130831ab85be56578f3fa75369bb
         consensus.SegwitHeight = 1; // 00000000002b980fcd729daaa248fd9316a5200e9b367f4ff2c42453e84201ca
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
@@ -331,9 +331,7 @@ public:
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.fPoSNoRetargeting = false;
-
-
-
+        consensus.nMinimumDifficultyBlocks = 10;
 
         consensus.nRuleChangeActivationThreshold = 1815; // 90% of 2016
         consensus.nMinerConfirmationWindow = 8064; // nPowTargetTimespan / nPowTargetSpacing
@@ -373,7 +371,7 @@ public:
         //vFixedSeeds.clear();
         //vSeeds.clear();
         vSeeds.emplace_back("testseed.arielcoin.org");
-        
+
 
         // nodes with support for servicebits filtering should be at the top
 //        vSeeds.emplace_back("qtum4.dynu.net"); // Ariel testnet

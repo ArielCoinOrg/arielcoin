@@ -474,7 +474,7 @@ void SetupServerArgs(ArgsManager& argsman)
     argsman.AddArg("-torpassword=<pass>", "Tor control port password (default: empty)", ArgsManager::ALLOW_ANY | ArgsManager::SENSITIVE, OptionsCategory::CONNECTION);
     argsman.AddArg("-dgpstorage", "Receiving data from DGP via storage (default: -dgpevm)", ArgsManager::ALLOW_ANY, OptionsCategory::CONNECTION);
     argsman.AddArg("-dgpevm", "Receiving data from DGP via a contract call (default: -dgpevm)", ArgsManager::ALLOW_ANY, OptionsCategory::CONNECTION);
-    argsman.AddArg("-hwitoolpath=<path>", "Specify HWI tool path", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
+    //argsman.AddArg("-hwitoolpath=<path>", "Specify HWI tool path", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
 #ifdef USE_UPNP
 #if USE_UPNP
     argsman.AddArg("-upnp", "Use UPnP to map the listening port (default: 1 when listening and no -proxy)", ArgsManager::ALLOW_ANY, OptionsCategory::CONNECTION);
@@ -545,19 +545,19 @@ void SetupServerArgs(ArgsManager& argsman)
     argsman.AddArg("-printpriority", strprintf("Log transaction fee rate in " + CURRENCY_UNIT + "/kvB when mining blocks (default: %u)", DEFAULT_PRINTPRIORITY), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-uacomment=<cmt>", "Append comment to the user agent string", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-opsenderheight=<n>", "Use given block height to check opsender fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-btcecrecoverheight=<n>", "Use given block height to check btc_ecrecover fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-btcecrecoverheight=<n>", "Use given block height to check btc_ecrecover fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-constantinopleheight=<n>", "Use given block height to check constantinople fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-difficultychangeheight=<n>", "Use given block height to check difficulty change fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-offlinestakingheight=<n>", "Use given block height to check offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-delegationsaddress=<adr>", "Use given contract delegations address for offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-lastmposheight=<n>", "Use given block height to check remove mpos fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-reduceblocktimeheight=<n>", "Use given block height to check blocks with reduced target spacing (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-difficultychangeheight=<n>", "Use given block height to check difficulty change fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-offlinestakingheight=<n>", "Use given block height to check offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-delegationsaddress=<adr>", "Use given contract delegations address for offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-lastmposheight=<n>", "Use given block height to check remove mpos fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-reduceblocktimeheight=<n>", "Use given block height to check blocks with reduced target spacing (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-powallowmindifficultyblocks", "Use given value for pow allow min difficulty blocks parameter (regtest-only, default: 1)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-pownoretargeting", "Use given value for pow no retargeting parameter (regtest-only, default: 1)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-posnoretargeting", "Use given value for pos no retargeting parameter (regtest-only, default: 1)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-muirglacierheight=<n>", "Use given block height to check contracts with EVM Muir Glacier (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-londonheight=<n>", "Use given block height to check contracts with EVM London (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-taprootheight=<n>", "Use given block height to check taproot (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    //argsman.AddArg("-taprootheight=<n>", "Use given block height to check taproot (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
 
     SetupChainParamsBaseOptions(argsman);
 
@@ -577,11 +577,11 @@ void SetupServerArgs(ArgsManager& argsman)
     argsman.AddArg("-blockmintxfee=<amt>", strprintf("Set lowest fee rate (in %s/kvB) for transactions to be included in block creation. (default: %s)", CURRENCY_UNIT, FormatMoney(DEFAULT_BLOCK_MIN_TX_FEE)), ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
     argsman.AddArg("-blockversion=<n>", "Override block version to test forking scenarios", ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::BLOCK_CREATION);
 
-    argsman.AddArg("-staker-min-tx-gas-price=<amt>", "Any contract execution with a gas price below this will not be included in a block (defaults to the value specified by the DGP)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
-    argsman.AddArg("-staker-max-tx-gas-limit=<n>", "Any contract execution with a gas limit over this amount will not be included in a block (defaults to soft block gas limit)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
-    argsman.AddArg("-staker-soft-block-gas-limit=<n>", "After this amount of gas is surpassed in a block, no more contract executions will be added to the block (defaults to consensus-critical maximum block gas limit)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
-    argsman.AddArg("-aggressive-staking", "Check more often to publish immediately when valid block is found.", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
-    argsman.AddArg("-emergencystaking", "Emergency staking without blockchain synchronization.", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
+    //argsman.AddArg("-staker-min-tx-gas-price=<amt>", "Any contract execution with a gas price below this will not be included in a block (defaults to the value specified by the DGP)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
+    //argsman.AddArg("-staker-max-tx-gas-limit=<n>", "Any contract execution with a gas limit over this amount will not be included in a block (defaults to soft block gas limit)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
+    //argsman.AddArg("-staker-soft-block-gas-limit=<n>", "After this amount of gas is surpassed in a block, no more contract executions will be added to the block (defaults to consensus-critical maximum block gas limit)", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
+    //argsman.AddArg("-aggressive-staking", "Check more often to publish immediately when valid block is found.", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
+    //argsman.AddArg("-emergencystaking", "Emergency staking without blockchain synchronization.", ArgsManager::ALLOW_ANY, OptionsCategory::BLOCK_CREATION);
 
     argsman.AddArg("-rest", strprintf("Accept public REST requests (default: %u)", DEFAULT_REST_ENABLE), ArgsManager::ALLOW_ANY, OptionsCategory::RPC);
     argsman.AddArg("-rpcallowip=<ip>", "Allow JSON-RPC connections from specified source. Valid for <ip> are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times", ArgsManager::ALLOW_ANY, OptionsCategory::RPC);
@@ -612,8 +612,8 @@ void SetupServerArgs(ArgsManager& argsman)
     argsman.AddArg("-headerspamfilterignoreport=<n>", strprintf("Ignore the port in the ip address when looking for header spam, determine whether or not multiple nodes can be on the same IP (default: %u)", DEFAULT_HEADER_SPAM_FILTER_IGNORE_PORT), ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-cleanblockindex=<true/false>", "Clean block index (enabled by default)", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-cleanblockindextimeout=<n>", "Clean block index periodically after some time (default 600 seconds)", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
-    argsman.AddArg("-stakingallowlist=<address>", "Allow list delegate address. Can be specified multiple times to add multiple addresses.", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
-    argsman.AddArg("-stakingexcludelist=<address>", "Exclude list delegate address. Can be specified multiple times to add multiple addresses.", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
+    //argsman.AddArg("-stakingallowlist=<address>", "Allow list delegate address. Can be specified multiple times to add multiple addresses.", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
+    //argsman.AddArg("-stakingexcludelist=<address>", "Exclude list delegate address. Can be specified multiple times to add multiple addresses.", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
 
     // Add the hidden options
     argsman.AddHiddenArgs(hidden_args);

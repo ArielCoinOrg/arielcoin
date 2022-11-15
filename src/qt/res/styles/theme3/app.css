@@ -8,7 +8,7 @@ QWidget{
 Main Window CSS
 --------------------------------------------*/
 QMainWindow{
-    background-color: #de8f4f;
+    background-color: #1f1f1f;
     border: 0px solid transparent;
     background-image: url(":/styles/theme3/app-icons/bg");
     background-position: bottom left;

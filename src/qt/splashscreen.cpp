@@ -76,16 +76,17 @@ SplashScreen::SplashScreen(const NetworkStyle* networkStyle)
     pixPaint.drawPixmap(rectBg, bg);
 
     QRect logoRect(splashSize.width() - logoSize - 20, 20, logoSize, logoSize);
-    QPainterPath logoPath;
-    logoPath.addRoundedRect(logoRect, logoSize / 2, logoSize / 2);
+    //QPainterPath logoPath;
+    //logoPath.addRoundedRect(logoRect, logoSize / 2, logoSize / 2);
     pixPaint.setRenderHint(QPainter::Antialiasing);
-    pixPaint.setPen(logo_frame_color);
-    pixPaint.drawPath(logoPath);
+    //pixPaint.setPen(logo_frame_color);
+    //pixPaint.drawPath(logoPath);
 
-    QPixmap logo = PlatformStyle::SingleColorIcon(":/icons/bitcoin", foreground_color).pixmap(QSize(logoImageSize, logoImageSize));
+    QColor log_foreground_color = "#ffffff";
+    QPixmap logo = PlatformStyle::SingleColorIcon(":/icons/ariel", log_foreground_color).pixmap(QSize(logoImageSize, logoImageSize));
     pixPaint.drawPixmap(logoRect.x() + 6, logoRect.y() + 6, logo);
 
-    pixPaint.setPen(foreground_color);
+    pixPaint.setPen(log_foreground_color);
 
     pixPaint.setFont(QFont(font, 22 * fontFactor, QFont::Bold));
     QRect rectTitle(QPoint(0, logoRect.bottom() + 10), QSize(splashSize.width() - 20, packageTextHeight));

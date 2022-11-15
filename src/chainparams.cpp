@@ -370,8 +370,11 @@ public:
 //        assert(consensus.hashGenesisBlock == uint256S("0x0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222"));
 //        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
+        vSeeds.emplace_back("testseed.arielcoin.org");
+        
+
         // nodes with support for servicebits filtering should be at the top
 //        vSeeds.emplace_back("qtum4.dynu.net"); // Ariel testnet
 

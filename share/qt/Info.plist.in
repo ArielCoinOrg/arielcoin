@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.qtumproject.Ariel-Qt</string>
+  <string>org.ariel.Ariel-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.qtum.QtumPayment</string>
+      <string>org.ariel.ArielPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>qtum</string>
+        <string>ariel</string>
       </array>
     </dict>
   </array>

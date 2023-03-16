@@ -48,7 +48,7 @@ Ariel Core uses a full node model, and thus requires downloading the entire bloc
 
 ### Ariel Web Wallet
 
-A browser wallet that supports the Ledger hardware wallet, offline cold wallet, restoration from mobile wallets, creation of QRC20 tokens and QRC1155 NFTs.
+A browser wallet that supports the Ledger hardware wallet, offline cold wallet, restoration from mobile wallets, creation of ARC20 tokens and ARC1155 NFTs.
 
 Web site https://arl.cash
 
@@ -83,7 +83,7 @@ Make sure to check out these resources as well for more information and to keep 
 *	Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.
 *	Although all of the infrastructure is present, Ariel Core does not currently parse Solidity event data. You must parse this yourself using either searchlogs or -record-log-opcodes features.
 *	It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled.
-*	In Ariel there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the coinbase operation in Solidity (this address is also the one registered for the continuous staker rewards after 2000 blocks).
+
 
 ----------
 

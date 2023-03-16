@@ -8,9 +8,8 @@ Welcome to the Ariel Fastlane Main Network. This is the main network where the t
 The major features of the Ariel network include:
 
 1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Ariel .
-2. A Proof of Stake consensus system which is optimized for Ariel 's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Ariel that have created blocks in the past. Staking from smart contracts is under development.
-3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc.
-4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Ariel . This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
+2. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc.
+3. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Ariel . This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
 
 Note: Ariel Core is considered beta software. We make no warranties or guarantees of its security or stability.
 

@@ -4791,7 +4791,7 @@ static RPCHelpMan createwallet()
     }
 
     if (!request.params[2].isNull() && request.params[2].get_bool()) {
-        flags |= WALLET_FLAG_BLANK_WALLET;
+        //flags |= WALLET_FLAG_BLANK_WALLET;
     }
     SecureString passphrase;
     passphrase.reserve(100);

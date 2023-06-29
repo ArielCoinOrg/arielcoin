@@ -263,7 +263,7 @@ std::shared_ptr<CWallet> CreateWallet(interfaces::Chain& chain, const std::strin
 
     // Born encrypted wallets need to be created blank first.
     if (!passphrase.empty()) {
-        wallet_creation_flags |= WALLET_FLAG_BLANK_WALLET;
+        //wallet_creation_flags |= WALLET_FLAG_BLANK_WALLET;
     }
 
     // Private keys must be disabled for an external signer wallet

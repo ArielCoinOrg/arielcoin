@@ -51,10 +51,18 @@ RUN apt-get install autoconf automake binutils bison bsdmainutils ca-certificate
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8
 #------------------------------------------------
 
+RUN cd depends && make -j12
+
 WORKDIR /usr/src/ariel
 
 RUN ./contrib/install_db4.sh `pwd`
 
-RUN ./autogen.sh
-#RUN ./configure --without-gui
+RUN git submodule update --recursive
+#RUN git submodule init && git submodule update
+#RUN cd src/evmone
+#RUN git submodule init && git submodule update
+#WORKDIR /usr/src/ariel
+
+#RUN ./autogen.sh
+#RUN ./configure --prefix=$PWD/depends/x86_64-pc-linux-gnu
 #RUN make -j12

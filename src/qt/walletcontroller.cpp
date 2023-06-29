@@ -306,7 +306,7 @@ void CreateWalletActivity::createWallet()
         flags |= WALLET_FLAG_DISABLE_PRIVATE_KEYS;
     }
     if (m_create_wallet_dialog->isMakeBlankWalletChecked()) {
-        flags |= WALLET_FLAG_BLANK_WALLET;
+        // flags |= WALLET_FLAG_BLANK_WALLET;
     }
     if (m_create_wallet_dialog->isDescriptorWalletChecked()) {
         flags |= WALLET_FLAG_DESCRIPTORS;

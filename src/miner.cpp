@@ -1394,8 +1394,8 @@ public:
         fSuperStake = gArgs.GetBoolArg("-superstaking", DEFAULT_SUPER_STAKE);
         nOfflineStakeHeight = consensusParams.nOfflineStakeHeight;
         fDelegationsContract = !consensusParams.delegationsAddress.IsNull();
-        fEmergencyStaking = gArgs.GetBoolArg("-emergencystaking", false);
-        fAggressiveStaking = gArgs.IsArgSet("-aggressive-staking");
+        fEmergencyStaking = false; //gArgs.GetBoolArg("-emergencystaking", false);
+        fAggressiveStaking = false; //gArgs.IsArgSet("-aggressive-staking");
         int maxWaitForBestHeader = gArgs.GetArg("-maxstakerwaitforbestheader", DEFAULT_MAX_STAKER_WAIT_FOR_BEST_BLOCK_HEADER);
         if(maxWaitForBestHeader > 0)
         {

@@ -182,15 +182,6 @@ void DelegationItemWidget::updateLogo()
 
         ui->delegationLogo->setToolTip(tr("Confirmed delegation<br>Your weight is %1<br>Network weight is %2<br>Expected time to earn reward is %3").arg(nWeight).arg(nNetworkWeight).arg(text));
     }
-    else
-    {
-        if(d->blockHight < 0)
-            ui->delegationLogo->setToolTip(tr("Not staking because the delegation is not confirmed"));
-        else if (!nWeight)
-            ui->delegationLogo->setToolTip(tr("Not staking because you don't have mature coins"));
-        else
-            ui->delegationLogo->setToolTip(tr("Not staking"));
-    }
 
     switch (d->status)
     {

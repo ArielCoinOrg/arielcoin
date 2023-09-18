@@ -4762,7 +4762,7 @@ static RPCHelpMan createwallet()
         {
             {"wallet_name", RPCArg::Type::STR, RPCArg::Optional::NO, "The name for the new wallet. If this is a path, the wallet will be created at the path location."},
             {"disable_private_keys", RPCArg::Type::BOOL, RPCArg::Default{false}, "Disable the possibility of private keys (only watchonlys are possible in this mode)."},
-            {"blank", RPCArg::Type::BOOL, RPCArg::Default{false}, "Create a blank wallet. A blank wallet has no keys or HD seed. One can be set using sethdseed."},
+            {"blank", RPCArg::Type::BOOL, RPCArg::Default{false}, "Create a blank wallet."}, //A blank wallet has no keys. One can be set using sethdseed."},
             {"passphrase", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "Encrypt the wallet with this passphrase."},
             {"avoid_reuse", RPCArg::Type::BOOL, RPCArg::Default{false}, "Keep track of coin reuse, and treat dirty and clean coins differently with privacy considerations in mind."},
             {"descriptors", RPCArg::Type::BOOL, RPCArg::Default{false}, "Create a native descriptor wallet. The wallet will use descriptors internally to handle address creation"},
@@ -4791,7 +4791,7 @@ static RPCHelpMan createwallet()
     }
 
     if (!request.params[2].isNull() && request.params[2].get_bool()) {
-        flags |= WALLET_FLAG_BLANK_WALLET;
+        //flags |= WALLET_FLAG_BLANK_WALLET;
     }
     SecureString passphrase;
     passphrase.reserve(100);
@@ -7380,7 +7380,7 @@ static const CRPCCommand commands[] =
     { "wallet",             &sendmanywithdupes,              },
     { "wallet",             &sendtoaddress,                  },
     { "wallet",             &splitutxosforaddress,           },
-    { "wallet",             &sethdseed,                      },
+    //{ "wallet",             &sethdseed,                      },
     { "wallet",             &setlabel,                       },
     { "wallet",             &settxfee,                       },
     { "wallet",             &setwalletflag,                  },
@@ -7397,7 +7397,7 @@ static const CRPCCommand commands[] =
     { "wallet",             &walletpassphrase,               },
     { "wallet",             &walletpassphrasechange,         },
     { "wallet",             &walletprocesspsbt,              },
-    { "wallet",             &reservebalance,                 },
+//    { "wallet",             &reservebalance,                 },
     { "wallet",             &createcontract,                 },
     { "wallet",             &sendtocontract,                 },
 //    { "wallet",             &removedelegationforaddress,     },

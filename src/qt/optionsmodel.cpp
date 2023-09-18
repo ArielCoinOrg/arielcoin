@@ -109,34 +109,12 @@ void OptionsModel::Init(bool resetSettings)
     if (!gArgs.SoftSetArg("-dbcache", settings.value("nDatabaseCache").toString().toStdString()))
         addOverriddenOption("-dbcache");
 
-#ifdef ENABLE_WALLET
-    if (!settings.contains("fSuperStaking"))
-        settings.setValue("fSuperStaking", false);
-    bool fSuperStaking = settings.value("fSuperStaking").toBool();
-    if (!gArgs.SoftSetBoolArg("-superstaking", fSuperStaking))
-        addOverriddenOption("-superstaking");
-    if(fSuperStaking)
-    {
-        if (!gArgs.SoftSetBoolArg("-staking", true))
-            addOverriddenOption("-staking");
-        if (!gArgs.SoftSetBoolArg("-logevents", true))
-            addOverriddenOption("-logevents");
-        if (!gArgs.SoftSetBoolArg("-addrindex", true))
-            addOverriddenOption("-addrindex");
-    }
-#endif
 
     if (!settings.contains("fLogEvents"))
         settings.setValue("fLogEvents", fLogEvents);
     if (!gArgs.SoftSetBoolArg("-logevents", settings.value("fLogEvents").toBool()))
         addOverriddenOption("-logevents");
 
-#ifdef ENABLE_WALLET
-    if (!settings.contains("nReserveBalance"))
-        settings.setValue("nReserveBalance", (long long)DEFAULT_RESERVE_BALANCE);
-    if (!gArgs.SoftSetArg("-reservebalance", FormatMoney(settings.value("nReserveBalance").toLongLong())))
-        addOverriddenOption("-reservebalance");
-#endif
 
     if (!settings.contains("nThreadsScriptVerif"))
         settings.setValue("nThreadsScriptVerif", DEFAULT_SCRIPTCHECK_THREADS);
@@ -255,11 +233,6 @@ void OptionsModel::Init(bool resetSettings)
     if (!gArgs.SoftSetArg("-hwitoolpath", settings.value("HWIToolPath").toString().toStdString()))
         addOverriddenOption("-hwitoolpath");
 
-    if (!settings.contains("StakeLedgerId"))
-        settings.setValue("StakeLedgerId", "");
-
-    if (!gArgs.SoftSetArg("-stakerledgerid", settings.value("StakeLedgerId").toString().toStdString()))
-        addOverriddenOption("-stakerledgerid");
 #endif
 }
 
@@ -421,8 +394,6 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("external_signer_path");
         case ZeroBalanceAddressToken:
             return settings.value("bZeroBalanceAddressToken");
-        case ReserveBalance:
-            return settings.value("nReserveBalance");
         case SignPSBTWithHWITool:
             return settings.value("signPSBTWithHWITool");
 #endif
@@ -637,12 +608,6 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
         case SuperStaking:
             if (settings.value("fSuperStaking") != value) {
                 settings.setValue("fSuperStaking", value);
-                setRestartRequired(true);
-            }
-            break;
-        case ReserveBalance:
-            if (settings.value("nReserveBalance") != value) {
-                settings.setValue("nReserveBalance", value);
                 setRestartRequired(true);
             }
             break;

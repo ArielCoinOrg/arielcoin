@@ -768,14 +768,7 @@ void InitParameterInteraction(ArgsManager& args)
 #ifdef ENABLE_WALLET
     // Set the required parameters for super staking
     if(args.GetBoolArg("-superstaking", DEFAULT_SUPER_STAKE))
-    {
-        if (args.SoftSetBoolArg("-staking", true))
-            LogPrintf("%s: parameter interaction: -superstaking=1 -> setting -staking=1\n", __func__);
-        if (args.SoftSetBoolArg("-logevents", true))
-            LogPrintf("%s: parameter interaction: -superstaking=1 -> setting -logevents=1\n", __func__);
-        if (args.SoftSetBoolArg("-addrindex", true))
-            LogPrintf("%s: parameter interaction: -superstaking=1 -> setting -addrindex=1\n", __func__);
-    }
+    {}
 #endif
 }
 
@@ -1139,16 +1132,6 @@ bool AppInitParameterInteraction(const ArgsManager& args)
 
     if (args.IsArgSet("-offlinestakingheight")) {
         // Allow overriding offline staking block for testing
-        if (!chainparams.MineBlocksOnDemand()) {
-            return InitError(Untranslated("Offline staking block height may only be overridden on regtest."));
-        }
-
-        int offlineStakingBlock = args.GetArg("-offlinestakingheight", 0);
-        if(offlineStakingBlock >= 0)
-        {
-            UpdateOfflineStakingBlockHeight(offlineStakingBlock);
-            LogPrintf("Activate offline staking at block height %d\n.", offlineStakingBlock);
-        }
     }
 
     if (args.IsArgSet("-delegationsaddress")) {
@@ -1268,26 +1251,6 @@ bool AppInitParameterInteraction(const ArgsManager& args)
         }
     }
 
-    if(args.IsArgSet("-stakingallowlist") && args.IsArgSet("-stakingexcludelist"))
-    {
-        return InitError(Untranslated("Either -stakingallowlist or -stakingexcludelist parameter can be specified to the staker, not both."));
-    }
-
-    // Check allow list
-    for (const std::string& strAddress : args.GetArgs("-stakingallowlist"))
-    {
-        CTxDestination dest = DecodeDestination(strAddress);
-        if(!std::holds_alternative<PKHash>(dest))
-            return InitError(Untranslated(strprintf("-stakingallowlist, address %s does not refer to public key hash", strAddress)));
-    }
-
-    // Check exclude list
-    for (const std::string& strAddress : args.GetArgs("-stakingexcludelist"))
-    {
-        CTxDestination dest = DecodeDestination(strAddress);
-        if(!std::holds_alternative<PKHash>(dest))
-            return InitError(Untranslated(strprintf("-stakingexcludelist, address %s does not refer to public key hash", strAddress)));
-    }
 
     return true;
 }

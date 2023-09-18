@@ -3466,8 +3466,6 @@ std::shared_ptr<CWallet> CWallet::Create(interfaces::Chain* chain, const std::st
     walletInstance->m_confirm_target = gArgs.GetArg("-txconfirmtarget", DEFAULT_TX_CONFIRM_TARGET);
     walletInstance->m_spend_zero_conf_change = gArgs.GetBoolArg("-spendzeroconfchange", DEFAULT_SPEND_ZEROCONF_CHANGE);
     walletInstance->m_signal_rbf = gArgs.GetBoolArg("-walletrbf", DEFAULT_WALLET_RBF);
-    if(!ParseMoney(gArgs.GetArg("-reservebalance", FormatMoney(DEFAULT_RESERVE_BALANCE)), walletInstance->m_reserve_balance))
-        walletInstance->m_reserve_balance = DEFAULT_RESERVE_BALANCE;
     walletInstance->m_use_change_address = gArgs.GetBoolArg("-usechangeaddress", DEFAULT_USE_CHANGE_ADDRESS);
     if(!ParseMoney(gArgs.GetArg("-stakingminutxovalue", FormatMoney(DEFAULT_STAKING_MIN_UTXO_VALUE)), walletInstance->m_staking_min_utxo_value))
         walletInstance->m_staking_min_utxo_value = DEFAULT_STAKING_MIN_UTXO_VALUE;

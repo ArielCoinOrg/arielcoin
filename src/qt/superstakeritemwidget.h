@@ -65,7 +65,7 @@ private Q_SLOTS:
     void on_buttonRestore_clicked();
 
 private:
-    void updateLogo();
+    void updateLogo() {}
     void updateBalance();
     void updateLabelStaker();
 

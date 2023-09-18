@@ -49,7 +49,6 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "splitutxosforaddress", 3, "maxoutputs" },
     { "splitutxosforaddress", 4, "psbt" },
     { "settxfee", 0, "amount" },
-    { "sethdseed", 0, "newkeypool" },
     { "getsubsidy", 0, "height" },
     { "getreceivedbyaddress", 1, "minconf" },
     { "getreceivedbylabel", 1, "minconf" },

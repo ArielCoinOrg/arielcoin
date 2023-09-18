@@ -372,8 +372,6 @@ public Q_SLOTS:
 #ifdef ENABLE_WALLET
     /** Update ledger icon **/
     void updateLedgerIcon();
-    /** Update staking icon **/
-    void updateStakingIcon();
 #endif // ENABLE_WALLET
 
     /** called by a timer to check if ShutdownRequested() has been set **/
